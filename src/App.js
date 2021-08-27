@@ -7,6 +7,7 @@ function App() {
       <header className="App-header">
         <div> MATTS APP</div>
         <div>added this </div>
+        <h3>added another line</h3>
       </header>
     </div>
   );
