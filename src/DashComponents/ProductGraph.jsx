@@ -28,7 +28,17 @@ export const MarketingMailClassGraph = (props) => {
   const [xHover, setXHover] = useState(0);
   const [yHover, setYHover] = useState(0);
 
+  // useEffect(allGraphFunctions, [data, propData]);
   useEffect(allGraphFunctions, [data, propData]);
+
+  useEffect(() => {
+    setData(propData);
+    drawBars();
+    raiseBars();
+    raiseTargets();
+    // drawTooltip();
+    // raiseTooltip();
+  });
 
   const tooltipWidth = 150;
   const tooltipHeight = 50;
@@ -44,8 +54,8 @@ export const MarketingMailClassGraph = (props) => {
     transitionBars();
     raiseBars();
     raiseTargets();
-    drawTooltip();
-    raiseTooltip();
+    // drawTooltip();
+    // raiseTooltip();
   }
 
   function raiseTooltip() {
@@ -236,8 +246,6 @@ export const MarketingMailClassGraph = (props) => {
     let currentBarY = d3.select(this)._groups[0][0].y.animVal.value;
 
     let currentBarId = d3.select(this)._groups[0][0].id;
-
-    console.log(currentBarX);
 
     let tooltipXDisplacement = 20;
     const tooltipYDisplacement = 100;
