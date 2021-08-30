@@ -1,0 +1,32 @@
+[
+    {
+      "dataSet": "missedTarget",
+      "label": "missed target",
+      "value": 24
+    },
+    {
+      "dataSet": "missedTarget",
+      "label": "exceeded target",
+      "value": 5
+    },
+    {
+      "dataSet": "missedTarget",
+      "label": "no data",
+      "value": 14
+    },
+    {
+      "dataSet": "changeCount",
+      "label": "negative change",
+      "value": 25
+    },
+    {
+      "dataSet": "changeCount",
+      "label": "positive change",
+      "value": 8
+    },
+    {
+      "dataSet": "changeCount",
+      "label": "missing data",
+      "value": 10
+    }
+  ]

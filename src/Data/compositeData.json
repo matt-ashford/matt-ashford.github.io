@@ -1,0 +1,72 @@
+[
+    {
+      "ProductNameAbbrev": "SP First Class",
+      "ProductName": "Single-Piece First Class Mail",
+      "DeliverySpeed": "2-Day",
+      "Target": 96.5,
+      "Result2020": 91.47,
+      "PointsFromTarget": -5.03,
+      "Result2019": 92.05,
+      "AnnualChange": -0.58
+    },
+    {
+      "ProductNameAbbrev": "SP First Class",
+      "ProductName": "Single-Piece First Class Mail",
+      "DeliverySpeed": "3-5 Day",
+      "Target": 95.25,
+      "Result2020": 78.83,
+      "PointsFromTarget": -16.42,
+      "Result2019": 80.88,
+      "AnnualChange": -2.05
+    },
+    {
+      "ProductNameAbbrev": "Prst First Class",
+      "ProductName": "Presorted First Class Mail",
+      "DeliverySpeed": "Overnight",
+      "Target": 96.8,
+      "Result2020": 94.72,
+      "PointsFromTarget": -2.08,
+      "Result2019": 95.46,
+      "AnnualChange": -0.74
+    },
+    {
+      "ProductNameAbbrev": "Prst First Class",
+      "ProductName": "Presorted First Class Mail",
+      "DeliverySpeed": "2-Day",
+      "Target": 96.5,
+      "Result2020": 92.77,
+      "PointsFromTarget": -3.73,
+      "Result2019": 94.1,
+      "AnnualChange": -1.33
+    },
+    {
+      "ProductNameAbbrev": "Prst First Class",
+      "ProductName": "Presorted First Class Mail",
+      "DeliverySpeed": "3-5 Day",
+      "Target": 95.25,
+      "Result2020": 89.89,
+      "PointsFromTarget": -5.36,
+      "Result2019": 91.95,
+      "AnnualChange": -2.06
+    },
+    {
+      "ProductNameAbbrev": "First Class Composite",
+      "ProductName": "First Class Letter and Flat Composite",
+      "DeliverySpeed": "missing",
+      "Target": 96,
+      "Result2020": 89.73,
+      "PointsFromTarget": -6.27,
+      "Result2019": 91.36,
+      "AnnualChange": -1.63
+    },
+    {
+      "ProductNameAbbrev": "MM and Per Composite",
+      "ProductName": "Marketing Mail and Periodicals Composite",
+      "DeliverySpeed": "missing",
+      "Target": 91.8,
+      "Result2020": 88.38,
+      "PointsFromTarget": -3.42,
+      "Result2019": 88.73,
+      "AnnualChange": -0.35
+    }
+  ]

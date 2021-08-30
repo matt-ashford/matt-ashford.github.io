@@ -1,0 +1,44 @@
+[
+    {
+      "mailClass": "First Class Mail",
+      "totalProducts": 17,
+      "negativeChange": 12,
+      "positiveChange": 2,
+      "missing": 3
+    },
+    {
+      "mailClass": "Marketing Mail",
+      "totalProducts": 9,
+      "negativeChange": 5,
+      "positiveChange": 4,
+      "missing": 0
+    },
+    {
+      "mailClass": "Package Services",
+      "totalProducts": 4,
+      "negativeChange": 2,
+      "positiveChange": 1,
+      "missing": 1
+    },
+    {
+      "mailClass": "Periodicals",
+      "totalProducts": 2,
+      "negativeChange": 2,
+      "positiveChange": 1,
+      "missing": 0
+    },
+    {
+      "mailClass": "Special Services",
+      "totalProducts": 11,
+      "negativeChange": 4,
+      "positiveChange": 8,
+      "missing": 6
+    },
+    {
+      "mailClass": "Grand Total",
+      "totalProducts": 43,
+      "negativeChange": 25,
+      "positiveChange": 8,
+      "missing": 10
+    }
+  ]
