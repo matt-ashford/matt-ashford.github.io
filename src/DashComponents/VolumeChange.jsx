@@ -1,7 +1,7 @@
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
-// import { KeyboardArrowDownIcon } from "@material-ui/icons/KeyboardArrowDown";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const useStyles = makeStyles({
   root: {
@@ -89,10 +89,10 @@ export const VolumeChange = (props) => {
 
       <Typography variant="h5" gutterBottom className={classes.volText}>
         Annual change
-        {/* <KeyboardArrowDownIcon
+        <KeyboardArrowDownIcon
           className={classes.changeIcon}
           fontSize="small"
-        /> */}
+        />
         {volumeChangeText}
       </Typography>
     </div>

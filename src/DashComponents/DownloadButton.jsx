@@ -1,7 +1,7 @@
 import { CSVLink } from "react-csv";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-// import TocIcon from "@material-ui/icons/Toc";
+import TocIcon from "@material-ui/icons/Toc";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
@@ -33,7 +33,7 @@ export const DownloadButton = (props) => {
         <div>
           <Grid container direction="row">
             <Grid item xs={2}>
-              {/* <TocIcon className={classes.icon} /> */}
+              <TocIcon className={classes.icon} />
             </Grid>
             <Grid item xs={10}>
               <p> Download CSV</p>
