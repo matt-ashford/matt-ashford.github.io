@@ -7,8 +7,6 @@ import { primaryColor, highlightColor, lightGrey } from "../Design/MyTheme";
 export const PieGraph = (props) => {
   const { propData } = props;
 
-  // const [data, setData] = useState(propData);
-
   useEffect(() => {
     drawPie();
   });

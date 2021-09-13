@@ -20,7 +20,7 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
-export const MarketingMailClassGraph = (props) => {
+export const ProductGraph = (props) => {
   const { propData } = props;
 
   const [data, setData] = useState({});
@@ -28,7 +28,6 @@ export const MarketingMailClassGraph = (props) => {
   const [xHover, setXHover] = useState(0);
   const [yHover, setYHover] = useState(0);
 
-  // useEffect(allGraphFunctions, [data, propData]);
   useEffect(allGraphFunctions, [data, propData]);
 
   useEffect(() => {
@@ -36,8 +35,6 @@ export const MarketingMailClassGraph = (props) => {
     drawBars();
     raiseBars();
     raiseTargets();
-    // drawTooltip();
-    // raiseTooltip();
   });
 
   const tooltipWidth = 150;
@@ -54,8 +51,6 @@ export const MarketingMailClassGraph = (props) => {
     transitionBars();
     raiseBars();
     raiseTargets();
-    // drawTooltip();
-    // raiseTooltip();
   }
 
   function raiseTooltip() {
@@ -172,7 +167,7 @@ export const MarketingMailClassGraph = (props) => {
   function drawNonBarItems() {
     const data2020 = propData.filter((row) => row.fy === 2020);
 
-    const quarters = ["Q1", "Q2", "Q3", "Q4 "];
+    const quarters = ["Q1", "Q2", "Q3", "Q4"];
     const interBarMargin = getInterBarMargin(data2020);
 
     svg
@@ -305,4 +300,4 @@ export const MarketingMailClassGraph = (props) => {
   );
 };
 
-export default MarketingMailClassGraph;
+export default ProductGraph;

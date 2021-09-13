@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
     color: theme.palette.text.secondary,
     minWidth: 300,
-    // elevation: 0,
   },
   graphDiv: {
     minWidth: 850,

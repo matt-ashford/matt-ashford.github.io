@@ -3,6 +3,18 @@ import { useState, useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 
+import {
+  margin,
+  svgHeight,
+  svgHeightFull,
+  svgWidth,
+  interDotX,
+} from "../Design/graphDimensionsLine";
+
+import { secondaryColor, lineGraphTitleBlock } from "../Design/MyTheme";
+
+import { TooltipExtract } from "./Tooltip";
+
 const useStyles = makeStyles({
   headerText: {
     color: "white",
@@ -19,6 +31,8 @@ export const QuarterlyVolume = (props) => {
 
   const [xHover, setXHover] = useState(0);
   const [yHover, setYHover] = useState(0);
+  const [hoverId, setHoverId] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
     setData(propData);
@@ -35,11 +49,6 @@ export const QuarterlyVolume = (props) => {
   }, [data, propData]);
 
   const currentProductName = data[0].product;
-
-  const margin = { top: 10, right: 5, bottom: 10, left: 20 };
-  const svgHeight = 200 - margin.top - margin.bottom;
-  const svgWdight = 350 - margin.right - margin.left;
-  const interDotX = 95;
 
   const data2020 = propData.filter((row) => row.fy === 2020);
   const volumes2020 = data2020.map((row) => row.volume);
@@ -90,9 +99,7 @@ export const QuarterlyVolume = (props) => {
       .duration(600)
       .attr("d", line)
       .style("fill", "none")
-      // .style("strokeWidth", 9)
       .style("stroke-width", "3px")
-      // .style("stroke", "black")
       .style("stroke", "blue")
       .attr("id", "volumeLine");
   }
@@ -108,11 +115,14 @@ export const QuarterlyVolume = (props) => {
         let currentDotY = d3.select(this)._groups[0][0].cy;
         let currentDotId = d3.select(this)._groups[0][0].id;
 
+        console.log("qvol component", currentDotX, currentDotY);
         currentDotX = currentDotX.baseVal.value;
         currentDotY = currentDotY.baseVal.value;
 
         setXHover(currentDotX);
         setYHover(currentDotY);
+        setHoverId(currentDotId);
+        setIsHovering(true);
 
         drawTooltip(currentDotX, currentDotY);
 
@@ -135,6 +145,8 @@ export const QuarterlyVolume = (props) => {
         d3.select("#lineTooltip").remove();
         d3.select("#lineTooltip").style("opacity", 0);
         d3.select("#tooltipText").remove();
+
+        setIsHovering(false);
       })
       .transition()
       .duration(600)
@@ -237,7 +249,7 @@ export const QuarterlyVolume = (props) => {
   }
 
   return (
-    <div style={{ backgroundColor: "#225CF6", paddingTop: "1%" }}>
+    <div style={{ backgroundColor: secondaryColor, paddingTop: "1%" }}>
       <div style={{ marginTop: "1%" }}>
         <p
           className={classes.headerText}
@@ -248,9 +260,16 @@ export const QuarterlyVolume = (props) => {
         <p className={classes.headerText}> {currentProductName}</p>
       </div>
 
-      <div style={{ backgroundColor: "#caf3fa" }}>
-        <svg height={200} width={325} id="qtrVolsvg"></svg>
+      <div style={{ backgroundColor: lineGraphTitleBlock }}>
+        <svg height={svgHeightFull} width={325} id="qtrVolsvg"></svg>
       </div>
+      <TooltipExtract
+        xHover={xHover}
+        yHover={yHover}
+        hoverId={hoverId}
+        svgHeightFull={svgHeightFull}
+        isHovering={isHovering}
+      />
     </div>
   );
 };
