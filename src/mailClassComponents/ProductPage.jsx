@@ -66,9 +66,9 @@ const ProductPageFull = (props) => {
 
             <Grid item xs={3}>
               {" "}
-              <Paper className={classes.quarterlyContainer}>
-                <QuarterlyVolume propData={productData} />
-              </Paper>
+              {/* <Paper className={classes.quarterlyContainer}> */}
+              <QuarterlyVolume propData={productData} />
+              {/* </Paper> */}
               <div style={{ marginTop: "10%" }}></div>
               <DownloadButton
                 propData={productData}

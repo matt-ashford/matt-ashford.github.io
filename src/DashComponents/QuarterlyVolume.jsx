@@ -115,7 +115,6 @@ export const QuarterlyVolume = (props) => {
         let currentDotY = d3.select(this)._groups[0][0].cy;
         let currentDotId = d3.select(this)._groups[0][0].id;
 
-        console.log("qvol component", currentDotX, currentDotY);
         currentDotX = currentDotX.baseVal.value;
         currentDotY = currentDotY.baseVal.value;
 
@@ -124,27 +123,27 @@ export const QuarterlyVolume = (props) => {
         setHoverId(currentDotId);
         setIsHovering(true);
 
-        drawTooltip(currentDotX, currentDotY);
+        // drawTooltip(currentDotX, currentDotY);
 
-        d3.select("#lineTooltip")
-          .attr("x", tooltipXPoz(currentDotX, currentDotId))
-          .attr("y", tooltipYPoz(currentDotY, currentDotId))
-          .transition()
-          .duration(300)
-          .style("opacity", 0.95);
+        // d3.select("#lineTooltip")
+        //   .attr("x", tooltipXPoz(currentDotX, currentDotId))
+        //   .attr("y", tooltipYPoz(currentDotY, currentDotId))
+        //   .transition()
+        //   .duration(300)
+        //   .style("opacity", 0.95);
 
-        d3.select("#tooltipText")
-          .attr("x", tooltipXPoz(currentDotX, currentDotId) + 10)
-          .attr("y", tooltipYPoz(currentDotY, currentDotId) + 25)
-          .text(tooltipTextChange(currentDotId, data2020))
-          .transition()
-          .duration(300)
-          .style("opacity", 1);
+        // d3.select("#tooltipText")
+        //   .attr("x", tooltipXPoz(currentDotX, currentDotId) + 10)
+        //   .attr("y", tooltipYPoz(currentDotY, currentDotId) + 25)
+        //   .text(tooltipTextChange(currentDotId, data2020))
+        //   .transition()
+        //   .duration(300)
+        //   .style("opacity", 1);
       })
       .on("mouseout", () => {
-        d3.select("#lineTooltip").remove();
-        d3.select("#lineTooltip").style("opacity", 0);
-        d3.select("#tooltipText").remove();
+        // d3.select("#lineTooltip").remove();
+        // d3.select("#lineTooltip").style("opacity", 0);
+        // d3.select("#tooltipText").remove();
 
         setIsHovering(false);
       })
@@ -249,7 +248,9 @@ export const QuarterlyVolume = (props) => {
   }
 
   return (
-    <div style={{ backgroundColor: secondaryColor, paddingTop: "1%" }}>
+    <div
+      style={{ backgroundColor: secondaryColor, paddingTop: "1%", width: 325 }}
+    >
       <div style={{ marginTop: "1%" }}>
         <p
           className={classes.headerText}
