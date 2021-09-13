@@ -190,62 +190,62 @@ export const QuarterlyVolume = (props) => {
       .style("opacity", 0);
   }
 
-  function tooltipXPoz(currentDotX, currentDotId) {
-    const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
+  // function tooltipXPoz(currentDotX, currentDotId) {
+  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
 
-    if (currentDotQuarter > 2) {
-      return currentDotX - tooltipWidth;
-    }
+  //   if (currentDotQuarter > 2) {
+  //     return currentDotX - tooltipWidth;
+  //   }
 
-    return currentDotX;
-  }
+  //   return currentDotX;
+  // }
 
-  function tooltipYPoz(currentDotY, currentDotId) {
-    const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
+  // function tooltipYPoz(currentDotY, currentDotId) {
+  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
 
-    if (currentDotQuarter > 2) {
-      return currentDotY - tooltipHeight;
-    }
+  //   if (currentDotQuarter > 2) {
+  //     return currentDotY - tooltipHeight;
+  //   }
 
-    return currentDotY;
-  }
+  //   return currentDotY;
+  // }
 
-  function tooltipTextChange(currentDotId, dataIn) {
-    const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
+  // function tooltipTextChange(currentDotId, dataIn) {
+  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
 
-    const dataSorted = dataIn.sort((a, b) => a.quarter - b.quarter);
+  //   const dataSorted = dataIn.sort((a, b) => a.quarter - b.quarter);
 
-    const currentRow = dataSorted[currentDotQuarter - 1];
+  //   const currentRow = dataSorted[currentDotQuarter - 1];
 
-    const thisVol = currentRow.volume;
+  //   const thisVol = currentRow.volume;
 
-    const volText = formatVolumeNumber(thisVol);
+  //   const volText = formatVolumeNumber(thisVol);
 
-    return `Q${currentDotQuarter} volume: ${volText}`;
-  }
+  //   return `Q${currentDotQuarter} volume: ${volText}`;
+  // }
 
-  function formatVolumeNumber(rawNumber) {
-    let trailingLetter = "B";
-    let divisor = 1000000000;
+  // function formatVolumeNumber(rawNumber) {
+  //   let trailingLetter = "B";
+  //   let divisor = 1000000000;
 
-    if (rawNumber / divisor < 1) {
-      trailingLetter = "M";
-      divisor = divisor / 1000;
-    }
+  //   if (rawNumber / divisor < 1) {
+  //     trailingLetter = "M";
+  //     divisor = divisor / 1000;
+  //   }
 
-    const outputNumber = rawNumber / divisor;
+  //   const outputNumber = rawNumber / divisor;
 
-    let stringNum;
-    if (trailingLetter === "M") {
-      stringNum = outputNumber.toFixed(0);
-    }
+  //   let stringNum;
+  //   if (trailingLetter === "M") {
+  //     stringNum = outputNumber.toFixed(0);
+  //   }
 
-    if (trailingLetter === "B") {
-      stringNum = outputNumber.toFixed(2);
-    }
+  //   if (trailingLetter === "B") {
+  //     stringNum = outputNumber.toFixed(2);
+  //   }
 
-    return `${stringNum}${trailingLetter}`;
-  }
+  //   return `${stringNum}${trailingLetter}`;
+  // }
 
   return (
     <div
@@ -270,6 +270,7 @@ export const QuarterlyVolume = (props) => {
         hoverId={hoverId}
         svgHeightFull={svgHeightFull}
         isHovering={isHovering}
+        propData={data2020}
       />
     </div>
   );
