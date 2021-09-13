@@ -3,21 +3,21 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
-import volData from "../../Data/volume.json";
+import volData from "../Data/volume.json";
 
 import { useState } from "react";
 
-import annualData from "../../Data/annualData.json";
+import annualData from "../Data/annualData.json";
 
-import MarketingMailClassGraph from "./MarketingMailClassGraph";
-import ProductCountTableData from "../../DashComponents/ProductCountTable";
-import VolumeChange from "../../DashComponents/VolumeChange";
-import ProductDropdown from "../../DashComponents/ProductDropdown";
-import ProductPage from "../ProductPage";
+import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
+import ProductCountTableData from "../DashComponents/ProductCountTable";
+import VolumeChange from "../DashComponents/VolumeChange";
+import ProductDropdown from "../DashComponents/ProductDropdown";
+import ProductPage from "./ProductPage";
 
-import DownloadButton from "../../DashComponents/DownloadButton";
+import DownloadButton from "../DashComponents/DownloadButton";
 
-import { lightGrey } from "../../Design/MyTheme";
+import { lightGrey } from "../Design/MyTheme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -69,7 +69,10 @@ export const MarketingMail = (props) => {
         </Grid>
         <Grid item lg={9} xs={12}>
           <Paper className={classes.graphDiv} elevation={3}>
-            <MarketingMailClassGraph propData={mmAnnualData} />
+            <ClassLevelGraph
+              propData={mmAnnualData}
+              mailClass={"Marketing Mail"}
+            />
           </Paper>
         </Grid>
 

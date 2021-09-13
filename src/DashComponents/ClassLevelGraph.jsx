@@ -1,13 +1,13 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import GraphKey from "../../DashComponents/GraphKey";
+import GraphKey from "./GraphKey";
 import {
   primaryColor,
   secondaryColor,
   highlightColor,
   textNodeFont,
   lightGrey,
-} from "../../Design/MyTheme";
+} from "../Design/MyTheme";
 
 import {
   marginBottom,
@@ -18,10 +18,10 @@ import {
   marginTop,
   yScale,
   yScaleRev,
-} from "../../Design/graphDimensions";
+} from "../Design/graphDimensions";
 
-export const MarketingMailClassGraph = (props) => {
-  const { propData } = props;
+export const ClassLevelGraph = (props) => {
+  const { propData, mailClass } = props;
 
   const [data, setData] = useState({});
 
@@ -154,7 +154,7 @@ export const MarketingMailClassGraph = (props) => {
 
   return (
     <div>
-      <h3 fontFamily={textNodeFont}>Marketing Mail Products</h3>
+      <h3 fontFamily={textNodeFont}>{mailClass} Products</h3>
       <svg
         shapeRendering="crispEdges"
         id="mmClassSvg"
@@ -171,4 +171,4 @@ export const MarketingMailClassGraph = (props) => {
   );
 };
 
-export default MarketingMailClassGraph;
+export default ClassLevelGraph;
