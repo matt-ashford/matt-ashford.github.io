@@ -20,10 +20,17 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
+import { TooltipService } from "./TooltipService";
+
 export const ClassLevelGraph = (props) => {
   const { propData, mailClass } = props;
 
   const [data, setData] = useState({});
+
+  const [xHover, setXHover] = useState(0);
+  const [hoverId, setHoverId] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
+  const [hoverHeight, setHoverHeight] = useState(0);
 
   useEffect(() => {
     setData(propData);
@@ -74,12 +81,7 @@ export const ClassLevelGraph = (props) => {
       .attr("text-anchor", "middle")
       .attr("class", "graphicElement nameBox nonBar")
       .attr("font-family", textNodeFont)
-      .attr("id", (d, i) => `${i}`)
-      .on("mouseover", function () {
-        const idCount = this.id;
-        const parentBox = `nameBox_${idCount}`;
-        d3.select(`#${parentBox}`).attr("fill", lightGrey);
-      });
+      .attr("id", (d, i) => `${i}`);
 
     svg
       .append("g")
@@ -117,11 +119,20 @@ export const ClassLevelGraph = (props) => {
       .attr("width", barWidth)
       .attr("fill", secondaryColor)
       .attr("class", "graphicElement bar2020")
+      .attr("id", (d) => `${d.productId}_${d.fy}`)
       .on("mouseover", function (event) {
-        // const thisBar = d3.select(this)._groups[0][0].id;
-        // const thisBar = d3.select(this)._groups[0][0];
-        // const thisBar = d3.select(this);
-        // toolTipMotion(event);
+        const currentBarId = d3.select(this)._groups[0][0].id;
+        const currentBarX = d3.select(this)._groups[0][0].x.baseVal.value;
+        const currentBarHeight =
+          d3.select(this)._groups[0][0].height.baseVal.value;
+
+        setXHover(currentBarX);
+        setHoverId(currentBarId);
+        setIsHovering(true);
+        setHoverHeight(currentBarHeight);
+      })
+      .on("mouseout", () => {
+        setIsHovering(false);
       });
 
     svg
@@ -153,21 +164,29 @@ export const ClassLevelGraph = (props) => {
   }
 
   return (
-    <div>
-      <h3 fontFamily={textNodeFont}>{mailClass} Products</h3>
-      <svg
-        shapeRendering="crispEdges"
-        id="mmClassSvg"
-        height={300}
-        width={850}
-      ></svg>
-      <GraphKey
-        level={"classLevel"}
-        bar2019={".bar2019"}
-        bar2020={".bar2020"}
+    <>
+      <div>
+        <h3 fontFamily={textNodeFont}>{mailClass} Products</h3>
+        <svg
+          shapeRendering="crispEdges"
+          id="mmClassSvg"
+          height={300}
+          width={850}
+        ></svg>
+        <GraphKey
+          level={"classLevel"}
+          bar2019={".bar2019"}
+          bar2020={".bar2020"}
+        />
+      </div>
+      <TooltipService
+        xHover={xHover}
+        hoverId={hoverId}
+        isHovering={isHovering}
+        hoverHeight={hoverHeight}
+        propData={propData}
       />
-      {/* <Tooltip toolTipData={toolTipData} /> */}
-    </div>
+    </>
   );
 };
 

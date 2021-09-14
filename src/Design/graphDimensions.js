@@ -22,15 +22,6 @@ export const {
   marginTop,
 } = classGraphDims;
 
-// const {
-//   marginBottom,
-//   graphHeight,
-//   graphWidth,
-//   barWidth,
-//   interBarMargin,
-//   marginLeft,
-// } = classGraphDims;
-
 export const yScale = d3.scaleLinear().domain([0, 100]).range([0, 250]);
 export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([250, 0]);
 

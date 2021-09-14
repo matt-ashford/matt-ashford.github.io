@@ -21,8 +21,6 @@ export const TooltipVolume = (props) => {
     tooltipDiv.style("opacity", 0).style("top", 1500);
   });
 
-  console.log("toltip", darkGrey);
-
   return (
     <div
       style={{
