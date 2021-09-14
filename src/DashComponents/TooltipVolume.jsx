@@ -1,8 +1,9 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect } from "react";
+import { darkGrey } from "../Design/MyTheme";
 
-export const TooltipExtract = (props) => {
+export const TooltipVolume = (props) => {
   const { xHover, yHover, hoverId, svgHeightFull, isHovering, propData } =
     props;
 
@@ -14,11 +15,13 @@ export const TooltipExtract = (props) => {
 
   const tooltipText = tooltipTextChange(hoverId, propData);
 
-  const tooltipDiv = d3.select("#tooltipExtract");
+  const tooltipDiv = d3.select("#TooltipVolume");
 
   tooltipDiv.on("mouseover", () => {
     tooltipDiv.style("opacity", 0).style("top", 1500);
   });
+
+  console.log("toltip", darkGrey);
 
   return (
     <div
@@ -29,20 +32,27 @@ export const TooltipExtract = (props) => {
         height: tooltipHeight,
         font: "12px sans-serif",
         background: "lightsteelblue",
-        paddingTop: 20,
+        textAlign: "center",
+        verticalAlign: "middle",
+        paddingTop: "10px",
+        borderRadius: "5px",
+        backgroundColor: darkGrey,
+        fontWeight: "bold",
+        fontSize: "13px",
       }}
-      id="tooltipExtract"
+      id="TooltipVolume"
     >
-      {tooltipText}
+      <span style={{ marginTop: textMarginTop }}> {tooltipText}</span>
     </div>
   );
 };
 
 const tooltipWidth = 130;
-const tooltipHeight = 50;
+const tooltipHeight = 30;
+const textMarginTop = 10;
 
 function removeOnMouseOut(isHovering) {
-  const tooltipDiv = d3.select("#tooltipExtract");
+  const tooltipDiv = d3.select("#TooltipVolume");
 
   if (!isHovering) {
     tooltipDiv
@@ -51,12 +61,12 @@ function removeOnMouseOut(isHovering) {
       .style("opacity", 0)
       .style("top", 1500);
   } else {
-    tooltipDiv.transition().duration(400).style("opacity", 0.9);
+    tooltipDiv.transition().duration(400).style("opacity", 0.95);
   }
 }
 
 function tooltipXPoz(xHover, hoverId) {
-  const tooltipDiv = d3.select("#tooltipExtract");
+  const tooltipDiv = d3.select("#TooltipVolume");
 
   let currentDotQuarter = 0;
 
@@ -76,7 +86,7 @@ function tooltipXPoz(xHover, hoverId) {
 }
 
 function tooltipYPoz(yHover, hoverId, svgHeightFull) {
-  const tooltipDiv = d3.select("#tooltipExtract");
+  const tooltipDiv = d3.select("#TooltipVolume");
 
   let currentDotQuarter = 0;
 
@@ -93,6 +103,7 @@ function tooltipYPoz(yHover, hoverId, svgHeightFull) {
 
   if (currentDotQuarter > 2) {
     outputVal -= tooltipHeight;
+    outputVal -= textMarginTop;
   }
 
   tooltipDiv.style("top", `${outputVal}px`);
@@ -143,4 +154,4 @@ function formatVolumeNumber(rawNumber) {
   return `${stringNum}${trailingLetter}`;
 }
 
-export default TooltipExtract;
+export default TooltipVolume;

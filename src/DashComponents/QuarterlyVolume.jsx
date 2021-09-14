@@ -13,7 +13,7 @@ import {
 
 import { secondaryColor, lineGraphTitleBlock } from "../Design/MyTheme";
 
-import { TooltipExtract } from "./Tooltip";
+import { TooltipVolume } from "./TooltipVolume";
 
 const useStyles = makeStyles({
   headerText: {
@@ -122,29 +122,8 @@ export const QuarterlyVolume = (props) => {
         setYHover(currentDotY);
         setHoverId(currentDotId);
         setIsHovering(true);
-
-        // drawTooltip(currentDotX, currentDotY);
-
-        // d3.select("#lineTooltip")
-        //   .attr("x", tooltipXPoz(currentDotX, currentDotId))
-        //   .attr("y", tooltipYPoz(currentDotY, currentDotId))
-        //   .transition()
-        //   .duration(300)
-        //   .style("opacity", 0.95);
-
-        // d3.select("#tooltipText")
-        //   .attr("x", tooltipXPoz(currentDotX, currentDotId) + 10)
-        //   .attr("y", tooltipYPoz(currentDotY, currentDotId) + 25)
-        //   .text(tooltipTextChange(currentDotId, data2020))
-        //   .transition()
-        //   .duration(300)
-        //   .style("opacity", 1);
       })
       .on("mouseout", () => {
-        // d3.select("#lineTooltip").remove();
-        // d3.select("#lineTooltip").style("opacity", 0);
-        // d3.select("#tooltipText").remove();
-
         setIsHovering(false);
       })
       .transition()
@@ -163,7 +142,7 @@ export const QuarterlyVolume = (props) => {
       .attr("cx", (d, i) => i * interDotX + margin.left)
       .attr("cy", (d) => yScale(d.volume))
       .attr("r", 5)
-      .attr("id", (d, i) => `Quarter${i + 1} dot`)
+      .attr("id", (d, i) => `volumeDot_${i + 1}`)
       .attr("fill", "black")
       .attr("class", "dot");
   }
@@ -190,81 +169,30 @@ export const QuarterlyVolume = (props) => {
       .style("opacity", 0);
   }
 
-  // function tooltipXPoz(currentDotX, currentDotId) {
-  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
-
-  //   if (currentDotQuarter > 2) {
-  //     return currentDotX - tooltipWidth;
-  //   }
-
-  //   return currentDotX;
-  // }
-
-  // function tooltipYPoz(currentDotY, currentDotId) {
-  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
-
-  //   if (currentDotQuarter > 2) {
-  //     return currentDotY - tooltipHeight;
-  //   }
-
-  //   return currentDotY;
-  // }
-
-  // function tooltipTextChange(currentDotId, dataIn) {
-  //   const currentDotQuarter = parseInt(currentDotId.match(/\d/)[0]);
-
-  //   const dataSorted = dataIn.sort((a, b) => a.quarter - b.quarter);
-
-  //   const currentRow = dataSorted[currentDotQuarter - 1];
-
-  //   const thisVol = currentRow.volume;
-
-  //   const volText = formatVolumeNumber(thisVol);
-
-  //   return `Q${currentDotQuarter} volume: ${volText}`;
-  // }
-
-  // function formatVolumeNumber(rawNumber) {
-  //   let trailingLetter = "B";
-  //   let divisor = 1000000000;
-
-  //   if (rawNumber / divisor < 1) {
-  //     trailingLetter = "M";
-  //     divisor = divisor / 1000;
-  //   }
-
-  //   const outputNumber = rawNumber / divisor;
-
-  //   let stringNum;
-  //   if (trailingLetter === "M") {
-  //     stringNum = outputNumber.toFixed(0);
-  //   }
-
-  //   if (trailingLetter === "B") {
-  //     stringNum = outputNumber.toFixed(2);
-  //   }
-
-  //   return `${stringNum}${trailingLetter}`;
-  // }
-
   return (
-    <div
-      style={{ backgroundColor: secondaryColor, paddingTop: "1%", width: 325 }}
-    >
-      <div style={{ marginTop: "1%" }}>
-        <p
-          className={classes.headerText}
-          style={{ fontSize: "20px", fontWeight: "bold" }}
-        >
-          FY 2020 Quarterly Volume
-        </p>
-        <p className={classes.headerText}> {currentProductName}</p>
-      </div>
+    <>
+      <div
+        style={{
+          backgroundColor: secondaryColor,
+          paddingTop: "1%",
+          width: svgWidth,
+        }}
+      >
+        <div style={{ marginTop: "1%" }}>
+          <p
+            className={classes.headerText}
+            style={{ fontSize: "20px", fontWeight: "bold" }}
+          >
+            FY 2020 Quarterly Volume
+          </p>
+          <p className={classes.headerText}> {currentProductName}</p>
+        </div>
 
-      <div style={{ backgroundColor: lineGraphTitleBlock }}>
-        <svg height={svgHeightFull} width={325} id="qtrVolsvg"></svg>
+        <div style={{ backgroundColor: lineGraphTitleBlock }}>
+          <svg height={svgHeightFull} width={svgWidth} id="qtrVolsvg"></svg>
+        </div>
       </div>
-      <TooltipExtract
+      <TooltipVolume
         xHover={xHover}
         yHover={yHover}
         hoverId={hoverId}
@@ -272,7 +200,7 @@ export const QuarterlyVolume = (props) => {
         isHovering={isHovering}
         propData={data2020}
       />
-    </div>
+    </>
   );
 };
 
