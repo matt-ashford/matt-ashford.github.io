@@ -20,7 +20,7 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
-import { TooltipService } from "./TooltipService";
+import { TooltipService_ClassLevel } from "./TooltipService_ClassLevel";
 
 export const ClassLevelGraph = (props) => {
   const { propData, mailClass } = props;
@@ -106,33 +106,37 @@ export const ClassLevelGraph = (props) => {
       .attr("width", barWidth)
       .attr("fill", primaryColor)
       .attr("class", "graphicElement bar2019")
-      .attr("id", (d) => `${d.pctOnTime}% on Time`);
+      .attr("id", (d) => `${d.productId}_${d.fy}`)
+      .on("mouseover", function () {
+        const currentBarSelection = d3.select(this);
+
+        mouseOverTriggers(currentBarSelection);
+      })
+      .on("mouseout", () => {
+        const currentBarSelection = d3.select(this);
+        mouseOutTriggers(currentBarSelection);
+      });
 
     svg
       .selectAll(".bar2020")
       .data(data2020)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft - 7)
+      .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft)
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
       .attr("fill", secondaryColor)
       .attr("class", "graphicElement bar2020")
       .attr("id", (d) => `${d.productId}_${d.fy}`)
-      .on("mouseover", function (event) {
-        const currentBarId = d3.select(this)._groups[0][0].id;
-        const currentBarX = d3.select(this)._groups[0][0].x.baseVal.value;
-        const currentBarHeight =
-          d3.select(this)._groups[0][0].height.baseVal.value;
+      .on("mouseover", function () {
+        const currentBarSelection = d3.select(this);
 
-        setXHover(currentBarX);
-        setHoverId(currentBarId);
-        setIsHovering(true);
-        setHoverHeight(currentBarHeight);
+        mouseOverTriggers(currentBarSelection);
       })
       .on("mouseout", () => {
-        setIsHovering(false);
+        const currentBarSelection = d3.select(this);
+        mouseOutTriggers(currentBarSelection);
       });
 
     svg
@@ -159,6 +163,26 @@ export const ClassLevelGraph = (props) => {
       .attr("class", "graphicElement");
   }
 
+  function mouseOverTriggers(currentBarSelection) {
+    const currentBarId = currentBarSelection._groups[0][0].id;
+    const currentBarX = currentBarSelection._groups[0][0].x.baseVal.value;
+    const currentBarHeight =
+      currentBarSelection._groups[0][0].height.baseVal.value;
+
+    setXHover(currentBarX);
+    setHoverId(currentBarId);
+    setIsHovering(true);
+    setHoverHeight(currentBarHeight);
+
+    currentBarSelection.attr("stroke", "black").attr("stroke-width", "2px");
+  }
+
+  function mouseOutTriggers(currentBarSelection) {
+    setIsHovering(false);
+
+    d3.selectAll("rect").attr("stroke", "none");
+  }
+
   function removeBars() {
     d3.selectAll(".graphicElement").remove();
   }
@@ -179,12 +203,13 @@ export const ClassLevelGraph = (props) => {
           bar2020={".bar2020"}
         />
       </div>
-      <TooltipService
+      <TooltipService_ClassLevel
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}
         hoverHeight={hoverHeight}
         propData={propData}
+        tooltipId={"tooltipClassGraph"}
       />
     </>
   );

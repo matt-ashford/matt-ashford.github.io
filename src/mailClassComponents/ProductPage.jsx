@@ -49,26 +49,25 @@ const ProductPageFull = (props) => {
     <>
       <div style={{ marginTop: "2%", marginBottom: "20%" }}>
         <Divider />
-        <div style={{ marginTop: "2%" }}>
-          <Grid container spacing={3}>
-            <Grid item xs={6}>
-              <div style={{ minWidth: 900 }}>
+        <div style={{ marginTop: "2%", marginLeft: "2%" }}>
+          <Grid container spacing={0}>
+            {/* <Grid item xl={7} lg={12}> */}
+            <Grid item lg={7} md={12}>
+              <div style={{ width: 875 }}>
                 <Paper className={classes.productGraphContainer}>
                   <ProductGraph propData={productData} />
                 </Paper>
               </div>
             </Grid>
 
-            {/* lg={9} md={12} */}
-
-            {/* lg={3} md={12} */}
-            <div style={{ width: "250px" }}></div>
+            <Grid
+              item
+              xs={1}
+              //  style={{ width: 1 }}
+            ></Grid>
 
             <Grid item xs={3}>
-              {" "}
-              {/* <Paper className={classes.quarterlyContainer}> */}
               <QuarterlyVolume propData={productData} />
-              {/* </Paper> */}
               <div style={{ marginTop: "10%" }}></div>
               <DownloadButton
                 propData={productData}

@@ -6,6 +6,9 @@ export const colorPalleteMatt = {
   highlightColor: "#22F6AC",
   lightGrey: "#e6e8e6",
   darkGrey: "#778380",
+  greenGrey: "#53aca0",
+  // pinkHighlight: "#ac5363",
+  pinkHighlight: "#f45273",
   alternateHighlight: "#1ED4C7",
   alternateSecondary: "#1E7FD4",
   lineGraphTitleBlock: "#caf3fa",
@@ -17,6 +20,8 @@ export const {
   highlightColor,
   lightGrey,
   darkGrey,
+  pinkHighlight,
+  greenGrey,
   alternateHighlight,
   alternateSecondary,
   lineGraphTitleBlock,
@@ -34,6 +39,17 @@ const myTheme = createTheme({
       main: primaryColor,
     },
   },
+  // breakpoints: {
+  //   values: {
+  //     xs: 0,
+  //     sm: 450,
+  //     md: 600,
+  //     // lg: 950,
+  //     // lg: 1100,
+  //     lg: 1000,
+  //     // xl: 1920,
+  //   },
+  // },
 });
 
 export default myTheme;

@@ -20,13 +20,17 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
+import { TooltipService_ProductLevel } from "./TooltipService_ProductLevel";
+
 export const ProductGraph = (props) => {
   const { propData } = props;
 
   const [data, setData] = useState({});
 
   const [xHover, setXHover] = useState(0);
-  const [yHover, setYHover] = useState(0);
+  const [hoverId, setHoverId] = useState("");
+  const [isHovering, setIsHovering] = useState(false);
+  const [hoverHeight, setHoverHeight] = useState(0);
 
   useEffect(allGraphFunctions, [data, propData]);
 
@@ -36,9 +40,6 @@ export const ProductGraph = (props) => {
     raiseBars();
     raiseTargets();
   });
-
-  const tooltipWidth = 150;
-  const tooltipHeight = 50;
 
   function allGraphFunctions() {
     d3.selectAll(".nonBarQuarter").remove();
@@ -53,9 +54,6 @@ export const ProductGraph = (props) => {
     raiseTargets();
   }
 
-  function raiseTooltip() {
-    d3.select("#productTooltip").raise();
-  }
   function raiseBars() {
     d3.selectAll(".bar2019Quarter").raise();
     d3.selectAll(".bar2020Quarter").raise();
@@ -111,7 +109,7 @@ export const ProductGraph = (props) => {
       .data(data2020)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft - 7)
+      .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft)
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("width", barWidth)
       .attr("fill", secondaryColor)
@@ -139,14 +137,16 @@ export const ProductGraph = (props) => {
       .transition()
       .duration(500)
       .attr("height", (d) => yScale(d.pctOnTime))
-      .attr("y", (d) => topStart - yScale(d.pctOnTime));
+      .attr("y", (d) => topStart - yScale(d.pctOnTime))
+      .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
 
     d3.selectAll(".bar2019Quarter")
       .data(data2019)
       .transition()
       .duration(500)
       .attr("height", (d) => yScale(d.pctOnTime))
-      .attr("y", (d) => topStart - yScale(d.pctOnTime));
+      .attr("y", (d) => topStart - yScale(d.pctOnTime))
+      .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
 
     svg
       .selectAll(".targetLines")
@@ -160,8 +160,6 @@ export const ProductGraph = (props) => {
       .style("stroke", highlightColor)
       .style("stroke-width", 2)
       .attr("class", "nonBarQuarter  graphicElementQuarter targetLines");
-
-    // drawNonBarItems();
   }
 
   function drawNonBarItems() {
@@ -206,97 +204,66 @@ export const ProductGraph = (props) => {
     d3.selectAll(".targetLines").style("opacity", 1);
   }
 
-  function drawTooltip() {
-    const tooltipSelection = d3.select("#productTooltip");
-
-    tooltipSelection.remove();
-
-    d3.select("#productTooltipText").remove();
-
-    const svg = d3.select("#productSvg");
-    svg
-      .append("rect")
-      .attr("width", tooltipWidth)
-      .attr("height", tooltipHeight)
-      .attr("id", "productTooltip")
-      .attr("fill", "#888a8c")
-      .attr("rx", 3)
-      .style("opacity", 0);
-
-    svg
-      .append("text")
-      .text("testing text")
-      .attr("stroke", "black")
-      .attr("id", "productTooltipText")
-      .style("font-size", "14px")
-      .style("opacity", 0);
-
-    tooltipSelection.raise();
-  }
-
   const theseBars = d3.selectAll(".bar2020Quarter, .bar2019Quarter");
 
   theseBars.on("mouseover", function () {
-    let currentBarX = d3.select(this)._groups[0][0].x.animVal.value;
-    let currentBarY = d3.select(this)._groups[0][0].y.animVal.value;
+    console.log("hovering ");
+    const currentBarSelection = d3.select(this);
 
-    let currentBarId = d3.select(this)._groups[0][0].id;
-
-    let tooltipXDisplacement = 20;
-    const tooltipYDisplacement = 100;
-
-    if (currentBarX > 500) {
-      tooltipXDisplacement = -155;
-    }
-
-    currentBarY += tooltipYDisplacement;
-    currentBarX += tooltipXDisplacement;
-
-    const textMarginTop = 30;
-    const textMarginLeft = 5;
-
-    d3.select("#productTooltip")
-      .attr("x", currentBarX)
-      .attr("y", currentBarY)
-      .transition()
-      .duration(300)
-      .style("opacity", 0.95);
-
-    d3.select("#productTooltipText")
-      .attr("x", currentBarX + textMarginLeft)
-      .attr("y", currentBarY + textMarginTop)
-      .transition()
-      .duration(300)
-      .style("opacity", 0.95)
-      .text(currentBarId);
-
-    d3.select("#productTooltipText").raise();
+    mouseOverTriggers(currentBarSelection);
   });
 
   theseBars.on("mouseout", function () {
-    d3.select("#productTooltip").transition().duration(300).style("opacity", 0);
-    d3.select("#productTooltipText")
-      .transition()
-      .duration(300)
-      .style("opacity", 0);
+    const currentBarSelection = d3.select(this);
+    mouseOutTriggers(currentBarSelection);
   });
 
+  function mouseOverTriggers(currentBarSelection) {
+    const currentBarId = currentBarSelection._groups[0][0].id;
+    const currentBarX = currentBarSelection._groups[0][0].x.baseVal.value;
+    const currentBarHeight =
+      currentBarSelection._groups[0][0].height.baseVal.value;
+
+    setXHover(currentBarX);
+    setHoverId(currentBarId);
+    setIsHovering(true);
+    setHoverHeight(currentBarHeight);
+
+    currentBarSelection.attr("stroke", "black").attr("stroke-width", "2px");
+  }
+
+  function mouseOutTriggers(currentBarSelection) {
+    setIsHovering(false);
+
+    d3.selectAll("rect").attr("stroke", "none");
+  }
+
   return (
-    <div>
-      <h3 fontFamily={textNodeFont}>Product-Level Quarterly Data</h3>
-      <h4>{propData[0].product}</h4>
-      <svg
-        shapeRendering="crispEdges"
-        id="productSvg"
-        height={300}
-        width={850}
-      ></svg>
-      <GraphKey
-        level={"productLevel"}
-        bar2019={".bar2019Quarter"}
-        bar2020={".bar2020Quarter"}
+    <>
+      <div>
+        <h3 fontFamily={textNodeFont}>Product-Level Quarterly Data</h3>
+        <h4>{propData[0].product}</h4>
+        <svg
+          shapeRendering="crispEdges"
+          id="productSvg"
+          height={300}
+          width={850}
+        ></svg>
+        <GraphKey
+          level={"productLevel"}
+          bar2019={".bar2019Quarter"}
+          bar2020={".bar2020Quarter"}
+        />
+      </div>
+      <TooltipService_ProductLevel
+        xHover={xHover}
+        hoverId={hoverId}
+        isHovering={isHovering}
+        hoverHeight={hoverHeight}
+        propData={propData}
+        tooltipId={"tooltipProductGraph"}
       />
-    </div>
+    </>
   );
 };
 

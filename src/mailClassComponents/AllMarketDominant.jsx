@@ -57,11 +57,7 @@ export const AllMarketDominant = (props) => {
             </Paper>
           </Grid>
           <Grid item xs={5}>
-            <Paper
-              style={{ marginTop: "-5%" }}
-              className={classes.paperTopRow}
-              // style={{ paddingBottom: "10%", paddingTop: "1%" }}
-            >
+            <Paper style={{ marginTop: "-5%" }} className={classes.paperTopRow}>
               <MDCompositeContainer />
             </Paper>
           </Grid>
