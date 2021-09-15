@@ -77,7 +77,7 @@ export const MarketingMail = (props) => {
 
         <Grid item xs={3}>
           <Grid container direction="column" spacing={3}>
-            <Grid item xs={4}>
+            <Grid item lg={7} md={12}>
               <Paper className={classes.paper}>
                 <div>
                   {" "}

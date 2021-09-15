@@ -29,8 +29,6 @@ export const {
 
 export const lightGreyAgain = "#e6e8e6";
 
-// const darkGrey = "#888a8c";
-
 export const textNodeFont = "'Roboto', sans-serif";
 
 const myTheme = createTheme({
@@ -39,17 +37,30 @@ const myTheme = createTheme({
       main: primaryColor,
     },
   },
-  // breakpoints: {
-  //   values: {
-  //     xs: 0,
-  //     sm: 450,
-  //     md: 600,
-  //     // lg: 950,
-  //     // lg: 1100,
-  //     lg: 1000,
-  //     // xl: 1920,
-  //   },
-  // },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 450,
+      md: 600,
+      lg: 1550,
+    },
+  },
 });
+
+export const tooltipStyles = {
+  position: "relative",
+  textAlign: "center",
+  font: "12px sans-serif",
+  background: "lightsteelblue",
+  textAlign: "center",
+  verticalAlign: "middle",
+  paddingTop: "8px",
+  paddingBottom: "8px",
+  borderRadius: "5px",
+  fontWeight: "bolder",
+  fontSize: "14px",
+  fontFamily: "roboto",
+  boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
+};
 
 export default myTheme;

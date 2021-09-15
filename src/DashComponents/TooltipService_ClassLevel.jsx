@@ -1,12 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import {
-  darkGrey,
-  pinkHighlight,
-  lightGrey,
-  greenGrey,
-} from "../Design/MyTheme";
+import { pinkHighlight, greenGrey, tooltipStyles } from "../Design/MyTheme";
 
 const tooltipWidth = 130;
 const tooltipHeight = 30;
@@ -31,10 +26,6 @@ export const TooltipService_ClassLevel = (props) => {
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
-  tooltipDiv.on("mouseover", () => {
-    tooltipDiv.style("opacity", 0).style("top", 1500);
-  });
-
   const pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
 
   const tooltipColor = assignColor(pointsFromTarget);
@@ -47,29 +38,16 @@ export const TooltipService_ClassLevel = (props) => {
     }
   }
 
+  tooltipDiv
+    .style("width", `${tooltipWidth}px`)
+    .style("height", `${tooltipHeight}px`)
+    .style("background-color", tooltipColor)
+    .on("mouseover", () => {
+      tooltipDiv.style("opacity", 0).style("top", 1500);
+    });
+
   return (
-    <div
-      style={{
-        position: "relative",
-        textAlign: "center",
-        width: tooltipWidth,
-        height: tooltipHeight,
-        font: "12px sans-serif",
-        background: "lightsteelblue",
-        textAlign: "center",
-        verticalAlign: "middle",
-        paddingTop: "8px",
-        paddingBottom: "8px",
-        borderRadius: "5px",
-        backgroundColor: tooltipColor,
-        fontWeight: "bolder",
-        fontSize: "14px",
-        fontFamily: "roboto",
-        boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
-      }}
-      // id="TooltipService"
-      id={tooltipId}
-    >
+    <div style={tooltipStyles} id={tooltipId}>
       <span style={{ marginTop: textMarginTop, marginBottom: "5px" }}>
         {tooltipText}
       </span>
@@ -78,7 +56,6 @@ export const TooltipService_ClassLevel = (props) => {
 };
 
 function removeOnMouseOut(isHovering, tooltipId) {
-  // const tooltipDiv = d3.select("#TooltipService");
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   if (!isHovering) {
@@ -93,7 +70,6 @@ function removeOnMouseOut(isHovering, tooltipId) {
 }
 
 function tooltipXPoz(xHover, tooltipId) {
-  // const tooltipDiv = d3.select("#TooltipService");
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   let outputVal;

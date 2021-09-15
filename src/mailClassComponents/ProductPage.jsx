@@ -60,11 +60,10 @@ const ProductPageFull = (props) => {
               </div>
             </Grid>
 
-            <Grid
+            {/* <Grid
               item
               xs={1}
-              //  style={{ width: 1 }}
-            ></Grid>
+            ></Grid> */}
 
             <Grid item xs={3}>
               <QuarterlyVolume propData={productData} />
