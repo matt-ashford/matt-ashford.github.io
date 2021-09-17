@@ -12,6 +12,7 @@ import {
 import {
   marginBottom,
   graphHeight,
+  graphWidth,
   barWidth,
   marginLeft,
   barMarginLeft,
@@ -195,7 +196,7 @@ export const ClassLevelGraph = (props) => {
           shapeRendering="crispEdges"
           id="mmClassSvg"
           height={300}
-          width={850}
+          width={graphWidth}
         ></svg>
         <GraphKey
           level={"classLevel"}

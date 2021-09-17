@@ -1,4 +1,5 @@
 import { createTheme } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 
 export const colorPalleteMatt = {
   primaryColor: "#2CC6EB",
@@ -62,5 +63,27 @@ export const tooltipStyles = {
   fontFamily: "roboto",
   boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
 };
+
+export const useStyles_ClassPage = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paperDropdown: {
+    minWidth: 850,
+    padding: theme.spacing(1),
+    marginTop: "5%",
+  },
+  paper: {
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+    minWidth: 300,
+  },
+  graphDiv: {
+    minWidth: 850,
+    maxWidth: 1000,
+    padding: "1%",
+  },
+}));
 
 export default myTheme;

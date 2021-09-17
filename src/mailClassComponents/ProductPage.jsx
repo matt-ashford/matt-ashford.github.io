@@ -51,7 +51,6 @@ const ProductPageFull = (props) => {
         <Divider />
         <div style={{ marginTop: "2%", marginLeft: "2%" }}>
           <Grid container spacing={0}>
-            {/* <Grid item xl={7} lg={12}> */}
             <Grid item lg={7} md={12}>
               <div style={{ width: 875 }}>
                 <Paper className={classes.productGraphContainer}>
@@ -59,11 +58,6 @@ const ProductPageFull = (props) => {
                 </Paper>
               </div>
             </Grid>
-
-            {/* <Grid
-              item
-              xs={1}
-            ></Grid> */}
 
             <Grid item xs={3}>
               <QuarterlyVolume propData={productData} />

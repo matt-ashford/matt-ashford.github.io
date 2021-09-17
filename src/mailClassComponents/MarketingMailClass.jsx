@@ -17,32 +17,10 @@ import ProductPage from "./ProductPage";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
-import { lightGrey } from "../Design/MyTheme";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paperDropdown: {
-    minWidth: 850,
-    padding: theme.spacing(1),
-    marginTop: "5%",
-  },
-  paper: {
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-    minWidth: 300,
-  },
-  graphDiv: {
-    minWidth: 850,
-    maxWidth: 1000,
-    padding: "1%",
-  },
-}));
+import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 
 export const MarketingMail = (props) => {
-  const classes = useStyles();
+  const classes = useStyles_ClassPage();
 
   const [selectedProductId, setSelectedProductId] = useState(0);
 
