@@ -25,6 +25,14 @@ const useStyles = makeStyles({
 export const QuarterlyVolume = (props) => {
   const { propData } = props;
 
+  let isFirstClass = false;
+
+  if (propData[0].class === "First Class Mail") {
+    isFirstClass = true;
+  }
+
+  // console.log("qtr vol", isFirstClass);
+
   const classes = useStyles();
 
   const [data, setData] = useState(propData);
@@ -48,7 +56,12 @@ export const QuarterlyVolume = (props) => {
     transitionDots();
   }, [data, propData]);
 
-  const currentProductName = data[0].product;
+  let currentProductName = data[0].product;
+
+  if (isFirstClass) {
+    const firstRow = data[0];
+    currentProductName = `${firstRow.product} (${firstRow.deliverySpeed})`;
+  }
 
   const data2020 = propData.filter((row) => row.fy === 2020);
   const volumes2020 = data2020.map((row) => row.volume);

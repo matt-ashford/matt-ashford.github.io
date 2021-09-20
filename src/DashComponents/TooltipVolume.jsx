@@ -45,7 +45,7 @@ export const TooltipVolume = (props) => {
   );
 };
 
-const tooltipWidth = 130;
+const tooltipWidth = 140;
 const tooltipHeight = 30;
 const textMarginTop = 10;
 
@@ -126,7 +126,7 @@ function tooltipTextChange(currentDotId, dataIn) {
 
   const volText = formatVolumeNumber(thisVol);
 
-  return `Q${currentDotQuarter} volume: ${volText}`;
+  return `Q${currentDotQuarter} Volume: ${volText}`;
 }
 
 function formatVolumeNumber(rawNumber) {
@@ -138,18 +138,16 @@ function formatVolumeNumber(rawNumber) {
     divisor = divisor / 1000;
   }
 
+  if (rawNumber / divisor < 1) {
+    trailingLetter = "K";
+    divisor = divisor / 1000;
+  }
+
   const outputNumber = rawNumber / divisor;
 
-  let stringNum;
-  if (trailingLetter === "M") {
-    stringNum = outputNumber.toFixed(0);
-  }
+  let stringNum = outputNumber.toFixed(2);
 
-  if (trailingLetter === "B") {
-    stringNum = outputNumber.toFixed(2);
-  }
-
-  return `${stringNum}${trailingLetter}`;
+  return `${stringNum} ${trailingLetter}`;
 }
 
 export default TooltipVolume;

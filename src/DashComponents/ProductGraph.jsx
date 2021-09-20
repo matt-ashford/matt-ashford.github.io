@@ -34,6 +34,8 @@ export const ProductGraph = (props) => {
 
   useEffect(allGraphFunctions, [data, propData]);
 
+  console.log("prod grpah", propData);
+
   useEffect(() => {
     setData(propData);
     drawBars();
@@ -92,17 +94,18 @@ export const ProductGraph = (props) => {
       .attr("width", barWidth)
       .attr("fill", primaryColor)
       .attr("class", "graphicElementQuarter bar2019Quarter")
-      .attr("id", (d) => {
-        const target = d.target;
-        const score = d.pctOnTime;
+      .attr("height", (d) => yScale(d.pctOnTime))
+      .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
+    // .attr("id", (d) => {
+    //   const target = d.target;
+    //   const score = d.pctOnTime;
 
-        let ptsFromTarget = target - score;
+    //   let ptsFromTarget = target - score;
 
-        ptsFromTarget = ptsFromTarget.toFixed(1);
+    //   ptsFromTarget = ptsFromTarget.toFixed(1);
 
-        return `${ptsFromTarget} points from target`;
-      })
-      .attr("height", (d) => yScale(d.pctOnTime));
+    //   return `${ptsFromTarget} points from target`;
+    // })
 
     svg
       .selectAll(".bar2020Quarter")
@@ -115,15 +118,16 @@ export const ProductGraph = (props) => {
       .attr("fill", secondaryColor)
       .attr("class", "graphicElementQuarter bar2020Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
-      .attr("id", (d) => {
-        const target = d.target;
-        const score = d.pctOnTime;
+      .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
+    // .attr("id", (d) => {
+    //   const target = d.target;
+    //   const score = d.pctOnTime;
 
-        let ptsFromTarget = target - score;
-        ptsFromTarget = ptsFromTarget.toFixed(1);
+    //   let ptsFromTarget = target - score;
+    //   ptsFromTarget = ptsFromTarget.toFixed(1);
 
-        return `${ptsFromTarget} points from target`;
-      });
+    //   return `${ptsFromTarget} points from target`;
+    // });
   }
 
   function transitionBars() {
@@ -207,7 +211,6 @@ export const ProductGraph = (props) => {
   const theseBars = d3.selectAll(".bar2020Quarter, .bar2019Quarter");
 
   theseBars.on("mouseover", function () {
-    console.log("hovering ");
     const currentBarSelection = d3.select(this);
 
     mouseOverTriggers(currentBarSelection);
@@ -238,11 +241,19 @@ export const ProductGraph = (props) => {
     d3.selectAll("rect").attr("stroke", "none");
   }
 
+  const firstRow = propData[0];
+
+  let productName = firstRow.product;
+
+  if (firstRow.class === "First Class Mail") {
+    productName = `${firstRow.product} (${firstRow.deliverySpeed})`;
+  }
+
   return (
     <>
       <div>
         <h3 fontFamily={textNodeFont}>Product-Level Quarterly Data</h3>
-        <h4>{propData[0].product}</h4>
+        <h4>{productName}</h4>
         <svg
           shapeRendering="crispEdges"
           id="productSvg"

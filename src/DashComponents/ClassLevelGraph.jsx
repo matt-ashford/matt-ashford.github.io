@@ -98,8 +98,8 @@ export const ClassLevelGraph = (props) => {
         },${topStart + 15})rotate(${rotationDeg})`;
       })
       .style("text-anchor", "start")
-      .attr("dx", "-.8em")
-      .attr("dy", ".15em");
+      .attr("dx", "-.9em")
+      .attr("dy", ".3em");
 
     svg
       .append("g")

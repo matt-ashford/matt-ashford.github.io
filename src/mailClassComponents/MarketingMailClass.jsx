@@ -84,6 +84,7 @@ export const MarketingMail = (props) => {
             propData={mmAnnualData}
             selectedProductId={selectedProductId}
             changeProductSelected={changeProductSelected}
+            mailClass="Marketing Mail"
           />
         </Paper>
       </Grid>

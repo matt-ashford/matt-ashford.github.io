@@ -32,7 +32,7 @@ export const FirstClass = () => {
     (row) => row.class === "First Class Mail"
   );
 
-  // console.log(fcAnnualData);
+  let volDataFC = volData.filter((row) => row.mailClass === "FC");
 
   return (
     <div className={classes.root} id="allMdContainer">
@@ -53,44 +53,45 @@ export const FirstClass = () => {
           </Paper>
         </Grid>
 
-        {/* <Grid item xs={3}>
-      <Grid container direction="column" spacing={3}>
-        <Grid item lg={7} md={12}>
-          <Paper className={classes.paper}>
-            <div>
-              {" "}
-              <ProductCountTableData propData={mmAnnualData} />{" "}
-            </div>
-          </Paper>
-        </Grid>
         <Grid item xs={3}>
-          <Paper
-            className={classes.paper}
-            style={{ backgroundColor: lightGrey }}
-          >
-            <VolumeChange propData={volDataMM} />
-          </Paper>
-          <div style={{ marginTop: "30%" }}></div>
-          <Paper>
-            <DownloadButton
-              propData={mmAnnualData}
-              dataName={"Class-Level Data"}
-            />
-          </Paper>
+          <Grid container direction="column" spacing={3}>
+            <Grid item lg={7} md={12}>
+              <Paper className={classes.paper}>
+                <div>
+                  {" "}
+                  <ProductCountTableData propData={fcAnnualData} />{" "}
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper
+                className={classes.paper}
+                style={{ backgroundColor: lightGrey }}
+              >
+                <VolumeChange propData={volDataFC} />
+              </Paper>
+              <div style={{ marginTop: "30%" }}></div>
+              <Paper>
+                <DownloadButton
+                  propData={fcAnnualData}
+                  dataName={"Class-Level Data"}
+                />
+              </Paper>
+            </Grid>
+          </Grid>
         </Grid>
-      </Grid>
-    </Grid>
 
         <Paper className={classes.paperDropdown}>
           <ProductDropdown
-            propData={mmAnnualData}
+            propData={fcAnnualData}
             selectedProductId={selectedProductId}
             changeProductSelected={changeProductSelected}
+            mailClass="First Class"
           />
-        </Paper> */}
+        </Paper>
       </Grid>
 
-      {/* <ProductPage selectedProductId={selectedProductId} /> */}
+      <ProductPage selectedProductId={selectedProductId} />
     </div>
   );
 };

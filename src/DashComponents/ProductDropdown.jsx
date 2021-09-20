@@ -8,11 +8,13 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
+import quarterlyData from "../Data/quarterlyData.json";
+
 const useStyles = makeStyles((theme) => ({
   selectDropdown: {
     marginRight: "5%",
 
-    width: "350px",
+    width: "375px",
   },
   formControl: {
     margin: theme.spacing(1),
@@ -27,11 +29,50 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ProductDropdown = (props) => {
-  const { propData, selectedProductId, changeProductSelected } = props;
+  const { propData, selectedProductId, changeProductSelected, mailClass } =
+    props;
 
   const classes = useStyles();
 
-  function nameFromId(selectedProductId) {
+  const inputRef = useRef();
+
+  let productList = propData
+    .filter((row) => row.fy === 2020)
+    .filter((row) => !row.product.includes("Mixed"));
+
+  if (mailClass !== "First Class")
+    productList = productList.filter((row) => row.productAbbrev !== "missing");
+  else {
+    productList = productList
+
+      .filter((row) => row.productId !== 61) //sp flats overnight
+      .filter((row) => row.productId !== 1) //sp letters overnight
+      .filter((row) => ![10, 11, 12, 14, 15, 16].includes(row.productId)) //inbound/outbound deliv speeds
+      .filter((row) => ![7, 8, 9].includes(row.productId)); // flats product
+  }
+
+  productList.push({
+    class: mailClass,
+    fy: 2019,
+    product: "none",
+    productId: 0,
+  });
+
+  function returnFullProductName(element) {
+    const productName = element.product;
+    const deliverySpeed = element.deliverySpeed;
+
+    if ((mailClass !== "First Class") | (productName === "none")) {
+      return productName;
+    }
+    if ((mailClass === "First Class") & (productName === "Flats")) {
+      return `${element.subProductName} (${deliverySpeed})`;
+    } else {
+      return `${productName} (${deliverySpeed})`;
+    }
+  }
+
+  function getNameFromId(selectedProductId) {
     selectedProductId = parseInt(selectedProductId);
 
     if (selectedProductId === 0) {
@@ -41,28 +82,20 @@ export const ProductDropdown = (props) => {
         .product;
     }
   }
-  const inputRef = useRef();
-
-  let productList = propData
-    .filter((row) => row.fy === 2020)
-    .filter((row) => !row.product.includes("Mixed"));
-
-  productList.push({
-    class: "Marketing Mail",
-    fy: 2019,
-    product: "none",
-    productId: 0,
-  });
 
   const menuItems = productList.map((el, ind) => (
     <MenuItem
       key={`dropdown${ind}`}
       id={el.productId}
       onClick={changeProductSelected}
+      // onClick = {}
+      // onClick={(e) => {
+      //   console.log(e.target.id);
+      // }}
       value={el.product}
       ref={inputRef}
     >
-      {el.product}
+      {returnFullProductName(el)}
     </MenuItem>
   ));
 
@@ -77,7 +110,7 @@ export const ProductDropdown = (props) => {
           </Grid>
           <Grid item xs={5}>
             <Select
-              value={nameFromId(selectedProductId)}
+              value={getNameFromId(selectedProductId)}
               className={classes.selectDropdown}
             >
               {menuItems}
