@@ -32,7 +32,7 @@ export const FirstClass = () => {
     (row) => row.class === "First Class Mail"
   );
 
-  console.log(fcAnnualData);
+  // console.log(fcAnnualData);
 
   return (
     <div className={classes.root} id="allMdContainer">

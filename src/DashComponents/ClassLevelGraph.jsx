@@ -15,6 +15,7 @@ import {
   graphWidth,
   barWidth,
   marginLeft,
+  marginRight,
   barMarginLeft,
   marginTop,
   yScale,
@@ -44,9 +45,13 @@ export const ClassLevelGraph = (props) => {
 
   const topStart = graphHeight - marginBottom;
 
-  const svgWidth = 850;
+  const svgWidth = graphWidth - marginLeft - marginRight;
 
-  const svg = d3.select("#mmClassSvg");
+  // console.log(mailClass.replace(/\s+/g, "") + "ClassSvg");
+
+  const svgId = mailClass.replace(/\s+/g, "") + "ClassSvg";
+
+  const svg = d3.select(`#${svgId}`);
 
   function barFunctions() {
     removeBars();
@@ -76,13 +81,25 @@ export const ClassLevelGraph = (props) => {
       .data(data2020)
       .enter()
       .append("text")
-      .attr("x", (d, i) => i * interBarMargin + 75)
-      .attr("y", topStart + 15)
       .text((d) => d.productAbbrev)
       .attr("text-anchor", "middle")
       .attr("class", "graphicElement nameBox nonBar")
       .attr("font-family", textNodeFont)
-      .attr("id", (d, i) => `${i}`);
+      .attr("id", (d, i) => `productName${i}`)
+      .attr("transform", function (d, i) {
+        let rotationDeg = 0;
+
+        if (data2020.length > 9) {
+          rotationDeg = 25;
+        }
+
+        return `translate(${
+          i * interBarMargin + 75
+        },${topStart + 15})rotate(${rotationDeg})`;
+      })
+      .style("text-anchor", "start")
+      .attr("dx", "-.8em")
+      .attr("dy", ".15em");
 
     svg
       .append("g")
@@ -162,6 +179,17 @@ export const ClassLevelGraph = (props) => {
       .attr("transform", "translate(-5,315) rotate(270)")
       .attr("font-family", textNodeFont)
       .attr("class", "graphicElement");
+
+    function rotateTextConditionally(dataset) {
+      const datasetLength = dataset.length;
+
+      console.log(datasetLength, "rotate cond");
+      if (datasetLength > 8) {
+        return "rotate(45)";
+      } else {
+        return "rotate(0)";
+      }
+    }
   }
 
   function mouseOverTriggers(currentBarSelection) {
@@ -190,12 +218,12 @@ export const ClassLevelGraph = (props) => {
 
   return (
     <>
-      <div>
+      <div style={{ marginLeft: "-5%" }}>
         <h3 fontFamily={textNodeFont}>{mailClass} Products</h3>
         <svg
           shapeRendering="crispEdges"
-          id="mmClassSvg"
-          height={300}
+          id={svgId}
+          height={325}
           width={graphWidth}
         ></svg>
         <GraphKey

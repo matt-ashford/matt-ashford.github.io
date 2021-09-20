@@ -8,7 +8,6 @@ export const colorPalleteMatt = {
   lightGrey: "#e6e8e6",
   darkGrey: "#778380",
   greenGrey: "#53aca0",
-  // pinkHighlight: "#ac5363",
   pinkHighlight: "#f45273",
   alternateHighlight: "#1ED4C7",
   alternateSecondary: "#1E7FD4",
@@ -42,7 +41,7 @@ const myTheme = createTheme({
     values: {
       xs: 0,
       sm: 450,
-      md: 600,
+      md: 1223,
       lg: 1550,
     },
   },
@@ -80,8 +79,9 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
     minWidth: 300,
   },
   graphDiv: {
-    minWidth: 850,
-    maxWidth: 1000,
+    // minWidth: 850,
+    // maxWidth: 1000,
+    width: 850,
     padding: "1%",
   },
 }));

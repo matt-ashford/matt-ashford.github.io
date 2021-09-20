@@ -73,7 +73,8 @@ function tooltipXPoz(xHover, tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   let outputVal;
-  const xPush = 100;
+  // const xPush = 100;
+  const xPush = 50;
 
   outputVal = xHover + xPush;
 
@@ -121,30 +122,5 @@ function calcPointsFromTargetAnnual(hoverId, propData) {
 
   return pointsFromTarget;
 }
-
-// function calcPointsFromTargetQuarterly(hoverId, propData) {
-//   const idList = hoverId.split("_");
-//   const productId = parseInt(idList[0]);
-//   const yearVal = parseInt(idList[1]);
-//   const quarterVal = parseInt(idList[2]);
-
-//   let pointsFromTarget;
-
-//   if (propData) {
-//     let hoveredRow = propData
-//       .filter((row) => row.fy === yearVal)
-//       .filter((row) => row.productId === productId)
-//       .filter((row) => row.quarter === quarterVal);
-
-//     if (hoveredRow.length > 0) {
-//       hoveredRow = hoveredRow[0];
-//       pointsFromTarget = hoveredRow.pctOnTime - hoveredRow.target;
-//       pointsFromTarget = pointsFromTarget.toFixed(2);
-//     }
-//   }
-//   console.log(propData);
-
-//   return pointsFromTarget;
-// }
 
 export default TooltipService_ClassLevel;

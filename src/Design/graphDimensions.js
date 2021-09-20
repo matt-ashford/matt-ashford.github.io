@@ -2,10 +2,10 @@ import * as d3 from "d3";
 
 const classGraphDims = {
   graphHeight: 300,
-  graphWidth: 900,
+  graphWidth: 820,
   barWidth: 20,
   marginLeft: 40,
-  marginRight: 20,
+  marginRight: 40,
   marginBottom: 30,
   marginTop: 20,
   barMarginLeft: 40 + 20,
