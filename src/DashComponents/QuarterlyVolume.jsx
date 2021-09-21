@@ -11,7 +11,11 @@ import {
   interDotX,
 } from "../Design/graphDimensionsLine";
 
-import { secondaryColor, lineGraphTitleBlock } from "../Design/MyTheme";
+import {
+  secondaryColor,
+  lineGraphTitleBlock,
+  primaryColor,
+} from "../Design/MyTheme";
 
 import { TooltipVolume } from "./TooltipVolume";
 
@@ -186,7 +190,7 @@ export const QuarterlyVolume = (props) => {
     <>
       <div
         style={{
-          backgroundColor: secondaryColor,
+          backgroundColor: primaryColor,
           paddingTop: "1%",
           width: svgWidth,
         }}

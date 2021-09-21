@@ -45,7 +45,13 @@ export const FirstClass = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item md={9} xs={12} className={classes.classGraphContainer}>
+          <Grid
+            item
+            md={9}
+            xs={12}
+            style={{ maxWidth: 950 }}
+            // className={classes.classGraphContainer}
+          >
             <Paper
               className={classes.graphDiv}
               elevation={3}

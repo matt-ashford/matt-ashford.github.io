@@ -26,8 +26,17 @@ const useStyles = makeStyles((theme) => ({
   },
   paperTopRow: {
     paddingBottom: "10%",
-    minHeight: 450,
+    height: 400,
     paddingTop: "2%",
+  },
+  mdGraphContainer: {
+    maxWidth: 600,
+    height: 500,
+    marginTop: "2%",
+    // marginLeft: "2%",
+  },
+  titleBox: {
+    marginTop: "1%",
   },
 }));
 
@@ -42,7 +51,7 @@ export const AllMarketDominant = (props) => {
 
   return (
     <div className={classes.root} id="allMdContainer">
-      <Grid item xs={12} style={{ marginBottom: "2%", marginTop: "1%" }}>
+      <Grid item xs={12} className={classes.titleBox}>
         <div className={classes.root}>
           <Typography variant="h4" component="h4" gutterBottom>
             All Market Dominant Products
@@ -50,14 +59,24 @@ export const AllMarketDominant = (props) => {
         </div>
       </Grid>
       <Grid container spacing={4}>
-        <Grid container alignItems="center" justifyContent="center" spacing={2}>
-          <Grid item xs={5}>
+        <Grid
+          container
+          //  alignItems="left"
+          //   justifyContent="center"
+          spacing={2}
+        >
+          <Grid
+            item
+            xs={5}
+            className={classes.mdGraphContainer}
+            style={{ marginLeft: "4%" }}
+          >
             <Paper className={classes.paperTopRow}>
               <PieGraph propData={missesData} />
             </Paper>
           </Grid>
-          <Grid item xs={5}>
-            <Paper style={{ marginTop: "-5%" }} className={classes.paperTopRow}>
+          <Grid item xs={5} className={classes.mdGraphContainer}>
+            <Paper className={classes.paperTopRow}>
               <MDCompositeContainer />
             </Paper>
           </Grid>

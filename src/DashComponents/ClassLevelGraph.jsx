@@ -6,6 +6,7 @@ import {
   secondaryColor,
   highlightColor,
   textNodeFont,
+  pinkHighlight,
   lightGrey,
 } from "../Design/MyTheme";
 
@@ -122,7 +123,7 @@ export const ClassLevelGraph = (props) => {
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
-      .attr("fill", primaryColor)
+      .attr("fill", secondaryColor)
       .attr("class", "graphicElement bar2019")
       .attr("id", (d) => `${d.productId}_${d.fy}`)
       .on("mouseover", function () {
@@ -144,7 +145,7 @@ export const ClassLevelGraph = (props) => {
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
-      .attr("fill", secondaryColor)
+      .attr("fill", primaryColor)
       .attr("class", "graphicElement bar2020")
       .attr("id", (d) => `${d.productId}_${d.fy}`)
       .on("mouseover", function () {
@@ -166,8 +167,9 @@ export const ClassLevelGraph = (props) => {
       .attr("y1", (d) => topStart - yScale(d.target))
       .attr("x2", (d, i) => i * interBarMargin + barWidth * 2 + barMarginLeft)
       .attr("y2", (d) => topStart - yScale(d.target))
-      .style("stroke", highlightColor)
-      .style("stroke-width", 2)
+      // .style("stroke", highlightColor)
+      .style("stroke", pinkHighlight)
+      .style("stroke-width", 3)
       .attr("class", "graphicElement targetLines nonBar");
 
     svg
@@ -223,7 +225,7 @@ export const ClassLevelGraph = (props) => {
         <svg
           shapeRendering="crispEdges"
           id={svgId}
-          height={325}
+          height={330}
           width={graphWidth}
         ></svg>
         <GraphKey

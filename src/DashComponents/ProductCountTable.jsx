@@ -6,6 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import {
   primaryColor,
   secondaryColor,
+  liteBlue,
   alternateHighlight,
 } from "../Design/MyTheme";
 
@@ -15,11 +16,11 @@ const useStyles = makeStyles({
     borderRadius: "1%",
   },
   missedCountCountainer: {
-    backgroundColor: secondaryColor,
+    backgroundColor: liteBlue,
     borderRadius: "1%",
   },
   decCountContainer: {
-    backgroundColor: alternateHighlight,
+    backgroundColor: secondaryColor,
     borderRadius: "1%",
   },
   tableText: {

@@ -4,15 +4,12 @@ import {
   primaryColor,
   secondaryColor,
   highlightColor,
+  pinkHighlight,
   textNodeFont,
 } from "../Design/MyTheme";
 
 export const GraphKey = (props) => {
   const { bar2019, bar2020, level } = props;
-
-  // console.log(props);
-
-  // console.log("graphkey ", level, bar2019, bar2020);
 
   const id2019 = `key2019${level}`;
   const id2020 = `key2020${level}`;
@@ -35,9 +32,9 @@ export const GraphKey = (props) => {
     });
 
   return (
-    <svg height={50}>
+    <svg height={35}>
       <rect
-        fill={primaryColor}
+        fill={secondaryColor}
         x={20}
         y={20}
         width={15}
@@ -49,7 +46,7 @@ export const GraphKey = (props) => {
       </text>
 
       <rect
-        fill={secondaryColor}
+        fill={primaryColor}
         x={100}
         y={20}
         width={15}
@@ -65,8 +62,9 @@ export const GraphKey = (props) => {
         y1={25}
         x2={215}
         y2={25}
-        strokeWidth={1}
-        stroke={highlightColor}
+        strokeWidth={2}
+        // stroke={highlightColor}
+        stroke={pinkHighlight}
         className="targetLines"
       />
 

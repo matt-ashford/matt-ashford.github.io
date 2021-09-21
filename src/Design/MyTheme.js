@@ -2,9 +2,17 @@ import { createTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 export const colorPalleteMatt = {
-  primaryColor: "#2CC6EB",
-  secondaryColor: "#225CF6",
-  highlightColor: "#22F6AC",
+  // primaryColor: "#225CF6",
+  // secondaryColor: "#2CC6EB",
+  primaryColor: "#225CF6",
+  // secondaryColor: "#7bb9e5", //best
+  secondaryColor: "#88b7d7", //new
+
+  // liteBlue: "#2CC6EB",
+  liteBlue: "#108FE0",
+
+  // highlightColor: "#E0DE04",
+  highlightColor: "#E08D20",
   lightGrey: "#e6e8e6",
   darkGrey: "#778380",
   greenGrey: "#53aca0",
@@ -17,6 +25,7 @@ export const colorPalleteMatt = {
 export const {
   primaryColor,
   secondaryColor,
+  liteBlue,
   highlightColor,
   lightGrey,
   darkGrey,
@@ -79,8 +88,6 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
     minWidth: 300,
   },
   graphDiv: {
-    // minWidth: 850,
-    // maxWidth: 1000,
     width: 850,
     padding: "1%",
   },

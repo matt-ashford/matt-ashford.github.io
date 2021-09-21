@@ -3,7 +3,9 @@ import { textNodeFont } from "../Design/MyTheme";
 const PieGraphKey = (props) => {
   const { colorObj } = props;
 
-  const { primaryColor, highlightColor, lightGrey } = colorObj;
+  // const { primaryColor, highlightColor, lightGrey } = colorObj;
+
+  const { pinkHighlight, liteBlue, lightGrey } = colorObj;
 
   const gridMargin = 20;
   const gridStart = 20;
@@ -17,7 +19,7 @@ const PieGraphKey = (props) => {
     <div style={{ paddingLeft: "25%", marginBottom: "10%" }}>
       <svg height={100}>
         <rect
-          fill={primaryColor}
+          fill={pinkHighlight}
           x={gridStart}
           y={gridStart}
           width={15}
@@ -33,7 +35,7 @@ const PieGraphKey = (props) => {
         </text>
 
         <rect
-          fill={highlightColor}
+          fill={liteBlue}
           x={gridStart}
           y={cellLocation(2)}
           width={15}

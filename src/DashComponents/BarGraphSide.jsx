@@ -5,6 +5,7 @@ import {
   primaryColor,
   secondaryColor,
   highlightColor,
+  pinkHighlight,
 } from "../Design/MyTheme";
 
 import {
@@ -40,7 +41,7 @@ export const BarGraphSide = (props) => {
   const interBarMargin = 15;
   const barHeight = 25;
 
-  const colorSeq = [primaryColor, secondaryColor];
+  const colorSeq = [secondaryColor, primaryColor];
 
   const xScale = d3
     .scaleLinear()
@@ -82,7 +83,8 @@ export const BarGraphSide = (props) => {
       .attr("y1", barMarginTop - barHeight)
       .attr("x2", (d) => xScale(d))
       .attr("y2", barMarginTop + barHeight + 10)
-      .style("stroke", highlightColor)
+      // .style("stroke", highlightColor)
+      .style("stroke", pinkHighlight)
       .style("stroke-width", 2)
       .attr("class", `${mailClass}target`);
   }

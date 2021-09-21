@@ -6,6 +6,7 @@ import {
   primaryColor,
   secondaryColor,
   highlightColor,
+  pinkHighlight,
   textNodeFont,
 } from "../Design/MyTheme";
 
@@ -90,7 +91,7 @@ export const ProductGraph = (props) => {
       .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("width", barWidth)
-      .attr("fill", primaryColor)
+      .attr("fill", secondaryColor)
       .attr("class", "graphicElementQuarter bar2019Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
@@ -103,7 +104,7 @@ export const ProductGraph = (props) => {
       .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft)
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("width", barWidth)
-      .attr("fill", secondaryColor)
+      .attr("fill", primaryColor)
       .attr("class", "graphicElementQuarter bar2020Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
@@ -140,8 +141,9 @@ export const ProductGraph = (props) => {
       .attr("y1", (d) => topStart - yScale(d.target))
       .attr("x2", (d, i) => i * interBarMargin + barWidth * 2 + barMarginLeft)
       .attr("y2", (d) => topStart - yScale(d.target))
-      .style("stroke", highlightColor)
-      .style("stroke-width", 2)
+      // .style("stroke", highlightColor)
+      .style("stroke", pinkHighlight)
+      .style("stroke-width", 3)
       .attr("class", "nonBarQuarter  graphicElementQuarter targetLines");
   }
 

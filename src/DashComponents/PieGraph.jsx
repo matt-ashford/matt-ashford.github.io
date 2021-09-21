@@ -2,7 +2,14 @@ import * as d3 from "d3";
 import { useEffect } from "react";
 import PieGraphKey from "./PieGraphKey";
 
-import { primaryColor, highlightColor, lightGrey } from "../Design/MyTheme";
+import {
+  primaryColor,
+  highlightColor,
+  lightGrey,
+  liteBlue,
+  pinkHighlight,
+  secondaryColor,
+} from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
   const { propData } = props;
@@ -31,7 +38,7 @@ export const PieGraph = (props) => {
 
     const pie = d3.pie();
 
-    const colorList = [primaryColor, highlightColor, lightGrey];
+    const colorList = [pinkHighlight, liteBlue, lightGrey];
 
     //Set up groups
     const arcs = svg
@@ -62,8 +69,8 @@ export const PieGraph = (props) => {
       });
   }
   const colorObj = {
-    primaryColor: primaryColor,
-    highlightColor: highlightColor,
+    pinkHighlight: pinkHighlight,
+    liteBlue: liteBlue,
     lightGrey: lightGrey,
   };
   return (
