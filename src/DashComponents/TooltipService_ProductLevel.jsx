@@ -107,10 +107,6 @@ function calcPointsFromTargetQuarterly(hoverId, propData) {
   const yearVal = parseInt(idList[1]);
   const quarterVal = parseInt(idList[2]);
 
-  // console.log(idList);
-
-  // console.log(productId, yearVal, quarterVal);
-
   let pointsFromTarget;
 
   if (propData) {
@@ -121,7 +117,6 @@ function calcPointsFromTargetQuarterly(hoverId, propData) {
 
     if (hoveredRow.length > 0) {
       hoveredRow = hoveredRow[0];
-      console.log(hoveredRow);
 
       pointsFromTarget = hoveredRow.target - hoveredRow.pctOnTime;
       pointsFromTarget = pointsFromTarget.toFixed(2);

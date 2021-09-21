@@ -34,8 +34,6 @@ export const ProductGraph = (props) => {
 
   useEffect(allGraphFunctions, [data, propData]);
 
-  console.log("prod grpah", propData);
-
   useEffect(() => {
     setData(propData);
     drawBars();
@@ -96,16 +94,6 @@ export const ProductGraph = (props) => {
       .attr("class", "graphicElementQuarter bar2019Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
-    // .attr("id", (d) => {
-    //   const target = d.target;
-    //   const score = d.pctOnTime;
-
-    //   let ptsFromTarget = target - score;
-
-    //   ptsFromTarget = ptsFromTarget.toFixed(1);
-
-    //   return `${ptsFromTarget} points from target`;
-    // })
 
     svg
       .selectAll(".bar2020Quarter")
@@ -119,15 +107,6 @@ export const ProductGraph = (props) => {
       .attr("class", "graphicElementQuarter bar2020Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
-    // .attr("id", (d) => {
-    //   const target = d.target;
-    //   const score = d.pctOnTime;
-
-    //   let ptsFromTarget = target - score;
-    //   ptsFromTarget = ptsFromTarget.toFixed(1);
-
-    //   return `${ptsFromTarget} points from target`;
-    // });
   }
 
   function transitionBars() {

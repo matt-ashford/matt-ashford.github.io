@@ -77,9 +77,24 @@ export const ProductDropdown = (props) => {
 
     if (selectedProductId === 0) {
       return "none";
+    }
+
+    const currentRow = propData.filter(
+      (row) => row.productId === selectedProductId
+    )[0];
+
+    // console.log(currentRow);
+
+    if (mailClass !== "First Class") {
+      return currentRow.product;
     } else {
-      return propData.filter((row) => row.productId === selectedProductId)[0]
-        .product;
+      if (currentRow.product === "Flats") {
+        console.log(`${currentRow.subProduct} (${currentRow.deliverySpeed})`);
+
+        return `${currentRow.subProductName} (${currentRow.deliverySpeed})`;
+      } else {
+        return `${currentRow.product} (${currentRow.deliverySpeed})`;
+      }
     }
   }
 
@@ -88,16 +103,14 @@ export const ProductDropdown = (props) => {
       key={`dropdown${ind}`}
       id={el.productId}
       onClick={changeProductSelected}
-      // onClick = {}
-      // onClick={(e) => {
-      //   console.log(e.target.id);
-      // }}
-      value={el.product}
+      value={returnFullProductName(el)}
       ref={inputRef}
     >
       {returnFullProductName(el)}
     </MenuItem>
   ));
+
+  // productList.map((el) => console.log(returnFullProductName(el)));
 
   return (
     <>
