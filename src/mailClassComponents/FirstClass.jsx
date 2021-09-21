@@ -36,52 +36,58 @@ export const FirstClass = () => {
 
   return (
     <div className={classes.root} id="allMdContainer">
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <div className={classes.root}>
-            <Typography variant="h4" component="h4" gutterBottom>
-              First Class Data
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item lg={9} xs={12}>
-          <Paper className={classes.graphDiv} elevation={3} width={graphWidth}>
-            <ClassLevelGraph
-              propData={fcAnnualData}
-              mailClass={"First Class"}
-            />
-          </Paper>
-        </Grid>
+      <Grid container spacing={1} justifyContent="flex-start">
+        <Grid container>
+          <Grid item xs={12}>
+            <div className={classes.root}>
+              <Typography variant="h4" component="h4" gutterBottom>
+                First Class Data
+              </Typography>
+            </div>
+          </Grid>
+          <Grid item md={9} xs={12} className={classes.classGraphContainer}>
+            <Paper
+              className={classes.graphDiv}
+              elevation={3}
+              width={graphWidth}
+            >
+              <ClassLevelGraph
+                propData={fcAnnualData}
+                mailClass={"First Class"}
+              />
+            </Paper>
+          </Grid>
 
-        <Grid item xs={3}>
-          <Grid container direction="column" spacing={3}>
-            <Grid item lg={7} md={12}>
-              <Paper className={classes.paper}>
-                <div>
-                  {" "}
-                  <ProductCountTableData propData={fcAnnualData} />{" "}
-                </div>
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper
-                className={classes.paper}
-                style={{ backgroundColor: lightGrey }}
-              >
-                <VolumeChange propData={volDataFC} />
-              </Paper>
-              <div style={{ marginTop: "30%" }}></div>
-              <Paper>
-                <DownloadButton
-                  propData={fcAnnualData}
-                  dataName={"Class-Level Data"}
-                />
-              </Paper>
+          <Grid item xs={3} float="left">
+            <Grid container direction="column" spacing={3}>
+              <Grid item lg={7} md={12}>
+                <Paper className={classes.paper}>
+                  <div>
+                    {" "}
+                    <ProductCountTableData propData={fcAnnualData} />{" "}
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item xs={3}>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: lightGrey }}
+                >
+                  <VolumeChange propData={volDataFC} />
+                </Paper>
+                <div style={{ marginTop: "30%" }}></div>
+                <Paper>
+                  <DownloadButton
+                    propData={fcAnnualData}
+                    dataName={"Class-Level Data"}
+                  />
+                </Paper>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
 
-        <Paper className={classes.paperDropdown}>
+        <Paper item xs={12} className={classes.paperDropdown}>
           <ProductDropdown
             propData={fcAnnualData}
             selectedProductId={selectedProductId}

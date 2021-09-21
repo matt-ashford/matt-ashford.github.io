@@ -84,6 +84,9 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
     width: 850,
     padding: "1%",
   },
+  classGraphContainer: {
+    maxWidth: 950,
+  },
 }));
 
 export default myTheme;

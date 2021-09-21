@@ -43,7 +43,7 @@ export const MarketingMail = (props) => {
             </Typography>
           </div>
         </Grid>
-        <Grid item lg={9} md={12}>
+        <Grid item lg={9} md={12} className={classes.classGraphContainer}>
           <Paper className={classes.graphDiv} elevation={3}>
             <ClassLevelGraph
               propData={mmAnnualData}
