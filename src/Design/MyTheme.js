@@ -87,6 +87,12 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     minWidth: 300,
   },
+  paperCountTable: {
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+    minWidth: 300,
+  },
   graphDiv: {
     width: 850,
     padding: "1%",

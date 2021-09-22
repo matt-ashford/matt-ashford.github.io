@@ -14,7 +14,6 @@ const useStyles = makeStyles({
     minWidth: 500,
     maxHeight: 400,
     padding: "4px 8px",
-    // border: "1px solid black",
     borderTop: "1px solid rgba(0, 0, 0, 0.2)",
     boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.2)",
   },

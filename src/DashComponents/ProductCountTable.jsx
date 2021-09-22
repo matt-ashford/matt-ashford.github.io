@@ -3,6 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
+import { useEffect, useState } from "react";
+
 import {
   primaryColor,
   secondaryColor,
@@ -10,10 +12,15 @@ import {
   alternateHighlight,
 } from "../Design/MyTheme";
 
+import * as d3 from "d3";
+
 const useStyles = makeStyles({
   totalCountCountainer: {
     backgroundColor: primaryColor,
     borderRadius: "1%",
+    justifyContent: "left",
+    paddingLeft: "-5%",
+    paddingRight: "-500px",
   },
   missedCountCountainer: {
     backgroundColor: liteBlue,
@@ -26,6 +33,12 @@ const useStyles = makeStyles({
   tableText: {
     color: "white",
     fontWeight: "bolder",
+    marginRight: "-50px",
+  },
+  tableTextNumber: {
+    color: "white",
+    fontWeight: "bolder",
+    marginLeft: "2%",
   },
 });
 
@@ -77,35 +90,197 @@ export const ProductCountTable = (props) => {
   const cellData = createCellData(propData);
 
   return (
+    // <>
+    //   <Container disableGutters={true} className={classes.totalCountCountainer}>
+    //     <Typography
+    //       variant="h4"
+    //       align="left"
+    //       className={classes.tableTextNumber}
+    //     >
+    //       {cellData.productCount}
+    //     </Typography>
+    //     <br></br>
+    //     <ProductCountBar
+    //       totalProductCount={cellData.productCount}
+    //       thisCount={cellData.productCount}
+    //       dataType="totalProductCount"
+    //     />
+    //     <Typography align="left" className={classes.tableText}>
+    //       Products in this Class
+    //     </Typography>
+
+    //     {/* </div> */}
+    //   </Container>
+
+    //   <Container
+    //     disableGutters={true}
+    //     className={classes.missedCountCountainer}
+    //   >
+    //     <Typography
+    //       variant="h4"
+    //       align="left"
+    //       className={classes.tableTextNumber}
+    //     >
+    //       {cellData.missedTarget}
+    //     </Typography>
+    //     <br></br>
+    //     <ProductCountBar
+    //       totalProductCount={cellData.productCount}
+    //       thisCount={cellData.missedTarget}
+    //       dataType="missedProductCount"
+    //     />
+
+    //     <Typography align="left" className={classes.tableText}>
+    //       Products Missed their Targets
+    //     </Typography>
+    //   </Container>
+    //   <Container disableGutters={true} className={classes.decCountContainer}>
+    //     <Typography
+    //       variant="h4"
+    //       align="left"
+    //       className={classes.tableTextNumber}
+    //     >
+    //       {cellData.decreasedCount}
+    //     </Typography>
+    //     <br></br>
+    //     <ProductCountBar
+    //       totalProductCount={cellData.productCount}
+    //       thisCount={cellData.decreasedCount}
+    //       dataType="decreasedProductCount"
+    //     />
+    //     <Typography align="left" className={classes.tableText}>
+    //       Products Decreased in FY2020
+    //     </Typography>
+    //   </Container>
+    //   {/* </div> */}
+    // </>
+
     <>
-      <Container className={classes.totalCountCountainer}>
-        <Typography className={classes.tableText}>
-          Total Product Count:
-        </Typography>
-        <br></br>
-        <Typography className={classes.tableText}>
+      <Container disableGutters={true} className={classes.totalCountCountainer}>
+        <Typography
+          variant="h4"
+          align="left"
+          className={classes.tableTextNumber}
+        >
           {cellData.productCount}
         </Typography>
-      </Container>
-      <Container className={classes.missedCountCountainer}>
-        <Typography className={classes.tableText}>
-          Products that Missed Target:
-        </Typography>
         <br></br>
-        <Typography className={classes.tableText}>
+        <Typography align="left" className={classes.tableText}>
+          Products in this Class
+        </Typography>
+
+        <ProductCountBar
+          totalProductCount={cellData.productCount}
+          thisCount={cellData.productCount}
+          dataType="totalProductCount"
+        />
+        {/* </div> */}
+      </Container>
+
+      <Container
+        disableGutters={true}
+        className={classes.missedCountCountainer}
+      >
+        <Typography
+          variant="h4"
+          align="left"
+          className={classes.tableTextNumber}
+        >
           {cellData.missedTarget}
         </Typography>
-      </Container>
-      <Container className={classes.decCountContainer}>
-        <Typography className={classes.tableText}>
-          Products that Decreased in FY2020:
-        </Typography>
         <br></br>
-        <Typography className={classes.tableText}>
+        <Typography align="left" className={classes.tableText}>
+          Products Missed their Targets
+        </Typography>
+        <ProductCountBar
+          totalProductCount={cellData.productCount}
+          thisCount={cellData.missedTarget}
+          dataType="missedProductCount"
+        />
+      </Container>
+      <Container disableGutters={true} className={classes.decCountContainer}>
+        <Typography
+          variant="h4"
+          align="left"
+          className={classes.tableTextNumber}
+        >
           {cellData.decreasedCount}
         </Typography>
+        <br></br>
+
+        <Typography align="left" className={classes.tableText}>
+          Products Decreased in FY2020
+        </Typography>
+        <ProductCountBar
+          totalProductCount={cellData.productCount}
+          thisCount={cellData.decreasedCount}
+          dataType="decreasedProductCount"
+        />
       </Container>
+      {/* </div> */}
     </>
+  );
+};
+
+const ProductCountBar = (props) => {
+  const { propData } = props;
+
+  const { totalProductCount, thisCount, dataType } = props;
+
+  const [barData, setBarData] = useState(0);
+
+  useEffect(() => {
+    setBarData(thisCount);
+    drawBar();
+  }, [totalProductCount]);
+
+  useEffect(() => {
+    drawBar();
+  }, [totalProductCount, barData]);
+
+  const svgId = `${dataType}_svg`;
+  const barId = `${dataType}_bar`;
+
+  const svgSelection = d3.select(`#${svgId}`);
+
+  const barHeight = 10;
+
+  const svgWidth = 300;
+  const svgHeight = barHeight + 20;
+
+  const countPercentage = thisCount / totalProductCount;
+
+  const xScale = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
+
+  const fakeData = [{ value: countPercentage }];
+
+  console.log(xScale(fakeData.value));
+  console.log(xScale(countPercentage));
+
+  function drawBar() {
+    svgSelection
+      .selectAll(`#${barId}`)
+      .data(fakeData)
+      .enter()
+      .append("rect")
+      .attr("x", 0)
+      .attr("y", 15)
+      .attr("height", 15)
+      .attr("width", (d) => xScale(countPercentage))
+      .attr("fill", "hsla(239, 100%, 100%, 0.55)")
+      .attr("id", barId);
+  }
+
+  return (
+    <div
+      style={{
+        // marginLeft: "-7%",
+        // marginLeft: "-4.5%",
+        marginBottom: "-5px",
+      }}
+    >
+      <svg fill="black" id={svgId} height={svgHeight} width={svgWidth}></svg>
+    </div>
   );
 };
 

@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 600,
     height: 500,
     marginTop: "2%",
-    // marginLeft: "2%",
   },
   titleBox: {
     marginTop: "1%",
@@ -59,12 +58,7 @@ export const AllMarketDominant = (props) => {
         </div>
       </Grid>
       <Grid container spacing={4}>
-        <Grid
-          container
-          //  alignItems="left"
-          //   justifyContent="center"
-          spacing={2}
-        >
+        <Grid container spacing={2}>
           <Grid
             item
             xs={5}

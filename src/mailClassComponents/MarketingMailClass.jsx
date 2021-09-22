@@ -59,13 +59,15 @@ export const MarketingMail = (props) => {
         </Grid>
 
         <Grid item xs={3}>
-          <Grid container direction="column" spacing={3}>
+          <Grid container direction="column" justify="flex-start" spacing={3}>
             <Grid item lg={7} md={12}>
-              <Paper className={classes.paper}>
-                <div>
-                  {" "}
-                  <ProductCountTableData propData={mmAnnualData} />{" "}
-                </div>
+              <Paper
+                // alignItems="left"
+                className={classes.paperCountTable}
+              >
+                {/* <div style={{ marginLeft: "-5%" }}> */}
+                <ProductCountTableData propData={mmAnnualData} />
+                {/* </div> */}
               </Paper>
             </Grid>
             <Grid item xs={3}>
