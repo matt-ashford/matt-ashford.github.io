@@ -50,7 +50,6 @@ export const FirstClass = () => {
             md={9}
             xs={12}
             style={{ maxWidth: 950 }}
-            // className={classes.classGraphContainer}
           >
             <Paper
               className={classes.graphDiv}

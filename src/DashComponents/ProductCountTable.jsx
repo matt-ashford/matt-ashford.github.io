@@ -33,12 +33,13 @@ const useStyles = makeStyles({
   tableText: {
     color: "white",
     fontWeight: "bolder",
-    marginRight: "-50px",
+    // marginRight: "-50px",
+    marginLeft: "10px",
   },
   tableTextNumber: {
     color: "white",
     fontWeight: "bolder",
-    marginLeft: "2%",
+    marginLeft: "3%",
   },
 });
 
@@ -174,7 +175,6 @@ export const ProductCountTable = (props) => {
           thisCount={cellData.productCount}
           dataType="totalProductCount"
         />
-        {/* </div> */}
       </Container>
 
       <Container
@@ -217,7 +217,6 @@ export const ProductCountTable = (props) => {
           dataType="decreasedProductCount"
         />
       </Container>
-      {/* </div> */}
     </>
   );
 };
@@ -240,6 +239,7 @@ const ProductCountBar = (props) => {
 
   const svgId = `${dataType}_svg`;
   const barId = `${dataType}_bar`;
+  const otherBarId = `${dataType}_otherBar`;
 
   const svgSelection = d3.select(`#${svgId}`);
 
@@ -250,14 +250,25 @@ const ProductCountBar = (props) => {
 
   const countPercentage = thisCount / totalProductCount;
 
+  const countPercentageDiff = 1 - countPercentage;
+
   const xScale = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
 
   const fakeData = [{ value: countPercentage }];
 
-  console.log(xScale(fakeData.value));
-  console.log(xScale(countPercentage));
-
   function drawBar() {
+    svgSelection
+      .selectAll(`#${otherBarId}`)
+      .data(fakeData)
+      .enter()
+      .append("rect")
+      .attr("x", xScale(countPercentage))
+      .attr("y", 15)
+      .attr("height", 15)
+      .attr("width", (d) => xScale(countPercentageDiff))
+      .attr("fill", "hsla(239, 100%, 100%, 0.55)")
+      .attr("id", otherBarId);
+
     svgSelection
       .selectAll(`#${barId}`)
       .data(fakeData)
@@ -267,18 +278,12 @@ const ProductCountBar = (props) => {
       .attr("y", 15)
       .attr("height", 15)
       .attr("width", (d) => xScale(countPercentage))
-      .attr("fill", "hsla(239, 100%, 100%, 0.55)")
+      .attr("fill", "white")
       .attr("id", barId);
   }
 
   return (
-    <div
-      style={{
-        // marginLeft: "-7%",
-        // marginLeft: "-4.5%",
-        marginBottom: "-5px",
-      }}
-    >
+    <div>
       <svg fill="black" id={svgId} height={svgHeight} width={svgWidth}></svg>
     </div>
   );

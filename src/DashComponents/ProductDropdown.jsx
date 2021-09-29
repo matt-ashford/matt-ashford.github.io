@@ -83,14 +83,10 @@ export const ProductDropdown = (props) => {
       (row) => row.productId === selectedProductId
     )[0];
 
-    // console.log(currentRow);
-
     if (mailClass !== "First Class") {
       return currentRow.product;
     } else {
       if (currentRow.product === "Flats") {
-        console.log(`${currentRow.subProduct} (${currentRow.deliverySpeed})`);
-
         return `${currentRow.subProductName} (${currentRow.deliverySpeed})`;
       } else {
         return `${currentRow.product} (${currentRow.deliverySpeed})`;
@@ -109,8 +105,6 @@ export const ProductDropdown = (props) => {
       {returnFullProductName(el)}
     </MenuItem>
   ));
-
-  // productList.map((el) => console.log(returnFullProductName(el)));
 
   return (
     <>
