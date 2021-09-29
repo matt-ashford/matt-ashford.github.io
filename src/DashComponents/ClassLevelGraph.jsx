@@ -23,6 +23,8 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
+import { TooltipTarget } from "./TooltipTarget";
+
 import { TooltipService_ClassLevel } from "./TooltipService_ClassLevel";
 
 export const ClassLevelGraph = (props) => {
@@ -34,6 +36,9 @@ export const ClassLevelGraph = (props) => {
   const [hoverId, setHoverId] = useState("");
   const [isHovering, setIsHovering] = useState(false);
   const [hoverHeight, setHoverHeight] = useState(0);
+
+  const [isHoveringTarget, setIsHoveringTarget] = useState(false);
+  const [hoverTargetId, setHoverTargetId] = useState("");
 
   useEffect(() => {
     setData(propData);
@@ -47,8 +52,6 @@ export const ClassLevelGraph = (props) => {
   const topStart = graphHeight - marginBottom;
 
   const svgWidth = graphWidth - marginLeft - marginRight;
-
-  // console.log(mailClass.replace(/\s+/g, "") + "ClassSvg");
 
   const svgId = mailClass.replace(/\s+/g, "") + "ClassSvg";
 
@@ -125,7 +128,7 @@ export const ClassLevelGraph = (props) => {
       .attr("width", barWidth)
       .attr("fill", secondaryColor)
       .attr("class", "graphicElement bar2019")
-      .attr("id", (d) => `${d.productId}_${d.fy}`)
+      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
       .on("mouseover", function () {
         const currentBarSelection = d3.select(this);
 
@@ -147,7 +150,7 @@ export const ClassLevelGraph = (props) => {
       .attr("width", barWidth)
       .attr("fill", primaryColor)
       .attr("class", "graphicElement bar2020")
-      .attr("id", (d) => `${d.productId}_${d.fy}`)
+      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
       .on("mouseover", function () {
         const currentBarSelection = d3.select(this);
 
@@ -170,7 +173,17 @@ export const ClassLevelGraph = (props) => {
       // .style("stroke", highlightColor)
       .style("stroke", pinkHighlight)
       .style("stroke-width", 3)
-      .attr("class", "graphicElement targetLines nonBar");
+      .attr("class", "graphicElement targetLines nonBar")
+      .attr("id", (d) => `classTarget_${d.productId}`)
+      .on("mouseover", function () {
+        const currentTargetSelection = d3.select(this);
+
+        mouseOverTriggersTarget(currentTargetSelection);
+      })
+      .on("mouseout", function () {
+        const currentTargetSelection = d3.select(this);
+        mouseOutTriggersTarget(currentTargetSelection);
+      });
 
     svg
       .append("text")
@@ -196,6 +209,7 @@ export const ClassLevelGraph = (props) => {
 
   function mouseOverTriggers(currentBarSelection) {
     const currentBarId = currentBarSelection._groups[0][0].id;
+
     const currentBarX = currentBarSelection._groups[0][0].x.baseVal.value;
     const currentBarHeight =
       currentBarSelection._groups[0][0].height.baseVal.value;
@@ -205,7 +219,7 @@ export const ClassLevelGraph = (props) => {
     setIsHovering(true);
     setHoverHeight(currentBarHeight);
 
-    currentBarSelection.attr("stroke", "black").attr("stroke-width", "2px");
+    currentBarSelection.attr("stroke", "black");
   }
 
   function mouseOutTriggers(currentBarSelection) {
@@ -216,6 +230,22 @@ export const ClassLevelGraph = (props) => {
 
   function removeBars() {
     d3.selectAll(".graphicElement").remove();
+  }
+
+  function mouseOverTriggersTarget(currentTargetSelection) {
+    const currentTargetId = currentTargetSelection._groups[0][0].id;
+
+    const currentTargetX =
+      currentTargetSelection._groups[0][0].x1.baseVal.value;
+    const currentTargetHeight =
+      currentTargetSelection._groups[0][0].y1.baseVal.value;
+
+    setIsHoveringTarget(true);
+    setHoverTargetId(currentTargetId);
+  }
+
+  function mouseOutTriggersTarget(currentTargetSelection) {
+    setIsHoveringTarget(false);
   }
 
   return (
@@ -241,6 +271,13 @@ export const ClassLevelGraph = (props) => {
         hoverHeight={hoverHeight}
         propData={propData}
         tooltipId={"tooltipClassGraph"}
+      />
+
+      <TooltipTarget
+        isHoveringTarget={isHoveringTarget}
+        hoverTargetId={hoverTargetId}
+        tooltipId={"tooltipClassTarget"}
+        propData={propData}
       />
     </>
   );

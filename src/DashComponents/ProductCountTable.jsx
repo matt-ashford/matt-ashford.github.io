@@ -283,7 +283,12 @@ const ProductCountBar = (props) => {
   }
 
   return (
-    <div>
+    <div
+      style={{
+        //  marginBottom: "10px" ,
+        paddingBottom: "5px",
+      }}
+    >
       <svg fill="black" id={svgId} height={svgHeight} width={svgWidth}></svg>
     </div>
   );

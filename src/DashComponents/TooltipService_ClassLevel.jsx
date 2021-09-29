@@ -104,8 +104,8 @@ function tooltipTextChange(hoverId, propData) {
 
 function calcPointsFromTargetAnnual(hoverId, propData) {
   const idList = hoverId.split("_");
-  const productId = parseInt(idList[0]);
-  const yearVal = parseInt(idList[1]);
+  const productId = parseInt(idList[1]);
+  const yearVal = parseInt(idList[2]);
 
   let pointsFromTarget;
 

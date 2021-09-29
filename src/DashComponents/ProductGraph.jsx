@@ -213,7 +213,8 @@ export const ProductGraph = (props) => {
     setIsHovering(true);
     setHoverHeight(currentBarHeight);
 
-    currentBarSelection.attr("stroke", "black").attr("stroke-width", "2px");
+    currentBarSelection.attr("stroke", "black");
+    // .attr("stroke-width", "2px");
   }
 
   function mouseOutTriggers(currentBarSelection) {
