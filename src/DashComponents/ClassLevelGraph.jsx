@@ -39,6 +39,7 @@ export const ClassLevelGraph = (props) => {
 
   const [isHoveringTarget, setIsHoveringTarget] = useState(false);
   const [hoverTargetId, setHoverTargetId] = useState("");
+  const [xHoverTarget, setXHoverTarget] = useState(0);
 
   useEffect(() => {
     setData(propData);
@@ -170,7 +171,6 @@ export const ClassLevelGraph = (props) => {
       .attr("y1", (d) => topStart - yScale(d.target))
       .attr("x2", (d, i) => i * interBarMargin + barWidth * 2 + barMarginLeft)
       .attr("y2", (d) => topStart - yScale(d.target))
-      // .style("stroke", highlightColor)
       .style("stroke", pinkHighlight)
       .style("stroke-width", 3)
       .attr("class", "graphicElement targetLines nonBar")
@@ -242,6 +242,7 @@ export const ClassLevelGraph = (props) => {
 
     setIsHoveringTarget(true);
     setHoverTargetId(currentTargetId);
+    setXHoverTarget(currentTargetX);
   }
 
   function mouseOutTriggersTarget(currentTargetSelection) {
@@ -278,6 +279,7 @@ export const ClassLevelGraph = (props) => {
         hoverTargetId={hoverTargetId}
         tooltipId={"tooltipClassTarget"}
         propData={propData}
+        xHoverTarget={xHoverTarget}
       />
     </>
   );
