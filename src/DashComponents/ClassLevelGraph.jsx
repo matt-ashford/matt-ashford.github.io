@@ -81,20 +81,27 @@ export const ClassLevelGraph = (props) => {
 
     const interBarMargin = getInterBarMargin(data2020);
 
+    const hasManyProducts = data2020.length > 9 ? true : false;
+
     svg
       .selectAll(".productNameText")
       .data(data2020)
       .enter()
       .append("text")
       .text((d) => d.productAbbrev)
-      .attr("text-anchor", "middle")
+      .attr("text-anchor", () => {
+        if (hasManyProducts) {
+          return "start";
+        }
+        return "middle";
+      })
       .attr("class", "graphicElement nameBox nonBar")
       .attr("font-family", textNodeFont)
       .attr("id", (d, i) => `productName${i}`)
       .attr("transform", function (d, i) {
         let rotationDeg = 0;
 
-        if (data2020.length > 9) {
+        if (hasManyProducts) {
           rotationDeg = 25;
         }
 
@@ -102,9 +109,20 @@ export const ClassLevelGraph = (props) => {
           i * interBarMargin + 75
         },${topStart + 15})rotate(${rotationDeg})`;
       })
-      .style("text-anchor", "start")
-      .attr("dx", "-.9em")
-      .attr("dy", ".3em");
+      .attr("dx", () => {
+        if (hasManyProducts) {
+          return "-.9em";
+        } else {
+          return ".3em";
+        }
+      })
+      .attr("dy", () => {
+        if (hasManyProducts) {
+          return ".3em";
+        } else {
+          return ".2em";
+        }
+      });
 
     svg
       .append("g")

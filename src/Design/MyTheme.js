@@ -78,8 +78,10 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
   },
   paperDropdown: {
     minWidth: 850,
+    maxHeight: 50,
+    // width: 50,
     padding: theme.spacing(1),
-    marginTop: "5%",
+    marginTop: "1%",
   },
   paper: {
     padding: theme.spacing(1),
@@ -96,9 +98,10 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
   graphDiv: {
     width: 850,
     padding: "1%",
+    height: 450,
   },
   classGraphContainer: {
-    maxWidth: 950,
+    maxWidth: 900,
   },
 }));
 

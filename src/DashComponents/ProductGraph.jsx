@@ -16,6 +16,8 @@ import {
   barWidth,
   marginLeft,
   barMarginLeft,
+  graphWidthProduct,
+  productTextMarginLeft,
   marginTop,
   yScale,
   yScaleRev,
@@ -66,7 +68,7 @@ export const ProductGraph = (props) => {
 
   const topStart = graphHeight - marginBottom;
 
-  const svgWidth = 850;
+  const svgWidth = graphWidthProduct;
 
   const svg = d3.select("#productSvg");
 
@@ -156,8 +158,9 @@ export const ProductGraph = (props) => {
     svg
       .append("text")
       .text("On-Time (%)")
+      // .attr("x", 190)
       .attr("x", 190)
-      .attr("y", 20)
+      .attr("y", 25)
       .style("text-anchor", "middle")
       .attr("transform", "translate(-5,315) rotate(270)")
       .attr("font-family", textNodeFont)
@@ -168,7 +171,11 @@ export const ProductGraph = (props) => {
       .data(quarters)
       .enter()
       .append("text")
-      .attr("x", (d, i) => i * interBarMargin + 75)
+      .attr(
+        "x",
+        (d, i) =>
+          i * (interBarMargin - 1) + barMarginLeft + productTextMarginLeft - 2
+      )
       .attr("y", topStart + 15)
       .text((d) => d)
       .attr("text-anchor", "middle")
@@ -233,8 +240,9 @@ export const ProductGraph = (props) => {
 
   return (
     <>
-      <div>
+      <div style={{ paddingTop: "1%" }}>
         <h3 fontFamily={textNodeFont}>Product-Level Quarterly Data</h3>
+
         <h4>{productName}</h4>
         <svg
           shapeRendering="crispEdges"

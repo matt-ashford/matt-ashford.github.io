@@ -19,9 +19,13 @@ export const TooltipTarget = (props) => {
     setTooltipText(tooltipTextChange(hoverTargetId, propData));
   }, [isHoveringTarget]);
 
-  useEffect(() => {
-    removeOnMouseOut(isHoveringTarget, tooltipId);
-  });
+  // useEffect(() => {
+  //   tooltipYPoz(tooltipId);
+  // }, [hoverTargetId]);
+
+  // useEffect(() => {
+  //   removeOnMouseOut(isHoveringTarget, tooltipId);
+  // });
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 

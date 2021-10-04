@@ -52,8 +52,8 @@ const ProductPageFull = (props) => {
         <div style={{ marginTop: "2%", marginLeft: "2%" }}>
           <Grid container spacing={0}>
             <Grid item lg={7} md={12}>
-              <div style={{ width: 875 }}>
-                <Paper className={classes.productGraphContainer}>
+              <div style={{ width: 825 }}>
+                <Paper elevation={3} className={classes.productGraphContainer}>
                   <ProductGraph propData={productData} />
                 </Paper>
               </div>
