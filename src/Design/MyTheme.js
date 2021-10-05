@@ -8,13 +8,11 @@ export const colorPalleteMatt = {
   // secondaryColor: "#7bb9e5", //best
   secondaryColor: "#88b7d7", //new
 
-  // liteBlue: "#2CC6EB",
   liteBlue: "#108FE0",
 
-  // highlightColor: "#E0DE04",
   highlightColor: "#E08D20",
   lightGrey: "#e6e8e6",
-  darkGrey: "#778380",
+  darkGrey: "#8e9492",
   greenGrey: "#53aca0",
   pinkHighlight: "#f45273",
   alternateHighlight: "#1ED4C7",

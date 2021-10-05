@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect } from "react";
-import { darkGrey } from "../Design/MyTheme";
+import { darkGrey, lightGrey } from "../Design/MyTheme";
 
 export const TooltipVolume = (props) => {
   const { xHover, yHover, hoverId, svgHeightFull, isHovering, propData } =
@@ -35,6 +35,7 @@ export const TooltipVolume = (props) => {
         paddingTop: "10px",
         borderRadius: "5px",
         backgroundColor: darkGrey,
+        // backgroundColor: lightGrey,
         fontWeight: "bold",
         fontSize: "13px",
       }}
@@ -147,7 +148,7 @@ function formatVolumeNumber(rawNumber) {
 
   let stringNum = outputNumber.toFixed(2);
 
-  return `${stringNum} ${trailingLetter}`;
+  return `${stringNum}${trailingLetter}`;
 }
 
 export default TooltipVolume;

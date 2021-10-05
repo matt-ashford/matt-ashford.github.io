@@ -1,10 +1,12 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
+import { darkGrey } from "../Design/MyTheme";
 
 const tooltipWidth = 130;
 const tooltipHeight = 15;
+// const tooltipHeight = 25;
 const textMarginTop = 10;
-const tooltipColor = "grey";
+const tooltipColor = darkGrey;
 
 export const TooltipTarget = (props) => {
   const { propData, isHoveringTarget, hoverTargetId, tooltipId, xHoverTarget } =
@@ -19,23 +21,12 @@ export const TooltipTarget = (props) => {
     setTooltipText(tooltipTextChange(hoverTargetId, propData));
   }, [isHoveringTarget]);
 
-  // useEffect(() => {
-  //   tooltipYPoz(tooltipId);
-  // }, [hoverTargetId]);
-
-  // useEffect(() => {
-  //   removeOnMouseOut(isHoveringTarget, tooltipId);
-  // });
-
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   tooltipDiv
     .style("width", `${tooltipWidth}px`)
     .style("height", `${tooltipHeight}px`)
-    .style("background-color", tooltipColor)
-    .on("mouseover", () => {
-      tooltipDiv.style("opacity", 0).style("top", 1500);
-    });
+    .style("background-color", tooltipColor);
 
   return (
     <div id={tooltipId} style={tooltipStyles_Target}>
@@ -46,7 +37,7 @@ export const TooltipTarget = (props) => {
           height: "0",
           borderLeft: "15px solid transparent",
           borderRight: "15px solid transparent",
-          borderTop: "20px solid grey",
+          borderTop: `20px solid ${darkGrey}`,
           marginLeft: `50px`,
         }}
         class="arrow-down"
@@ -88,7 +79,15 @@ function tooltipXPoz(xHover, tooltipId) {
 function tooltipYPoz(tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
+  const isProductLevelGraph = tooltipId.includes("Product");
+
   let outputVal = -450;
+
+  if (isProductLevelGraph) {
+    outputVal += 25;
+  }
+
+  console.log(tooltipId);
 
   tooltipDiv.style("top", `${outputVal}px`);
 }
