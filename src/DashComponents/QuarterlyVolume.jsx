@@ -125,15 +125,27 @@ export const QuarterlyVolume = (props) => {
     const svg = d3.select("#qtrVolsvg");
 
     svg
-      .selectAll(".dot")
+      .selectAll(".dotTooltipRect")
       .data(data2020)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => {
+        return i * interDotX;
+      })
+      .attr("y", (d) => 0)
+      .attr("height", (d) => svgHeight)
+      .attr("width", interDotX)
+      .attr("class", "dotTooltipRect")
+      .style("opacity", 0)
+      .attr("id", (d, i) => `tooltlipRectSeq_${i + 1}`)
       .on("mouseover", function () {
-        let currentDotX = d3.select(this)._groups[0][0].cx;
-        let currentDotY = d3.select(this)._groups[0][0].cy;
-        let currentDotId = d3.select(this)._groups[0][0].id;
+        const currentRectId = d3.select(this)._groups[0][0].id;
+        const rectSequence = currentRectId.match(/\d/)[0];
+        const currentDotId = `volumeDot_${rectSequence}`;
+        const currentDotSelection = d3.select(`#${currentDotId}`);
 
-        currentDotX = currentDotX.baseVal.value;
-        currentDotY = currentDotY.baseVal.value;
+        const currentDotX = currentDotSelection._groups[0][0].cx.baseVal.value;
+        const currentDotY = currentDotSelection._groups[0][0].cy.baseVal.value;
 
         setXHover(currentDotX);
         setYHover(currentDotY);
@@ -142,7 +154,11 @@ export const QuarterlyVolume = (props) => {
       })
       .on("mouseout", () => {
         setIsHovering(false);
-      })
+      });
+
+    svg
+      .selectAll(".dot")
+      .data(data2020)
       .transition()
       .duration(600)
       .attr("cy", (d) => yScale(d.volume));
@@ -162,28 +178,6 @@ export const QuarterlyVolume = (props) => {
       .attr("id", (d, i) => `volumeDot_${i + 1}`)
       .attr("fill", "black")
       .attr("class", "dot");
-  }
-
-  function drawTooltip(currentDotX, currentDotY) {
-    d3.select("#lineTooltip").remove();
-
-    const svg = d3.select("#qtrVolsvg");
-    svg
-      .append("rect")
-      .attr("width", tooltipWidth)
-      .attr("height", tooltipHeight)
-      .attr("id", "lineTooltip")
-      .attr("fill", "#888a8c")
-      .attr("rx", 3)
-      .style("opacity", 0);
-
-    svg
-      .append("text")
-      .text("testing text")
-      .attr("stroke", "black")
-      .attr("id", "tooltipText")
-      .style("font-size", "14px")
-      .style("opacity", 0);
   }
 
   return (

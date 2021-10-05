@@ -73,7 +73,6 @@ function tooltipXPoz(xHover, tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   let outputVal;
-  // const xPush = 100;
   const xPush = 50;
 
   outputVal = xHover + xPush;
