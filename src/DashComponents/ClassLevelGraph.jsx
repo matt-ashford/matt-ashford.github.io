@@ -17,6 +17,7 @@ import {
   barWidth,
   marginLeft,
   marginRight,
+  targetMarginLeft,
   barMarginLeft,
   marginTop,
   yScale,
@@ -185,13 +186,29 @@ export const ClassLevelGraph = (props) => {
       .data(data2020)
       .enter()
       .append("line")
-      .attr("x1", (d, i) => i * interBarMargin + marginLeft)
+      .attr("x1", (d, i) => i * interBarMargin + marginLeft + targetMarginLeft)
       .attr("y1", (d) => topStart - yScale(d.target))
-      .attr("x2", (d, i) => i * interBarMargin + barWidth * 2 + barMarginLeft)
+      .attr(
+        "x2",
+        (d, i) =>
+          i * interBarMargin + barWidth * 2 + barMarginLeft + targetMarginLeft
+      )
       .attr("y2", (d) => topStart - yScale(d.target))
       .style("stroke", pinkHighlight)
       .style("stroke-width", 3)
-      .attr("class", "graphicElement targetLines nonBar")
+      .attr("class", "graphicElement targetLines nonBar");
+
+    svg
+      .selectAll(".targetTooltipRect")
+      .data(data2020)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
+      .attr("y", (d) => 0)
+      .attr("height", (d) => topStart - yScale(d.target))
+      .attr("width", barWidth * 2.5)
+      .style("opacity", 0)
+      .attr("class", "targetTooltipRect")
       .attr("id", (d) => `classTarget_${d.productId}`)
       .on("mouseover", function () {
         const currentTargetSelection = d3.select(this);
@@ -253,10 +270,9 @@ export const ClassLevelGraph = (props) => {
   function mouseOverTriggersTarget(currentTargetSelection) {
     const currentTargetId = currentTargetSelection._groups[0][0].id;
 
-    const currentTargetX =
-      currentTargetSelection._groups[0][0].x1.baseVal.value;
+    const currentTargetX = currentTargetSelection._groups[0][0].x.baseVal.value;
     const currentTargetHeight =
-      currentTargetSelection._groups[0][0].y1.baseVal.value;
+      currentTargetSelection._groups[0][0].y.baseVal.value;
 
     setIsHoveringTarget(true);
     setHoverTargetId(currentTargetId);

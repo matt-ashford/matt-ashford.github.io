@@ -16,6 +16,7 @@ import {
   barWidth,
   marginLeft,
   barMarginLeft,
+  targetMarginLeft,
   graphWidthProduct,
   productTextMarginLeft,
   marginTop,
@@ -24,6 +25,7 @@ import {
 } from "../Design/graphDimensions";
 
 import { TooltipService_ProductLevel } from "./TooltipService_ProductLevel";
+import { TooltipTarget } from "./TooltipTarget";
 
 export const ProductGraph = (props) => {
   const { propData } = props;
@@ -35,23 +37,24 @@ export const ProductGraph = (props) => {
   const [isHovering, setIsHovering] = useState(false);
   const [hoverHeight, setHoverHeight] = useState(0);
 
-  useEffect(allGraphFunctions, [data, propData]);
+  const [isHoveringTarget, setIsHoveringTarget] = useState(false);
+  const [hoverTargetId, setHoverTargetId] = useState("");
+  const [xHoverTarget, setXHoverTarget] = useState(0);
+
+  // useEffect(allGraphFunctions, [data, propData]);
 
   useEffect(() => {
-    setData(propData);
+    allGraphFunctions();
+  }, [data, propData]);
+
+  useEffect(() => {
     drawBars();
-    raiseBars();
-    raiseTargets();
   });
 
   function allGraphFunctions() {
     d3.selectAll(".nonBarQuarter").remove();
-
     drawNonBarItems();
-
     setData(propData);
-    drawBars();
-
     transitionBars();
     raiseBars();
     raiseTargets();
@@ -110,6 +113,45 @@ export const ProductGraph = (props) => {
       .attr("class", "graphicElementQuarter bar2020Quarter")
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("id", (d) => `${d.productId}_${d.fy}_${d.quarter}`);
+
+    svg
+      .selectAll(".targetTooltipRect")
+      .data(data2020)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
+      .attr("y", (d) => 0)
+      .attr("height", (d) => topStart - yScale(d.target))
+      .attr("width", barWidth * 2.5)
+      .style("opacity", 0)
+      .attr("class", "targetTooltipRect nonBarQuarter")
+      .attr("id", (d) => `productTarget_${d.productId}`)
+      .on("mouseover", function () {
+        const currentTargetSelection = d3.select(this);
+
+        mouseOverTriggersTarget(currentTargetSelection);
+      })
+      .on("mouseout", function () {
+        const currentTargetSelection = d3.select(this);
+        mouseOutTriggersTarget(currentTargetSelection);
+      });
+
+    svg
+      .selectAll(".targetLines")
+      .data(data2020)
+      .enter()
+      .append("line")
+      .attr("x1", (d, i) => i * interBarMargin + marginLeft + targetMarginLeft)
+      .attr("y1", (d) => topStart - yScale(d.target))
+      .attr(
+        "x2",
+        (d, i) =>
+          i * interBarMargin + barWidth * 2 + barMarginLeft + targetMarginLeft
+      )
+      .attr("y2", (d) => topStart - yScale(d.target))
+      .style("stroke", pinkHighlight)
+      .style("stroke-width", 3)
+      .attr("class", "graphicElementQuarter targetLines");
   }
 
   function transitionBars() {
@@ -137,16 +179,35 @@ export const ProductGraph = (props) => {
     svg
       .selectAll(".targetLines")
       .data(data2020)
-      .enter()
-      .append("line")
-      .attr("x1", (d, i) => i * interBarMargin + marginLeft)
+      .transition()
+      .duration(500)
       .attr("y1", (d) => topStart - yScale(d.target))
-      .attr("x2", (d, i) => i * interBarMargin + barWidth * 2 + barMarginLeft)
       .attr("y2", (d) => topStart - yScale(d.target))
-      // .style("stroke", highlightColor)
       .style("stroke", pinkHighlight)
       .style("stroke-width", 3)
-      .attr("class", "nonBarQuarter  graphicElementQuarter targetLines");
+      .attr("class", " graphicElementQuarter targetLines");
+
+    svg
+      .selectAll(".targetTooltipRect")
+      .data(data2020)
+      .enter()
+      .append("rect")
+      .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
+      .attr("y", (d) => 0)
+      .attr("height", (d) => topStart - yScale(d.target))
+      .attr("width", barWidth * 2.5)
+      .style("opacity", 0)
+      .attr("class", "targetTooltipRect nonBarQuarter")
+      .attr("id", (d) => `productTarget_${d.productId}`)
+      .on("mouseover", function () {
+        const currentTargetSelection = d3.select(this);
+
+        mouseOverTriggersTarget(currentTargetSelection);
+      })
+      .on("mouseout", function () {
+        const currentTargetSelection = d3.select(this);
+        mouseOutTriggersTarget(currentTargetSelection);
+      });
   }
 
   function drawNonBarItems() {
@@ -221,7 +282,6 @@ export const ProductGraph = (props) => {
     setHoverHeight(currentBarHeight);
 
     currentBarSelection.attr("stroke", "black");
-    // .attr("stroke-width", "2px");
   }
 
   function mouseOutTriggers(currentBarSelection) {
@@ -236,6 +296,22 @@ export const ProductGraph = (props) => {
 
   if (firstRow.class === "First Class Mail") {
     productName = `${firstRow.product} (${firstRow.deliverySpeed})`;
+  }
+
+  function mouseOverTriggersTarget(currentTargetSelection) {
+    const currentTargetId = currentTargetSelection._groups[0][0].id;
+
+    const currentTargetX = currentTargetSelection._groups[0][0].x.baseVal.value;
+    const currentTargetHeight =
+      currentTargetSelection._groups[0][0].y.baseVal.value;
+
+    setIsHoveringTarget(true);
+    setHoverTargetId(currentTargetId);
+    setXHoverTarget(currentTargetX);
+  }
+
+  function mouseOutTriggersTarget(currentTargetSelection) {
+    setIsHoveringTarget(false);
   }
 
   return (
@@ -263,6 +339,14 @@ export const ProductGraph = (props) => {
         hoverHeight={hoverHeight}
         propData={propData}
         tooltipId={"tooltipProductGraph"}
+      />
+
+      <TooltipTarget
+        isHoveringTarget={isHoveringTarget}
+        hoverTargetId={hoverTargetId}
+        tooltipId={"tooltipProductTarget"}
+        propData={propData}
+        xHoverTarget={xHoverTarget}
       />
     </>
   );
