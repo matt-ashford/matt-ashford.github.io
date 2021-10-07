@@ -27,6 +27,7 @@ import {
 import { TooltipTarget } from "./TooltipTarget";
 
 import { TooltipService_ClassLevel } from "./TooltipService_ClassLevel";
+import { TooltipProductNames } from "./TooltipProductNames";
 
 export const ClassLevelGraph = (props) => {
   const { propData, mailClass } = props;
@@ -42,6 +43,10 @@ export const ClassLevelGraph = (props) => {
   const [hoverTargetId, setHoverTargetId] = useState("");
   const [xHoverTarget, setXHoverTarget] = useState(0);
 
+  const [isHoveringProductText, setIsHoveringProductText] = useState(false);
+  const [hoverTextId, setHoverTextId] = useState("");
+  const [xHoverText, setXhoverText] = useState(0);
+
   useEffect(() => {
     setData(propData);
     barFunctions();
@@ -50,6 +55,13 @@ export const ClassLevelGraph = (props) => {
   useEffect(() => {
     barFunctions();
   }, [data, propData]);
+
+  const dataProducts = propData.filter(
+    (row) => row.productAbbrev !== "missing"
+  );
+  const data2020 = dataProducts.filter((row) => row.fy === 2020);
+
+  const hasManyProducts = data2020.length > 9 ? true : false;
 
   const topStart = graphHeight - marginBottom;
 
@@ -82,8 +94,6 @@ export const ClassLevelGraph = (props) => {
 
     const interBarMargin = getInterBarMargin(data2020);
 
-    const hasManyProducts = data2020.length > 9 ? true : false;
-
     svg
       .selectAll(".productNameText")
       .data(data2020)
@@ -98,7 +108,7 @@ export const ClassLevelGraph = (props) => {
       })
       .attr("class", "graphicElement nameBox nonBar")
       .attr("font-family", textNodeFont)
-      .attr("id", (d, i) => `productName${i}`)
+      .attr("id", (d, i) => `nameTextid_${d.productId}`)
       .attr("transform", function (d, i) {
         let rotationDeg = 0;
 
@@ -123,6 +133,13 @@ export const ClassLevelGraph = (props) => {
         } else {
           return ".2em";
         }
+      })
+      .on("mouseover", function () {
+        const currentTextSelection = d3.select(this);
+        mouseOverTriggersProductText(currentTextSelection);
+      })
+      .on("mouseout", function () {
+        mouseOutTriggersProductText();
       });
 
     svg
@@ -283,6 +300,22 @@ export const ClassLevelGraph = (props) => {
     setIsHoveringTarget(false);
   }
 
+  function mouseOverTriggersProductText(currentTextSelection) {
+    const currentTextId = currentTextSelection._groups[0][0].id;
+
+    // console.log(currentTextSelection._groups[0][0]);
+
+    setIsHoveringProductText(true);
+    setHoverTextId(currentTextId);
+    setXhoverText(
+      currentTextSelection._groups[0][0].transform.baseVal[0].matrix.e
+    );
+  }
+
+  function mouseOutTriggersProductText() {
+    setIsHoveringProductText(false);
+  }
+
   return (
     <>
       <div style={{ marginLeft: "-5%" }}>
@@ -290,7 +323,7 @@ export const ClassLevelGraph = (props) => {
         <svg
           shapeRendering="crispEdges"
           id={svgId}
-          height={330}
+          height={hasManyProducts ? 350 : 330}
           width={graphWidth}
         ></svg>
         <GraphKey
@@ -314,6 +347,13 @@ export const ClassLevelGraph = (props) => {
         tooltipId={"tooltipClassTarget"}
         propData={propData}
         xHoverTarget={xHoverTarget}
+      />
+
+      <TooltipProductNames
+        isHoveringProductText={isHoveringProductText}
+        hoverTextId={hoverTextId}
+        propData={propData}
+        xHoverText={xHoverText}
       />
     </>
   );

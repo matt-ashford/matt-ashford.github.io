@@ -12,7 +12,8 @@ export const colorPalleteMatt = {
 
   highlightColor: "#E08D20",
   lightGrey: "#e6e8e6",
-  darkGrey: "#8e9492",
+  // darkGrey: "#8e9492",
+  darkGrey: "#abb8b3",
   greenGrey: "#53aca0",
   pinkHighlight: "#f45273",
   alternateHighlight: "#1ED4C7",
@@ -97,6 +98,11 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
     width: 850,
     padding: "1%",
     height: 450,
+  },
+  graphDivFirstClass: {
+    width: 850,
+    padding: "1%",
+    height: 500,
   },
   classGraphContainer: {
     maxWidth: 900,

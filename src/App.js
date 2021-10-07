@@ -46,12 +46,12 @@ function App() {
               <Route
                 exact
                 path="/package-services"
-                render={(props) => <SpecialServices {...props} />}
+                render={(props) => <PackageServices {...props} />}
               />
               <Route
                 exact
                 path="/special-services"
-                render={(props) => <PackageServices {...props} />}
+                render={(props) => <SpecialServices {...props} />}
               />
               <Route
                 exact
