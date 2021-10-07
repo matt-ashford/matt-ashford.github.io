@@ -61,7 +61,14 @@ export const ClassLevelGraph = (props) => {
   );
   const data2020 = dataProducts.filter((row) => row.fy === 2020);
 
-  const hasManyProducts = data2020.length > 9 ? true : false;
+  const rotateProductNames = [
+    // "Special Services",
+    "First Class Mail",
+  ].includes(data2020[0].class)
+    ? true
+    : false;
+
+  // const rotateProductNames = data2020.length > 9 ? true : false;
 
   const topStart = graphHeight - marginBottom;
 
@@ -101,7 +108,7 @@ export const ClassLevelGraph = (props) => {
       .append("text")
       .text((d) => d.productAbbrev)
       .attr("text-anchor", () => {
-        if (hasManyProducts) {
+        if (rotateProductNames) {
           return "start";
         }
         return "middle";
@@ -112,7 +119,7 @@ export const ClassLevelGraph = (props) => {
       .attr("transform", function (d, i) {
         let rotationDeg = 0;
 
-        if (hasManyProducts) {
+        if (rotateProductNames) {
           rotationDeg = 25;
         }
 
@@ -121,14 +128,14 @@ export const ClassLevelGraph = (props) => {
         },${topStart + 15})rotate(${rotationDeg})`;
       })
       .attr("dx", () => {
-        if (hasManyProducts) {
+        if (rotateProductNames) {
           return "-.9em";
         } else {
           return ".3em";
         }
       })
       .attr("dy", () => {
-        if (hasManyProducts) {
+        if (rotateProductNames) {
           return ".3em";
         } else {
           return ".2em";
@@ -250,7 +257,6 @@ export const ClassLevelGraph = (props) => {
     function rotateTextConditionally(dataset) {
       const datasetLength = dataset.length;
 
-      console.log(datasetLength, "rotate cond");
       if (datasetLength > 8) {
         return "rotate(45)";
       } else {
@@ -323,7 +329,7 @@ export const ClassLevelGraph = (props) => {
         <svg
           shapeRendering="crispEdges"
           id={svgId}
-          height={hasManyProducts ? 350 : 330}
+          height={rotateProductNames ? 350 : 330}
           width={graphWidth}
         ></svg>
         <GraphKey

@@ -32,6 +32,8 @@ export const Periodicals = () => {
 
   let volDataPER = volData.filter((row) => row.mailClass === "PER");
 
+  console.log("perAnnualDat", perAnnualData);
+
   return (
     <div className={classes.root} id="allMdContainer">
       <Grid container spacing={1} justifyContent="flex-start">

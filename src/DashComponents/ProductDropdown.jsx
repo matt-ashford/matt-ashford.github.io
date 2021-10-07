@@ -48,7 +48,10 @@ export const ProductDropdown = (props) => {
       .filter((row) => row.productId !== 61) //sp flats overnight
       .filter((row) => row.productId !== 1) //sp letters overnight
       .filter((row) => ![10, 11, 12, 14, 15, 16].includes(row.productId)) //inbound/outbound deliv speeds
-      .filter((row) => ![7, 8, 9].includes(row.productId)); // flats product
+      .filter((row) => ![7, 8, 9].includes(row.productId)) // flats product
+      .filter(
+        (row) => ![44, 45, 46, 48, 60, 50, 51, 52, 53].includes(row.productId)
+      ); // special services nonsense
   }
 
   productList.push({

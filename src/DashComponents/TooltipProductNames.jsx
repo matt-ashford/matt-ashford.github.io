@@ -65,8 +65,6 @@ function tooltipXPoz(xHoverText) {
 
   outputVal = xHoverText + xPush;
 
-  console.log(outputVal);
-
   const yPush = -150;
 
   tooltipDiv.style("left", `${outputVal}px`).style("top", `${yPush}px`);

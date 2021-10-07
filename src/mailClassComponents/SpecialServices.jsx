@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 
 import volData from "../Data/volume.json";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import annualData from "../Data/annualData.json";
 
@@ -90,16 +90,18 @@ export const SpecialServices = () => {
         </Grid>
 
         <Paper item xs={12} className={classes.paperDropdown}>
-          <ProductDropdown
+          <div>
+            Quarterly Product-level data is not available for products within
+            the Special Services mail class
+          </div>
+          {/* <ProductDropdown
             propData={ssAnnualData}
             selectedProductId={selectedProductId}
             changeProductSelected={changeProductSelected}
             mailClass="Special Services"
-          />
+          /> */}
         </Paper>
       </Grid>
-
-      <ProductPage selectedProductId={selectedProductId} />
     </div>
   );
 };

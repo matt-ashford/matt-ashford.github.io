@@ -41,7 +41,7 @@ export const PackageServices = (props) => {
           <Grid item xs={12}>
             <div className={classes.root}>
               <Typography variant="h4" component="h4" gutterBottom>
-                Periodicals Class-Level Data
+                Package Services Class-Level Data
               </Typography>
             </div>
           </Grid>
@@ -53,7 +53,7 @@ export const PackageServices = (props) => {
             >
               <ClassLevelGraph
                 propData={psAnnualData}
-                mailClass={"Periodicals"}
+                mailClass={"Package Services"}
               />
             </Paper>
           </Grid>
