@@ -59,16 +59,20 @@ export const ClassLevelGraph = (props) => {
   const dataProducts = propData.filter(
     (row) => row.productAbbrev !== "missing"
   );
-  const data2020 = dataProducts.filter((row) => row.fy === 2020);
 
-  const rotateProductNames = [
-    // "Special Services",
-    "First Class Mail",
-  ].includes(data2020[0].class)
-    ? true
-    : false;
+  const rotateProductNames = mailClass === "First Class" ? true : false;
 
-  // const rotateProductNames = data2020.length > 9 ? true : false;
+  const strippedMailClass = mailClass.replace(/\s+/g, "");
+
+  const extraBarMarginLookup = {
+    FirstClass: 0,
+    MarketingMail: 0,
+    Periodicals: 70,
+    SpecialServices: 40,
+    PackageServices: 70,
+  };
+
+  const extraBarMargin = extraBarMarginLookup[strippedMailClass];
 
   const topStart = graphHeight - marginBottom;
 
@@ -124,7 +128,7 @@ export const ClassLevelGraph = (props) => {
         }
 
         return `translate(${
-          i * interBarMargin + 75
+          i * interBarMargin + 75 + extraBarMargin
         },${topStart + 15})rotate(${rotationDeg})`;
       })
       .attr("dx", () => {
@@ -166,7 +170,7 @@ export const ClassLevelGraph = (props) => {
       .data(data2019)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
+      .attr("x", (d, i) => barXPoz(i))
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
@@ -188,7 +192,7 @@ export const ClassLevelGraph = (props) => {
       .data(data2020)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * interBarMargin + barWidth + barMarginLeft)
+      .attr("x", (d, i) => barXPoz(i) + barWidth)
       .attr("y", (d) => topStart - yScale(d.pctOnTime))
       .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
@@ -210,12 +214,20 @@ export const ClassLevelGraph = (props) => {
       .data(data2020)
       .enter()
       .append("line")
-      .attr("x1", (d, i) => i * interBarMargin + marginLeft + targetMarginLeft)
+      .attr(
+        "x1",
+        (d, i) =>
+          i * interBarMargin + marginLeft + targetMarginLeft + extraBarMargin
+      )
       .attr("y1", (d) => topStart - yScale(d.target))
       .attr(
         "x2",
         (d, i) =>
-          i * interBarMargin + barWidth * 2 + barMarginLeft + targetMarginLeft
+          i * interBarMargin +
+          barWidth * 2 +
+          barMarginLeft +
+          targetMarginLeft +
+          extraBarMargin
       )
       .attr("y2", (d) => topStart - yScale(d.target))
       .style("stroke", pinkHighlight)
@@ -227,7 +239,7 @@ export const ClassLevelGraph = (props) => {
       .data(data2020)
       .enter()
       .append("rect")
-      .attr("x", (d, i) => i * interBarMargin + barMarginLeft)
+      .attr("x", (d, i) => barXPoz(i))
       .attr("y", (d) => 0)
       .attr("height", (d) => topStart - yScale(d.target))
       .attr("width", barWidth * 2.5)
@@ -262,6 +274,10 @@ export const ClassLevelGraph = (props) => {
       } else {
         return "rotate(0)";
       }
+    }
+
+    function barXPoz(i) {
+      return i * interBarMargin + barMarginLeft + extraBarMargin;
     }
   }
 

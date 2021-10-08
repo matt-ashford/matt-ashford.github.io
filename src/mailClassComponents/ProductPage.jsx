@@ -14,8 +14,6 @@ export const ProductPage = (props) => {
 
   const productData = data.filter((row) => row.productId === productId);
 
-  console.log("product page", productData);
-
   let renderedSection;
 
   if (productId && productId !== 0) {
