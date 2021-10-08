@@ -50,7 +50,7 @@ const PieGraphKey = (props) => {
           Products that Exceeded Target
         </text>
 
-        <rect
+        {/* <rect
           fill={lightGrey}
           x={gridStart}
           y={cellLocation(3)}
@@ -64,7 +64,7 @@ const PieGraphKey = (props) => {
           fontFamily={textNodeFont}
         >
           Products with no Data
-        </text>
+        </text> */}
       </svg>
     </div>
   );

@@ -4,7 +4,6 @@ import { darkGrey } from "../Design/MyTheme";
 
 const tooltipWidth = 130;
 const tooltipHeight = 15;
-// const tooltipHeight = 25;
 const textMarginTop = 10;
 const tooltipColor = darkGrey;
 
@@ -86,8 +85,6 @@ function tooltipYPoz(tooltipId) {
   if (isProductLevelGraph) {
     outputVal += 25;
   }
-
-  console.log(tooltipId);
 
   tooltipDiv.style("top", `${outputVal}px`);
 }

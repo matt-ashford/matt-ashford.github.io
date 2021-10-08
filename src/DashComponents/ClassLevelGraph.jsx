@@ -67,7 +67,7 @@ export const ClassLevelGraph = (props) => {
   const extraBarMarginLookup = {
     FirstClass: 0,
     MarketingMail: 0,
-    Periodicals: 70,
+    Periodicals: 90,
     SpecialServices: 40,
     PackageServices: 70,
   };
@@ -324,8 +324,6 @@ export const ClassLevelGraph = (props) => {
 
   function mouseOverTriggersProductText(currentTextSelection) {
     const currentTextId = currentTextSelection._groups[0][0].id;
-
-    // console.log(currentTextSelection._groups[0][0]);
 
     setIsHoveringProductText(true);
     setHoverTextId(currentTextId);

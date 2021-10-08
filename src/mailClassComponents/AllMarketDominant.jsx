@@ -5,7 +5,6 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 
 import PieGraph from "../DashComponents/PieGraph";
-import topLevelPieData from "../Data/topLevelPieData.json";
 import MDCompositeContainer from "./allMarketDominantComponents/MDCompositeContainer";
 import VolumeChange from "../DashComponents/VolumeChange";
 import volumeData from "../Data/volume.json";
@@ -42,9 +41,9 @@ const useStyles = makeStyles((theme) => ({
 export const AllMarketDominant = (props) => {
   const classes = useStyles();
 
-  const missesData = topLevelPieData.filter(
-    (row) => row.dataSet === "missedTarget"
-  );
+  const topLevelData = createTopLevelData();
+
+  const pieData = topLevelData.filter((row) => row.dataSet === "missedTarget");
 
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
@@ -66,7 +65,7 @@ export const AllMarketDominant = (props) => {
             style={{ marginLeft: "4%" }}
           >
             <Paper className={classes.paperTopRow}>
-              <PieGraph propData={missesData} />
+              <PieGraph propData={pieData} />
             </Paper>
           </Grid>
           <Grid item xs={5} className={classes.mdGraphContainer}>
@@ -102,7 +101,6 @@ export const AllMarketDominant = (props) => {
               </div>
             </Paper>
             <div style={{ marginTop: "10%" }}> </div>
-            {/* <Paper> */}
             <DownloadButton
               propData={annualDataFull}
               dataName={"Market Dominant Data"}
@@ -113,5 +111,69 @@ export const AllMarketDominant = (props) => {
     </div>
   );
 };
+
+function createTopLevelData() {
+  const annualDataTopLevel = annualDataFull.filter(
+    (row) => row.productAbbrev !== "missing"
+  );
+
+  const data2020 = annualDataTopLevel.filter((row) => row.fy === 2020);
+
+  const missedTargetCount = data2020.filter(
+    (row) => row.pointsFromTarget > 0
+  ).length;
+
+  const exceededTargetCount = data2020.filter(
+    (row) => row.pointsFromTarget < 0
+  ).length;
+
+  let negativeChangeCount = 0;
+  let positiveChangeCount = 0;
+  let rowCountsDEL = 0;
+
+  for (let i = 0; i < data2020.length; i++) {
+    rowCountsDEL++;
+
+    const currentProductId = data2020[i].productId;
+    const singleProduct = annualDataTopLevel.filter(
+      (row) => row.productId === currentProductId
+    );
+    const latestYearScore = singleProduct.filter((row) => row.fy === 2020)[0]
+      .pointsFromTarget;
+    const prevYearScore = singleProduct.filter((row) => row.fy === 2019)[0]
+      .pointsFromTarget;
+
+    if (latestYearScore > prevYearScore) {
+      positiveChangeCount += 1;
+    } else {
+      negativeChangeCount += 1;
+    }
+  }
+
+  const topLevelDataRez = [
+    {
+      dataSet: "missedTarget",
+      label: "missed target",
+      value: missedTargetCount,
+    },
+    {
+      dataSet: "missedTarget",
+      label: "exceeded target",
+      value: exceededTargetCount,
+    },
+    {
+      dataSet: "changeCount",
+      label: "negative change",
+      value: negativeChangeCount,
+    },
+    {
+      dataSet: "changeCount",
+      label: "positive change",
+      value: positiveChangeCount,
+    },
+  ];
+
+  return topLevelDataRez;
+}
 
 export default AllMarketDominant;

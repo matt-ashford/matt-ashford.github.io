@@ -167,7 +167,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          Products in this Class
+          Products are rated in this Class
         </Typography>
 
         <ProductCountBar
