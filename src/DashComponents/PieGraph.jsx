@@ -3,12 +3,10 @@ import { useEffect } from "react";
 import PieGraphKey from "./PieGraphKey";
 
 import {
-  primaryColor,
-  highlightColor,
   lightGrey,
   liteBlue,
   pinkHighlight,
-  secondaryColor,
+  greenGrey,
 } from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
@@ -38,7 +36,7 @@ export const PieGraph = (props) => {
 
     const pie = d3.pie();
 
-    const colorList = [pinkHighlight, liteBlue, lightGrey];
+    const colorList = [pinkHighlight, greenGrey];
 
     //Set up groups
     const arcs = svg
@@ -70,15 +68,14 @@ export const PieGraph = (props) => {
   }
   const colorObj = {
     pinkHighlight: pinkHighlight,
-    liteBlue: liteBlue,
-    lightGrey: lightGrey,
+    greenGrey: greenGrey,
   };
   return (
     <>
       <div style={{ paddingRight: "28%" }}>
-        <h4 style={{ marginBottom: "1rem", marginTop: "-1%" }}>
+        <h3 style={{ marginBottom: "1rem", marginTop: "5%" }}>
           FY2020 Mail Product Count
-        </h4>
+        </h3>
         <svg width={svgWidth} height={svgHeight} id={svgId}></svg>
         <PieGraphKey colorObj={colorObj} />
       </div>

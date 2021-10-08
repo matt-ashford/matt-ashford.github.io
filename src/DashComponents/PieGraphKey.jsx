@@ -5,7 +5,7 @@ const PieGraphKey = (props) => {
 
   // const { primaryColor, highlightColor, lightGrey } = colorObj;
 
-  const { pinkHighlight, liteBlue, lightGrey } = colorObj;
+  const { pinkHighlight, greenGrey } = colorObj;
 
   const gridMargin = 20;
   const gridStart = 20;
@@ -35,7 +35,7 @@ const PieGraphKey = (props) => {
         </text>
 
         <rect
-          fill={liteBlue}
+          fill={greenGrey}
           x={gridStart}
           y={cellLocation(2)}
           width={15}

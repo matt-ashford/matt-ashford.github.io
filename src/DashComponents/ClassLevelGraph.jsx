@@ -69,7 +69,7 @@ export const ClassLevelGraph = (props) => {
     MarketingMail: 0,
     Periodicals: 90,
     SpecialServices: 40,
-    PackageServices: 70,
+    PackageServices: 90,
   };
 
   const extraBarMargin = extraBarMarginLookup[strippedMailClass];

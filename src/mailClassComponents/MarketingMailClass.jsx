@@ -13,6 +13,7 @@ import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
+import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
@@ -35,7 +36,12 @@ export const MarketingMail = (props) => {
 
   return (
     <div className={classes.root} id="allMdContainer">
-      <Grid container spacing={3}>
+      <Grid
+        container
+        spacing={3}
+
+        // style={{marginBotto}}
+      >
         <Grid item xs={12}>
           <div className={classes.root}>
             <Typography variant="h4" component="h4" gutterBottom>
@@ -61,13 +67,8 @@ export const MarketingMail = (props) => {
         <Grid item xs={3}>
           <Grid container direction="column" justify="flex-start" spacing={3}>
             <Grid item lg={7} md={12}>
-              <Paper
-                // alignItems="left"
-                className={classes.paperCountTable}
-              >
-                {/* <div style={{ marginLeft: "-5%" }}> */}
+              <Paper className={classes.paperCountTable}>
                 <ProductCountTableData propData={mmAnnualData} />
-                {/* </div> */}
               </Paper>
             </Grid>
             <Grid item xs={3}>
@@ -98,6 +99,9 @@ export const MarketingMail = (props) => {
       </Grid>
 
       <ProductPage selectedProductId={selectedProductId} />
+
+      <div style={{ height: "50px" }}></div>
+      <PRCLinks />
     </div>
   );
 };

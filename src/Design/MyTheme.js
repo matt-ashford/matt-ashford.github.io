@@ -2,19 +2,13 @@ import { createTheme } from "@material-ui/core/styles";
 import { makeStyles } from "@material-ui/core/styles";
 
 export const colorPalleteMatt = {
-  // primaryColor: "#225CF6",
-  // secondaryColor: "#2CC6EB",
   primaryColor: "#225CF6",
-  // secondaryColor: "#7bb9e5", //best
   secondaryColor: "#88b7d7", //new
-
   liteBlue: "#108FE0",
-
   highlightColor: "#E08D20",
   lightGrey: "#e6e8e6",
-  // darkGrey: "#8e9492",
   darkGrey: "#abb8b3",
-  greenGrey: "#53aca0",
+  greenGrey: "#69cfa9",
   pinkHighlight: "#f45273",
   alternateHighlight: "#1ED4C7",
   alternateSecondary: "#1E7FD4",
@@ -78,7 +72,6 @@ export const useStyles_ClassPage = makeStyles((theme) => ({
   paperDropdown: {
     minWidth: 850,
     maxHeight: 50,
-    // width: 50,
     padding: theme.spacing(1),
     marginTop: "1%",
   },

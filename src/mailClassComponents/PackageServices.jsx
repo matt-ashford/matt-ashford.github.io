@@ -13,6 +13,7 @@ import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
+import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
@@ -98,6 +99,8 @@ export const PackageServices = (props) => {
       </Grid>
 
       <ProductPage selectedProductId={selectedProductId} />
+      <div style={{ height: "50px" }}></div>
+      <PRCLinks />
     </div>
   );
 };

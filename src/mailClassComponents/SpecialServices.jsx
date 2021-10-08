@@ -11,8 +11,8 @@ import annualData from "../Data/annualData.json";
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
-import ProductDropdown from "../DashComponents/ProductDropdown";
-import ProductPage from "./ProductPage";
+
+import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
@@ -94,14 +94,10 @@ export const SpecialServices = () => {
             Quarterly Product-level data is not available for products within
             the Special Services mail class
           </div>
-          {/* <ProductDropdown
-            propData={ssAnnualData}
-            selectedProductId={selectedProductId}
-            changeProductSelected={changeProductSelected}
-            mailClass="Special Services"
-          /> */}
         </Paper>
       </Grid>
+      <div style={{ height: "50px" }}></div>
+      <PRCLinks />
     </div>
   );
 };

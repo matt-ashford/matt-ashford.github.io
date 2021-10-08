@@ -15,16 +15,27 @@ export const ProductPage = (props) => {
   const productData = data.filter((row) => row.productId === productId);
 
   let renderedSection;
+  let dynamicMarginBottom = 5;
 
   if (productId && productId !== 0) {
     renderedSection = (
       <ProductPageFull productId={productId} productData={productData} />
     );
+    dynamicMarginBottom = 0;
   } else {
     renderedSection = <EmptyProductPage />;
   }
 
-  return <div>{renderedSection}</div>;
+  return (
+    <div
+      style={{
+        //  marginBottom: "15rem"
+        marginBottom: `${dynamicMarginBottom}rem`,
+      }}
+    >
+      {renderedSection}
+    </div>
+  );
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -47,7 +58,13 @@ const ProductPageFull = (props) => {
 
   return (
     <>
-      <div style={{ marginTop: "2%", marginBottom: "20%" }}>
+      <div
+        style={{
+          marginTop: "2%",
+          //  marginBottom: "15rem"
+          // marginBottom: `${dynamicMarginBottom}rem`,
+        }}
+      >
         <Divider />
         <div style={{ marginTop: "2%", marginLeft: "2%" }}>
           <Grid container spacing={0}>
