@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect } from "react";
-import { darkGrey, lightGrey } from "../Design/MyTheme";
+import { darkGrey } from "../Design/MyTheme";
 
 export const TooltipVolume = (props) => {
   const { xHover, yHover, hoverId, svgHeightFull, isHovering, propData } =
@@ -17,9 +17,9 @@ export const TooltipVolume = (props) => {
 
   const tooltipDiv = d3.select("#TooltipVolume");
 
-  tooltipDiv.on("mouseover", () => {
-    tooltipDiv.style("opacity", 0).style("top", 1500);
-  });
+  // tooltipDiv.on("mouseover", () => {
+  //   tooltipDiv.style("opacity", 0).style("top", 1500);
+  // });
 
   return (
     <div

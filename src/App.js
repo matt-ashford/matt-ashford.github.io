@@ -9,6 +9,7 @@ import { MarketingMail } from "./mailClassComponents/MarketingMailClass";
 import { SpecialServices } from "./mailClassComponents/SpecialServices";
 import { PackageServices } from "./mailClassComponents/PackageServices";
 import { Periodicals } from "./mailClassComponents/Periodicals";
+import { HomePage } from "./mailClassComponents/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
@@ -22,6 +23,11 @@ function App() {
         <ThemeProvider theme={myTheme}>
           <div className="App">
             <Switch>
+              <Route
+                exact
+                from="/dash-deploy"
+                render={(props) => <HomePage {...props} />}
+              />
               <Route
                 exact
                 from="/all-md"

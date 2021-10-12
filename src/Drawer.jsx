@@ -36,6 +36,10 @@ const Drawer = (props) => {
 
   const homeName = [
     {
+      text: "Home",
+      onClick: () => history.push("/dash-deploy"),
+    },
+    {
       text: "All Market Dominant",
       onClick: () => history.push("/all-md"),
     },

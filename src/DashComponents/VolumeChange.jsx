@@ -2,6 +2,7 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 const useStyles = makeStyles({
   root: {
@@ -49,6 +50,13 @@ export const VolumeChange = (props) => {
   let volChangePct = (FY2020 - FY2019) / FY2019;
 
   const volumeChangeText = formatVolumeChangeNumber(volChangePct);
+
+  const arrowIcon =
+    FY2020 < FY2019 ? (
+      <KeyboardArrowDownIcon className={classes.changeIcon} fontSize="small" />
+    ) : (
+      <KeyboardArrowUpIcon className={classes.changeIcon} fontSize="small" />
+    );
 
   function formatVolumeNumber(rawNumber) {
     let trailingLetter = "B";

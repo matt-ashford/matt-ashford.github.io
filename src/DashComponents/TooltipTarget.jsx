@@ -16,7 +16,7 @@ export const TooltipTarget = (props) => {
   useEffect(() => {
     removeOnMouseOut(isHoveringTarget, tooltipId);
     tooltipXPoz(xHoverTarget, tooltipId);
-    tooltipYPoz(tooltipId);
+    tooltipYPoz(tooltipId, propData);
     setTooltipText(tooltipTextChange(hoverTargetId, propData));
   }, [isHoveringTarget]);
 
@@ -75,8 +75,10 @@ function tooltipXPoz(xHover, tooltipId) {
   tooltipDiv.style("left", `${outputVal}px`);
 }
 
-function tooltipYPoz(tooltipId) {
+function tooltipYPoz(tooltipId, propData) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
+
+  const mailClass = propData[0].class;
 
   const isProductLevelGraph = tooltipId.includes("Product");
 
@@ -84,6 +86,10 @@ function tooltipYPoz(tooltipId) {
 
   if (isProductLevelGraph) {
     outputVal += 25;
+  }
+
+  if (mailClass === "First Class Mail") {
+    outputVal -= 25;
   }
 
   tooltipDiv.style("top", `${outputVal}px`);
