@@ -61,13 +61,11 @@ const ProductPageFull = (props) => {
       <div
         style={{
           marginTop: "2%",
-          //  marginBottom: "15rem"
-          // marginBottom: `${dynamicMarginBottom}rem`,
         }}
       >
         <Divider />
         <div style={{ marginTop: "2%", marginLeft: "2%" }}>
-          <Grid container spacing={0}>
+          <Grid container spacing={2}>
             <Grid item lg={7} md={12}>
               <div style={{ width: 825 }}>
                 <Paper elevation={3} className={classes.productGraphContainer}>
