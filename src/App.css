@@ -1,3 +1,6 @@
+:root {
+  --shadedDiv: hsla(307, 0%, 80%, 0.4);
+}
 .App {
   text-align: center;
 }
@@ -32,16 +35,80 @@ body {
   margin-top: 1rem;
 }
 
-#envelopeSvgContainer {
-  /* animation: bobAndWeave 2s ease-in-out infinite; */
-  animation: bob 2s linear alternate-reverse infinite;
+.homePageTextContainerLeft {
+  margin-left: 10em;
+  margin-top: 10em;
 }
 
-@keyframes bob {
-  0% {
-    transform: translateY(0px);
-  }
-  100% {
-    transform: translateY(20px);
-  }
+.homePageTextContainerLeft:first-child {
+  margin-left: 10em;
+  margin-top: 2em;
+  margin-bottom: 5em;
+}
+
+.homePageTextContainerLeft:not(:first-child) {
+  margin-left: 13em;
+  margin-bottom: 3em;
+  text-align: left;
+}
+
+#topLogoContainer {
+  transform: scale(0.6);
+  margin-bottom: -10em;
+}
+
+#contactInfoContainer {
+  padding: 1em;
+  background-color: var(--shadedDiv);
+}
+
+#homePageFooter {
+  background-color: var(--shadedDiv);
+  height: 8em;
+  padding-top: 2em;
+  padding-left: 35vw;
+  z-index: 1;
+}
+
+#linksContainer {
+  padding: 2em;
+}
+
+#footerLogoAndName {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  /* background-color: grey; */
+}
+
+#footerLogoContainer {
+  padding: 1em 0.5em 0 0.5em;
+  width: 122px;
+  height: 75px;
+  transform: scale(0.2);
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  margin-top: -3em;
+  /* background-color: green; */
+}
+
+.footerPRC {
+  margin-top: -1em;
+}
+
+#footerPRCNameContainer {
+  padding: 1em 0.5em 0 0.5em;
+  font-weight: bold;
+  /* background-color: red; */
+}
+
+#footerAddressContainer {
+  padding: 1em 0.5em 0 0.5em;
+  /* background-color: purple; */
+  float: right;
+  text-align: left;
+}
+
+.homePageTextIdentifier {
+  color: red;
 }
