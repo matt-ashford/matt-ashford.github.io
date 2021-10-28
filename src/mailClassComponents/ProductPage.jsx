@@ -29,7 +29,6 @@ export const ProductPage = (props) => {
   return (
     <div
       style={{
-        //  marginBottom: "15rem"
         marginBottom: `${dynamicMarginBottom}rem`,
       }}
     >
@@ -67,7 +66,7 @@ const ProductPageFull = (props) => {
       >
         <Divider />
         <div style={{ marginTop: "2%", marginLeft: "2%" }}>
-          <Grid container spacing={2}>
+          <Grid container spacing={6}>
             <Grid item lg={7} md={12}>
               <div style={{ width: 825 }}>
                 <Paper elevation={3} className={classes.productGraphContainer}>
