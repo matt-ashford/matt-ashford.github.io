@@ -5,12 +5,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { useEffect, useState } from "react";
 
-import {
-  primaryColor,
-  secondaryColor,
-  liteBlue,
-  alternateHighlight,
-} from "../Design/MyTheme";
+import { primaryColor, secondaryColor, liteBlue } from "../Design/MyTheme";
 
 import * as d3 from "d3";
 
@@ -33,7 +28,6 @@ const useStyles = makeStyles({
   tableText: {
     color: "white",
     fontWeight: "bolder",
-    // marginRight: "-50px",
     marginLeft: "10px",
   },
   tableTextNumber: {
@@ -45,6 +39,18 @@ const useStyles = makeStyles({
 
 export const ProductCountTable = (props) => {
   const { propData } = props;
+
+  function productOrCategory(propData) {
+    const secondRowValues = Object.values(propData[1]);
+
+    const isFirstClass = secondRowValues.includes("First Class Mail");
+
+    if (isFirstClass) {
+      return "Product Categories";
+    }
+
+    return "Products";
+  }
 
   const classes = useStyles();
 
@@ -102,7 +108,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          Products are rated in this Class
+          {productOrCategory(propData)} are rated in this Class
         </Typography>
 
         <ProductCountBar
@@ -125,7 +131,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          Products Missed their Targets
+          {productOrCategory(propData)} Missed their Targets
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}
@@ -144,7 +150,7 @@ export const ProductCountTable = (props) => {
         <br></br>
 
         <Typography align="left" className={classes.tableText}>
-          Products Decreased in FY2020
+          {productOrCategory(propData)} Decreased in FY2020
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}

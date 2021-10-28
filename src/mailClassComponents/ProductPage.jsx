@@ -48,6 +48,8 @@ const useStyles = makeStyles((theme) => ({
   },
   productGraphContainer: {
     minwidth: 700,
+    maxWidth: 775,
+    paddingTop: "1%",
   },
 }));
 

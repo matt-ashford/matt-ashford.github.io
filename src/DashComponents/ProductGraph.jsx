@@ -41,8 +41,6 @@ export const ProductGraph = (props) => {
   const [hoverTargetId, setHoverTargetId] = useState("");
   const [xHoverTarget, setXHoverTarget] = useState(0);
 
-  // useEffect(allGraphFunctions, [data, propData]);
-
   useEffect(() => {
     allGraphFunctions();
   }, [data, propData]);
@@ -235,7 +233,7 @@ export const ProductGraph = (props) => {
       .attr(
         "x",
         (d, i) =>
-          i * (interBarMargin - 1) + barMarginLeft + productTextMarginLeft - 2
+          i * (interBarMargin - 1) + barMarginLeft + productTextMarginLeft
       )
       .attr("y", topStart + 15)
       .text((d) => d)
@@ -316,7 +314,7 @@ export const ProductGraph = (props) => {
 
   return (
     <>
-      <div style={{ paddingTop: "1%" }}>
+      <div id="productGraphContainer">
         <h3 fontFamily={textNodeFont}>Product-Level Quarterly Data</h3>
 
         <h4>{productName}</h4>

@@ -11,6 +11,8 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+/* ALL MD STUFF   */
+
 #allMdContainer {
   margin-left: 200px;
   margin-right: 100px;
@@ -34,6 +36,8 @@ body {
 #gridSpacing2 {
   margin-top: 1rem;
 }
+
+/* HOME PAGE STUFF  */
 
 .homePageTextContainerLeft {
   margin-left: 10em;
@@ -112,3 +116,14 @@ body {
 .homePageTextIdentifier {
   color: red;
 }
+
+/* PRODUCT GRAPH STUFF  */
+
+#productSvg {
+  margin-left: 1.5em;
+}
+
+/* #productGraphContainer {
+  padding-top: 1%;
+  max-width: 800;
+} */

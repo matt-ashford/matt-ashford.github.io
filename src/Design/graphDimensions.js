@@ -3,7 +3,8 @@ import * as d3 from "d3";
 const classGraphDims = {
   graphHeight: 300,
   graphWidth: 820,
-  graphWidthProduct: 750,
+  graphWidthProduct: 675,
+  // graphWidthProduct: 750,
   productTextMarginLeft: 25,
   targetMarginLeft: 11,
   barWidth: 20,
@@ -11,7 +12,7 @@ const classGraphDims = {
   marginRight: 40,
   marginBottom: 30,
   marginTop: 20,
-  barMarginLeft: 40 + 20,
+  barMarginLeft: 40 + 30,
 };
 
 export const {
