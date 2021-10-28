@@ -17,44 +17,74 @@ const useStyles = makeStyles({
     borderTop: "1px solid rgba(0, 0, 0, 0.2)",
     boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.2)",
   },
+
+  tableHead: {
+    fontWeight: "bolder",
+    color: "green",
+  },
 });
 
 export const ProductCountTableMD = () => {
   const classes = useStyles();
 
-  console.log(countData);
-
   return (
     <>
-      <h3>Product Count by Class</h3>
+      <h3>Product Category Count by Class</h3>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
-          <TableHead>
+          <TableHead className={classes.tableHead}>
             <TableRow>
-              <TableCell>Mail Class</TableCell>
-              <TableCell align="right">Total Products</TableCell>
-              <TableCell align="right">Negative Change</TableCell>
-              <TableCell align="right">Positive Change</TableCell>
-              <TableCell align="right">Missing Data</TableCell>
+              <TableCell
+                style={{
+                  inlineSize: "100px",
+                  textAlign: "left",
+                  fontWeight: "bolder",
+                }}
+              >
+                Mail Class
+              </TableCell>
+              <TableCell
+                align="center"
+                className="allMdTableHeader"
+                style={{ fontWeight: "bolder" }}
+              >
+                Total Product Categories
+              </TableCell>
+              <TableCell
+                align="center"
+                className="allMdTableHeader"
+                style={{ fontWeight: "bolder" }}
+              >
+                Product Categories that missed Target in FY2020
+              </TableCell>
+              <TableCell
+                align="center"
+                className="allMdTableHeader"
+                style={{ fontWeight: "bolder" }}
+              >
+                Product Categories that Decreased in FY2020
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {countData.map((row, ind) => (
               <TableRow key={`row${ind}`}>
-                <TableCell component="th" scope="row" key={`row${ind}1`}>
+                <TableCell
+                  component="th"
+                  scope="row"
+                  key={`row${ind}1`}
+                  // style={{ inlineSize: "150px", textAlign: "left" }}
+                >
                   {row.mailClass}
                 </TableCell>
-                <TableCell align="right" key={`row${ind}2`}>
+                <TableCell key={`row${ind}2`} align="center">
                   {row.totalProducts}
                 </TableCell>
-                <TableCell align="right" key={`row${ind}3`}>
+                <TableCell key={`row${ind}3`} align="center">
+                  {row.productsMissedTarget}
+                </TableCell>
+                <TableCell key={`row${ind}4`} align="center">
                   {row.negativeChange}
-                </TableCell>
-                <TableCell align="right" key={`row${ind}4`}>
-                  {row.positiveChange}
-                </TableCell>
-                <TableCell align="right" key={`row${ind}5`}>
-                  {row.missing}
                 </TableCell>
               </TableRow>
             ))}

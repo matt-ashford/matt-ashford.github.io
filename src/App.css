@@ -37,6 +37,23 @@ body {
   margin-top: 1rem;
 }
 
+.allMdTableHeader {
+  inline-size: 200px;
+  text-align: center;
+  /* filter: blur(5px); */
+  font-weight: bolder;
+}
+
+.allMdTableHeader:nth-child(2) {
+  inline-size: 100px;
+  text-align: center;
+}
+
+.allMdTableHeader:last-child {
+  inline-size: 150px;
+  text-align: center;
+}
+
 /* HOME PAGE STUFF  */
 
 .homePageTextContainerLeft {
@@ -122,8 +139,3 @@ body {
 #productSvg {
   margin-left: 1.5em;
 }
-
-/* #productGraphContainer {
-  padding-top: 1%;
-  max-width: 800;
-} */

@@ -21,22 +21,6 @@ const PieGraphKey = (props) => {
         <rect
           fill={pinkHighlight}
           x={gridStart}
-          y={gridStart}
-          width={15}
-          height={15}
-          id="keyMissed"
-        ></rect>
-        <text
-          x={cellLocation(1) + gridMargin}
-          y={gridStart + textMargin}
-          fontFamily={textNodeFont}
-        >
-          Products that Missed Target
-        </text>
-
-        <rect
-          fill={greenGrey}
-          x={gridStart}
           y={cellLocation(2)}
           width={15}
           height={15}
@@ -47,24 +31,24 @@ const PieGraphKey = (props) => {
           y={cellLocation(2) + textMargin}
           fontFamily={textNodeFont}
         >
-          Products that Exceeded Target
+          Products that Missed Target
         </text>
 
-        {/* <rect
-          fill={lightGrey}
+        <rect
+          fill={greenGrey}
           x={gridStart}
-          y={cellLocation(3)}
+          y={gridStart}
           width={15}
           height={15}
-          id="key2020"
+          id="keyMissed"
         ></rect>
         <text
           x={cellLocation(1) + gridMargin}
-          y={cellLocation(3) + textMargin}
+          y={gridStart + textMargin}
           fontFamily={textNodeFont}
         >
-          Products with no Data
-        </text> */}
+          Products that Exceeded Target
+        </text>
       </svg>
     </div>
   );
