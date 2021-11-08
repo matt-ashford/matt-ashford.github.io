@@ -40,13 +40,13 @@ const useStyles = makeStyles({
 export const ProductCountTable = (props) => {
   const { propData } = props;
 
-  function productOrCategory(propData) {
+  function productOrComponent(propData) {
     const secondRowValues = Object.values(propData[1]);
 
     const isFirstClass = secondRowValues.includes("First Class Mail");
 
     if (isFirstClass) {
-      return "Product Categories";
+      return "Product Components";
     }
 
     return "Products";
@@ -108,7 +108,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          {productOrCategory(propData)} are rated in this Class
+          {productOrComponent(propData)} are rated in this Class
         </Typography>
 
         <ProductCountBar
@@ -131,7 +131,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          {productOrCategory(propData)} Missed their Targets
+          {productOrComponent(propData)} Missed their Targets
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}
@@ -150,7 +150,7 @@ export const ProductCountTable = (props) => {
         <br></br>
 
         <Typography align="left" className={classes.tableText}>
-          {productOrCategory(propData)} Decreased in FY2020
+          {productOrComponent(propData)} Decreased in FY2020
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}

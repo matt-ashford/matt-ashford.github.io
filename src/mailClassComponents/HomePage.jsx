@@ -54,9 +54,7 @@ export const HomePage = () => {
       <Grid container spacing={4} className="homePageTextContainerLeft ">
         <Grid item xs={7}>
           <Typography variant="h6">
-            {/* <p className="homePageTextIdentifier">
-              TextID: DashboardIntro
-            </p> */}
+            <p className="homePageTextIdentifier">TextID: Dashboard Intro</p>
             The Postal Regulatory Commission has launched an interactive
             dashboard that provides visual data and interactive tools to allow
             the public to view the service performance results for many mail
@@ -70,9 +68,9 @@ export const HomePage = () => {
           <Typography variant="h5">About this Dashboard</Typography>
           <br />
           <Typography variant="h6">
-            {/* <p className="homePageTextIdentifier">
-              TextID: DashDescription 
-            </p> */}
+            <p className="homePageTextIdentifier">
+              TextID: Dashboard Description
+            </p>
             <ul>
               <li>
                 Every mailpiece handled by USPS has a service performance
@@ -110,7 +108,7 @@ export const HomePage = () => {
             <Typography variant="h5">Additional Resources</Typography>
             <br />
             <Typography variant="h6">
-              {/* <p className="homePageTextIdentifier">TextID: Links</p> */}
+              <p className="homePageTextIdentifier">TextID: Links</p>
               <Link
                 href="https://www.prc.gov/dockets/document/116399"
                 className="homePageLink"
@@ -138,6 +136,7 @@ export const HomePage = () => {
         <Grid item xs={7}>
           <Typography variant="h6"> Glossary </Typography>
           <Typography variant="h6">
+            <p className="homePageTextIdentifier">TextID: Glossary</p>
             <ul>
               <li>
                 <span className="undelineMe"> Product component:</span> a
@@ -167,7 +166,7 @@ export const HomePage = () => {
       <Grid container spacing={4} className="homePageTextContainerLeft">
         <Grid item xs={7}>
           <Typography variant="h6"> Disclosure: </Typography>
-          {/* <p className="homePageTextIdentifier">TextID: Disclosure Section</p> */}
+          <p className="homePageTextIdentifier">TextID: Disclosure Section</p>
           <Typography variant="body1">
             The information contained on this webpage or beta dashboard is for
             general information purposes only.

@@ -29,7 +29,7 @@ export const ProductCountTableMD = () => {
 
   return (
     <>
-      <h3>Product Category Count by Class</h3>
+      <h3>Product Component Count by Class</h3>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead className={classes.tableHead}>
@@ -48,21 +48,21 @@ export const ProductCountTableMD = () => {
                 className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
               >
-                Total Product Categories
+                Total Product Components
               </TableCell>
               <TableCell
                 align="center"
                 className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
               >
-                Product Categories that missed Target in FY2020
+                Product Components that missed Target in FY2020
               </TableCell>
               <TableCell
                 align="center"
                 className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
               >
-                Product Categories that Decreased in FY2020
+                Product Components that Decreased in FY2020
               </TableCell>
             </TableRow>
           </TableHead>

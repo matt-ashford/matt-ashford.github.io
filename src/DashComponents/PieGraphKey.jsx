@@ -16,8 +16,10 @@ const PieGraphKey = (props) => {
   const textMargin = 12;
 
   return (
-    <div style={{ paddingLeft: "25%", marginBottom: "10%" }}>
-      <svg height={100}>
+    <div
+      style={{ paddingLeft: "25%", marginBottom: "10%", marginLeft: "-15%" }}
+    >
+      <svg height={100} width={400}>
         <rect
           fill={pinkHighlight}
           x={gridStart}
@@ -31,7 +33,7 @@ const PieGraphKey = (props) => {
           y={cellLocation(2) + textMargin}
           fontFamily={textNodeFont}
         >
-          Products that Missed Target
+          Products Components that Missed Target
         </text>
 
         <rect
@@ -47,7 +49,7 @@ const PieGraphKey = (props) => {
           y={gridStart + textMargin}
           fontFamily={textNodeFont}
         >
-          Products that Exceeded Target
+          Products Components that Exceeded Target
         </text>
       </svg>
     </div>

@@ -336,10 +336,18 @@ export const ClassLevelGraph = (props) => {
     setIsHoveringProductText(false);
   }
 
+  function titleText(mailClass) {
+    if (mailClass === "First Class") {
+      return "First-Class Product Components";
+    } else {
+      return `${mailClass} Products`;
+    }
+  }
+
   return (
     <>
       <div style={{ marginLeft: "-5%" }}>
-        <h3 fontFamily={textNodeFont}>{mailClass} Products</h3>
+        <h3 fontFamily={textNodeFont}>{titleText(mailClass)}</h3>
         <svg
           shapeRendering="crispEdges"
           id={svgId}
