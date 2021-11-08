@@ -11,10 +11,10 @@ import {
 export const GraphKey = (props) => {
   const { bar2019, bar2020, level } = props;
 
-  const id2019 = `key2019${level}`;
-  const id2020 = `key2020${level}`;
+  const selector2019 = `key2019${level}`;
+  const selector2020 = `key2020${level}`;
 
-  d3.select(`#${id2019}`)
+  d3.select(`.${selector2019}`)
     .on("mouseover", function () {
       d3.selectAll(bar2020).transition().duration(200).style("opacity", 0.2);
     })
@@ -23,7 +23,7 @@ export const GraphKey = (props) => {
     })
     .on("click", () => console.log("clicked"));
 
-  d3.select(`#${id2020}`)
+  d3.select(`.${selector2020}`)
     .on("mouseover", function () {
       d3.selectAll(bar2019).transition().duration(200).style("opacity", 0.2);
     })
@@ -39,9 +39,9 @@ export const GraphKey = (props) => {
         y={20}
         width={15}
         height={15}
-        id={id2019}
+        className={selector2019}
       ></rect>
-      <text x={39} y={30} fontFamily={textNodeFont}>
+      <text className={selector2019} x={39} y={30} fontFamily={textNodeFont}>
         FY2019
       </text>
 
@@ -51,9 +51,9 @@ export const GraphKey = (props) => {
         y={20}
         width={15}
         height={15}
-        id={id2020}
+        className={selector2020}
       ></rect>
-      <text x={120} y={30} fontFamily={textNodeFont}>
+      <text x={120} y={30} fontFamily={textNodeFont} className={selector2020}>
         {" "}
         FY2020
       </text>

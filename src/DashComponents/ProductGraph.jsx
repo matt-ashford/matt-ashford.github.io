@@ -305,7 +305,7 @@ export const ProductGraph = (props) => {
 
     setIsHoveringTarget(true);
     setHoverTargetId(currentTargetId);
-    setXHoverTarget(currentTargetX);
+    setXHoverTarget(currentTargetX + 25);
   }
 
   function mouseOutTriggersTarget(currentTargetSelection) {

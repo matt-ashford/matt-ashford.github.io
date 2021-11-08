@@ -128,7 +128,7 @@ export const ClassLevelGraph = (props) => {
         }
 
         return `translate(${
-          i * interBarMargin + 75 + extraBarMargin
+          i * interBarMargin + 85 + extraBarMargin
         },${topStart + 15})rotate(${rotationDeg})`;
       })
       .attr("dx", () => {
