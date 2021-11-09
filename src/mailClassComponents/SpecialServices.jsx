@@ -18,6 +18,7 @@ import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import { graphWidth } from "../Design/graphDimensions";
+import Footer from "./Footer";
 
 export const SpecialServices = () => {
   const classes = useStyles_ClassPage();
@@ -37,68 +38,70 @@ export const SpecialServices = () => {
   let volDataSS = volData.filter((row) => row.mailClass === "SS");
 
   return (
-    <div className={classes.root} id="allMdContainer">
-      <Grid container spacing={1} justifyContent="flex-start">
-        <Grid container>
-          <Grid item xs={12}>
-            <div className={classes.root}>
-              <Typography variant="h4" component="h4" gutterBottom>
-                Special Services Class-Level Data
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
-            <Paper
-              className={classes.graphDiv}
-              elevation={3}
-              width={graphWidth}
-            >
-              <ClassLevelGraph
-                propData={ssAnnualData}
-                mailClass={"Special Services"}
-              />
-            </Paper>
-          </Grid>
+    <>
+      <div className={classes.root} id="allMdContainer">
+        <Grid container spacing={1} justifyContent="flex-start">
+          <Grid container>
+            <Grid item xs={12}>
+              <div className={classes.root}>
+                <Typography variant="h4" component="h4" gutterBottom>
+                  Special Services Class-Level Data
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
+              <Paper
+                className={classes.graphDiv}
+                elevation={3}
+                width={graphWidth}
+              >
+                <ClassLevelGraph
+                  propData={ssAnnualData}
+                  mailClass={"Special Services"}
+                />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={3} float="left">
-            <Grid container direction="column" spacing={3}>
-              <Grid item lg={7} md={12}>
-                <Paper className={classes.paper}>
-                  <div>
-                    {" "}
-                    <ProductCountTableData propData={ssAnnualData} />{" "}
-                  </div>
-                </Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper
-                  className={classes.paper}
-                  style={{ backgroundColor: lightGrey }}
-                >
-                  <VolumeChange propData={volDataSS} />
-                </Paper>
-                <div style={{ marginTop: "30%" }}></div>
-                <Paper>
-                  <DownloadButton
-                    propData={ssAnnualData}
-                    dataName={"Class-Level Data"}
-                  />
-                </Paper>
+            <Grid item xs={3} float="left">
+              <Grid container direction="column" spacing={3}>
+                <Grid item lg={7} md={12}>
+                  <Paper className={classes.paper}>
+                    <div>
+                      {" "}
+                      <ProductCountTableData propData={ssAnnualData} />{" "}
+                    </div>
+                  </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper
+                    className={classes.paper}
+                    style={{ backgroundColor: lightGrey }}
+                  >
+                    <VolumeChange propData={volDataSS} />
+                  </Paper>
+                  <div style={{ marginTop: "30%" }}></div>
+                  <Paper>
+                    <DownloadButton
+                      propData={ssAnnualData}
+                      dataName={"Class-Level Data"}
+                    />
+                  </Paper>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
 
-        <Paper item xs={12} className={classes.paperDropdown}>
-          <div>
-            Quarterly Product-level data is not available for products within
-            the Special Services mail class
-          </div>
-        </Paper>
-      </Grid>
-      <div style={{ height: "50px" }}></div>
-      <PRCLinks />
-    </div>
+          <Paper item xs={12} className={classes.paperDropdown}>
+            <div>
+              Quarterly Product-level data is not available for products within
+              the Special Services mail class
+            </div>
+          </Paper>
+        </Grid>
+        <div style={{ height: "150px" }}></div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -19,6 +19,7 @@ import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import { graphWidth } from "../Design/graphDimensions";
+import Footer from "./Footer";
 
 export const FirstClass = () => {
   const classes = useStyles_ClassPage();
@@ -36,72 +37,74 @@ export const FirstClass = () => {
   let volDataFC = volData.filter((row) => row.mailClass === "FC");
 
   return (
-    <div className={classes.root} id="allMdContainer">
-      <Grid container spacing={1} justifyContent="flex-start">
-        <Grid container>
-          <Grid item xs={12}>
-            <div className={classes.root}>
-              <Typography variant="h4" component="h4" gutterBottom>
-                First Class Data
-              </Typography>
-            </div>
-          </Grid>
-          <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
-            <Paper
-              className={classes.graphDivFirstClass}
-              elevation={3}
-              width={graphWidth}
-            >
-              <ClassLevelGraph
-                propData={fcAnnualData}
-                mailClass={"First Class"}
-              />
-            </Paper>
-          </Grid>
+    <>
+      <div className={classes.root} id="allMdContainer">
+        <Grid container spacing={1} justifyContent="flex-start">
+          <Grid container>
+            <Grid item xs={12}>
+              <div className={classes.root}>
+                <Typography variant="h4" component="h4" gutterBottom>
+                  First Class Data
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
+              <Paper
+                className={classes.graphDivFirstClass}
+                elevation={3}
+                width={graphWidth}
+              >
+                <ClassLevelGraph
+                  propData={fcAnnualData}
+                  mailClass={"First Class"}
+                />
+              </Paper>
+            </Grid>
 
-          <Grid item xs={3} float="left">
-            <Grid container direction="column" spacing={3}>
-              <Grid item lg={7} md={12}>
-                <Paper className={classes.paper}>
-                  <div>
-                    {" "}
-                    <ProductCountTableData propData={fcAnnualData} />{" "}
-                  </div>
-                </Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper
-                  className={classes.paper}
-                  style={{ backgroundColor: lightGrey }}
-                >
-                  <VolumeChange propData={volDataFC} />
-                </Paper>
-                <div style={{ marginTop: "30%" }}></div>
-                <Paper>
-                  <DownloadButton
-                    propData={fcAnnualData}
-                    dataName={"Class-Level Data"}
-                  />
-                </Paper>
+            <Grid item xs={3} float="left">
+              <Grid container direction="column" spacing={3}>
+                <Grid item lg={7} md={12}>
+                  <Paper className={classes.paper}>
+                    <div>
+                      {" "}
+                      <ProductCountTableData propData={fcAnnualData} />{" "}
+                    </div>
+                  </Paper>
+                </Grid>
+                <Grid item xs={3}>
+                  <Paper
+                    className={classes.paper}
+                    style={{ backgroundColor: lightGrey }}
+                  >
+                    <VolumeChange propData={volDataFC} />
+                  </Paper>
+                  <div style={{ marginTop: "30%" }}></div>
+                  <Paper>
+                    <DownloadButton
+                      propData={fcAnnualData}
+                      dataName={"Class-Level Data"}
+                    />
+                  </Paper>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
+
+          <Paper item xs={12} className={classes.paperDropdown}>
+            <ProductDropdown
+              propData={fcAnnualData}
+              selectedProductId={selectedProductId}
+              changeProductSelected={changeProductSelected}
+              mailClass="First Class"
+            />
+          </Paper>
         </Grid>
 
-        <Paper item xs={12} className={classes.paperDropdown}>
-          <ProductDropdown
-            propData={fcAnnualData}
-            selectedProductId={selectedProductId}
-            changeProductSelected={changeProductSelected}
-            mailClass="First Class"
-          />
-        </Paper>
-      </Grid>
-
-      <ProductPage selectedProductId={selectedProductId} />
-      <div style={{ height: "50px" }}></div>
-      <PRCLinks />
-    </div>
+        <ProductPage selectedProductId={selectedProductId} />
+        <div style={{ height: "150px" }}></div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

@@ -18,6 +18,7 @@ import PRCLinks from "../DashComponents/PRCLinks";
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
+import Footer from "./Footer";
 
 export const MarketingMail = (props) => {
   const classes = useStyles_ClassPage();
@@ -35,74 +36,76 @@ export const MarketingMail = (props) => {
   let volDataMM = volData.filter((row) => row.mailClass === "MM");
 
   return (
-    <div className={classes.root} id="allMdContainer">
-      <Grid
-        container
-        spacing={3}
-
-        // style={{marginBotto}}
-      >
-        <Grid item xs={12}>
-          <div className={classes.root}>
-            <Typography variant="h4" component="h4" gutterBottom>
-              Marketing Mail Class-Level Data
-            </Typography>
-          </div>
-        </Grid>
+    <>
+      <div className={classes.root} id="allMdContainer">
         <Grid
-          item
-          lg={9}
-          md={12}
-          style={{ maxWidth: 950 }}
-          className={classes.classGraphContainer}
+          container
+          spacing={3}
+
+          // style={{marginBotto}}
         >
-          <Paper className={classes.graphDiv} elevation={3}>
-            <ClassLevelGraph
+          <Grid item xs={12}>
+            <div className={classes.root}>
+              <Typography variant="h4" component="h4" gutterBottom>
+                Marketing Mail Class-Level Data
+              </Typography>
+            </div>
+          </Grid>
+          <Grid
+            item
+            lg={9}
+            md={12}
+            style={{ maxWidth: 950 }}
+            className={classes.classGraphContainer}
+          >
+            <Paper className={classes.graphDiv} elevation={3}>
+              <ClassLevelGraph
+                propData={mmAnnualData}
+                mailClass={"Marketing Mail"}
+              />
+            </Paper>
+          </Grid>
+
+          <Grid item xs={3}>
+            <Grid container direction="column" justify="flex-start" spacing={3}>
+              <Grid item lg={7} md={12}>
+                <Paper className={classes.paperCountTable}>
+                  <ProductCountTableData propData={mmAnnualData} />
+                </Paper>
+              </Grid>
+              <Grid item xs={3}>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: lightGrey }}
+                >
+                  <VolumeChange propData={volDataMM} />
+                </Paper>
+                <div style={{ marginTop: "30%" }}></div>
+                <Paper>
+                  <DownloadButton
+                    propData={mmAnnualData}
+                    dataName={"Class-Level Data"}
+                  />
+                </Paper>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Paper className={classes.paperDropdown}>
+            <ProductDropdown
               propData={mmAnnualData}
-              mailClass={"Marketing Mail"}
+              selectedProductId={selectedProductId}
+              changeProductSelected={changeProductSelected}
+              mailClass="Marketing Mail"
             />
           </Paper>
         </Grid>
 
-        <Grid item xs={3}>
-          <Grid container direction="column" justify="flex-start" spacing={3}>
-            <Grid item lg={7} md={12}>
-              <Paper className={classes.paperCountTable}>
-                <ProductCountTableData propData={mmAnnualData} />
-              </Paper>
-            </Grid>
-            <Grid item xs={3}>
-              <Paper
-                className={classes.paper}
-                style={{ backgroundColor: lightGrey }}
-              >
-                <VolumeChange propData={volDataMM} />
-              </Paper>
-              <div style={{ marginTop: "30%" }}></div>
-              <Paper>
-                <DownloadButton
-                  propData={mmAnnualData}
-                  dataName={"Class-Level Data"}
-                />
-              </Paper>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Paper className={classes.paperDropdown}>
-          <ProductDropdown
-            propData={mmAnnualData}
-            selectedProductId={selectedProductId}
-            changeProductSelected={changeProductSelected}
-            mailClass="Marketing Mail"
-          />
-        </Paper>
-      </Grid>
+        <ProductPage selectedProductId={selectedProductId} />
 
-      <ProductPage selectedProductId={selectedProductId} />
-
-      <div style={{ height: "50px" }}></div>
-      <PRCLinks />
-    </div>
+        <div style={{ height: "150px" }}></div>
+      </div>
+      <Footer />
+    </>
   );
 };
 

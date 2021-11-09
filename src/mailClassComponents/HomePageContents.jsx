@@ -16,7 +16,7 @@ const DashContents = (props) => {
       onClick: () => history.push("/first-class"),
     },
     {
-      text: "USPS service performance results for Marketing Mail",
+      text: "USPS service performance results for USPS Marketing Mail",
       onClick: () => history.push("/marketing-mail"),
     },
     {
@@ -34,7 +34,7 @@ const DashContents = (props) => {
   ];
 
   return (
-    <List>
+    <List id="homePageContentsList">
       {mailClassNames.map((item, index) => {
         const { text, onClick } = item;
 

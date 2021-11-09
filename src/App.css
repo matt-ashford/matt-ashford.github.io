@@ -71,6 +71,10 @@ body {
   text-align: left;
 }
 
+.aboutDashPara {
+  text-align: left;
+}
+
 #topLogoContainer {
   transform: scale(0.6);
   margin-bottom: -10em;
@@ -83,10 +87,15 @@ body {
 
 #homePageFooter {
   background-color: var(--shadedDiv);
-  height: 8em;
+  /* height: 8em; */
   padding-top: 2em;
-  padding-left: 35vw;
-  z-index: 1;
+  /* padding-left: 35vw; */
+  /* align-items: right; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* z-index: 1; */
 }
 
 #linksContainer {
@@ -128,6 +137,50 @@ body {
   text-align: left;
 }
 
+#footerDisclosure {
+  font-size: smaller;
+}
+
+#footerDisclosureContainer {
+  margin-top: 40px;
+  margin-left: 160px;
+  max-width: 65vw;
+}
+
+#iconAndLinkContainer {
+  margin-left: 40px;
+}
+
+#iconsContainer {
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: row;
+  font-size: smallest;
+
+  align-items: flex-start;
+  transform: scale(1.2);
+
+  gap: 5px;
+  margin-bottom: 10px;
+  /* background-color: green; */
+}
+
+#tweetPageLink {
+  margin-left: -10px;
+  margin-top: 100px;
+}
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: black;
+}
+
+#dashIntroPara {
+  text-align: center;
+  font-size: 1.2em;
+}
+
 .homePageTextIdentifier {
   color: red;
 }
@@ -136,10 +189,15 @@ body {
   text-decoration: underline;
 }
 
+#homePageContentsList {
+  width: 700px;
+  text-align: center;
+}
+
 .contentsListItem {
   margin-top: 3px;
   margin-bottom: 3px;
-  /* margin-left: 10%; */
+  margin-left: 20px;
 }
 
 /* PRODUCT GRAPH STUFF  */

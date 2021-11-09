@@ -11,10 +11,9 @@ import volumeData from "../Data/volume.json";
 import ProductCountTableMD from "../DashComponents/ProductCountTableMD";
 import DownloadButton from "../DashComponents/DownloadButton";
 import annualDataFull from "../Data/annualData.json";
+import Footer from "./Footer";
 
 import { lightGrey } from "../Design/MyTheme";
-
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,67 +49,76 @@ export const AllMarketDominant = (props) => {
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
   return (
-    <div className={classes.root} id="allMdContainer">
-      <Grid item xs={12} className={classes.titleBox}>
-        <div className={classes.root}>
-          <Typography variant="h4" component="h4" gutterBottom>
-            All Market Dominant Products
-          </Typography>
-        </div>
-      </Grid>
-      <Grid container spacing={4}>
-        <Grid container spacing={2}>
-          <Grid
-            item
-            xs={5}
-            className={classes.mdGraphContainer}
-            style={{ marginLeft: "4%" }}
-          >
-            <Paper className={classes.paperTopRow}>
-              <PieGraph propData={pieData} />
-            </Paper>
-          </Grid>
-          <Grid item xs={5} className={classes.mdGraphContainer}>
-            <Paper className={classes.paperTopRow}>
-              <MDCompositeContainer />
-            </Paper>
-          </Grid>
+    <>
+      <div className={classes.root} id="allMdContainer">
+        <Grid item xs={12} className={classes.titleBox}>
+          <div className={classes.root}>
+            <Typography variant="h4" component="h4" gutterBottom>
+              All Market Dominant Products
+            </Typography>
+          </div>
         </Grid>
-
-        <Grid item xs={12}>
-          <div id="gridSpacing"></div>
-        </Grid>
-
-        <Grid container alignItems="center" justifyContent="center" spacing={2}>
-          <Grid item xs={8}>
-            <Paper className={classes.paper}>
-              <div id="topEvents">
-                <ProductCountTableMD />
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper
-              className={classes.paper}
-              style={{
-                backgroundColor: lightGrey,
-                paddingTop: "-10%",
-                marginTop: "-60%",
-              }}
+        <Grid container spacing={4}>
+          <Grid container spacing={2}>
+            <Grid
+              item
+              xs={5}
+              className={classes.mdGraphContainer}
+              style={{ marginLeft: "4%" }}
             >
-              <div id="topAnnualVolume" style={{}}>
-                <VolumeChange propData={totalMDVol} />
-              </div>
-            </Paper>
-            <div style={{ marginTop: "10%" }}> </div>
-            <DownloadButton
-              propData={annualDataFull}
-              dataName={"Market Dominant Data"}
-            />
+              <Paper className={classes.paperTopRow}>
+                <PieGraph propData={pieData} />
+              </Paper>
+            </Grid>
+            <Grid item xs={5} className={classes.mdGraphContainer}>
+              <Paper className={classes.paperTopRow}>
+                <MDCompositeContainer />
+              </Paper>
+            </Grid>
+          </Grid>
+
+          <Grid item xs={12}>
+            <div id="gridSpacing"></div>
+          </Grid>
+
+          <Grid
+            container
+            alignItems="center"
+            justifyContent="center"
+            spacing={2}
+          >
+            <Grid item xs={8}>
+              <Paper className={classes.paper}>
+                <div id="topEvents">
+                  <ProductCountTableMD />
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper
+                className={classes.paper}
+                style={{
+                  backgroundColor: lightGrey,
+                  paddingTop: "-10%",
+                  marginTop: "-60%",
+                }}
+              >
+                <div id="topAnnualVolume" style={{}}>
+                  <VolumeChange propData={totalMDVol} />
+                </div>
+              </Paper>
+              <div style={{ marginTop: "10%" }}> </div>
+              <DownloadButton
+                propData={annualDataFull}
+                dataName={"Market Dominant Data"}
+              />
+            </Grid>
           </Grid>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+      <div style={{ height: "150px" }}></div>
+      <Footer />
+    </>
   );
 };
 
