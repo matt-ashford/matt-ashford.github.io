@@ -26,6 +26,7 @@ export const Footer = () => {
             <a
               target="_blank"
               href="https://www.linkedin.com/company/postal-regulatory-commission/mycompany/"
+              className="iconLink"
             >
               <LinkedInIcon />
             </a>
@@ -33,6 +34,7 @@ export const Footer = () => {
             <a
               target="_blank"
               href="https://twitter.com/postalregulator?lang=en.gov"
+              className="iconLink"
             >
               <TwitterIcon />
             </a>
