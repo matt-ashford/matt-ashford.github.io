@@ -13,12 +13,13 @@ import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
-import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import Footer from "./Footer";
+
+import MailClassDef from "../DashComponents/MailClassDef";
 
 export const MarketingMail = (props) => {
   const classes = useStyles_ClassPage();
@@ -64,6 +65,8 @@ export const MarketingMail = (props) => {
                 mailClass={"Marketing Mail"}
               />
             </Paper>
+
+            <MailClassDef mailClass={"Marketing Mail"} />
           </Grid>
 
           <Grid item xs={3}>

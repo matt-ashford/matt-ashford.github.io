@@ -12,13 +12,12 @@ import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 
-import PRCLinks from "../DashComponents/PRCLinks";
-
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import { graphWidth } from "../Design/graphDimensions";
 import Footer from "./Footer";
+import MailClassDef from "../DashComponents/MailClassDef";
 
 export const SpecialServices = () => {
   const classes = useStyles_ClassPage();
@@ -60,6 +59,8 @@ export const SpecialServices = () => {
                   mailClass={"Special Services"}
                 />
               </Paper>
+
+              <MailClassDef mailClass={"Special Services"} />
             </Grid>
 
             <Grid item xs={3} float="left">
@@ -91,7 +92,7 @@ export const SpecialServices = () => {
             </Grid>
           </Grid>
 
-          <Paper item xs={12} className={classes.paperDropdown}>
+          <Paper xs={12} className={classes.paperDropdown}>
             <div>
               Quarterly Product-level data is not available for products within
               the Special Services mail class

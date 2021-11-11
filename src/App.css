@@ -169,11 +169,6 @@ body {
   margin-left: -10px;
   margin-top: 100px;
 }
-/* a:link,
-a:visited,
-a:hover,
-a:active {
-} */
 
 .iconLink {
   color: black;
@@ -207,4 +202,12 @@ a:active {
 
 #productSvg {
   margin-left: 1.5em;
+}
+
+/* CLASS LEVEL STUFF  */
+
+#mailClassDefContainer {
+  width: 850px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

@@ -39,7 +39,7 @@ export const TooltipTarget = (props) => {
           borderTop: `20px solid ${darkGrey}`,
           marginLeft: `50px`,
         }}
-        class="arrow-down"
+        className="arrow-down"
       ></div>
     </div>
   );

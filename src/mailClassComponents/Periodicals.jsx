@@ -13,13 +13,13 @@ import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
-import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import { graphWidth } from "../Design/graphDimensions";
 import Footer from "./Footer";
+import MailClassDef from "../DashComponents/MailClassDef";
 
 export const Periodicals = () => {
   const classes = useStyles_ClassPage();
@@ -33,8 +33,6 @@ export const Periodicals = () => {
   const perAnnualData = annualData.filter((row) => row.class === "Periodicals");
 
   let volDataPER = volData.filter((row) => row.mailClass === "PER");
-
-  console.log("perAnnualDat", perAnnualData);
 
   return (
     <>
@@ -59,6 +57,8 @@ export const Periodicals = () => {
                   mailClass={"Periodicals"}
                 />
               </Paper>
+
+              <MailClassDef mailClass={"Periodicals"} />
             </Grid>
 
             <Grid item xs={3} float="left">
@@ -90,7 +90,7 @@ export const Periodicals = () => {
             </Grid>
           </Grid>
 
-          <Paper item xs={12} className={classes.paperDropdown}>
+          <Paper xs={12} className={classes.paperDropdown}>
             <ProductDropdown
               propData={perAnnualData}
               selectedProductId={selectedProductId}

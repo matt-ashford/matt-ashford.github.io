@@ -13,13 +13,14 @@ import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
-import PRCLinks from "../DashComponents/PRCLinks";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
 import { graphWidth } from "../Design/graphDimensions";
 import Footer from "./Footer";
+
+import MailClassDef from "../DashComponents/MailClassDef";
 
 export const FirstClass = () => {
   const classes = useStyles_ClassPage();
@@ -59,6 +60,7 @@ export const FirstClass = () => {
                   mailClass={"First Class"}
                 />
               </Paper>
+              <MailClassDef mailClass={"First Class Mail"} />
             </Grid>
 
             <Grid item xs={3} float="left">
@@ -90,7 +92,7 @@ export const FirstClass = () => {
             </Grid>
           </Grid>
 
-          <Paper item xs={12} className={classes.paperDropdown}>
+          <Paper xs={12} className={classes.paperDropdown}>
             <ProductDropdown
               propData={fcAnnualData}
               selectedProductId={selectedProductId}
@@ -101,6 +103,7 @@ export const FirstClass = () => {
         </Grid>
 
         <ProductPage selectedProductId={selectedProductId} />
+
         <div style={{ height: "150px" }}></div>
       </div>
       <Footer />

@@ -1,0 +1,22 @@
+[
+    {
+      "mailClass": "First Class Mail",
+      "definition": "First-Class includes letters, cards or large envelopes destined for either domestic or international delivery. First-Class Mail letters include postcards, correspondence, bills or statements of account and payments"
+    },
+    {
+      "mailClass": "Marketing Mail",
+      "definition": "Marketing Mail includes advertisements and marketing packages weighing less than 16 ounces and meeting the criteria of not being required to be mailed using First-Class Mail service because of their content Marketing Mail is typically used for direct advertising to multiple delivery addresses"
+    },
+    {
+      "mailClass": "Periodicals",
+      "definition": "Periodicals include newspapers, magazines and newsletters that have a required frequency "
+    },
+    {
+      "mailClass": "Special Services",
+      "definition": "Special Services is a broad category which includes PO Box services, money orders and USPS Extra Services"
+    },
+  {
+      "mailClass": "Package Services",
+      "definition": "Package Services includes merchandise or printed matter, such as library and media mail weighing up to 70 pounds"
+    }
+  ]
