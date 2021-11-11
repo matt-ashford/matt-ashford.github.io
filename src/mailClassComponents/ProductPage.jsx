@@ -7,6 +7,8 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import DownloadButton from "../DashComponents/DownloadButton";
 
+import ProductDef from "../DashComponents/ProductDef";
+
 export const ProductPage = (props) => {
   const { selectedProductId } = props;
 
@@ -85,6 +87,7 @@ const ProductPageFull = (props) => {
             </Grid>
           </Grid>
         </div>
+        <ProductDef productId={productId} />
       </div>
     </>
   );

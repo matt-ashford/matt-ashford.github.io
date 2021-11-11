@@ -14,8 +14,6 @@ export const MailClassDef = (props) => {
     classDefText = thisDefinitionRow.definition;
   }
 
-  console.log(thisDefinitionRow);
-
   return <div id="mailClassDefContainer">{classDefText} </div>;
 };
 

@@ -4,62 +4,76 @@
       "productId": 2,
       "productName": "Single-Piece Letters and Postcards",
       "definition": "Small envelopes",
-      "examples": "Wedding Invitations, Greeting Cards and Post Cards"
+      "examples": "wedding invitations, greeting cards and post cards"
+    },
+    {
+      "mailClass": "First Class Mail",
+      "productId": 3,
+      "productName": "Single-Piece Letters and Postcards",
+      "definition": "",
+      "examples": "wedding invitations, greeting cards and post cards"
     },
     {
       "mailClass": "First Class Mail",
       "productId": 4,
       "productName": "Presort Letters/Postcards",
       "definition": "",
-      "examples": "Bank Statements, Insurance Bills and Credit Card Bills"
+      "examples": "bank statements, insurance claims, and credit card bills"
     },
     {
       "mailClass": "First Class Mail",
-      "productId": 7,
-      "productName": "Flats",
-      "definition": "Large envelopes",
-      "examples": ""
+      "productId": 5,
+      "productName": "Presort Letters/Postcards",
+      "definition": "",
+      "examples": "bank statements, insurance claims, and credit card bills"
+    },
+    {
+      "mailClass": "First Class Mail",
+      "productId": 6,
+      "productName": "Presort Letters/Postcards",
+      "definition": "",
+      "examples": "bank statements, insurance claims, and credit card bills"
     },
     {
       "mailClass": "Marketing Mail",
       "productId": 18,
       "productName": "High Density and Saturation Letters",
       "definition": "",
-      "examples": "Letter advertisments"
+      "examples": "letter advertisments and election mail"
     },
     {
       "mailClass": "Marketing Mail",
       "productId": 19,
       "productName": "High Density and Saturation Flats/Parcels",
       "definition": "",
-      "examples": "Catalogs and coupon books"
+      "examples": "catalogs and coupon books"
     },
     {
       "mailClass": "Marketing Mail",
       "productId": 21,
       "productName": "Letters",
       "definition": "",
-      "examples": "Letter advertisments"
+      "examples": "letter advertisments and election mail"
     },
     {
       "mailClass": "Marketing Mail",
       "productId": 22,
       "productName": "Flats",
       "definition": "",
-      "examples": "Catalogs and coupon books"
+      "examples": "catalogs and coupon books"
     },
     {
       "mailClass": "Periodicals",
       "productId": 27,
       "productName": "In-County",
       "definition": "",
-      "examples": "Magazines and newspapers"
+      "examples": "magazines and newspapers"
     },
     {
       "mailClass": "Periodicals",
       "productId": 28,
       "productName": "Outside County",
       "definition": "",
-      "examples": "Magazines and newspapers"
+      "examples": "magazines and newspapers"
     }
   ]
