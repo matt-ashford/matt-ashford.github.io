@@ -7,10 +7,10 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
   button: {
     padding: "-2rem",
-    // width: "350%",
     width: "15rem",
     color: "black",
     font: "roboto",
+    textDecoration: "none",
   },
   icon: {
     transform: "scale(1.5)",
@@ -28,25 +28,30 @@ export const DownloadButton = (props) => {
   const classes = useStyles();
 
   return (
-    <CSVLink data={propData}>
-      <Button className={classes.button} variant="contained">
-        <div>
-          <Grid container direction="row">
-            <Grid item xs={2}>
-              <TocIcon className={classes.icon} />
+    <>
+      <CSVLink data={propData}>
+        <Button
+          className={classes.button}
+          variant="contained"
+          id="downloadButton"
+        >
+          <div>
+            <Grid container direction="row">
+              <Grid item xs={2}>
+                <TocIcon className={classes.icon} />
+              </Grid>
+              <Grid item xs={10}>
+                <p> Download CSV</p>
+              </Grid>
+              <Grid item xs={2}></Grid>
+              <Grid item xs={10}>
+                <p className={classes.dataName}>{dataName}</p>
+              </Grid>
             </Grid>
-            <Grid item xs={10}>
-              <p> Download CSV</p>
-            </Grid>
-            <Grid item xs={2}></Grid>
-
-            <Grid item xs={10}>
-              <p className={classes.dataName}>{dataName}</p>
-            </Grid>
-          </Grid>
-        </div>
-      </Button>
-    </CSVLink>
+          </div>
+        </Button>
+      </CSVLink>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const Drawer = (props) => {
 
   const mailClassNames = [
     {
-      text: "First Class",
+      text: "First-Class",
       onClick: () => history.push("/first-class"),
     },
     {

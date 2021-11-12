@@ -16,7 +16,7 @@ export const MDCompositeContainer = () => {
     <div style={{}}>
       <h3>Composite Scores </h3>
 
-      <h5>First Class Letters and Flats</h5>
+      <h5>First-Class Letters and Flats</h5>
 
       <BarGraphSide propData={fcData} />
 

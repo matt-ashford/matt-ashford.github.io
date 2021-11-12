@@ -1,9 +1,18 @@
 import productDefs from "../Data/productDefinitions.json";
+import annualData from "../Data/annualData.json";
 
 export const ProductDef = (props) => {
   const { productId } = props;
 
   let productDefRow = productDefs.filter((row) => row.productId === productId);
+
+  let annualProductRow = annualData.filter(
+    (row) => row.productId === productId
+  );
+  annualProductRow = annualProductRow[0];
+
+  const productName = annualProductRow.product;
+  let mailClass = annualProductRow["class"];
 
   let exampleText = "";
 
@@ -18,26 +27,46 @@ export const ProductDef = (props) => {
     exampleText = productDefRow.examples;
   }
 
-  console.log("proddef", productDefRow);
-
   function generateFullText(exampleText) {
-    const productName = productDefRow.productName;
-    const mailClass = productDefRow.mailClass;
     let mailClassText = "";
 
-    if (["Marketing Mail", "Periodicals"].includes(mailClass)) {
+    if (mailClass === "First Class Mail") {
+      mailClass = "First-Class";
+    }
+
+    if (["First-Class", "Marketing Mail", "Periodicals"].includes(mailClass)) {
       mailClassText = mailClass + " ";
     }
 
-    if (!defExists) {
-      return "";
-    }
+    const defText = defExists ? (
+      <p>
+        Examples of {mailClassText}
+        {productName} include {exampleText}
+      </p>
+    ) : (
+      ""
+    );
 
-    const fullText = `Examples of ${mailClassText}${productName} include ${exampleText}`;
+    const fullText = (
+      <>
+        {defText}
+        <p>
+          For a full product definitinon of {mailClassText}
+          {productName} please see the{" "}
+          <a
+            href="https://www.prc.gov/mail-classification-schedule"
+            target="_blank"
+            style={{ textDecoration: "underline" }}
+          >
+            Mail Classification Schedule
+          </a>
+        </p>
+      </>
+    );
     return fullText;
   }
 
-  return <div id="productDefContainer"> {generateFullText(exampleText)} </div>;
+  return <div id="productDefContainer"> {generateFullText(exampleText)}</div>;
 };
 
 export default ProductDef;

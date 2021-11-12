@@ -39,14 +39,9 @@ export const MarketingMail = (props) => {
   return (
     <>
       <div className={classes.root} id="allMdContainer">
-        <Grid
-          container
-          spacing={3}
-
-          // style={{marginBotto}}
-        >
+        <Grid container spacing={1} justifyContent="flex-start">
           <Grid item xs={12}>
-            <div className={classes.root}>
+            <div className={classes.root} id="classTitleTextContainer">
               <Typography variant="h4" component="h4" gutterBottom>
                 Marketing Mail Class-Level Data
               </Typography>
@@ -56,8 +51,7 @@ export const MarketingMail = (props) => {
             item
             lg={9}
             md={12}
-            style={{ maxWidth: 950 }}
-            className={classes.classGraphContainer}
+            style={{ maxWidth: "950px", minWidth: "700px" }}
           >
             <Paper className={classes.graphDiv} elevation={3}>
               <ClassLevelGraph

@@ -3,6 +3,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { ReactComponent as Logo } from "../Design/prcIcon.svg";
 
 export const Footer = () => {
+  const linkText = "  feedback-data@prc.gov";
   return (
     <div id="homePageFooter">
       <div id="footerLogoAndName">
@@ -52,6 +53,15 @@ export const Footer = () => {
       </div>
 
       <div id="footerDisclosureContainer">
+        <div id="footerEmailContainer">
+          <p id="footerEmailText">
+            send feedback about this dashboard to{" "}
+            <a href="mailto:feedback-data@prc.gov" target="_blank">
+              {/* feedback-data@prc.gov */}
+              {linkText}
+            </a>
+          </p>
+        </div>
         <p className="footerPRC" id="footerDisclosure">
           The information contained on this webpage or beta dashboard is for
           general information purposes only. This dashboard provides some of,

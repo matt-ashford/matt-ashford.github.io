@@ -6,8 +6,9 @@ import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
 
 const useStyles = makeStyles({
   root: {
-    width: "100%",
-    maxWidth: 500,
+    // width: "100%",
+    // width: "500px",
+    // maxWidth: 500,
   },
   outterContainer: {
     backgroundColor: "#e6e8e6",
@@ -15,14 +16,16 @@ const useStyles = makeStyles({
 
   titleText: {
     fontSize: 20,
-    marginLeft: "-75px",
+    marginLeft: "-30%",
     color: "black",
     fontWeight: "bold",
     marginBottom: "-0.5rem",
   },
   volText: {
     fontSize: 17,
-    marginBottom: "2%",
+    marginLeft: "-30%",
+    marginBottom: "1%",
+    marginTop: "-1em",
   },
   volNumber: {
     fontSize: 18,
@@ -90,7 +93,7 @@ export const VolumeChange = (props) => {
   }
 
   return (
-    <div>
+    <div id="volumeChangeContainer">
       <Typography variant="h5" gutterBottom className={classes.titleText}>
         Total Volume: {`${volumeTextNumber}`}
       </Typography>

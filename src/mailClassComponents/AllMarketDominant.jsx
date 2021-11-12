@@ -101,6 +101,7 @@ export const AllMarketDominant = (props) => {
                   backgroundColor: lightGrey,
                   paddingTop: "-10%",
                   marginTop: "-60%",
+                  minWidth: "200px",
                 }}
               >
                 <div id="topAnnualVolume" style={{}}>

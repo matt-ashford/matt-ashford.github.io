@@ -49,7 +49,7 @@ export const HomePageGlossary = () => {
           </li>
 
           <li>
-            <span className="undelineMe">Market Dominant product:</span>A
+            <span className="undelineMe">Market Dominant product:</span> A
             product “in the sale of which the Postal Service exercises
             sufficient market power that it can effectively set the price of
             such product substantially above costs, raise prices significantly,

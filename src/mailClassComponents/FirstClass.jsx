@@ -41,53 +41,56 @@ export const FirstClass = () => {
     <>
       <div className={classes.root} id="allMdContainer">
         <Grid container spacing={1} justifyContent="flex-start">
-          <Grid container>
-            <Grid item xs={12}>
-              <div className={classes.root}>
-                <Typography variant="h4" component="h4" gutterBottom>
-                  First Class Data
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
-              <Paper
-                className={classes.graphDivFirstClass}
-                elevation={3}
-                width={graphWidth}
-              >
-                <ClassLevelGraph
-                  propData={fcAnnualData}
-                  mailClass={"First Class"}
-                />
-              </Paper>
-              <MailClassDef mailClass={"First Class Mail"} />
-            </Grid>
+          <Grid item xs={12}>
+            <div className={classes.root} id="classTitleTextContainer">
+              <Typography variant="h4" component="h4" gutterBottom>
+                First-Class Mail Class-Level Data
+              </Typography>
+            </div>
+          </Grid>
+          <Grid
+            item
+            md={9}
+            xs={12}
+            style={{ maxWidth: "950px", minWidth: "800px" }}
+          >
+            <Paper
+              className={classes.graphDivFirstClass}
+              elevation={3}
+              width={graphWidth}
+            >
+              <ClassLevelGraph
+                propData={fcAnnualData}
+                mailClass={"First Class"}
+              />
+            </Paper>
+            <MailClassDef mailClass={"First Class Mail"} />
+          </Grid>
 
-            <Grid item xs={3} float="left">
-              <Grid container direction="column" spacing={3}>
-                <Grid item lg={7} md={12}>
-                  <Paper className={classes.paper}>
-                    <div>
-                      {" "}
-                      <ProductCountTableData propData={fcAnnualData} />{" "}
-                    </div>
-                  </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper
-                    className={classes.paper}
-                    style={{ backgroundColor: lightGrey }}
-                  >
-                    <VolumeChange propData={volDataFC} />
-                  </Paper>
-                  <div style={{ marginTop: "30%" }}></div>
-                  <Paper>
-                    <DownloadButton
-                      propData={fcAnnualData}
-                      dataName={"Class-Level Data"}
-                    />
-                  </Paper>
-                </Grid>
+          <Grid item xs={3} float="left">
+            <Grid container direction="column" spacing={3}>
+              <Grid item lg={7} md={12}>
+                <Paper className={classes.paper}>
+                  <div>
+                    {" "}
+                    <ProductCountTableData propData={fcAnnualData} />{" "}
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item xs={3}>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: lightGrey }}
+                >
+                  <VolumeChange propData={volDataFC} />
+                </Paper>
+                <div style={{ marginTop: "30%" }}></div>
+                <Paper>
+                  <DownloadButton
+                    propData={fcAnnualData}
+                    dataName={"Class-Level Data"}
+                  />
+                </Paper>
               </Grid>
             </Grid>
           </Grid>

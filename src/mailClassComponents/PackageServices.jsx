@@ -43,7 +43,7 @@ export const PackageServices = (props) => {
         <Grid container spacing={1} justifyContent="flex-start">
           <Grid container>
             <Grid item xs={12}>
-              <div className={classes.root}>
+              <div className={classes.root} id="classTitleTextContainer">
                 <Typography variant="h4" component="h4" gutterBottom>
                   Package Services Class-Level Data
                 </Typography>
