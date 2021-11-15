@@ -25,11 +25,49 @@ const useStyles = makeStyles((theme) => ({
 export const DownloadButton = (props) => {
   const { propData, dataName } = props;
 
+  function removeNeedlessCols(propData) {
+    const needlessCols = [
+      "originalOrder",
+      "missingData",
+      "mailMeasuredPctFootnote",
+      "subProduct",
+      "subProductName",
+      "productId",
+    ];
+
+    const remainingCols = Object.keys(propData[0]).filter(
+      (val) => !needlessCols.includes(val)
+    );
+
+    let rez = [];
+
+    for (let row in propData) {
+      let rezRow = {};
+      const currentRow = propData[row];
+
+      for (let col in remainingCols) {
+        const currenCol = remainingCols[col];
+
+        rezRow[currenCol] = currentRow[currenCol];
+      }
+      rez.push(rezRow);
+    }
+
+    console.log(rez);
+    return rez;
+  }
+
+  const rezData = propData ? removeNeedlessCols(propData) : propData;
+
+  // console.log(removeNeedlessCols(propData));
+
+  // console.log(propData);
+
   const classes = useStyles();
 
   return (
     <>
-      <CSVLink data={propData}>
+      <CSVLink data={rezData}>
         <Button
           className={classes.button}
           variant="contained"

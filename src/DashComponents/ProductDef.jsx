@@ -51,7 +51,7 @@ export const ProductDef = (props) => {
       <>
         {defText}
         <p>
-          For a full product definitinon of {mailClassText}
+          For a full product definition of {mailClassText}
           {productName} please see the{" "}
           <a
             href="https://www.prc.gov/mail-classification-schedule"

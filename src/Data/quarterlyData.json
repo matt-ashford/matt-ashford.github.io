@@ -9,10 +9,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -24,10 +24,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 89.97,
-    "weights": 5746853359,
-    "deliveryDates": 74,
     "volume": 5746853359,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -39,10 +39,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 72.46,
-    "weights": 2237900778,
-    "deliveryDates": 74,
     "volume": 2237900778,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -54,10 +54,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": 94.94,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 1240561508,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -69,10 +69,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 93.02,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 2371854666,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -84,10 +84,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 90.11,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 8364293092,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -99,10 +99,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": 77.9,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 12544794,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -114,10 +114,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 77.96,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 36340944,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -129,10 +129,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 76.2,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 115072682,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -144,10 +144,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 74,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -159,10 +159,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 77.98,
-    "weights": 217688443,
-    "deliveryDates": 74,
     "volume": 217688443,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -174,10 +174,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 67.22,
-    "weights": 158138372,
-    "deliveryDates": 74,
     "volume": 158138372,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -189,10 +189,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -204,10 +204,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 74.45,
-    "weights": 573863.92,
-    "deliveryDates": 74,
     "volume": 3016,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -219,10 +219,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 74.1,
-    "weights": 1369494.46,
-    "deliveryDates": 74,
     "volume": 7044,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -234,10 +234,10 @@
     "quarter": 1,
     "target": 94,
     "pctOnTime": 74.2,
-    "weights": 1943358.38,
-    "deliveryDates": 74,
     "volume": 10060,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -249,10 +249,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -264,10 +264,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 78.84,
-    "weights": 637226.67,
-    "deliveryDates": 74,
     "volume": 4482,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -279,10 +279,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 69.33,
-    "weights": 1017871.69,
-    "deliveryDates": 74,
     "volume": 6741,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -294,10 +294,10 @@
     "quarter": 1,
     "target": 94,
     "pctOnTime": 72.99,
-    "weights": 1655098.36,
-    "deliveryDates": 74,
     "volume": 11223,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -309,10 +309,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -324,10 +324,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 92.07,
-    "weights": 4539099693,
-    "deliveryDates": 74,
     "volume": 4539099693,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -339,10 +339,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 80.52,
-    "weights": 1673045678,
-    "deliveryDates": 74,
     "volume": 1673045678,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -354,10 +354,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": 95,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 1382521720,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -369,10 +369,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 93.46,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 2603616272,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -384,10 +384,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 90.58,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 9185638642,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -399,10 +399,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": 80.16,
-    "weights": 0.25,
-    "deliveryDates": "N/A",
     "volume": 10537768,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -414,10 +414,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 81.62,
-    "weights": 0.25,
-    "deliveryDates": "N/A",
     "volume": 35141406,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -429,10 +429,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 79.36,
-    "weights": 0.25,
-    "deliveryDates": "N/A",
     "volume": 121213062,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -444,10 +444,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 75,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -459,10 +459,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 81.14,
-    "weights": 224730400,
-    "deliveryDates": 74,
     "volume": 224730400,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -474,10 +474,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 70.45,
-    "weights": 154931660,
-    "deliveryDates": 74,
     "volume": 154931660,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -489,10 +489,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -504,10 +504,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 81.24,
-    "weights": 583150.88,
-    "deliveryDates": 74,
     "volume": 3344,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -519,10 +519,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 76.3,
-    "weights": 1360332.16,
-    "deliveryDates": 74,
     "volume": 7446,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -534,10 +534,10 @@
     "quarter": 2,
     "target": 94,
     "pctOnTime": 77.78,
-    "weights": 1943483.04,
-    "deliveryDates": 74,
     "volume": 10790,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -549,10 +549,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -564,10 +564,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 83.41,
-    "weights": 639671.28,
-    "deliveryDates": 74,
     "volume": 4433,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -579,10 +579,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 72.7,
-    "weights": 943757.27,
-    "deliveryDates": 74,
     "volume": 6591,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -594,10 +594,10 @@
     "quarter": 2,
     "target": 94,
     "pctOnTime": 77.02,
-    "weights": 1583428.55,
-    "deliveryDates": 74,
     "volume": 11024,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -609,10 +609,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -624,10 +624,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 94.4,
-    "weights": 4356912722,
-    "deliveryDates": 77,
     "volume": 4356912722,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -639,10 +639,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 87.52,
-    "weights": 1628486581,
-    "deliveryDates": 77,
     "volume": 1628486581,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -654,10 +654,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": 96.48,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 1296619296,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -669,10 +669,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 95.4,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 2457971862,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -684,10 +684,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 93.76,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 8947529632,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -699,10 +699,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": 83.66,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 10123518,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -714,10 +714,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 84.59,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 33870452,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -729,10 +729,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 82.99,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 121314230,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -744,10 +744,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 77,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -759,10 +759,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 83.09,
-    "weights": 202002847,
-    "deliveryDates": 77,
     "volume": 202002847,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -774,10 +774,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 75.53,
-    "weights": 144240443,
-    "deliveryDates": 77,
     "volume": 144240443,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -789,10 +789,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -804,10 +804,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 86.85,
-    "weights": 594069.54,
-    "deliveryDates": 77,
     "volume": 3316,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -819,10 +819,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 85.28,
-    "weights": 1349548.66,
-    "deliveryDates": 77,
     "volume": 7655,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -834,10 +834,10 @@
     "quarter": 3,
     "target": 94,
     "pctOnTime": 85.76,
-    "weights": 1943618.2,
-    "deliveryDates": 77,
     "volume": 10971,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -849,10 +849,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -864,10 +864,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 84.76,
-    "weights": 640598.39,
-    "deliveryDates": 77,
     "volume": 4849,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -879,10 +879,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 79.8,
-    "weights": 965420.84,
-    "deliveryDates": 77,
     "volume": 6983,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -894,10 +894,10 @@
     "quarter": 3,
     "target": 94,
     "pctOnTime": 81.78,
-    "weights": 1606019.23,
-    "deliveryDates": 77,
     "volume": 11832,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -909,10 +909,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -924,10 +924,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 94.46,
-    "weights": 4077943314,
-    "deliveryDates": 77,
     "volume": 4077943314,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -939,10 +939,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 88.72,
-    "weights": 1493799738,
-    "deliveryDates": 77,
     "volume": 1493799738,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -954,10 +954,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": 96.37,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 1257228308,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -969,10 +969,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 95.41,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 2391871506,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -984,10 +984,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 94.26,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 8878715516,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -999,10 +999,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": 84.83,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 10007240,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1014,10 +1014,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 85.86,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 32218886,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1029,10 +1029,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 83.73,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 106806534,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1044,10 +1044,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 76,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1059,10 +1059,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 83.18,
-    "weights": 186620292,
-    "deliveryDates": 77,
     "volume": 186620292,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1074,10 +1074,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 77.16,
-    "weights": 132938644,
-    "deliveryDates": 77,
     "volume": 132938644,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1089,10 +1089,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1104,10 +1104,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 82.42,
-    "weights": 598397.76,
-    "deliveryDates": 77,
     "volume": 3287,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1119,10 +1119,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 80.18,
-    "weights": 1345246.4,
-    "deliveryDates": 77,
     "volume": 7342,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1134,10 +1134,10 @@
     "quarter": 4,
     "target": 94,
     "pctOnTime": 80.87,
-    "weights": 1943644.16,
-    "deliveryDates": 77,
     "volume": 10629,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1149,10 +1149,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1164,10 +1164,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 82.38,
-    "weights": 643458.3,
-    "deliveryDates": 77,
     "volume": 4812,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1179,10 +1179,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 78.47,
-    "weights": 974166.92,
-    "deliveryDates": 77,
     "volume": 7017,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1194,10 +1194,10 @@
     "quarter": 4,
     "target": 94,
     "pctOnTime": 80.02,
-    "weights": 1617625.21,
-    "deliveryDates": 77,
     "volume": 11829,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -1209,10 +1209,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1224,10 +1224,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 92.33,
-    "weights": 5141932771,
-    "deliveryDates": 75,
     "volume": 5141932771,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1239,10 +1239,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 78.67,
-    "weights": 2071992917,
-    "deliveryDates": 75,
     "volume": 2071992917,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1254,10 +1254,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": 94.64,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 1211678922,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1269,10 +1269,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 93.74,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 2314976324,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1284,10 +1284,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 91.48,
-    "weights": 0.26,
-    "deliveryDates": "N/A",
     "volume": 8294345516,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1299,10 +1299,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": 81.18,
-    "weights": 0.29,
-    "deliveryDates": "N/A",
     "volume": 11708836,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1314,10 +1314,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 80.07,
-    "weights": 0.29,
-    "deliveryDates": "N/A",
     "volume": 32977398,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1329,10 +1329,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 78.23,
-    "weights": 0.29,
-    "deliveryDates": "N/A",
     "volume": 114484040,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1344,10 +1344,10 @@
     "quarter": 1,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 75,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1359,10 +1359,10 @@
     "quarter": 1,
     "target": 96.5,
     "pctOnTime": 80.01,
-    "weights": 195683428,
-    "deliveryDates": 75,
     "volume": 195683428,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1374,10 +1374,10 @@
     "quarter": 1,
     "target": 95.25,
     "pctOnTime": 70.88,
-    "weights": 137687094,
-    "deliveryDates": 75,
     "volume": 137687094,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1389,10 +1389,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1404,10 +1404,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 75.8,
-    "weights": 555130.68,
-    "deliveryDates": 75,
     "volume": 3369,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1419,10 +1419,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 74.6,
-    "weights": 1241273.2,
-    "deliveryDates": 75,
     "volume": 7708,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1434,10 +1434,10 @@
     "quarter": 1,
     "target": 94,
     "pctOnTime": 74.97,
-    "weights": 1796403.88,
-    "deliveryDates": 75,
     "volume": 11077,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1449,10 +1449,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1464,10 +1464,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 76.99,
-    "weights": 686974.65,
-    "deliveryDates": 75,
     "volume": 4480,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1479,10 +1479,10 @@
     "quarter": 1,
     "target": "noTarget",
     "pctOnTime": 69.57,
-    "weights": 1045408.86,
-    "deliveryDates": 75,
     "volume": 6255,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1494,10 +1494,10 @@
     "quarter": 1,
     "target": 94,
     "pctOnTime": 72.51,
-    "weights": 1732383.51,
-    "deliveryDates": 75,
     "volume": 10735,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1509,10 +1509,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1524,10 +1524,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 93.55,
-    "weights": 4216860983,
-    "deliveryDates": 75,
     "volume": 4216860983,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1539,10 +1539,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 84.25,
-    "weights": 1580065328,
-    "deliveryDates": 75,
     "volume": 1580065328,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1554,10 +1554,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": 96.06,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 1289209048,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1569,10 +1569,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 94.6,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 2562909658,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1584,10 +1584,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 92.73,
-    "weights": 0.27,
-    "deliveryDates": "N/A",
     "volume": 9095928470,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1599,10 +1599,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": 82.77,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 9904172,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1614,10 +1614,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 80.67,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 31692372,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1629,10 +1629,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 79.74,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 110998898,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1644,10 +1644,10 @@
     "quarter": 2,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 75,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1659,10 +1659,10 @@
     "quarter": 2,
     "target": 96.5,
     "pctOnTime": 81.65,
-    "weights": 207488205,
-    "deliveryDates": 75,
     "volume": 207488205,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1674,10 +1674,10 @@
     "quarter": 2,
     "target": 95.25,
     "pctOnTime": 72.48,
-    "weights": 137546199,
-    "deliveryDates": 75,
     "volume": 137546199,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1689,10 +1689,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1704,10 +1704,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 70.9,
-    "weights": 559357.2,
-    "deliveryDates": 75,
     "volume": 3131,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1719,10 +1719,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 67.09,
-    "weights": 1236987.56,
-    "deliveryDates": 75,
     "volume": 7054,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1734,10 +1734,10 @@
     "quarter": 2,
     "target": 94,
     "pctOnTime": 68.28,
-    "weights": 1796344.76,
-    "deliveryDates": 75,
     "volume": 10185,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1749,10 +1749,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1764,10 +1764,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 78.52,
-    "weights": 687089.32,
-    "deliveryDates": 75,
     "volume": 4542,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1779,10 +1779,10 @@
     "quarter": 2,
     "target": "noTarget",
     "pctOnTime": 71.63,
-    "weights": 1056812.69,
-    "deliveryDates": 75,
     "volume": 6163,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1794,10 +1794,10 @@
     "quarter": 2,
     "target": 94,
     "pctOnTime": 74.34,
-    "weights": 1743902.01,
-    "deliveryDates": 75,
     "volume": 10705,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1809,10 +1809,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1824,10 +1824,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 93.04,
-    "weights": 3677913592,
-    "deliveryDates": 77,
     "volume": 3677913592,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1839,10 +1839,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 82.48,
-    "weights": 1316389036,
-    "deliveryDates": 77,
     "volume": 1316389036,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1854,10 +1854,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": 95.91,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 1133941132,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1869,10 +1869,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 93.52,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 2220051026,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1884,10 +1884,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 90.91,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 7850388616,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1899,10 +1899,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": 80.71,
-    "weights": 0.22,
-    "deliveryDates": "N/A",
     "volume": 7982142,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1914,10 +1914,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 73.87,
-    "weights": 0.22,
-    "deliveryDates": "N/A",
     "volume": 26434426,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1929,10 +1929,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 73.21,
-    "weights": 0.22,
-    "deliveryDates": "N/A",
     "volume": 97403250,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1944,10 +1944,10 @@
     "quarter": 3,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 77,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1959,10 +1959,10 @@
     "quarter": 3,
     "target": 96.5,
     "pctOnTime": 77.42,
-    "weights": 163928126,
-    "deliveryDates": 77,
     "volume": 163928126,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1974,10 +1974,10 @@
     "quarter": 3,
     "target": 95.25,
     "pctOnTime": 66.94,
-    "weights": 100787736,
-    "deliveryDates": 77,
     "volume": 100787736,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -1989,10 +1989,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2004,10 +2004,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 74.23,
-    "weights": 567414.1,
-    "deliveryDates": 77,
     "volume": 3237,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2019,10 +2019,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 58.64,
-    "weights": 1229024.32,
-    "deliveryDates": 77,
     "volume": 7486,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2034,10 +2034,10 @@
     "quarter": 3,
     "target": 94,
     "pctOnTime": 63.56,
-    "weights": 1796438.42,
-    "deliveryDates": 77,
     "volume": 10723,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2049,10 +2049,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2064,10 +2064,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 76.57,
-    "weights": 696136.19,
-    "deliveryDates": 77,
     "volume": 1726,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2079,10 +2079,10 @@
     "quarter": 3,
     "target": "noTarget",
     "pctOnTime": 62.81,
-    "weights": 1190814.07,
-    "deliveryDates": 77,
     "volume": 5772,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2094,10 +2094,10 @@
     "quarter": 3,
     "target": 94,
     "pctOnTime": 67.89,
-    "weights": 1886950.27,
-    "deliveryDates": 77,
     "volume": 7498,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2109,10 +2109,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2124,10 +2124,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 88.89,
-    "weights": 3649089319,
-    "deliveryDates": 77,
     "volume": 3649089319,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2139,10 +2139,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 73.01,
-    "weights": 1311712073,
-    "deliveryDates": 77,
     "volume": 1311712073,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2154,10 +2154,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": 93.01,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 1201102662,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2169,10 +2169,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 89.95,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 2236024464,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2184,10 +2184,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 84.92,
-    "weights": 0.23,
-    "deliveryDates": "N/A",
     "volume": 7742579218,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2199,10 +2199,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": 76.49,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 9584060,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2214,10 +2214,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 70.17,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 30041634,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2229,10 +2229,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 66.97,
-    "weights": 0.24,
-    "deliveryDates": "N/A",
     "volume": 106806534,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2244,10 +2244,10 @@
     "quarter": 4,
     "target": 96.8,
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": 77,
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2259,10 +2259,10 @@
     "quarter": 4,
     "target": 96.5,
     "pctOnTime": 73.83,
-    "weights": 163262992,
-    "deliveryDates": 77,
     "volume": 163262992,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2274,10 +2274,10 @@
     "quarter": 4,
     "target": 95.25,
     "pctOnTime": 60.31,
-    "weights": 105694543,
-    "deliveryDates": 77,
     "volume": 105694543,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2289,10 +2289,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2304,10 +2304,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 84.47,
-    "weights": 566316.52,
-    "deliveryDates": 77,
     "volume": 2969,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2319,10 +2319,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 79.55,
-    "weights": 1230093.24,
-    "deliveryDates": 77,
     "volume": 7302,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2334,10 +2334,10 @@
     "quarter": 4,
     "target": 94,
     "pctOnTime": 81.11,
-    "weights": 1796409.76,
-    "deliveryDates": 77,
     "volume": 10271,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2349,10 +2349,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": "missing",
-    "weights": "N/A",
-    "deliveryDates": "N/A",
     "volume": "missing",
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2364,10 +2364,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 68.59,
-    "weights": 686874.61,
-    "deliveryDates": 77,
     "volume": 4243,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2379,10 +2379,10 @@
     "quarter": 4,
     "target": "noTarget",
     "pctOnTime": 53.8,
-    "weights": 1217377.84,
-    "deliveryDates": 77,
     "volume": 11078,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -2394,10 +2394,10 @@
     "quarter": 4,
     "target": 94,
     "pctOnTime": 59.13,
-    "weights": 1904252.45,
-    "deliveryDates": 77,
     "volume": 15321,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2409,10 +2409,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 89.33,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2748539916,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2424,10 +2424,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 84.21,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 3201469018,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2439,10 +2439,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 85.24,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 18053169622,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2454,10 +2454,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 71.85,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1469761934,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2469,10 +2469,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 70.81,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 214296398,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2484,10 +2484,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 97.13,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 10849492,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2499,10 +2499,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 73.06,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 39754948,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2514,10 +2514,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 48.32,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2549140,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2529,10 +2529,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 92.9,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2601907648,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2544,10 +2544,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 91.14,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1992648876,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2559,10 +2559,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 88.46,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 16250283714,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2574,10 +2574,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 77.03,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1191426752,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2589,10 +2589,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 76.14,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 200388798,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2604,10 +2604,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 97.58,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 9513119,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2619,10 +2619,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 74.3,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 32553258,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2634,10 +2634,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 47.68,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1875204,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2649,10 +2649,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 95.12,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2730628080,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2664,10 +2664,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 93.08,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1944586696,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2679,10 +2679,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 91.41,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 16984797862,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2694,10 +2694,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 80.66,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1100850460,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2709,10 +2709,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 78.14,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 217301956,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2724,10 +2724,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 98.36,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 9717653,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2739,10 +2739,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 78.66,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 35329282,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2754,10 +2754,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 55.17,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2060344,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2769,10 +2769,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 95.62,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2558844934,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2784,10 +2784,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 93.83,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1913544556,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2799,10 +2799,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 92.35,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 16637573196,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2814,10 +2814,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 82.14,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1165641692,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2829,10 +2829,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 77.79,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 183360746,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2844,10 +2844,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 98.85,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 8999327,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2859,10 +2859,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 77.36,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 8166270,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2874,10 +2874,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 56.48,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 425152,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -2889,10 +2889,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 93.73,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 3025074872,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2904,10 +2904,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 89.93,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2806871140,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2919,10 +2919,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 89.51,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 18782694082,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2934,10 +2934,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 78.44,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1404574220,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2949,10 +2949,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 75.3,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 179735704,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2964,10 +2964,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 98.41,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 12917377,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2979,10 +2979,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 81.8,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 10338778,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -2994,10 +2994,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 52.9,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 586000,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3009,10 +3009,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 94.99,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2650657706,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3024,10 +3024,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 93.53,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2046662922,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3039,10 +3039,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 91.98,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 16355590788,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3054,10 +3054,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 81.88,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1161221656,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3069,10 +3069,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 78.04,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 175040522,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3084,10 +3084,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 98.49,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 10589248,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3099,10 +3099,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 79.55,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 16170668,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3114,10 +3114,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 52.92,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1020666,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3129,10 +3129,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 94.82,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1853545264,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3144,10 +3144,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 84.27,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1042335234,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3159,10 +3159,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 91.34,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 9809702176,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3174,10 +3174,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 71.74,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 724605062,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3189,10 +3189,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 79.67,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 127651384,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3204,10 +3204,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 95.66,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 7806316,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3219,10 +3219,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 82.94,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 26248082,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3234,10 +3234,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 52.04,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1329872,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3249,10 +3249,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 89.53,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 2491896834,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3264,10 +3264,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 85.69,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1451461404,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3279,10 +3279,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 86.75,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 13380649008,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3294,10 +3294,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 72.08,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 915423040,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3309,10 +3309,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 74.89,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 159287714,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3324,10 +3324,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 92.02,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 7034456,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3339,10 +3339,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 77.68,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 31345776,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3354,10 +3354,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 47.63,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1956420,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3369,10 +3369,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 85.61,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 842240186,
-    "saturationVolume": 1541423742
+    "saturationVolume": 1541423742,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -3384,10 +3384,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 89.87,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 461316624,
-    "saturationVolume": 1536176406
+    "saturationVolume": 1536176406,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -3399,10 +3399,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 91.01,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 627218326,
-    "saturationVolume": 1556790444
+    "saturationVolume": 1556790444,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -3414,10 +3414,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 91.18,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 600397766,
-    "saturationVolume": 1524378330
+    "saturationVolume": 1524378330,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -3429,10 +3429,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 87.97,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 805199188,
-    "saturationVolume": 1539363328
+    "saturationVolume": 1539363328,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3444,10 +3444,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 89.34,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 629703678,
-    "saturationVolume": 1423066956
+    "saturationVolume": 1423066956,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3459,10 +3459,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 86.98,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 354535034,
-    "saturationVolume": 1434214468
+    "saturationVolume": 1434214468,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -3474,10 +3474,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 86.19,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 551135310,
-    "saturationVolume": 1357882174
+    "saturationVolume": 1357882174,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3489,10 +3489,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 82.2,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1346021408,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3504,10 +3504,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 81.82,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1316406024,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3519,10 +3519,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 85.17,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1240902280,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3534,10 +3534,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 84.92,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1217123852,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3549,10 +3549,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 87.86,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1317377574,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3564,10 +3564,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 87.62,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1287635412,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3579,10 +3579,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 88,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1140649544,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3594,10 +3594,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 87.75,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1113886354,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -3609,10 +3609,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 84.78,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1176281012,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3624,10 +3624,10 @@
     "quarter": 1,
     "target": 91.8,
     "pctOnTime": 84.5,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1152361940,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3639,10 +3639,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 86.95,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1128799310,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3654,10 +3654,10 @@
     "quarter": 2,
     "target": 91.8,
     "pctOnTime": 86.72,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1106540318,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3669,10 +3669,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 76.91,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1101337396,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3684,10 +3684,10 @@
     "quarter": 3,
     "target": 91.8,
     "pctOnTime": 76.62,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1075783462,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3699,10 +3699,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 74.32,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 1003070230,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -3714,10 +3714,10 @@
     "quarter": 4,
     "target": 91.8,
     "pctOnTime": 74.15,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 982541250,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3729,10 +3729,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 47.48,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 26326922,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3744,10 +3744,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 98.5,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 66712537,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3759,10 +3759,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 84.35,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 31255954,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3774,10 +3774,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 52.61,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 10200156,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3789,10 +3789,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 98.57,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 53293799,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3804,10 +3804,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 84.91,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 31661868,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3819,10 +3819,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 65.42,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 14733588,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3834,10 +3834,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 98.28,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 41683610,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3849,10 +3849,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 88.27,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 30617307,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3864,10 +3864,10 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 57.45,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 20998554,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3879,10 +3879,10 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 98.72,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 46939247,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3894,10 +3894,10 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 90.51,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 32231836,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -3909,10 +3909,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 52.17,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 22232750,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3924,10 +3924,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 98.95,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 48056970,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3939,10 +3939,10 @@
     "quarter": 1,
     "target": 90,
     "pctOnTime": 87.78,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 33349878,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3954,10 +3954,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 61.66,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 11248822,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3969,10 +3969,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 98.95,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 46423738,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3984,10 +3984,10 @@
     "quarter": 2,
     "target": 90,
     "pctOnTime": 89.27,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 34131124,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -3999,10 +3999,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 57.28,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 12179256,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -4014,10 +4014,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 98.04,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 47895458,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -4029,10 +4029,10 @@
     "quarter": 3,
     "target": 90,
     "pctOnTime": 75.04,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 44750736,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -4044,10 +4044,10 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 57.52,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 6846900,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -4059,10 +4059,10 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 97.86,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 44628486,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -4074,9 +4074,9 @@
     "quarter": 4,
     "target": 90,
     "pctOnTime": 75.28,
-    "weights": "",
-    "deliveryDates": "",
     "volume": 45225336,
-    "saturationVolume": "missing"
+    "saturationVolume": "missing",
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   }
 ]

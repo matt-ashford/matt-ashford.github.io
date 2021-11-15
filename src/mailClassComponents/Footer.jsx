@@ -3,7 +3,7 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import { ReactComponent as Logo } from "../Design/prcIcon.svg";
 
 export const Footer = () => {
-  const linkText = "  feedback-data@prc.gov";
+  const linkText = " this link";
   return (
     <div id="homePageFooter">
       <div id="footerLogoAndName">
@@ -55,8 +55,8 @@ export const Footer = () => {
       <div id="footerDisclosureContainer">
         <div id="footerEmailContainer">
           <p id="footerEmailText">
-            send feedback about this dashboard to{" "}
-            <a href="mailto:feedback-data@prc.gov" target="_blank">
+            To submit feedback about this dashboard, please navigate to{" "}
+            <a href="https://www.prc.gov/contact" target="_blank">
               {/* feedback-data@prc.gov */}
               {linkText}
             </a>

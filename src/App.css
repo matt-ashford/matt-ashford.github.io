@@ -1,5 +1,6 @@
 :root {
   --shadedDiv: hsla(307, 0%, 80%, 0.4);
+  --darkerShading: hsla(254, 0%, 60%, 0.6);
 }
 .App {
   text-align: center;
@@ -153,8 +154,13 @@ body {
 
 #footerEmailContainer {
   margin-top: -50px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  margin-left: -50px;
   font-size: smaller;
+  /* background-color: var(--darkerShading); */
+  display: inline-block;
+  padding: 0 1em 0 1em;
+  /* border: 1px solid black; */
 }
 
 #footerEmailContainer a:link {
@@ -190,8 +196,12 @@ body {
 }
 
 #dashIntroPara {
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
+}
+
+#dashIntroPara :link {
+  text-decoration: underline;
 }
 
 .homePageTextIdentifier {
@@ -211,6 +221,7 @@ body {
   margin-top: 3px;
   margin-bottom: 3px;
   margin-left: 20px;
+  font-size: 18.5px;
 }
 
 /* PRODUCT GRAPH STUFF  */

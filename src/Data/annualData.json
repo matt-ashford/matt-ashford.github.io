@@ -15,7 +15,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 1
+    "originalOrder": 1,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -33,7 +35,9 @@
     "target": 96.5,
     "pctOnTime": 92.52,
     "pointsFromTarget": 3.98,
-    "originalOrder": 2
+    "originalOrder": 2,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -51,7 +55,9 @@
     "target": 95.25,
     "pctOnTime": 81.44,
     "pointsFromTarget": 13.81,
-    "originalOrder": 3
+    "originalOrder": 3,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -69,7 +75,9 @@
     "target": 96.8,
     "pctOnTime": 95.66,
     "pointsFromTarget": 1.14,
-    "originalOrder": 4
+    "originalOrder": 4,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -87,7 +95,9 @@
     "target": 96.5,
     "pctOnTime": 94.28,
     "pointsFromTarget": 2.22,
-    "originalOrder": 5
+    "originalOrder": 5,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -105,7 +115,9 @@
     "target": 95.25,
     "pctOnTime": 92.1,
     "pointsFromTarget": 3.15,
-    "originalOrder": 6
+    "originalOrder": 6,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -123,7 +135,9 @@
     "target": 96.8,
     "pctOnTime": 81.5,
     "pointsFromTarget": 15.3,
-    "originalOrder": 7
+    "originalOrder": 7,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -141,7 +155,9 @@
     "target": 96.5,
     "pctOnTime": 81.49,
     "pointsFromTarget": 15.01,
-    "originalOrder": 8
+    "originalOrder": 8,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -159,7 +175,9 @@
     "target": 95.25,
     "pctOnTime": 76.63,
     "pointsFromTarget": 18.62,
-    "originalOrder": 9
+    "originalOrder": 9,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -177,7 +195,9 @@
     "target": 96.8,
     "pctOnTime": 81.5,
     "pointsFromTarget": 15.3,
-    "originalOrder": 10
+    "originalOrder": 10,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -195,7 +215,9 @@
     "target": 96.5,
     "pctOnTime": 82.3,
     "pointsFromTarget": 14.15,
-    "originalOrder": 11
+    "originalOrder": 11,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -213,7 +235,9 @@
     "target": 95.25,
     "pctOnTime": 80.4,
     "pointsFromTarget": 14.84,
-    "originalOrder": 12
+    "originalOrder": 12,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -231,7 +255,9 @@
     "target": 96.8,
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 13
+    "originalOrder": 13,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -249,7 +275,9 @@
     "target": 96.5,
     "pctOnTime": 81.3,
     "pointsFromTarget": 15.22,
-    "originalOrder": 14
+    "originalOrder": 14,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -267,7 +295,9 @@
     "target": 95.25,
     "pctOnTime": 72.4,
     "pointsFromTarget": 22.84,
-    "originalOrder": 15
+    "originalOrder": 15,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -285,7 +315,9 @@
     "target": 96.8,
     "pctOnTime": 80.3,
     "pointsFromTarget": 16.48,
-    "originalOrder": 16
+    "originalOrder": 16,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -303,7 +335,9 @@
     "target": 96.5,
     "pctOnTime": 76.4,
     "pointsFromTarget": 20.07,
-    "originalOrder": 17
+    "originalOrder": 17,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -321,7 +355,9 @@
     "target": 95.25,
     "pctOnTime": 74.7,
     "pointsFromTarget": 20.51,
-    "originalOrder": 18
+    "originalOrder": 18,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -339,7 +375,9 @@
     "target": 96.8,
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 19
+    "originalOrder": 19,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -357,7 +395,9 @@
     "target": 96.5,
     "pctOnTime": 78.5,
     "pointsFromTarget": 18.02,
-    "originalOrder": 20
+    "originalOrder": 20,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -375,7 +415,9 @@
     "target": 95.25,
     "pctOnTime": 68.1,
     "pointsFromTarget": 27.11,
-    "originalOrder": 21
+    "originalOrder": 21,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -393,7 +435,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 22
+    "originalOrder": 22,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -411,7 +455,9 @@
     "target": "missing",
     "pctOnTime": 81.37,
     "pointsFromTarget": "missing",
-    "originalOrder": 23
+    "originalOrder": 23,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -429,7 +475,9 @@
     "target": "missing",
     "pctOnTime": 79.01,
     "pointsFromTarget": "missing",
-    "originalOrder": 24
+    "originalOrder": 24,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -447,7 +495,9 @@
     "target": 94,
     "pctOnTime": 79.73,
     "pointsFromTarget": 14.27,
-    "originalOrder": 25
+    "originalOrder": 25,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -465,7 +515,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 26
+    "originalOrder": 26,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -483,7 +535,9 @@
     "target": "missing",
     "pctOnTime": 66.8,
     "pointsFromTarget": "missing",
-    "originalOrder": 27
+    "originalOrder": 27,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -501,7 +555,9 @@
     "target": "missing",
     "pctOnTime": 63.63,
     "pointsFromTarget": "missing",
-    "originalOrder": 28
+    "originalOrder": 28,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -519,7 +575,9 @@
     "target": 94,
     "pctOnTime": 64.82,
     "pointsFromTarget": 29.18,
-    "originalOrder": 29
+    "originalOrder": 29,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "First Class Mail",
@@ -537,7 +595,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 30
+    "originalOrder": 30,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -555,7 +615,9 @@
     "target": 96.5,
     "pctOnTime": 92.03,
     "pointsFromTarget": 4.47,
-    "originalOrder": 31
+    "originalOrder": 31,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -573,7 +635,9 @@
     "target": 95.25,
     "pctOnTime": 79.67,
     "pointsFromTarget": 15.58,
-    "originalOrder": 32
+    "originalOrder": 32,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -591,7 +655,9 @@
     "target": 96.8,
     "pctOnTime": 94.95,
     "pointsFromTarget": 1.85,
-    "originalOrder": 33
+    "originalOrder": 33,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -609,7 +675,9 @@
     "target": 96.5,
     "pctOnTime": 93.03,
     "pointsFromTarget": 3.47,
-    "originalOrder": 34
+    "originalOrder": 34,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -627,7 +695,9 @@
     "target": 95.25,
     "pctOnTime": 90.15,
     "pointsFromTarget": 5.1,
-    "originalOrder": 35
+    "originalOrder": 35,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -645,7 +715,9 @@
     "target": 96.8,
     "pctOnTime": 80.32,
     "pointsFromTarget": 16.48,
-    "originalOrder": 36
+    "originalOrder": 36,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -663,7 +735,9 @@
     "target": 96.5,
     "pctOnTime": 77.52,
     "pointsFromTarget": 18.98,
-    "originalOrder": 37
+    "originalOrder": 37,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -681,7 +755,9 @@
     "target": 95.25,
     "pctOnTime": 73.35,
     "pointsFromTarget": 21.9,
-    "originalOrder": 38
+    "originalOrder": 38,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -699,7 +775,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 39
+    "originalOrder": 39,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -717,7 +795,9 @@
     "target": "missing",
     "pctOnTime": 76.41,
     "pointsFromTarget": "missing",
-    "originalOrder": 40
+    "originalOrder": 40,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -735,7 +815,9 @@
     "target": "missing",
     "pctOnTime": 69.97,
     "pointsFromTarget": "missing",
-    "originalOrder": 41
+    "originalOrder": 41,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -753,7 +835,9 @@
     "target": 94,
     "pctOnTime": 71.98,
     "pointsFromTarget": 22.02,
-    "originalOrder": 42
+    "originalOrder": 42,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -771,7 +855,9 @@
     "target": "missing",
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 43
+    "originalOrder": 43,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -789,7 +875,9 @@
     "target": "missing",
     "pctOnTime": 72.07,
     "pointsFromTarget": "missing",
-    "originalOrder": 44
+    "originalOrder": 44,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -807,7 +895,9 @@
     "target": "missing",
     "pctOnTime": 62.63,
     "pointsFromTarget": "missing",
-    "originalOrder": 45
+    "originalOrder": 45,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "First Class Mail",
@@ -825,7 +915,9 @@
     "target": 94,
     "pctOnTime": 66.18,
     "pointsFromTarget": 27.82,
-    "originalOrder": 46
+    "originalOrder": 46,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -843,7 +935,9 @@
     "target": 91.8,
     "pctOnTime": 93.08,
     "pointsFromTarget": -1.28,
-    "originalOrder": 47
+    "originalOrder": 47,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -861,7 +955,9 @@
     "target": 91.8,
     "pctOnTime": 89.36,
     "pointsFromTarget": 2.44,
-    "originalOrder": 48
+    "originalOrder": 48,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -879,7 +975,9 @@
     "target": 91.8,
     "pctOnTime": 89.96,
     "pointsFromTarget": 1.84,
-    "originalOrder": 49
+    "originalOrder": 49,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -897,7 +995,9 @@
     "target": 91.8,
     "pctOnTime": 89.25,
     "pointsFromTarget": 2.55,
-    "originalOrder": 50
+    "originalOrder": 50,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -915,7 +1015,9 @@
     "target": 91.8,
     "pctOnTime": 77.58,
     "pointsFromTarget": 14.22,
-    "originalOrder": 51
+    "originalOrder": 51,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -933,7 +1035,9 @@
     "target": 91.8,
     "pctOnTime": 75.66,
     "pointsFromTarget": 16.14,
-    "originalOrder": 52
+    "originalOrder": 52,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -951,7 +1055,9 @@
     "target": 91.8,
     "pctOnTime": 97.94,
     "pointsFromTarget": -6.14,
-    "originalOrder": 53
+    "originalOrder": 53,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -969,7 +1075,9 @@
     "target": 91.8,
     "pctOnTime": 75.42,
     "pointsFromTarget": 16.38,
-    "originalOrder": 54
+    "originalOrder": 54,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -987,7 +1095,9 @@
     "target": 91.8,
     "pctOnTime": 50.69,
     "pointsFromTarget": 41.11,
-    "originalOrder": 55
+    "originalOrder": 55,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Marketing Mail",
@@ -1005,7 +1115,9 @@
     "target": 91.8,
     "pctOnTime": 93.22,
     "pointsFromTarget": -1.42,
-    "originalOrder": 56
+    "originalOrder": 56,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1023,7 +1135,9 @@
     "target": 91.8,
     "pctOnTime": 87.53,
     "pointsFromTarget": 4.27,
-    "originalOrder": 57
+    "originalOrder": 57,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1041,7 +1155,9 @@
     "target": 91.8,
     "pctOnTime": 87.78,
     "pointsFromTarget": 4.02,
-    "originalOrder": 58
+    "originalOrder": 58,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1059,7 +1175,9 @@
     "target": 91.8,
     "pctOnTime": 89.78,
     "pointsFromTarget": 2.02,
-    "originalOrder": 59
+    "originalOrder": 59,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1077,7 +1195,9 @@
     "target": 91.8,
     "pctOnTime": 75.65,
     "pointsFromTarget": 16.15,
-    "originalOrder": 60
+    "originalOrder": 60,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1095,7 +1215,9 @@
     "target": 91.8,
     "pctOnTime": 76.99,
     "pointsFromTarget": 14.81,
-    "originalOrder": 61
+    "originalOrder": 61,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1113,7 +1235,9 @@
     "target": 91.8,
     "pctOnTime": 96.7,
     "pointsFromTarget": -4.9,
-    "originalOrder": 62
+    "originalOrder": 62,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1131,7 +1255,9 @@
     "target": 91.8,
     "pctOnTime": 80.18,
     "pointsFromTarget": 11.62,
-    "originalOrder": 63
+    "originalOrder": 63,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Marketing Mail",
@@ -1149,7 +1275,9 @@
     "target": 91.8,
     "pctOnTime": 50.56,
     "pointsFromTarget": 41.24,
-    "originalOrder": 64
+    "originalOrder": 64,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -1167,7 +1295,9 @@
     "target": 91.8,
     "pctOnTime": 85.72,
     "pointsFromTarget": 6.08,
-    "originalOrder": 65
+    "originalOrder": 65,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -1185,7 +1315,9 @@
     "target": 91.8,
     "pctOnTime": 85.44,
     "pointsFromTarget": 6.36,
-    "originalOrder": 66
+    "originalOrder": 66,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Periodicals",
@@ -1203,7 +1335,9 @@
     "target": 91.8,
     "pctOnTime": 80.93,
     "pointsFromTarget": 10.87,
-    "originalOrder": 67
+    "originalOrder": 67,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Periodicals",
@@ -1221,7 +1355,9 @@
     "target": 91.8,
     "pctOnTime": 80.69,
     "pointsFromTarget": 11.11,
-    "originalOrder": 68
+    "originalOrder": 68,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1239,7 +1375,9 @@
     "target": 90,
     "pctOnTime": 90.93,
     "pointsFromTarget": -0.93,
-    "originalOrder": 69
+    "originalOrder": 69,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1257,7 +1395,9 @@
     "target": 90,
     "pctOnTime": 99.77,
     "pointsFromTarget": -9.77,
-    "originalOrder": 70
+    "originalOrder": 70,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1275,7 +1415,9 @@
     "target": 90,
     "pctOnTime": "missing",
     "pointsFromTarget": "missing",
-    "originalOrder": 71
+    "originalOrder": 71,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1293,7 +1435,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 72
+    "originalOrder": 72,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1311,7 +1455,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 73
+    "originalOrder": 73,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1329,7 +1475,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 74
+    "originalOrder": 74,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1347,7 +1495,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 75
+    "originalOrder": 75,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1365,7 +1515,9 @@
     "target": 90,
     "pctOnTime": 99.43,
     "pointsFromTarget": -9.43,
-    "originalOrder": 76
+    "originalOrder": 76,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1383,7 +1535,9 @@
     "target": 90,
     "pctOnTime": 88.28,
     "pointsFromTarget": 1.72,
-    "originalOrder": 77
+    "originalOrder": 77,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1401,7 +1555,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 78
+    "originalOrder": 78,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1419,7 +1575,9 @@
     "target": 90,
     "pctOnTime": 99.66,
     "pointsFromTarget": -9.66,
-    "originalOrder": 79
+    "originalOrder": 79,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1437,7 +1595,9 @@
     "target": 90,
     "pctOnTime": 89.6,
     "pointsFromTarget": 0.4,
-    "originalOrder": 80
+    "originalOrder": 80,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1455,7 +1615,9 @@
     "target": 90,
     "pctOnTime": 99.8,
     "pointsFromTarget": -9.8,
-    "originalOrder": 81
+    "originalOrder": 81,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1473,7 +1635,9 @@
     "target": 90,
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 82
+    "originalOrder": 82,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1491,7 +1655,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 83
+    "originalOrder": 83,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1509,7 +1675,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 84
+    "originalOrder": 84,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1527,7 +1695,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 85
+    "originalOrder": 85,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1545,7 +1715,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 86
+    "originalOrder": 86,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1563,7 +1735,9 @@
     "target": 90,
     "pctOnTime": 93.1,
     "pointsFromTarget": -3.1,
-    "originalOrder": 87
+    "originalOrder": 87,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1581,7 +1755,9 @@
     "target": 90,
     "pctOnTime": 88.2,
     "pointsFromTarget": 1.8,
-    "originalOrder": 88
+    "originalOrder": 88,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1599,7 +1775,9 @@
     "target": "notRated",
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 89
+    "originalOrder": 89,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1617,7 +1795,9 @@
     "target": 90,
     "pctOnTime": 79.1,
     "pointsFromTarget": 10.9,
-    "originalOrder": 90
+    "originalOrder": 90,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1635,7 +1815,9 @@
     "target": 90,
     "pctOnTime": 93.73,
     "pointsFromTarget": -3.73,
-    "originalOrder": 91
+    "originalOrder": 91,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1653,7 +1835,9 @@
     "target": 90,
     "pctOnTime": 87.54,
     "pointsFromTarget": 2.46,
-    "originalOrder": 92
+    "originalOrder": 92,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1671,7 +1855,9 @@
     "target": 90,
     "pctOnTime": 84.48,
     "pointsFromTarget": 5.52,
-    "originalOrder": 93
+    "originalOrder": 93,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1689,7 +1875,9 @@
     "target": "missing",
     "pctOnTime": 0.82,
     "pointsFromTarget": "missing",
-    "originalOrder": 95
+    "originalOrder": 95,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1707,7 +1895,9 @@
     "target": "missing",
     "pctOnTime": 0.16,
     "pointsFromTarget": "missing",
-    "originalOrder": 96
+    "originalOrder": 96,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1725,7 +1915,9 @@
     "target": "missing",
     "pctOnTime": 0.03,
     "pointsFromTarget": "missing",
-    "originalOrder": 97
+    "originalOrder": 97,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1743,7 +1935,9 @@
     "target": 90,
     "pctOnTime": 97.95,
     "pointsFromTarget": -7.95,
-    "originalOrder": 98
+    "originalOrder": 98,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1761,7 +1955,9 @@
     "target": 90,
     "pctOnTime": 91.4,
     "pointsFromTarget": -1.4,
-    "originalOrder": 99
+    "originalOrder": 99,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1779,7 +1975,9 @@
     "target": 90,
     "pctOnTime": 91.28,
     "pointsFromTarget": -1.28,
-    "originalOrder": 100
+    "originalOrder": 100,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Special Services",
@@ -1797,7 +1995,9 @@
     "target": 90,
     "pctOnTime": 93.03,
     "pointsFromTarget": -3.03,
-    "originalOrder": 101
+    "originalOrder": 101,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1815,7 +2015,9 @@
     "target": 90,
     "pctOnTime": 87.57,
     "pointsFromTarget": 2.43,
-    "originalOrder": 102
+    "originalOrder": 102,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1833,7 +2035,9 @@
     "target": 90,
     "pctOnTime": 81.43,
     "pointsFromTarget": 8.57,
-    "originalOrder": 103
+    "originalOrder": 103,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1851,7 +2055,9 @@
     "target": "missing",
     "pctOnTime": 0.79,
     "pointsFromTarget": "missing",
-    "originalOrder": 105
+    "originalOrder": 105,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1869,7 +2075,9 @@
     "target": "missing",
     "pctOnTime": 0.19,
     "pointsFromTarget": "missing",
-    "originalOrder": 106
+    "originalOrder": 106,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1887,7 +2095,9 @@
     "target": "missing",
     "pctOnTime": 0.02,
     "pointsFromTarget": "missing",
-    "originalOrder": 107
+    "originalOrder": 107,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1905,7 +2115,9 @@
     "target": 90,
     "pctOnTime": 98.07,
     "pointsFromTarget": -8.07,
-    "originalOrder": 108
+    "originalOrder": 108,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1923,7 +2135,9 @@
     "target": 90,
     "pctOnTime": 84.05,
     "pointsFromTarget": 5.95,
-    "originalOrder": 109
+    "originalOrder": 109,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Special Services",
@@ -1941,7 +2155,9 @@
     "target": 90,
     "pctOnTime": 92,
     "pointsFromTarget": -2,
-    "originalOrder": 110
+    "originalOrder": 110,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -1959,7 +2175,9 @@
     "target": 90,
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 111
+    "originalOrder": 111,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -1977,7 +2195,9 @@
     "target": 90,
     "pctOnTime": 55.23,
     "pointsFromTarget": 34.77,
-    "originalOrder": 112
+    "originalOrder": 112,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -1995,7 +2215,9 @@
     "target": 90,
     "pctOnTime": 98.52,
     "pointsFromTarget": -8.52,
-    "originalOrder": 113
+    "originalOrder": 113,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -2013,7 +2235,9 @@
     "target": 90,
     "pctOnTime": 87.02,
     "pointsFromTarget": 2.98,
-    "originalOrder": 114
+    "originalOrder": 114,
+    "LibraryReferenceName": "USPS-FY19-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/111579"
   },
   {
     "class": "Package Services",
@@ -2031,7 +2255,9 @@
     "target": 90,
     "pctOnTime": "notRated",
     "pointsFromTarget": "missing",
-    "originalOrder": 115
+    "originalOrder": 115,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -2049,7 +2275,9 @@
     "target": 90,
     "pctOnTime": 55.73,
     "pointsFromTarget": 34.27,
-    "originalOrder": 116
+    "originalOrder": 116,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -2067,7 +2295,9 @@
     "target": 90,
     "pctOnTime": 98.46,
     "pointsFromTarget": -8.46,
-    "originalOrder": 117
+    "originalOrder": 117,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   },
   {
     "class": "Package Services",
@@ -2085,6 +2315,8 @@
     "target": 90,
     "pctOnTime": 80.89,
     "pointsFromTarget": 9.11,
-    "originalOrder": 118
+    "originalOrder": 118,
+    "LibraryReferenceName": "USPS-FY20-29",
+    "LibraryReferenceLink": "https://www.prc.gov/dockets/document/115696"
   }
 ]

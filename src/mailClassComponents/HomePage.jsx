@@ -44,7 +44,7 @@ export const HomePage = () => {
         <Grid item xs={9} className="homePageTextContainerLeft">
           <Typography variant="h2">Welcome</Typography>
           <Typography variant="h5">
-            To the Postal Regulatory Commission's Service Performance Dashboard
+            Postal Regulatory Commission Service Performance Dashboard BETA
           </Typography>
           <div id="topLogoContainer">
             <Logo />
@@ -58,11 +58,15 @@ export const HomePage = () => {
           <Typography variant="h6">
             {/* <p className="homePageTextIdentifier">TextID: Dashboard Intro</p> */}
             <p id="dashIntroPara">
-              &emsp; The Postal Regulatory Commission has launched an
-              interactive dashboard that provides visual data and interactive
-              tools to allow the public to view the service performance results
-              for many Market Dominant mail products (and product components)
-              delivered by the United States Postal Service (USPS).
+              The Postal Regulatory Commission has launched an interactive
+              dashboard that provides visual data and interactive tools to allow
+              the public to view the service performance results for many Market
+              Dominant mail products (and product components) delivered by the
+              United States Postal Service (USPS). To submit feedback on this
+              dashboard, please navigate to{" "}
+              <a href="https://www.prc.gov/contact" target="_blank">
+                this link.
+              </a>
             </p>
           </Typography>
         </Grid>
@@ -77,9 +81,9 @@ export const HomePage = () => {
               TextID: Dashboard Description
             </p> */}
             <p className="aboutDashPara">
-              &emsp; The Postal Service sets service standards for products and
-              product components, which identify the amount of time within which
-              a customer can ordinarily expect a mailpiece to be delivered
+              The Postal Service sets service standards for products and product
+              components, which identify the amount of time within which a
+              customer can ordinarily expect a mailpiece to be delivered
               (expected days-to-delivery). The Postal Service also sets service
               performance targets for products and product components, which
               impose a goal for the percentage of measured mailpieces that
@@ -91,13 +95,13 @@ export const HomePage = () => {
               performance targets established by USPS.
             </p>
             <p className="aboutDashPara">
-              &emsp;The public data contained in the dashboard are obtained from
-              the Commission’s Annual Compliance Review dockets and will change
+              The public data contained in the dashboard are obtained from the
+              Commission’s Annual Compliance Review dockets and will change
               throughout time as data are updated.
             </p>
             <p className="aboutDashPara">
-              &emsp; The Commission’s dashboard is interactive, allowing users
-              to explore and reveal service performance information by hovering
+              The Commission’s dashboard is interactive, allowing users to
+              explore and reveal service performance information by hovering
               over data points. When hovering over an element of visual data, a
               pop-up will provide additional information.{" "}
             </p>
