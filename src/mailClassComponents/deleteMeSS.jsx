@@ -50,30 +50,34 @@ export const MarketingMail = () => {
           </Grid>
           <Grid
             item
-            md={9}
-            xs={12}
-            style={{ maxWidth: "950px", minWidth: "800px" }}
+            lg={9}
+            md={12}
+            style={{ maxWidth: "900px", minWidth: "800px" }}
           >
             <Paper
-              className={classes.graphDivFirstClass}
+              className={classes.graphDiv}
+              // className={classes.graphDivFirstClass}
               elevation={3}
-              width={graphWidth}
+              // width={graphWidth}
             >
               <ClassLevelGraph
                 propData={mmAnnualData}
                 mailClass={"Marketing Mail"}
               />
             </Paper>
+
             <MailClassDef mailClass={"Marketing Mail"} />
           </Grid>
 
           <Grid item xs={3} float="left">
             <Grid container direction="column" spacing={3}>
               <Grid item lg={7} md={12}>
-                <Paper className={classes.paper}>
+                <Paper
+                  className={classes.paper}
+                  // className={classes.paperCountTable}
+                >
                   <div>
-                    {" "}
-                    <ProductCountTableData propData={mmAnnualData} />{" "}
+                    <ProductCountTableData propData={mmAnnualData} />
                   </div>
                 </Paper>
               </Grid>

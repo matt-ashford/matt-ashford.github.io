@@ -22,7 +22,7 @@ import Footer from "./Footer";
 
 import MailClassDef from "../DashComponents/MailClassDef";
 
-export const PackageServices = (props) => {
+export const PackageServices = () => {
   const classes = useStyles_ClassPage();
 
   const [selectedProductId, setSelectedProductId] = useState(0);
@@ -41,54 +41,56 @@ export const PackageServices = (props) => {
     <>
       <div className={classes.root} id="allMdContainer">
         <Grid container spacing={1} justifyContent="flex-start">
-          <Grid container>
-            <Grid item xs={12}>
-              <div className={classes.root} id="classTitleTextContainer">
-                <Typography variant="h4" component="h4" gutterBottom>
-                  Package Services Class-Level Data
-                </Typography>
-              </div>
-            </Grid>
-            <Grid item md={9} xs={12} style={{ maxWidth: 950 }}>
-              <Paper
-                className={classes.graphDiv}
-                elevation={3}
-                width={graphWidth}
-              >
-                <ClassLevelGraph
-                  propData={psAnnualData}
-                  mailClass={"Package Services"}
-                />
-              </Paper>
+          <Grid item xs={12}>
+            <div className={classes.root} id="classTitleTextContainer">
+              <Typography variant="h4" component="h4" gutterBottom>
+                Package Services Class-Level Data
+              </Typography>
+            </div>
+          </Grid>
+          <Grid
+            item
+            md={9}
+            xs={12}
+            style={{ maxWidth: "950px", minWidth: "800px" }}
+          >
+            <Paper
+              className={classes.graphDivFirstClass}
+              elevation={3}
+              width={graphWidth}
+            >
+              <ClassLevelGraph
+                propData={psAnnualData}
+                mailClass={"Package Services"}
+              />
+            </Paper>
+            <MailClassDef mailClass={"Package Services"} />
+          </Grid>
 
-              <MailClassDef mailClass={"Package Services"} />
-            </Grid>
-
-            <Grid item xs={3} float="left">
-              <Grid container direction="column" spacing={3}>
-                <Grid item lg={7} md={12}>
-                  <Paper className={classes.paper}>
-                    <div>
-                      {" "}
-                      <ProductCountTableData propData={psAnnualData} />{" "}
-                    </div>
-                  </Paper>
-                </Grid>
-                <Grid item xs={3}>
-                  <Paper
-                    className={classes.paper}
-                    style={{ backgroundColor: lightGrey }}
-                  >
-                    <VolumeChange propData={volDataPS} />
-                  </Paper>
-                  <div style={{ marginTop: "30%" }}></div>
-                  <Paper>
-                    <DownloadButton
-                      propData={psAnnualData}
-                      dataName={"Class-Level Data"}
-                    />
-                  </Paper>
-                </Grid>
+          <Grid item xs={3} float="left">
+            <Grid container direction="column" spacing={3}>
+              <Grid item lg={7} md={12}>
+                <Paper className={classes.paper}>
+                  <div>
+                    {" "}
+                    <ProductCountTableData propData={psAnnualData} />{" "}
+                  </div>
+                </Paper>
+              </Grid>
+              <Grid item xs={3}>
+                <Paper
+                  className={classes.paper}
+                  style={{ backgroundColor: lightGrey }}
+                >
+                  <VolumeChange propData={volDataPS} />
+                </Paper>
+                <div style={{ marginTop: "30%" }}></div>
+                <Paper>
+                  <DownloadButton
+                    propData={psAnnualData}
+                    dataName={"Class-Level Data"}
+                  />
+                </Paper>
               </Grid>
             </Grid>
           </Grid>
@@ -98,12 +100,13 @@ export const PackageServices = (props) => {
               propData={psAnnualData}
               selectedProductId={selectedProductId}
               changeProductSelected={changeProductSelected}
-              mailClass="Periodicals"
+              mailClass="Package Services"
             />
           </Paper>
         </Grid>
 
         <ProductPage selectedProductId={selectedProductId} />
+
         <div style={{ height: "150px" }}></div>
       </div>
       <Footer />

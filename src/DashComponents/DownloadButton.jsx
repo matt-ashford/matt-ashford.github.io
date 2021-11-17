@@ -53,15 +53,10 @@ export const DownloadButton = (props) => {
       rez.push(rezRow);
     }
 
-    console.log(rez);
     return rez;
   }
 
   const rezData = propData ? removeNeedlessCols(propData) : propData;
-
-  // console.log(removeNeedlessCols(propData));
-
-  // console.log(propData);
 
   const classes = useStyles();
 
