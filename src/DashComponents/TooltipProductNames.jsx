@@ -100,6 +100,7 @@ const tooltipStyles_ProductText = {
   fontSize: "14px",
   fontFamily: "roboto",
   boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
+  border: "1px solid black",
   color: "black",
   opacity: 0,
 };

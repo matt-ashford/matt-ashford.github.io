@@ -35,6 +35,7 @@ export const TooltipVolume = (props) => {
         paddingTop: "10px",
         borderRadius: "5px",
         backgroundColor: darkGrey,
+        border: "1px solid black",
         // backgroundColor: lightGrey,
         fontWeight: "bold",
         fontSize: "13px",
