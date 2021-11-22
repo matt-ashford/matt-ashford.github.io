@@ -38,7 +38,9 @@ export const ProductDropdown = (props) => {
     .filter((row) => row.fy === 2020)
     .filter((row) => !row.product.includes("Mixed"));
 
-  if (mailClass !== "First Class")
+  const isFirstClass = mailClass === "First Class Mail" ? true : false;
+
+  if (isFirstClass)
     productList = productList.filter((row) => row.productAbbrev !== "missing");
   else {
     productList = productList
@@ -63,10 +65,10 @@ export const ProductDropdown = (props) => {
     const productName = element.product;
     const deliverySpeed = element.deliverySpeed;
 
-    if ((mailClass !== "First Class") | (productName === "none")) {
+    if (isFirstClass | (productName === "none")) {
       return productName;
     }
-    if ((mailClass === "First Class") & (productName === "Flats")) {
+    if (isFirstClass & (productName === "Flats")) {
       return `${element.subProductName} (${deliverySpeed})`;
     } else {
       return `${productName} (${deliverySpeed})`;
@@ -84,7 +86,7 @@ export const ProductDropdown = (props) => {
       (row) => row.productId === selectedProductId
     )[0];
 
-    if (mailClass !== "First Class") {
+    if (isFirstClass) {
       return currentRow.product;
     } else {
       if (currentRow.product === "Flats") {

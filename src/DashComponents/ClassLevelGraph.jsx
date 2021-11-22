@@ -30,7 +30,7 @@ import { TooltipProductNames } from "./TooltipProductNames";
 export const ClassLevelGraph = (props) => {
   const { propData, mailClass } = props;
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState([]);
 
   const [xHover, setXHover] = useState(0);
   const [hoverId, setHoverId] = useState("");
@@ -51,15 +51,16 @@ export const ClassLevelGraph = (props) => {
   }, []);
 
   useEffect(() => {
+    setData(propData);
     barFunctions();
   }, [data, propData]);
 
-  const rotateProductNames = mailClass === "First Class" ? true : false;
+  const rotateProductNames = mailClass === "First Class Mail" ? true : false;
 
   const strippedMailClass = mailClass.replace(/\s+/g, "");
 
   const extraBarMarginLookup = {
-    FirstClass: 0,
+    FirstClassMail: 0,
     MarketingMail: 0,
     Periodicals: 90,
     SpecialServices: 40,

@@ -40,7 +40,13 @@ const useStyles = makeStyles({
 export const ProductCountTable = (props) => {
   const { propData } = props;
 
-  function productOrComponent(propData) {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    setData(propData);
+  }, [propData]);
+
+  function productOrComponent(data) {
     const secondRowValues = Object.values(propData[1]);
 
     const isFirstClass = secondRowValues.includes("First Class Mail");
@@ -54,8 +60,8 @@ export const ProductCountTable = (props) => {
 
   const classes = useStyles();
 
-  function createCellData(propData) {
-    let singleYear = propData
+  function createCellData(inputData) {
+    let singleYear = inputData
       .filter((row) => row.fy === 2020)
       .filter((row) => row.productAbbrev !== "missing");
 
@@ -84,7 +90,7 @@ export const ProductCountTable = (props) => {
   }
 
   function decreasedThisYear(productId) {
-    const thisProduct = propData.filter((row) => row.productId === productId);
+    const thisProduct = data.filter((row) => row.productId === productId);
 
     const thisYearScore = thisProduct.filter((row) => row.fy === 2020)[0]
       .pctOnTime;
@@ -94,7 +100,9 @@ export const ProductCountTable = (props) => {
     return thisYearScore < lastYearScore;
   }
 
-  const cellData = createCellData(propData);
+  const cellData = createCellData(data);
+
+  console.log("cellData", cellData);
 
   return (
     <>
@@ -108,7 +116,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          {productOrComponent(propData)} are Rated in this Class
+          {productOrComponent(data)} are Rated in this Class
         </Typography>
 
         <ProductCountBar
@@ -131,7 +139,7 @@ export const ProductCountTable = (props) => {
         </Typography>
         <br></br>
         <Typography align="left" className={classes.tableText}>
-          {productOrComponent(propData)} Missed their Targets
+          {productOrComponent(data)} Missed their Targets
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}
@@ -150,7 +158,7 @@ export const ProductCountTable = (props) => {
         <br></br>
 
         <Typography align="left" className={classes.tableText}>
-          {productOrComponent(propData)} Decreased in FY2020
+          {productOrComponent(data)} Decreased in FY2020
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}
@@ -165,16 +173,22 @@ export const ProductCountTable = (props) => {
 const ProductCountBar = (props) => {
   const { totalProductCount, thisCount, dataType } = props;
 
-  const [barData, setBarData] = useState(0);
+  // const [barData, setBarData] = useState(0);
+
+  const [countPctState, setCountPctState] = useState(
+    thisCount / totalProductCount
+  );
 
   useEffect(() => {
-    setBarData(thisCount);
+    // setBarData(thisCount);
+    setCountPctState(thisCount / totalProductCount);
     drawBar();
   }, [totalProductCount]);
 
   useEffect(() => {
     drawBar();
-  }, [totalProductCount, barData]);
+    // }, [totalProductCount, barData]);
+  }, []);
 
   const svgId = `${dataType}_svg`;
   const barId = `${dataType}_bar`;
@@ -187,13 +201,15 @@ const ProductCountBar = (props) => {
   const svgWidth = 300;
   const svgHeight = barHeight + 20;
 
-  const countPercentage = thisCount / totalProductCount;
+  // const countPctState = thisCount / totalProductCount;
 
-  const countPercentageDiff = 1 - countPercentage;
+  const countPercentageDiff = 1 - countPctState;
+
+  console.log("within cell", countPctState);
 
   const xScale = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
 
-  const fakeData = [{ value: countPercentage }];
+  const fakeData = [{ value: countPctState }];
 
   function drawBar() {
     svgSelection
@@ -201,7 +217,7 @@ const ProductCountBar = (props) => {
       .data(fakeData)
       .enter()
       .append("rect")
-      .attr("x", xScale(countPercentage))
+      .attr("x", xScale(countPctState))
       .attr("y", 15)
       .attr("height", 15)
       .attr("width", (d) => xScale(countPercentageDiff))
@@ -216,7 +232,7 @@ const ProductCountBar = (props) => {
       .attr("x", 0)
       .attr("y", 15)
       .attr("height", 15)
-      .attr("width", (d) => xScale(countPercentage))
+      .attr("width", (d) => xScale(countPctState))
       .attr("fill", "white")
       .attr("id", barId);
   }
@@ -224,7 +240,6 @@ const ProductCountBar = (props) => {
   return (
     <div
       style={{
-        //  marginBottom: "10px" ,
         paddingBottom: "5px",
       }}
     >

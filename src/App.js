@@ -11,6 +11,7 @@ import { PackageServices } from "./mailClassComponents/PackageServices";
 import { Periodicals } from "./mailClassComponents/Periodicals";
 import { HomePage } from "./mailClassComponents/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage";
+import { MailClassPage } from "./mailClassComponents/MailClassPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Drawer from "./Drawer";
@@ -37,12 +38,16 @@ function App() {
               <Route
                 exact
                 path="/first-class"
-                render={(props) => <FirstClass {...props} />}
+                // render={(props) => <FirstClass {...props} />}
+                render={() => (
+                  <MailClassPage mailClassName="First Class Mail" />
+                )}
               />
               <Route
                 exact
                 path="/marketing-mail"
-                render={(props) => <MarketingMail {...props} />}
+                // render={(props) => <MarketingMail {...props} />}
+                render={() => <MailClassPage mailClassName="Marketing Mail" />}
               />
               <Route
                 exact
