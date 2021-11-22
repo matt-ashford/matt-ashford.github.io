@@ -8,8 +8,6 @@ import MenuItem from "@material-ui/core/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import { Typography, Grid } from "@material-ui/core";
 
-import quarterlyData from "../Data/quarterlyData.json";
-
 const useStyles = makeStyles((theme) => ({
   selectDropdown: {
     marginRight: "5%",

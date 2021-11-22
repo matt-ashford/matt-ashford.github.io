@@ -3,7 +3,6 @@ import * as d3 from "d3";
 import {
   primaryColor,
   secondaryColor,
-  highlightColor,
   pinkHighlight,
   textNodeFont,
 } from "../Design/MyTheme";

@@ -1,6 +1,4 @@
 import Typography from "@material-ui/core/Typography";
-import * as d3 from "d3";
-// import { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Divider from "@material-ui/core/Divider";
 import Link from "@material-ui/core/Link";
@@ -11,33 +9,6 @@ import HomePageGlossary from "./HomePageGlossary";
 import Footer from "./Footer";
 
 export const HomePage = () => {
-  const svg = d3.select("#envelopeSvg");
-
-  const lineStyles = {
-    stroke: "black",
-    strokeWidth: "3",
-  };
-
-  const envelopeXStart = "100";
-
-  const envelopeWidth = `${parseInt(envelopeXStart) + 250}`;
-  const envelopeHeight = "150";
-
-  const midWayWidth = `${
-    (parseInt(envelopeXStart) + parseInt(envelopeWidth)) / 2
-  }`;
-
-  function expandSpeedLine(selectionId) {
-    const startPoint = parseInt(envelopeXStart) - 10;
-    d3.select(`#${selectionId}`)
-      .attr("x2", startPoint)
-      .attr("x1", startPoint)
-      .transition()
-      .duration(500)
-      .attr("x2", startPoint)
-      .attr("x1", 0);
-  }
-
   return (
     <>
       <Grid container spacing={4}>
@@ -64,7 +35,11 @@ export const HomePage = () => {
               Dominant mail products (and product components) delivered by the
               United States Postal Service (USPS). To submit feedback on this
               dashboard, please navigate to{" "}
-              <a href="https://www.prc.gov/contact" target="_blank">
+              <a
+                href="https://www.prc.gov/contact"
+                rel="noreferrer"
+                target="_blank"
+              >
                 this link.
               </a>
             </p>

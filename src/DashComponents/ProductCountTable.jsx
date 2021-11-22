@@ -163,8 +163,6 @@ export const ProductCountTable = (props) => {
 };
 
 const ProductCountBar = (props) => {
-  const { propData } = props;
-
   const { totalProductCount, thisCount, dataType } = props;
 
   const [barData, setBarData] = useState(0);

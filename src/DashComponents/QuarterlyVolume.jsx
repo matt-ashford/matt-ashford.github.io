@@ -11,11 +11,7 @@ import {
   interDotX,
 } from "../Design/graphDimensionsLine";
 
-import {
-  secondaryColor,
-  lineGraphTitleBlock,
-  primaryColor,
-} from "../Design/MyTheme";
+import { lineGraphTitleBlock, primaryColor } from "../Design/MyTheme";
 
 import { TooltipVolume } from "./TooltipVolume";
 
@@ -69,9 +65,6 @@ export const QuarterlyVolume = (props) => {
 
   const data2020 = propData.filter((row) => row.fy === 2020);
   const volumes2020 = data2020.map((row) => row.volume);
-
-  const tooltipWidth = 130;
-  const tooltipHeight = 50;
 
   var yScale = d3
     .scaleLinear()

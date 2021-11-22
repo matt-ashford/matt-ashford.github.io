@@ -1,4 +1,3 @@
-import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
 import { pinkHighlight, greenGrey, tooltipStyles } from "../Design/MyTheme";
@@ -7,7 +6,7 @@ const tooltipWidth = 130;
 const tooltipHeight = 30;
 const textMarginTop = 10;
 
-export const TooltipService_ClassLevel = (props) => {
+export const TooltipServiceProductLevel = (props) => {
   const { xHover, hoverId, isHovering, hoverHeight, propData, tooltipId } =
     props;
 
@@ -26,7 +25,7 @@ export const TooltipService_ClassLevel = (props) => {
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
-  const pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
+  const pointsFromTarget = calcPointsFromTargetQuarterly(hoverId, propData);
 
   const tooltipColor = assignColor(pointsFromTarget);
 
@@ -96,30 +95,34 @@ function tooltipYPoz(hoverHeight, tooltipId) {
 function tooltipTextChange(hoverId, propData) {
   let pointsFromTarget;
 
-  pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
+  pointsFromTarget = calcPointsFromTargetQuarterly(hoverId, propData);
 
   return `Points from Target: ${pointsFromTarget}`;
 }
 
-function calcPointsFromTargetAnnual(hoverId, propData) {
+function calcPointsFromTargetQuarterly(hoverId, propData) {
   const idList = hoverId.split("_");
-  const productId = parseInt(idList[1]);
-  const yearVal = parseInt(idList[2]);
+  const productId = parseInt(idList[0]);
+  const yearVal = parseInt(idList[1]);
+  const quarterVal = parseInt(idList[2]);
 
   let pointsFromTarget;
 
   if (propData) {
     let hoveredRow = propData
       .filter((row) => row.fy === yearVal)
-      .filter((row) => row.productId === productId);
+      .filter((row) => row.productId === productId)
+      .filter((row) => row.quarter === quarterVal);
 
     if (hoveredRow.length > 0) {
       hoveredRow = hoveredRow[0];
-      pointsFromTarget = hoveredRow.pointsFromTarget;
+
+      pointsFromTarget = hoveredRow.target - hoveredRow.pctOnTime;
+      pointsFromTarget = pointsFromTarget.toFixed(2);
     }
   }
 
   return pointsFromTarget;
 }
 
-export default TooltipService_ClassLevel;
+export default TooltipServiceProductLevel;

@@ -1,12 +1,7 @@
 import * as d3 from "d3";
 import { useEffect } from "react";
 
-import {
-  primaryColor,
-  secondaryColor,
-  highlightColor,
-  pinkHighlight,
-} from "../Design/MyTheme";
+import { primaryColor, secondaryColor, pinkHighlight } from "../Design/MyTheme";
 
 import {
   svgWidth,

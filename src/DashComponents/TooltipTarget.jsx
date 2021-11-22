@@ -4,7 +4,6 @@ import { darkGrey } from "../Design/MyTheme";
 
 const tooltipWidth = 130;
 const tooltipHeight = 15;
-const textMarginTop = 10;
 const tooltipColor = darkGrey;
 
 export const TooltipTarget = (props) => {
@@ -111,7 +110,6 @@ function removeOnMouseOut(isHoveringTarget, tooltipId) {
 
 export const tooltipStyles_Target = {
   position: "relative",
-  textAlign: "center",
   font: "12px sans-serif",
   textAlign: "center",
   verticalAlign: "middle",

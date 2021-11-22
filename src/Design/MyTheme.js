@@ -52,7 +52,6 @@ const myTheme = createTheme({
 
 export const tooltipStyles = {
   position: "relative",
-  textAlign: "center",
   font: "12px sans-serif",
   background: "lightsteelblue",
   textAlign: "center",

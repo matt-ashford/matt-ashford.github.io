@@ -140,10 +140,10 @@ function createTopLevelData() {
 
   let negativeChangeCount = 0;
   let positiveChangeCount = 0;
-  let rowCountsDEL = 0;
+  // let rowCountsDEL = 0;
 
   for (let i = 0; i < data2020.length; i++) {
-    rowCountsDEL++;
+    // rowCountsDEL++;
 
     const currentProductId = data2020[i].productId;
     const singleProduct = annualDataTopLevel.filter(

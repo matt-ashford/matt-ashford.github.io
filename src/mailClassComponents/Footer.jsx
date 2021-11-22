@@ -25,6 +25,7 @@ export const Footer = () => {
         <div id="iconAndLinkContainer">
           <div id="iconsContainer">
             <a
+              rel="noreferrer"
               target="_blank"
               href="https://www.linkedin.com/company/postal-regulatory-commission/mycompany/"
               className="iconLink"
@@ -33,6 +34,7 @@ export const Footer = () => {
             </a>
 
             <a
+              rel="noreferrer"
               target="_blank"
               href="https://twitter.com/postalregulator?lang=en.gov"
               className="iconLink"
@@ -41,6 +43,7 @@ export const Footer = () => {
             </a>
           </div>
           <a
+            rel="noreferrer"
             id="tweetPageLink"
             href="https://twitter.com/share?ref_src=twsrc%5Etfw"
             className="twitter-share-button"
@@ -56,7 +59,11 @@ export const Footer = () => {
         <div id="footerEmailContainer">
           <p id="footerEmailText">
             To submit feedback about this dashboard, please navigate to{" "}
-            <a href="https://www.prc.gov/contact" target="_blank">
+            <a
+              href="https://www.prc.gov/contact"
+              rel="noreferrer"
+              target="_blank"
+            >
               {/* feedback-data@prc.gov */}
               {linkText}
             </a>

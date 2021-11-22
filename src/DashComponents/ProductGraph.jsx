@@ -5,7 +5,6 @@ import GraphKey from "./GraphKey";
 import {
   primaryColor,
   secondaryColor,
-  highlightColor,
   pinkHighlight,
   textNodeFont,
 } from "../Design/MyTheme";
@@ -24,7 +23,7 @@ import {
   yScaleRev,
 } from "../Design/graphDimensions";
 
-import { TooltipService_ProductLevel } from "./TooltipService_ProductLevel";
+import { TooltipServiceProductLevel } from "./TooltipServiceProductLevel";
 import { TooltipTarget } from "./TooltipTarget";
 
 export const ProductGraph = (props) => {
@@ -300,8 +299,6 @@ export const ProductGraph = (props) => {
     const currentTargetId = currentTargetSelection._groups[0][0].id;
 
     const currentTargetX = currentTargetSelection._groups[0][0].x.baseVal.value;
-    const currentTargetHeight =
-      currentTargetSelection._groups[0][0].y.baseVal.value;
 
     setIsHoveringTarget(true);
     setHoverTargetId(currentTargetId);
@@ -330,7 +327,7 @@ export const ProductGraph = (props) => {
           bar2020={".bar2020Quarter"}
         />
       </div>
-      <TooltipService_ProductLevel
+      <TooltipServiceProductLevel
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}

@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import { darkGrey } from "../Design/MyTheme";
 
 const tooltipWidth = 130;
-const tooltipHeight = 25;
-const textMarginTop = 10;
 const tooltipColor = darkGrey;
 const tooltipId = "tooltipProductName";
 
@@ -90,7 +88,6 @@ const tooltipStyles_ProductText = {
   position: "relative",
   textAlign: "center",
   font: "12px sans-serif",
-  textAlign: "center",
   verticalAlign: "middle",
   paddingTop: "8px",
   paddingBottom: "8px",

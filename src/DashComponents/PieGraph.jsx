@@ -2,12 +2,7 @@ import * as d3 from "d3";
 import { useEffect } from "react";
 import PieGraphKey from "./PieGraphKey";
 
-import {
-  lightGrey,
-  liteBlue,
-  pinkHighlight,
-  greenGrey,
-} from "../Design/MyTheme";
+import { pinkHighlight, greenGrey } from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
   const { propData } = props;

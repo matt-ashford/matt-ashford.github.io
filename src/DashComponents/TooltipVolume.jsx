@@ -1,4 +1,3 @@
-import { makeStyles } from "@material-ui/core/styles";
 import * as d3 from "d3";
 import { useEffect } from "react";
 import { darkGrey } from "../Design/MyTheme";
@@ -15,17 +14,10 @@ export const TooltipVolume = (props) => {
 
   const tooltipText = tooltipTextChange(hoverId, propData);
 
-  const tooltipDiv = d3.select("#TooltipVolume");
-
-  // tooltipDiv.on("mouseover", () => {
-  //   tooltipDiv.style("opacity", 0).style("top", 1500);
-  // });
-
   return (
     <div
       style={{
         position: "relative",
-        textAlign: "center",
         width: tooltipWidth,
         height: tooltipHeight,
         font: "12px sans-serif",
@@ -36,7 +28,6 @@ export const TooltipVolume = (props) => {
         borderRadius: "5px",
         backgroundColor: darkGrey,
         border: "1px solid black",
-        // backgroundColor: lightGrey,
         fontWeight: "bold",
         fontSize: "13px",
       }}

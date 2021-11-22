@@ -56,6 +56,7 @@ export const ProductDef = (props) => {
           <a
             href="https://www.prc.gov/mail-classification-schedule"
             target="_blank"
+            rel="noreferrer"
             style={{ textDecoration: "underline" }}
           >
             Mail Classification Schedule

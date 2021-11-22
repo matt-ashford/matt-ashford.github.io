@@ -4,10 +4,8 @@ import GraphKey from "./GraphKey";
 import {
   primaryColor,
   secondaryColor,
-  highlightColor,
   textNodeFont,
   pinkHighlight,
-  lightGrey,
 } from "../Design/MyTheme";
 
 import {
@@ -26,7 +24,7 @@ import {
 
 import { TooltipTarget } from "./TooltipTarget";
 
-import { TooltipService_ClassLevel } from "./TooltipService_ClassLevel";
+import { TooltipServiceClassLevel } from "./TooltipServiceClassLevel";
 import { TooltipProductNames } from "./TooltipProductNames";
 
 export const ClassLevelGraph = (props) => {
@@ -55,10 +53,6 @@ export const ClassLevelGraph = (props) => {
   useEffect(() => {
     barFunctions();
   }, [data, propData]);
-
-  const dataProducts = propData.filter(
-    (row) => row.productAbbrev !== "missing"
-  );
 
   const rotateProductNames = mailClass === "First Class" ? true : false;
 
@@ -266,16 +260,6 @@ export const ClassLevelGraph = (props) => {
       .attr("font-family", textNodeFont)
       .attr("class", "graphicElement");
 
-    function rotateTextConditionally(dataset) {
-      const datasetLength = dataset.length;
-
-      if (datasetLength > 8) {
-        return "rotate(45)";
-      } else {
-        return "rotate(0)";
-      }
-    }
-
     function barXPoz(i) {
       return i * interBarMargin + barMarginLeft + extraBarMargin;
     }
@@ -310,8 +294,6 @@ export const ClassLevelGraph = (props) => {
     const currentTargetId = currentTargetSelection._groups[0][0].id;
 
     const currentTargetX = currentTargetSelection._groups[0][0].x.baseVal.value;
-    const currentTargetHeight =
-      currentTargetSelection._groups[0][0].y.baseVal.value;
 
     setIsHoveringTarget(true);
     setHoverTargetId(currentTargetId);
@@ -360,7 +342,7 @@ export const ClassLevelGraph = (props) => {
           bar2020={".bar2020"}
         />
       </div>
-      <TooltipService_ClassLevel
+      <TooltipServiceClassLevel
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}

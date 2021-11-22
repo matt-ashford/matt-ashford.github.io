@@ -11,7 +11,6 @@ import annualData from "../Data/annualData.json";
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
-import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
 
 import DownloadButton from "../DashComponents/DownloadButton";

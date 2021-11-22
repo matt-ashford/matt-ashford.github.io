@@ -1,7 +1,6 @@
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { withRouter, Route, Switch, BrowserRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 const DashContents = (props) => {
   const { history } = props;
