@@ -27,6 +27,15 @@ export const MailClassPage = (props) => {
   const classes = useStyles_ClassPage();
 
   const [selectedProductId, setSelectedProductId] = useState(0);
+
+  useEffect(() => {
+    setSelectedProductId(0);
+  }, []);
+
+  useEffect(() => {
+    setSelectedProductId(0);
+  }, [mailClassName]);
+
   //   const [annualDataClass, setAnnualDataClass] = useState(
   //     generateAnnualClassData(mailClassName)
   //   );
@@ -46,8 +55,6 @@ export const MailClassPage = (props) => {
   );
 
   const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
-
-  console.log("class component", annualDataClass);
 
   //   useEffect(() => {
   //     setAnnualDataClass(generateAnnualClassData(mailClassName));

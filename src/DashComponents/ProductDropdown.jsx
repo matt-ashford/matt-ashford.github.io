@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
@@ -30,15 +30,28 @@ export const ProductDropdown = (props) => {
   const { propData, selectedProductId, changeProductSelected, mailClass } =
     props;
 
+  const [dropdownData, setDropdownData] = useState([]);
+  const [mailClassState, setMailClassState] = useState("");
+
+  // useEffect(() => {
+  //   setDropdownData(propData);
+  //   setMailClassState(mailClass);
+  // }, []);
+
+  useEffect(() => {
+    setDropdownData(propData);
+    setMailClassState(mailClass);
+  }, [propData, mailClassState, selectedProductId]);
+
   const classes = useStyles();
 
   const inputRef = useRef();
 
-  let productList = propData
+  let productList = dropdownData
     .filter((row) => row.fy === 2020)
     .filter((row) => !row.product.includes("Mixed"));
 
-  const isFirstClass = mailClass === "First Class Mail" ? true : false;
+  const isFirstClass = mailClassState === "First Class Mail" ? true : false;
 
   if (isFirstClass)
     productList = productList.filter((row) => row.productAbbrev !== "missing");
@@ -55,7 +68,7 @@ export const ProductDropdown = (props) => {
   }
 
   productList.push({
-    class: mailClass,
+    class: mailClassState,
     fy: 2019,
     product: "none",
     productId: 0,
@@ -65,37 +78,40 @@ export const ProductDropdown = (props) => {
     const productName = element.product;
     const deliverySpeed = element.deliverySpeed;
 
-    if (isFirstClass | (productName === "none")) {
+    if (isFirstClass & (productName === "none")) {
       return productName;
     }
+
     if (isFirstClass & (productName === "Flats")) {
-      return `${element.subProductName} (${deliverySpeed})`;
-    } else {
       return `${productName} (${deliverySpeed})`;
-    }
-  }
-
-  function getNameFromId(selectedProductId) {
-    selectedProductId = parseInt(selectedProductId);
-
-    if (selectedProductId === 0) {
-      return "none";
-    }
-
-    const currentRow = propData.filter(
-      (row) => row.productId === selectedProductId
-    )[0];
-
-    if (isFirstClass) {
-      return currentRow.product;
+    } else if (isFirstClass) {
+      return `${productName} (${deliverySpeed})`;
     } else {
-      if (currentRow.product === "Flats") {
-        return `${currentRow.subProductName} (${currentRow.deliverySpeed})`;
-      } else {
-        return `${currentRow.product} (${currentRow.deliverySpeed})`;
-      }
+      return `${productName}`;
     }
   }
+
+  // function getNameFromId(selectedProductId) {
+  //   selectedProductId = parseInt(selectedProductId);
+
+  //   if (selectedProductId === 0) {
+  //     return "none";
+  //   }
+
+  //   const currentRow = dropdownData.filter(
+  //     (row) => row.productId === selectedProductId
+  //   )[0];
+
+  //   if (isFirstClass) {
+  //     return currentRow.product;
+  //   } else {
+  //     if (currentRow.product === "Flats") {
+  //       return `${currentRow.subProductName} (${currentRow.deliverySpeed})`;
+  //     } else {
+  //       return `${currentRow.product} (${currentRow.deliverySpeed})`;
+  //     }
+  //   }
+  // }
 
   const menuItems = productList.map((el, ind) => (
     <MenuItem
@@ -120,7 +136,8 @@ export const ProductDropdown = (props) => {
           </Grid>
           <Grid item xs={5}>
             <Select
-              value={getNameFromId(selectedProductId)}
+              // value={getNameFromId(selectedProductId)}
+              // value="hello"
               className={classes.selectDropdown}
             >
               {menuItems}
@@ -128,6 +145,7 @@ export const ProductDropdown = (props) => {
           </Grid>
         </Grid>
       </FormControl>
+      {/* <div>{getNameFromId(selectedProductId)}</div> */}
     </>
   );
 };

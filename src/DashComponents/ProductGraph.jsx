@@ -289,11 +289,13 @@ export const ProductGraph = (props) => {
 
   const firstRow = propData[0];
 
-  let productName = firstRow.product;
+  let productName = firstRow ? firstRow.product : "";
 
-  if (firstRow.class === "First Class Mail") {
+  if (firstRow & (firstRow.class === "First Class Mail")) {
     productName = `${firstRow.product} (${firstRow.deliverySpeed})`;
   }
+
+  console.log("product graph", propData);
 
   function mouseOverTriggersTarget(currentTargetSelection) {
     const currentTargetId = currentTargetSelection._groups[0][0].id;

@@ -44,7 +44,11 @@ export const ProductCountTable = (props) => {
 
   useEffect(() => {
     setData(propData);
-  }, [propData]);
+  }, [propData, data]);
+
+  useEffect(() => {
+    setData(propData);
+  }, []);
 
   function productOrComponent(data) {
     const secondRowValues = Object.values(propData[1]);
@@ -101,8 +105,6 @@ export const ProductCountTable = (props) => {
   }
 
   const cellData = createCellData(data);
-
-  console.log("cellData", cellData);
 
   return (
     <>
@@ -173,22 +175,23 @@ export const ProductCountTable = (props) => {
 const ProductCountBar = (props) => {
   const { totalProductCount, thisCount, dataType } = props;
 
-  // const [barData, setBarData] = useState(0);
-
-  const [countPctState, setCountPctState] = useState(
-    thisCount / totalProductCount
-  );
+  const [countPctState, setCountPctState] = useState(0);
 
   useEffect(() => {
-    // setBarData(thisCount);
     setCountPctState(thisCount / totalProductCount);
+    removeBars();
     drawBar();
-  }, [totalProductCount]);
+  }, [thisCount, totalProductCount, countPctState]);
 
   useEffect(() => {
+    removeBars();
     drawBar();
-    // }, [totalProductCount, barData]);
   }, []);
+
+  useEffect(() => {
+    removeBars();
+    drawBar();
+  });
 
   const svgId = `${dataType}_svg`;
   const barId = `${dataType}_bar`;
@@ -205,11 +208,11 @@ const ProductCountBar = (props) => {
 
   const countPercentageDiff = 1 - countPctState;
 
-  console.log("within cell", countPctState);
-
   const xScale = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
 
   const fakeData = [{ value: countPctState }];
+
+  drawBar();
 
   function drawBar() {
     svgSelection
@@ -222,6 +225,7 @@ const ProductCountBar = (props) => {
       .attr("height", 15)
       .attr("width", (d) => xScale(countPercentageDiff))
       .attr("fill", "hsla(239, 100%, 100%, 0.55)")
+      .attr("class", "countTableBar")
       .attr("id", otherBarId);
 
     svgSelection
@@ -234,9 +238,13 @@ const ProductCountBar = (props) => {
       .attr("height", 15)
       .attr("width", (d) => xScale(countPctState))
       .attr("fill", "white")
+      .attr("class", "countTableBar")
       .attr("id", barId);
   }
 
+  function removeBars() {
+    svgSelection.selectAll(".countTableBar").remove();
+  }
   return (
     <div
       style={{
