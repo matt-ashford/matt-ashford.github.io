@@ -291,7 +291,8 @@ export const ProductGraph = (props) => {
 
   let productName = firstRow ? firstRow.product : "";
 
-  if (firstRow & (firstRow.class === "First Class Mail")) {
+  // if (firstRow & (firstRow.class === "First Class Mail")) {
+  if (firstRow.class === "First Class Mail") {
     productName = `${firstRow.product} (${firstRow.deliverySpeed})`;
   }
 

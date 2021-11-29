@@ -67,7 +67,8 @@ export const ProductCountTable = (props) => {
   function createCellData(inputData) {
     let singleYear = inputData
       .filter((row) => row.fy === 2020)
-      .filter((row) => row.productAbbrev !== "missing");
+      .filter((row) => row.productAbbrev !== "missing")
+      .filter((row) => row.subProduct !== "yes");
 
     let productCount = singleYear.length;
 

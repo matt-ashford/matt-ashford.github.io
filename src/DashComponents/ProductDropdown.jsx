@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 
 import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
+import Paper from "@material-ui/core/Paper";
 
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -53,18 +54,20 @@ export const ProductDropdown = (props) => {
 
   const isFirstClass = mailClassState === "First Class Mail" ? true : false;
 
-  if (isFirstClass)
+  if (isFirstClass) {
     productList = productList.filter((row) => row.productAbbrev !== "missing");
-  else {
-    productList = productList
 
+    productList = productList
+      .filter((row) => ![7, 8, 9].includes(row.productId))
       .filter((row) => row.productId !== 61) //sp flats overnight
       .filter((row) => row.productId !== 1) //sp letters overnight
-      .filter((row) => ![10, 11, 12, 14, 15, 16].includes(row.productId)) //inbound/outbound deliv speeds
-      .filter((row) => ![7, 8, 9].includes(row.productId)) // flats product
+      .filter((row) => ![10, 11, 12, 14, 15, 16].includes(row.productId)); //inbound/outbound deliv speeds
+  } else {
+    productList = productList
       .filter(
         (row) => ![44, 45, 46, 48, 60, 50, 51, 52, 53].includes(row.productId)
-      ); // special services nonsense
+      ) // special services nonsense
+      .filter((row) => ![40].includes(row.productId)); //alaska bypass
   }
 
   productList.push({
@@ -77,41 +80,20 @@ export const ProductDropdown = (props) => {
   function returnFullProductName(element) {
     const productName = element.product;
     const deliverySpeed = element.deliverySpeed;
+    const subProductName = element.subProductName;
 
     if (isFirstClass & (productName === "none")) {
       return productName;
     }
 
     if (isFirstClass & (productName === "Flats")) {
-      return `${productName} (${deliverySpeed})`;
+      return `${subProductName} (${deliverySpeed})`;
     } else if (isFirstClass) {
       return `${productName} (${deliverySpeed})`;
     } else {
       return `${productName}`;
     }
   }
-
-  // function getNameFromId(selectedProductId) {
-  //   selectedProductId = parseInt(selectedProductId);
-
-  //   if (selectedProductId === 0) {
-  //     return "none";
-  //   }
-
-  //   const currentRow = dropdownData.filter(
-  //     (row) => row.productId === selectedProductId
-  //   )[0];
-
-  //   if (isFirstClass) {
-  //     return currentRow.product;
-  //   } else {
-  //     if (currentRow.product === "Flats") {
-  //       return `${currentRow.subProductName} (${currentRow.deliverySpeed})`;
-  //     } else {
-  //       return `${currentRow.product} (${currentRow.deliverySpeed})`;
-  //     }
-  //   }
-  // }
 
   const menuItems = productList.map((el, ind) => (
     <MenuItem
@@ -125,29 +107,37 @@ export const ProductDropdown = (props) => {
     </MenuItem>
   ));
 
-  return (
-    <>
-      <FormControl>
-        <Grid container>
-          <Grid item xs={6}>
-            <Typography className={classes.dropdownLabel}>
-              View Product-Level Data:
-            </Typography>
+  console.log("dropdown", propData);
+
+  function returnDropdown(propData) {
+    const mailClass = propData[0].class;
+
+    if (mailClass === "Special Services") {
+      return (
+        <div>
+          Quarterly Product-level data is not available for products within the
+          Special Services mail class
+        </div>
+      );
+    } else {
+      return (
+        <FormControl>
+          <Grid container>
+            <Grid item xs={6}>
+              <Typography className={classes.dropdownLabel}>
+                View Product-Level Data:
+              </Typography>
+            </Grid>
+            <Grid item xs={5}>
+              <Select className={classes.selectDropdown}>{menuItems}</Select>
+            </Grid>
           </Grid>
-          <Grid item xs={5}>
-            <Select
-              // value={getNameFromId(selectedProductId)}
-              // value="hello"
-              className={classes.selectDropdown}
-            >
-              {menuItems}
-            </Select>
-          </Grid>
-        </Grid>
-      </FormControl>
-      {/* <div>{getNameFromId(selectedProductId)}</div> */}
-    </>
-  );
+        </FormControl>
+      );
+    }
+  }
+
+  return <>{returnDropdown(propData)}</>;
 };
 
 export default ProductDropdown;

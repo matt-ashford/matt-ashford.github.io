@@ -8,6 +8,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import DownloadButton from "../DashComponents/DownloadButton";
 
 import ProductDef from "../DashComponents/ProductDef";
+import { useEffect, useState } from "react";
 
 export const ProductPage = (props) => {
   const { selectedProductId } = props;
@@ -58,6 +59,8 @@ const ProductPageFull = (props) => {
   const classes = useStyles();
 
   const { productId, productData } = props;
+
+  // console.log("from product page", productData);
 
   return (
     <>

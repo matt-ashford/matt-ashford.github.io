@@ -4,11 +4,7 @@ import { ThemeProvider } from "@material-ui/core/styles";
 import myTheme from "./Design/MyTheme";
 
 import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
-import { FirstClass } from "./mailClassComponents/FirstClass";
-import { MarketingMail } from "./mailClassComponents/MarketingMailClass";
-import { SpecialServices } from "./mailClassComponents/SpecialServices";
-import { PackageServices } from "./mailClassComponents/PackageServices";
-import { Periodicals } from "./mailClassComponents/Periodicals";
+
 import { HomePage } from "./mailClassComponents/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage";
 import { MailClassPage } from "./mailClassComponents/MailClassPage";
@@ -38,7 +34,6 @@ function App() {
               <Route
                 exact
                 path="/first-class"
-                // render={(props) => <FirstClass {...props} />}
                 render={() => (
                   <MailClassPage mailClassName="First Class Mail" />
                 )}
@@ -46,23 +41,26 @@ function App() {
               <Route
                 exact
                 path="/marketing-mail"
-                // render={(props) => <MarketingMail {...props} />}
                 render={() => <MailClassPage mailClassName="Marketing Mail" />}
               />
               <Route
                 exact
                 path="/periodicals"
-                render={(props) => <Periodicals {...props} />}
+                render={() => <MailClassPage mailClassName="Periodicals" />}
               />
               <Route
                 exact
                 path="/package-services"
-                render={(props) => <PackageServices {...props} />}
+                render={() => (
+                  <MailClassPage mailClassName="Package Services" />
+                )}
               />
               <Route
                 exact
                 path="/special-services"
-                render={(props) => <SpecialServices {...props} />}
+                render={() => (
+                  <MailClassPage mailClassName="Special Services" />
+                )}
               />
               <Route
                 exact

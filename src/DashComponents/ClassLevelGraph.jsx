@@ -93,7 +93,9 @@ export const ClassLevelGraph = (props) => {
   }
 
   function drawBars() {
-    const dataProducts = data.filter((row) => row.productAbbrev !== "missing");
+    const dataProducts = data
+      .filter((row) => row.productAbbrev !== "missing")
+      .filter((row) => row.subProduct !== "yes");
 
     const data2020 = dataProducts.filter((row) => row.fy === 2020);
     const data2019 = dataProducts.filter((row) => row.fy === 2019);
