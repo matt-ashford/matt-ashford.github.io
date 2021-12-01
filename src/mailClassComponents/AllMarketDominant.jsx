@@ -8,7 +8,7 @@ import PieGraph from "../DashComponents/PieGraph";
 import MDCompositeContainer from "./allMarketDominantComponents/MDCompositeContainer";
 import VolumeChange from "../DashComponents/VolumeChange";
 import volumeData from "../Data/volume.json";
-import ProductCountTableMD from "../DashComponents/ProductCountTableMD";
+import ProductCountTableMD from "./allMarketDominantComponents/ProductCountTableMD";
 import DownloadButton from "../DashComponents/DownloadButton";
 import annualDataFull from "../Data/annualData.json";
 import Footer from "./Footer";
@@ -48,6 +48,8 @@ export const AllMarketDominant = (props) => {
 
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
+  const countDataTopLevel = generateCountDataTopLevel();
+
   return (
     <>
       <div className={classes.root} id="allMdContainer">
@@ -67,7 +69,7 @@ export const AllMarketDominant = (props) => {
               style={{ marginLeft: "4%" }}
             >
               <Paper className={classes.paperTopRow}>
-                <PieGraph propData={pieData} />
+                <PieGraph countData={countDataTopLevel} propData={pieData} />
               </Paper>
             </Grid>
             <Grid item xs={5} className={classes.mdGraphContainer}>
@@ -90,7 +92,7 @@ export const AllMarketDominant = (props) => {
             <Grid item xs={8}>
               <Paper className={classes.paper}>
                 <div id="topEvents">
-                  <ProductCountTableMD />
+                  <ProductCountTableMD countData={countDataTopLevel} />
                 </div>
               </Paper>
             </Grid>
@@ -123,6 +125,78 @@ export const AllMarketDominant = (props) => {
   );
 };
 
+function generateCountDataTopLevel() {
+  const mailClasses = [
+    "First Class Mail",
+    "Marketing Mail",
+    "Periodicals",
+    "Package Services",
+    "Special Services",
+    "Grand Total",
+  ];
+
+  let rez = [];
+
+  mailClasses.forEach((mailClass) => {
+    rez.push(generateCountDataByClass(mailClass));
+  });
+  return rez;
+}
+
+function generateCountDataByClass(mailClass) {
+  let singleClassData = annualDataFull;
+
+  if (mailClass !== "Grand Total") {
+    singleClassData = annualDataFull.filter((row) => row.class === mailClass);
+  }
+
+  singleClassData = singleClassData
+    .filter((row) => row.productAbbrev !== "missing")
+    .filter((row) => row.subProduct === "no");
+
+  const singleYearData = singleClassData.filter((row) => row.fy === 2020);
+
+  const rez = {
+    mailClass: mailClass,
+    totalProducts: singleYearData.length,
+    productsMissedTarget: countMissedTargets(singleClassData),
+    negativeChange: countProductDecreases(singleClassData),
+  };
+
+  return rez;
+}
+
+function countMissedTargets(singleClassData) {
+  const missedProductCount = singleClassData
+    .filter((row) => row.fy === 2020)
+    .filter((row) => row.pointsFromTarget > 0).length;
+
+  return missedProductCount;
+}
+
+function countProductDecreases(singleClassData) {
+  let negativeChangeCount = 0;
+
+  const data2020 = singleClassData.filter((row) => row.fy === 2020);
+
+  for (let i = 0; i < data2020.length; i++) {
+    const currentProductId = data2020[i].productId;
+    const singleProduct = singleClassData.filter(
+      (row) => row.productId === currentProductId
+    );
+    const thisYearScore = singleProduct.filter((row) => row.fy === 2020)[0]
+      .pctOnTime;
+    const prevYearScore = singleProduct.filter((row) => row.fy === 2019)[0]
+      .pctOnTime;
+
+    if (thisYearScore < prevYearScore) {
+      negativeChangeCount++;
+    }
+  }
+
+  return negativeChangeCount;
+}
+
 function createTopLevelData() {
   const annualDataTopLevel = annualDataFull.filter(
     (row) => row.productAbbrev !== "missing"
@@ -140,11 +214,8 @@ function createTopLevelData() {
 
   let negativeChangeCount = 0;
   let positiveChangeCount = 0;
-  // let rowCountsDEL = 0;
 
   for (let i = 0; i < data2020.length; i++) {
-    // rowCountsDEL++;
-
     const currentProductId = data2020[i].productId;
     const singleProduct = annualDataTopLevel.filter(
       (row) => row.productId === currentProductId

@@ -5,15 +5,15 @@ import PieGraphKey from "./PieGraphKey";
 import { pinkHighlight, greenGrey } from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
-  const { propData } = props;
+  const { countData, propData } = props;
 
   useEffect(() => {
     drawPie();
   });
 
-  const dataSet = propData[0].dataSet;
+  const dataName = "pieGraph";
 
-  const svgId = `${dataSet}svg`;
+  const svgId = `${dataName}svg`;
 
   const svg = d3.select(`#${svgId}`);
 
@@ -23,44 +23,45 @@ export const PieGraph = (props) => {
   function drawPie() {
     const svg = d3.select(`#${svgId}`);
 
-    const dataset = propData.map((row) => row.value);
+    let grandTotalRow = countData.filter(
+      (row) => row.mailClass === "Grand Total"
+    );
+
+    grandTotalRow = grandTotalRow[0];
+
+    const missedCount = grandTotalRow.productsMissedTarget;
+
+    const exceededCount = grandTotalRow.totalProducts - missedCount;
+
+    const pieData = [missedCount, exceededCount];
 
     const outerRadius = svgWidth / 2;
     const innerRadius = svgWidth / 3;
     const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
-
-    const pie = d3.pie();
+    // const arc = d3.arc().innerRadius(20).outerRadius(100);
 
     const colorList = [pinkHighlight, greenGrey];
 
-    //Set up groups
-    const arcs = svg
-      .selectAll("g.arc")
-      .data(pie(dataset))
-      .enter()
-      .append("g")
-      .attr("class", "arc")
-      .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+    let g = svg.append("g").attr("transform", "translate(150,150)");
 
-    //Draw arc paths
+    // Creating Pie generator
+    const pie = d3.pie();
+
+    // Creating arc
+    // var arc = d3.arc().innerRadius(0).outerRadius(100);
+
+    // Grouping different arcs
+    var arcs = g.selectAll("arc").data(pie(pieData)).enter().append("g");
+
+    // Appending path
     arcs
       .append("path")
-      .attr("fill", function (d, i) {
+      .attr("fill", (data, i) => {
         return colorList[i];
       })
       .attr("d", arc);
-
-    //Labels
-    arcs
-      .append("text")
-      .attr("transform", function (d) {
-        return "translate(" + arc.centroid(d) + ")";
-      })
-      .attr("text-anchor", "middle")
-      .text(function (d) {
-        return d.value;
-      });
   }
+
   const colorObj = {
     pinkHighlight: pinkHighlight,
     greenGrey: greenGrey,
@@ -78,3 +79,32 @@ export const PieGraph = (props) => {
   );
 };
 export default PieGraph;
+
+//   //Set up groups
+//   const arcs = svg
+//   .selectAll("g.arc")
+//   .data(pie(propData))
+//   // .data(pie(pieData))
+//   .enter()
+//   .append("g")
+//   .attr("class", "arc")
+//   .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
+
+// //Draw arc paths
+// arcs
+//   .append("path")
+//   .attr("fill", function (d, i) {
+//     return colorList[i];
+//   })
+//   .attr("d", arc);
+
+// //Labels
+// arcs
+//   .append("text")
+//   .attr("transform", function (d) {
+//     return "translate(" + arc.centroid(d) + ")";
+//   })
+//   .attr("text-anchor", "middle")
+//   .text(function (d) {
+//     return d.value;
+//   });

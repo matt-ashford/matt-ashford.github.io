@@ -2,7 +2,6 @@ import { useRef, useEffect, useState } from "react";
 
 import Select from "@material-ui/core/Select";
 import FormControl from "@material-ui/core/FormControl";
-import Paper from "@material-ui/core/Paper";
 
 import MenuItem from "@material-ui/core/MenuItem";
 
@@ -106,8 +105,6 @@ export const ProductDropdown = (props) => {
       {returnFullProductName(el)}
     </MenuItem>
   ));
-
-  console.log("dropdown", propData);
 
   function returnDropdown(propData) {
     const mailClass = propData[0].class;

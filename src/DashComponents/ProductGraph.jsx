@@ -296,8 +296,6 @@ export const ProductGraph = (props) => {
     productName = `${firstRow.product} (${firstRow.deliverySpeed})`;
   }
 
-  console.log("product graph", propData);
-
   function mouseOverTriggersTarget(currentTargetSelection) {
     const currentTargetId = currentTargetSelection._groups[0][0].id;
 

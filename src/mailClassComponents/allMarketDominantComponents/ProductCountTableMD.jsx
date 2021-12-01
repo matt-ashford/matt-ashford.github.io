@@ -7,7 +7,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-import countData from "../Data/toLevelProductCounts.json";
+// import countData from "../../Data/toLevelProductCounts.json";
+// import annualData from "../../Data/annualData.json";
 
 const useStyles = makeStyles({
   table: {
@@ -24,7 +25,11 @@ const useStyles = makeStyles({
   },
 });
 
-export const ProductCountTableMD = () => {
+export const ProductCountTableMD = (props) => {
+  const { countData } = props;
+
+  // console.log("count table", countData);
+  // console.table(countData);
   const classes = useStyles();
 
   return (
