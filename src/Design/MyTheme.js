@@ -66,6 +66,30 @@ export const tooltipStyles = {
   boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
 };
 
+export const useStyles_MDPage = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+  paperTopRow: {
+    paddingBottom: "10%",
+    height: 400,
+    paddingTop: "2%",
+  },
+  mdGraphContainer: {
+    maxWidth: 600,
+    height: 500,
+    marginTop: "2%",
+  },
+  titleBox: {
+    marginTop: "1%",
+  },
+}));
+
 export const useStyles_ClassPage = makeStyles((theme) => ({
   root: {
     flexGrow: 1,

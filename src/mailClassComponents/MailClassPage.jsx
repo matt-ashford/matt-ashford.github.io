@@ -36,37 +36,15 @@ export const MailClassPage = (props) => {
     setSelectedProductId(0);
   }, [mailClassName]);
 
-  //   const [annualDataClass, setAnnualDataClass] = useState(
-  //     generateAnnualClassData(mailClassName)
-  //   );
-  //   const [volDataClass, setVolDataClass] = useState(
-  //     generateVolDataClass(mailClassName)
-  //   );
-
   function changeProductSelected(e) {
     setSelectedProductId(e.target.id);
   }
-
-  //   const annualDataClass = generateAnnualClassData(mailClassName);
-  //   const volDataClass = generateVolDataClass(mailClassName);
 
   const annualDataClass = annualData.filter(
     (row) => row.class === mailClassName
   );
 
   const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
-
-  //   useEffect(() => {
-  //     setAnnualDataClass(generateAnnualClassData(mailClassName));
-  //     setVolDataClass(generateVolDataClass(mailClassName));
-  //     console.log("use effect trigger", mailClassName);
-  //   }, [mailClassName]);
-
-  //   useEffect(() => {
-  //     setAnnualDataClass(generateAnnualClassData(mailClassName));
-  //     setVolDataClass(generateVolDataClass(mailClassName));
-  //     console.log("intro trigger", annualDataClass);
-  //   }, []);
 
   const isFirstClass = mailClassName === "First Class Mail" ? true : false;
 
