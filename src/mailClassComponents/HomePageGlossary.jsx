@@ -4,7 +4,10 @@ import Typography from "@material-ui/core/Typography";
 export const HomePageGlossary = () => {
   return (
     <Grid item xs={7}>
-      <Typography variant="h4"> Glossary </Typography>
+      <Typography variant="h4" className="homePageHeader">
+        {" "}
+        Glossary{" "}
+      </Typography>
       <Typography variant="h6">
         {/* <p className="homePageTextIdentifier">TextID: Glossary</p> */}
         <ul>

@@ -6,9 +6,13 @@ import Paper from "@material-ui/core/Paper";
 import { ReactComponent as Logo } from "../Design/prcIcon.svg";
 import DashContents from "./HomePageContents";
 import HomePageGlossary from "./HomePageGlossary";
+// import HomePageLettersGraph from "./HomePageLettersGraph";
+import HomePageLettersGraphCOPIED from "./HomePageLettersGraphCOPIED";
 import Footer from "./Footer";
+import annualData from "../Data/annualData.json";
 
 export const HomePage = () => {
+  const letterData = annualData.filter((row) => [3, 2].includes(row.productId));
   return (
     <>
       <Grid container spacing={4}>
@@ -49,7 +53,9 @@ export const HomePage = () => {
 
       <Grid container spacing={4} className="homePageTextContainerLeft">
         <Grid item xs={7}>
-          <Typography variant="h3">About this Dashboard</Typography>
+          <Typography variant="h3" className="homePageHeader">
+            About this Dashboard
+          </Typography>
           <br />
           <Typography variant="h6">
             {/* <p className="homePageTextIdentifier">
@@ -83,11 +89,21 @@ export const HomePage = () => {
           </Typography>
           <br />
           <br />
-          <Typography variant="h4">Dashboard Contents</Typography>
+          <Typography variant="h4" className="homePageHeader">
+            Dashboard Contents
+          </Typography>
 
           <DashContents />
         </Grid>
         <Grid item xs={3}>
+          {/* <HomePageLettersGraph propData={letterData} /> */}
+
+          <div id="homeLetterGraphContainer">
+            <HomePageLettersGraphCOPIED
+              propData={letterData}
+              mailClass="First Class Mail"
+            />
+          </div>
           <HomePageContactInfo />
         </Grid>
       </Grid>

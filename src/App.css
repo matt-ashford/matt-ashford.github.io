@@ -1,15 +1,21 @@
 :root {
   --shadedDiv: hsla(307, 0%, 80%, 0.4);
   --darkerShading: hsla(254, 0%, 60%, 0.6);
+  --siteHeaders: rgb(66, 90, 128);
 }
 .App {
   text-align: center;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Arvo&family=Exo:wght@200;500&family=Oxygen:wght@300&display=swap");
+
 body {
-  /* font-family: "Josefin Sans", cursive; */
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Sans", cursive;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: "Arvo", serif;
+  /* font-family: "Exo", sans-serif; */
+  /* font-family: "Oxygen", sans-serif; */
 }
 
 /* ALL MD STUFF   */
@@ -76,8 +82,14 @@ body {
   text-align: left;
 }
 
+.homePageHeader {
+  color: var(--siteHeaders);
+  font-family: "Arvo", serif;
+}
+
 .aboutDashPara {
   text-align: left;
+  font-family: "Arvo", serif;
 }
 
 #topLogoContainer {
@@ -103,6 +115,18 @@ body {
   /* z-index: 1; */
 }
 
+#homeLetterGraphContainer {
+  border: 1px solid black;
+  margin-bottom: 6em;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 2em;
+  width: 450px;
+}
+
+.homePageLetterGraphTitle {
+  font-size: 20px;
+}
 #linksContainer {
   padding: 2em;
 }

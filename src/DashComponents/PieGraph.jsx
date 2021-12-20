@@ -5,7 +5,7 @@ import PieGraphKey from "./PieGraphKey";
 import { pinkHighlight, greenGrey } from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
-  const { countData, propData } = props;
+  const { countData } = props;
 
   useEffect(() => {
     drawPie();
@@ -38,22 +38,15 @@ export const PieGraph = (props) => {
     const outerRadius = svgWidth / 2;
     const innerRadius = svgWidth / 3;
     const arc = d3.arc().innerRadius(innerRadius).outerRadius(outerRadius);
-    // const arc = d3.arc().innerRadius(20).outerRadius(100);
 
     const colorList = [pinkHighlight, greenGrey];
 
     let g = svg.append("g").attr("transform", "translate(150,150)");
 
-    // Creating Pie generator
     const pie = d3.pie();
 
-    // Creating arc
-    // var arc = d3.arc().innerRadius(0).outerRadius(100);
-
-    // Grouping different arcs
     var arcs = g.selectAll("arc").data(pie(pieData)).enter().append("g");
 
-    // Appending path
     arcs
       .append("path")
       .attr("fill", (data, i) => {
@@ -66,6 +59,7 @@ export const PieGraph = (props) => {
     pinkHighlight: pinkHighlight,
     greenGrey: greenGrey,
   };
+
   return (
     <>
       <div style={{ paddingRight: "28%" }}>
@@ -79,32 +73,3 @@ export const PieGraph = (props) => {
   );
 };
 export default PieGraph;
-
-//   //Set up groups
-//   const arcs = svg
-//   .selectAll("g.arc")
-//   .data(pie(propData))
-//   // .data(pie(pieData))
-//   .enter()
-//   .append("g")
-//   .attr("class", "arc")
-//   .attr("transform", "translate(" + outerRadius + "," + outerRadius + ")");
-
-// //Draw arc paths
-// arcs
-//   .append("path")
-//   .attr("fill", function (d, i) {
-//     return colorList[i];
-//   })
-//   .attr("d", arc);
-
-// //Labels
-// arcs
-//   .append("text")
-//   .attr("transform", function (d) {
-//     return "translate(" + arc.centroid(d) + ")";
-//   })
-//   .attr("text-anchor", "middle")
-//   .text(function (d) {
-//     return d.value;
-//   });
