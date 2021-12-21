@@ -17,7 +17,9 @@ export const HomePage = () => {
     <>
       <Grid container spacing={4}>
         <Grid item xs={9} className="homePageTextContainerLeft">
-          <Typography variant="h2">Welcome</Typography>
+          <Typography variant="h1" className="homePageHeader">
+            Welcome
+          </Typography>
           <Typography variant="h5">
             Postal Regulatory Commission Service Performance Dashboard BETA
           </Typography>
@@ -111,7 +113,9 @@ export const HomePage = () => {
       <Grid container spacing={4} className="homePageTextContainerLeft">
         <Grid item xs={5}>
           <Paper elevation={3} id="linksContainer">
-            <Typography variant="h5">Additional Resources</Typography>
+            <Typography variant="h5" className="homePageHeader">
+              Additional Resources
+            </Typography>
             <br />
             <Typography variant="h6">
               {/* <p className="homePageTextIdentifier">TextID: Links</p> */}

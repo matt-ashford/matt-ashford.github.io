@@ -10,7 +10,7 @@ export const HomePageGlossary = () => {
       </Typography>
       <Typography variant="h6">
         {/* <p className="homePageTextIdentifier">TextID: Glossary</p> */}
-        <ul>
+        <ul className="aboutDashPara">
           <li>
             <span className="undelineMe">Service performance score:</span> The
             percentage of measured mailpieces within each product or product

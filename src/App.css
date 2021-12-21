@@ -2,6 +2,8 @@
   --shadedDiv: hsla(307, 0%, 80%, 0.4);
   --darkerShading: hsla(254, 0%, 60%, 0.6);
   --siteHeaders: rgb(66, 90, 128);
+  --uglyFont: "Arvo", serif;
+  --niceFont: "Roboto", sans-serif;
 }
 .App {
   text-align: center;
@@ -11,7 +13,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Arvo&family=Exo:wght@200;500&family=Oxygen:wght@300&display=swap");
 
 body {
-  font-family: "Josefin Sans", cursive;
+  /* font-family: "Josefin Sans", cursive; */
   /* font-family: "Roboto", sans-serif; */
   font-family: "Arvo", serif;
   /* font-family: "Exo", sans-serif; */
@@ -84,12 +86,12 @@ body {
 
 .homePageHeader {
   color: var(--siteHeaders);
-  font-family: "Arvo", serif;
+  font-family: var(--uglyFont);
 }
 
 .aboutDashPara {
   text-align: left;
-  font-family: "Arvo", serif;
+  font-family: var(--uglyFont);
 }
 
 #topLogoContainer {
@@ -121,7 +123,7 @@ body {
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 2em;
-  width: 450px;
+  width: 475px;
 }
 
 .homePageLetterGraphTitle {
@@ -129,6 +131,10 @@ body {
 }
 #linksContainer {
   padding: 2em;
+}
+
+.homePageLink {
+  font-family: var(--uglyFont);
 }
 
 #footerLogoAndName {
@@ -147,6 +153,10 @@ body {
   filter: grayscale(100%);
   margin-top: -3em;
   /* background-color: green; */
+}
+
+#glossaryList {
+  font-weight: lighter;
 }
 
 .footerPRC {
@@ -221,7 +231,8 @@ body {
 
 #dashIntroPara {
   text-align: left;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  font-family: var(--uglyFont);
 }
 
 #dashIntroPara :link {
@@ -237,8 +248,9 @@ body {
 }
 
 #homePageContentsList {
-  width: 700px;
+  width: 800px;
   text-align: center;
+  font-family: var(--uglyFont);
 }
 
 .contentsListItem {
