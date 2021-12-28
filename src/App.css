@@ -14,8 +14,8 @@
 
 body {
   /* font-family: "Josefin Sans", cursive; */
-  /* font-family: "Roboto", sans-serif; */
-  font-family: "Arvo", serif;
+  font-family: "Roboto", sans-serif;
+  /* font-family: "Arvo", serif; */
   /* font-family: "Exo", sans-serif; */
   /* font-family: "Oxygen", sans-serif; */
 }
@@ -91,7 +91,7 @@ body {
 
 .aboutDashPara {
   text-align: left;
-  font-family: var(--uglyFont);
+  font-family: var(--niceFont);
 }
 
 #topLogoContainer {
