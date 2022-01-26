@@ -89,6 +89,16 @@ export const HomePage = () => {
               pop-up will provide additional information.{" "}
             </p>
           </Typography>
+
+          <br />
+          <br />
+          <div id="homePageGraphContainer">
+            <HomePageLettersGraphCOPIED
+              propData={letterData}
+              mailClass="First Class Mail"
+            />
+          </div>
+
           <br />
           <br />
           <Typography variant="h4" className="homePageHeader">
@@ -96,17 +106,6 @@ export const HomePage = () => {
           </Typography>
 
           <DashContents />
-        </Grid>
-        <Grid item xs={3}>
-          {/* <HomePageLettersGraph propData={letterData} /> */}
-
-          <div id="homeLetterGraphContainer">
-            <HomePageLettersGraphCOPIED
-              propData={letterData}
-              mailClass="First Class Mail"
-            />
-          </div>
-          <HomePageContactInfo />
         </Grid>
       </Grid>
 

@@ -310,7 +310,7 @@ export const HomePageLettersGraphCOPIED = (props) => {
 
   return (
     <>
-      <div>
+      <div id="homePageGraphInnerContainer">
         <h2
           fontFamily={textNodeFont}
           className="homePageLetterGraphTitle"
@@ -343,17 +343,17 @@ export const HomePageLettersGraphCOPIED = (props) => {
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}
-        hoverHeight={hoverHeight}
+        hoverHeight={hoverHeight + 75}
         propData={propData}
         tooltipId={"tooltipClassGraph"}
       />
-
+      {/* 
       <TooltipProductNames
         isHoveringProductText={isHoveringProductText}
         hoverTextId={hoverTextId}
         propData={propData}
         xHoverText={xHoverText}
-      />
+      /> */}
     </>
   );
 };

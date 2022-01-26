@@ -89,6 +89,20 @@ body {
   font-family: var(--uglyFont);
 }
 
+#homePageGraphContainer {
+  /* background-color: blueviolet; */
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+}
+
+#homePageGraphInnerContainer {
+  width: 525px;
+  border: 1px solid grey;
+  padding-left: 5%;
+  padding-bottom: 2%;
+}
+
 .aboutDashPara {
   text-align: left;
   font-family: var(--niceFont);
