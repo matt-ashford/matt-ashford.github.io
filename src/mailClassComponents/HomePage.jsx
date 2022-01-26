@@ -34,20 +34,25 @@ export const HomePage = () => {
         <Grid item xs={7}>
           <Typography variant="h6">
             {/* <p className="homePageTextIdentifier">TextID: Dashboard Intro</p> */}
-            <p id="dashIntroPara">
+            <p className="dashIntroPara">
               The Postal Regulatory Commission has launched an interactive
               dashboard that provides visual data and interactive tools to allow
               the public to view the service performance results for many Market
               Dominant mail products (and product components) delivered by the
-              United States Postal Service (USPS). To submit feedback on this
-              dashboard, please navigate to{" "}
-              <a
-                href="https://www.prc.gov/contact"
-                rel="noreferrer"
-                target="_blank"
-              >
-                this link.
-              </a>
+              United States Postal Service (USPS).
+            </p>
+
+            <p className="dashIntroPara">
+              The Commission is soliciting public comment on this dashboard via
+              PI2022-^ [fill in that TBD docket number and provide a link].
+              Comments are due ^[INSERT TBD DATE] and reply comments are due
+              ^[INSERT TBD DATE]. Please refer to Order No. ^[ fill in that TBD
+              Order number and provide a link]. A guide to using the Filing
+              Online system, including how to create an account, is available
+              at: https://www.prc.gov/how-to-participate. If you have questions
+              about how to use the Filing Online system, please contact the
+              dockets clerk by email at dockets@prc.gov or telephone at (202)
+              789-6847.
             </p>
           </Typography>
         </Grid>
