@@ -54,7 +54,6 @@ export const Footer = () => {
           </a>
         </div>
       </div>
-
       <div id="footerDisclosureContainer">
         <div id="footerEmailContainer">
           <br />
@@ -90,6 +89,7 @@ export const Footer = () => {
           change or alter the Commission’s official ACD determinations.{" "}
         </p>
       </div>
+      {/* extraneous comment */}
     </div>
   );
 };
