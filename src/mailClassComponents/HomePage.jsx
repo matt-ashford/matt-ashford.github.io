@@ -54,9 +54,52 @@ export const HomePage = () => {
                 target="_blank"
                 href="https://www.prc.gov/docs/120/120596/FY21.ACR.pdf"
               >
-                Annual Compliance Determination
+                <u>Annual Compliance Determination</u>
               </a>
               &nbsp;for 2021, which contains data through fiscal year 2021.
+            </p>
+            <p className="dashIntroPara">
+              Since the Commission published the beta dashboard and received
+              comments on it, Congress passed the Postal Service Reform Act of
+              2022, and the President signed the reform bill into law on April
+              6, 2022. <i>See.&nbsp;</i>
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.congress.gov/bill/117th-congress/house-bill/3076/text?q=%7B%22search%22%3A%5B%22postal+service+reform+act%22%2C%22postal%22%2C%22service%22%2C%22reform%22%2C%22act%22%5D%7D&r=1&s=1"
+              >
+                <u>
+                  {" "}
+                  Postal Service Reform Act, Pub. L. 117-108, 136 Stat. 1127
+                  (April 6, 2022)
+                </u>
+              </a>
+              . The reform law requires the Postal Service to develop its own
+              public, interactive, service performance dashboard that, among
+              other features, presents data in a manner that is searchable and
+              can be downloaded in bulk by any person or entity. The law tasks
+              the Commission with:
+              <ul>
+                <li>
+                  establishing requirements for publication of service
+                  performance information on the Postal Service's dashboard (in
+                  terms of organizational structure, geographic coverage,
+                  granularity, and temporal coverage),
+                </li>
+                <li>
+                  recommending any changes to the Postal Service's measurement
+                  systems that the Commission deems necessary for measurement
+                  and publication of service performance information on the
+                  dashboard, and
+                </li>
+                <li>
+                  regularly consulting with the Postal Service on appropriate
+                  features and information for the Postal Service's dashboard.
+                </li>
+              </ul>
+              The Commission is therefore pausing any updates of the
+              Commission's beta dashboard to ensure that any data visualizations
+              add value and are complementary.
             </p>
           </Typography>
         </Grid>
