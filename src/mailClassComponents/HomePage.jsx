@@ -43,20 +43,20 @@ export const HomePage = () => {
             </p>
 
             <p className="dashIntroPara">
-              The Commission is soliciting public comment on this dashboard via
-              Docket No. PI2022-2. Comments are due March 18, 2022 and reply
-              comments are due April 7, 2022. A guide to using the Filing Online
-              system, including how to create an account, is available at:
+              Earlier this year, the Commission closed the period for public
+              comments on the beta version of its service performance dashboard.
+              The Commission is currently reviewing the submitted public
+              comments on the beta dashboard as well as the Postal Service’s
+              response to those comments. In the meantime, the Commission has
+              published the&nbsp;
               <a
                 rel="noreferrer"
                 target="_blank"
-                href="https://www.prc.gov/how-to-participate"
+                href="https://www.prc.gov/docs/120/120596/FY21.ACR.pdf"
               >
-                https://www.prc.gov/how-to-participate
+                Annual Compliance Determination
               </a>
-              . If you have questions about how to use the Filing Online system,
-              please contact the dockets clerk by email at dockets@prc.gov or
-              telephone at (202) 789-6847.
+              &nbsp;for 2021, which contains data through fiscal year 2021.
             </p>
           </Typography>
         </Grid>
