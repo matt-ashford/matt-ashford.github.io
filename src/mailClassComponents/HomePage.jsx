@@ -85,13 +85,13 @@ export const HomePage = () => {
                   establishing requirements for publication of service
                   performance information on the Postal Service's dashboard (in
                   terms of organizational structure, geographic coverage,
-                  granularity, and temporal coverage),
+                  granularity, and temporal coverage);
                 </li>
                 <li>
                   recommending any changes to the Postal Service's measurement
                   systems that the Commission deems necessary for measurement
                   and publication of service performance information on the
-                  dashboard, and
+                  dashboard; and
                 </li>
                 <li>
                   regularly consulting with the Postal Service on appropriate
