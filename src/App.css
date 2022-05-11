@@ -108,6 +108,10 @@ body {
   font-family: var(--niceFont);
 }
 
+.strikeThrough{
+  color:red
+}
+
 #topLogoContainer {
   transform: scale(0.6);
   margin-bottom: -10em;
