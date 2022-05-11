@@ -62,7 +62,7 @@ export const HomePage = () => {
               Since the Commission published the beta dashboard and received
               comments on it, Congress passed the Postal Service Reform Act of
               2022, and the President signed the reform bill into law on April
-              6, 2022. <i>See.&nbsp;</i>
+              6, 2022. <i>See&nbsp;</i>
               <a
                 rel="noreferrer"
                 target="_blank"
@@ -71,8 +71,9 @@ export const HomePage = () => {
                 <u>
                   {" "}
                   Postal Service Reform Act, Pub. L. 117-108, 136 Stat. 1127
-                  (April 6, 2022)
+                  (April 6, 2022
                 </u>
+                )
               </a>
               . The reform law requires the Postal Service to develop its own
               public, interactive, service performance dashboard that, among
