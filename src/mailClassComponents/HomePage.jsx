@@ -101,25 +101,6 @@ export const HomePage = () => {
               Commission's beta dashboard to ensure that any data visualizations
               add value and are complementary.
             </p>
-            <p className="dashIntroPara">
-              <del className="strikeThrough">
-                The Commission is soliciting public comment on this dashboard
-                via Docket No. PI2022-2. Comments are due March 18, 2022 and
-                reply comments are due April 7, 2022. A guide to using the
-                Filing Online system, including how to create an account, is
-                available at:
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  href="https://www.prc.gov/how-to-participate"
-                >
-                  https://www.prc.gov/how-to-participate
-                </a>
-                . If you have questions about how to use the Filing Online
-                system, please contact the dockets clerk by email at
-                dockets@prc.gov or telephone at (202) 789-6847.
-              </del>
-            </p>
           </Typography>
         </Grid>
       </Grid>
