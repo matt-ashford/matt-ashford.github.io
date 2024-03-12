@@ -21,6 +21,7 @@ export const AxisBottom = () => {
       .domain([0, 100])
       .range([marginLeft, svgWidth - marginRight]);
     //   .range([10, 390]);
+    //   .range([10, 390]);
 
     svg.append("g").call(d3.axisBottom(xScale).ticks(5));
 
