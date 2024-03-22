@@ -1,1 +1,258 @@
-[{"product":"Letters","delivery_speed":null,"mail_class":"Marketing Mail","product_id":8,"product_abbrev":null,"examples":"letter advertisments and election mail"},{"product":"Flats","delivery_speed":null,"mail_class":"Marketing Mail","product_id":10,"product_abbrev":null,"examples":"catalogs and coupon books"},{"product":"In-County","delivery_speed":null,"mail_class":"Periodicals","product_id":13,"product_abbrev":null,"examples":"magazines and newspapers"},{"product":"Outside County","delivery_speed":null,"mail_class":"Periodicals","product_id":15,"product_abbrev":null,"examples":"magazines and newspapers"},{"product":"Flats","delivery_speed":"Overnight","mail_class":"First Class","product_id":78,"product_abbrev":null,"examples":null},{"product":"Carrier Route","delivery_speed":null,"mail_class":"Marketing Mail","product_id":30,"product_abbrev":null,"examples":null},{"product":"Flats","delivery_speed":"Two-Day","mail_class":"First Class","product_id":60,"product_abbrev":"Flats 2 Day","examples":null},{"product":"Flats","delivery_speed":"Three-To-Five-Day","mail_class":"First Class","product_id":91,"product_abbrev":"Flats  3-5 Day","examples":null},{"product":"Presort Flats","delivery_speed":"Overnight","mail_class":"First Class","product_id":92,"product_abbrev":"Prst Flats Overnight","examples":null},{"product":"Presort Flats","delivery_speed":"Two-Day","mail_class":"First Class","product_id":93,"product_abbrev":"Prst Flats 2 Day","examples":null},{"product":"Presort Flats","delivery_speed":"Three-To-Five-Day","mail_class":"First Class","product_id":94,"product_abbrev":"Prst Flats 3-5 Day","examples":null},{"product":"Single-Piece Flats","delivery_speed":"Two-Day","mail_class":"First Class","product_id":96,"product_abbrev":"SP Flats 2 Day","examples":null},{"product":"Single-Piece Flats","delivery_speed":"Three-To-Five-Day","mail_class":"First Class","product_id":97,"product_abbrev":"SP Flats 3-5 Day","examples":null},{"product":"Presort Letters\/Postcards","delivery_speed":"Overnight","mail_class":"First Class","product_id":73,"product_abbrev":"Prst Overnight","examples":null},{"product":"High Density and Saturation Letters","delivery_speed":null,"mail_class":"Marketing Mail","product_id":40,"product_abbrev":"HDSL","examples":"letter advertisments and election mail"},{"product":"Presort Letters\/Postcards","delivery_speed":"Two-Day","mail_class":"First Class","product_id":37,"product_abbrev":"Prst 2 Day","examples":null},{"product":"Presort Letters\/Postcards","delivery_speed":"Three-To-Five-Day","mail_class":"First Class","product_id":98,"product_abbrev":"Prst 3-5 Day","examples":null},{"product":"Single-Piece Letters\/Postcards","delivery_speed":"Three-To-Five-Day","mail_class":"First Class","product_id":99,"product_abbrev":"SPLC 3-5 Day","examples":null},{"product":"Parcels","delivery_speed":null,"mail_class":"Marketing Mail","product_id":48,"product_abbrev":null,"examples":null},{"product":"High Density and Saturation Flats\/Parcels","delivery_speed":null,"mail_class":"Marketing Mail","product_id":52,"product_abbrev":"HDSF","examples":"catalogs and coupon books"},{"product":"Single-Piece Letters\/Postcards","delivery_speed":"Two-Day","mail_class":"First Class","product_id":59,"product_abbrev":"SPLC 2-Day","examples":null},{"product":"EDDM-Retail","delivery_speed":null,"mail_class":"Marketing Mail","product_id":82,"product_abbrev":null,"examples":null},{"product":"Media Mail\/Library Mail","delivery_speed":null,"mail_class":"Package Services","product_id":88,"product_abbrev":null,"examples":null},{"product":"Bound Printed Matter Flats","delivery_speed":null,"mail_class":"Package Services","product_id":89,"product_abbrev":null,"examples":null},{"product":"Bound Printed Matter Parcels","delivery_speed":null,"mail_class":"Package Services","product_id":90,"product_abbrev":null,"examples":null},{"product":"Outbound Single-Piece First-Class Mail International","delivery_speed":null,"mail_class":"First Class","product_id":100,"product_abbrev":null,"examples":null},{"product":"Inbound Single-Piece First-Class Mail International","delivery_speed":null,"mail_class":"First Class","product_id":101,"product_abbrev":null,"examples":null},{"product":"Ancillary Services","delivery_speed":null,"mail_class":"Special Services","product_id":103,"product_abbrev":null,"examples":null},{"product":"International Ancillary Services","delivery_speed":null,"mail_class":"Special Services","product_id":104,"product_abbrev":null,"examples":null},{"product":"Money Orders","delivery_speed":null,"mail_class":"Special Services","product_id":105,"product_abbrev":null,"examples":null},{"product":"Post Office Box Service","delivery_speed":null,"mail_class":"Special Services","product_id":106,"product_abbrev":null,"examples":null},{"product":"Stamp Fulfillment Services","delivery_speed":null,"mail_class":"Special Services","product_id":107,"product_abbrev":null,"examples":null}]
+[
+  {
+    "product": "Letters",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 8,
+    "product_abbrev": null,
+    "examples": "letter advertisments and election mail"
+  },
+  {
+    "product": "Flats",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 10,
+    "product_abbrev": null,
+    "examples": "catalogs and coupon books"
+  },
+  {
+    "product": "In-County",
+    "delivery_speed": null,
+    "mail_class": "Periodicals",
+    "product_id": 13,
+    "product_abbrev": null,
+    "examples": "magazines and newspapers"
+  },
+  {
+    "product": "Outside County",
+    "delivery_speed": null,
+    "mail_class": "Periodicals",
+    "product_id": 15,
+    "product_abbrev": null,
+    "examples": "magazines and newspapers"
+  },
+  {
+    "product": "Flats",
+    "delivery_speed": "Overnight",
+    "mail_class": "First Class",
+    "product_id": 78,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Carrier Route",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 30,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Flats",
+    "delivery_speed": "Two-Day",
+    "mail_class": "First Class",
+    "product_id": 60,
+    "product_abbrev": "Flats 2 Day",
+    "examples": null
+  },
+  {
+    "product": "Flats",
+    "delivery_speed": "Three-To-Five-Day",
+    "mail_class": "First Class",
+    "product_id": 91,
+    "product_abbrev": "Flats  3-5 Day",
+    "examples": null
+  },
+  {
+    "product": "Presort Flats",
+    "delivery_speed": "Overnight",
+    "mail_class": "First Class",
+    "product_id": 92,
+    "product_abbrev": "Prst Flats Overnight",
+    "examples": null
+  },
+  {
+    "product": "Presort Flats",
+    "delivery_speed": "Two-Day",
+    "mail_class": "First Class",
+    "product_id": 93,
+    "product_abbrev": "Prst Flats 2 Day",
+    "examples": null
+  },
+  {
+    "product": "Presort Flats",
+    "delivery_speed": "Three-To-Five-Day",
+    "mail_class": "First Class",
+    "product_id": 94,
+    "product_abbrev": "Prst Flats 3-5 Day",
+    "examples": null
+  },
+  {
+    "product": "Single-Piece Flats",
+    "delivery_speed": "Two-Day",
+    "mail_class": "First Class",
+    "product_id": 96,
+    "product_abbrev": "SP Flats 2 Day",
+    "examples": null
+  },
+  {
+    "product": "Single-Piece Flats",
+    "delivery_speed": "Three-To-Five-Day",
+    "mail_class": "First Class",
+    "product_id": 97,
+    "product_abbrev": "SP Flats 3-5 Day",
+    "examples": null
+  },
+  {
+    "product": "Presort Letters/Postcards",
+    "delivery_speed": "Overnight",
+    "mail_class": "First Class",
+    "product_id": 73,
+    "product_abbrev": "Prst Overnight",
+    "examples": null
+  },
+  {
+    "product": "High Density and Saturation Letters",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 40,
+    "product_abbrev": "HDSL",
+    "examples": "letter advertisments and election mail"
+  },
+  {
+    "product": "Presort Letters/Postcards",
+    "delivery_speed": "Two-Day",
+    "mail_class": "First Class",
+    "product_id": 37,
+    "product_abbrev": "Prst 2 Day",
+    "examples": null
+  },
+  {
+    "product": "Presort Letters/Postcards",
+    "delivery_speed": "Three-To-Five-Day",
+    "mail_class": "First Class",
+    "product_id": 98,
+    "product_abbrev": "Prst 3-5 Day",
+    "examples": null
+  },
+  {
+    "product": "Single-Piece Letters/Postcards",
+    "delivery_speed": "Three-To-Five-Day",
+    "mail_class": "First Class",
+    "product_id": 99,
+    "product_abbrev": "SPLC 3-5 Day",
+    "examples": null
+  },
+  {
+    "product": "Parcels",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 48,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "High Density and Saturation Flats/Parcels",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 52,
+    "product_abbrev": "HDSF",
+    "examples": "catalogs and coupon books"
+  },
+  {
+    "product": "Single-Piece Letters/Postcards",
+    "delivery_speed": "Two-Day",
+    "mail_class": "First Class",
+    "product_id": 59,
+    "product_abbrev": "SPLC 2-Day",
+    "examples": null
+  },
+  {
+    "product": "EDDM-Retail",
+    "delivery_speed": null,
+    "mail_class": "Marketing Mail",
+    "product_id": 82,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Media Mail/Library Mail",
+    "delivery_speed": null,
+    "mail_class": "Package Services",
+    "product_id": 88,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Bound Printed Matter Flats",
+    "delivery_speed": null,
+    "mail_class": "Package Services",
+    "product_id": 89,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Bound Printed Matter Parcels",
+    "delivery_speed": null,
+    "mail_class": "Package Services",
+    "product_id": 90,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Outbound Single-Piece First-Class Mail International",
+    "delivery_speed": null,
+    "mail_class": "First Class",
+    "product_id": 100,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Inbound Single-Piece First-Class Mail International",
+    "delivery_speed": null,
+    "mail_class": "First Class",
+    "product_id": 101,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Ancillary Services",
+    "delivery_speed": null,
+    "mail_class": "Special Services",
+    "product_id": 103,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "International Ancillary Services",
+    "delivery_speed": null,
+    "mail_class": "Special Services",
+    "product_id": 104,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Money Orders",
+    "delivery_speed": null,
+    "mail_class": "Special Services",
+    "product_id": 105,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Post Office Box Service",
+    "delivery_speed": null,
+    "mail_class": "Special Services",
+    "product_id": 106,
+    "product_abbrev": null,
+    "examples": null
+  },
+  {
+    "product": "Stamp Fulfillment Services",
+    "delivery_speed": null,
+    "mail_class": "Special Services",
+    "product_id": 107,
+    "product_abbrev": null,
+    "examples": null
+  }
+]
