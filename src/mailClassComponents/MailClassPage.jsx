@@ -1,13 +1,9 @@
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-
 import volData from "../Data/volume.json";
-
 import { useEffect, useState } from "react";
-
 import annualData from "../Data/annualData.json";
-
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
@@ -22,7 +18,18 @@ import Footer from "./Footer";
 
 import MailClassDef from "../DashComponents/MailClassDef";
 
+import {joinDataWithProdKey, joinDataWithLibRef} from "../DataManipulation/join"
+import annDat from "../Data/annual - Updated.json";
+
+
 export const MailClassPage = (props) => {
+
+  // const joinTest = joinDataWithProdKey(annDat)
+  const joinTest = joinDataWithLibRef(annDat)
+
+  console.log(joinTest)
+
+
   const { mailClassName } = props;
   const classes = useStyles_ClassPage();
 
