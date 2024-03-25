@@ -20,7 +20,5 @@ export const joinDataWithProdKey = (valueData) => {
 
 export const joinDataWithLibRef = (valueData) => {
   const dataWithKey = joinTwoJson(keyData, valueData, "product_id");
-  //   return dataWithKey;
   return joinTwoJson(lrData, dataWithKey, "fy");
-  //   const rez = lrData.filter((row) => row.fy == 2019);
 };

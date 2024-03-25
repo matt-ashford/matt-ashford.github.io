@@ -5,7 +5,7 @@ export const createCellData = (inputData) => {
     inputData = filterProdsFistClass(inputData);
   }
 
-  console.log(inputData);
+  //   console.log(inputData);
 
   const maxYear = inputData.reduce((maxSoFar, row) => {
     return row.fy > maxSoFar ? row.fy : maxSoFar;
@@ -32,7 +32,7 @@ export const createCellData = (inputData) => {
     decreasedCount: decreasedCount,
   };
 
-  console.log("frm prod count", rez);
+  //   console.log("frm prod count", rez);
 
   return rez;
 };

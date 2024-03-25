@@ -65,6 +65,10 @@ export const ProductCountTable = (props) => {
 
   const cellData = createCellData(data);
 
+  const maxYear = data.reduce((maxSoFar, row) => {
+    return row.fy > maxSoFar ? row.fy : maxSoFar;
+  }, 0);
+
   return (
     <>
       <Container disableGutters={true} className={classes.totalCountCountainer}>
@@ -119,7 +123,7 @@ export const ProductCountTable = (props) => {
         <br></br>
 
         <Typography align="left" className={classes.tableText}>
-          {productOrComponent(data)} Decreased in FY2020
+          {productOrComponent(data)} Decreased in {maxYear}
         </Typography>
         <ProductCountBar
           totalProductCount={cellData.productCount}

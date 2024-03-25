@@ -3,11 +3,12 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import volData from "../Data/volume.json";
 import { useEffect, useState } from "react";
-import annualData from "../Data/annualData.json";
+// import annualData from "../Data/annualData.json";
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/productCountTable/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
+import YearDropdown from "../DashComponents/YearDropdown";
 import ProductPage from "./ProductPage";
 
 import DownloadButton from "../DashComponents/DownloadButton";
@@ -20,7 +21,7 @@ import MailClassDef from "../DashComponents/MailClassDef";
 
 import {
   joinDataWithProdKey,
-  joinDataWithLibRef,
+  // joinDataWithLibRef,
 } from "../DataManipulation/join";
 import { filterAnnualComparison } from "../DataManipulation/filterAnnualComparison";
 import annDat from "../Data/annual - Updated.json";
@@ -30,9 +31,11 @@ export const MailClassPage = (props) => {
   const classes = useStyles_ClassPage();
 
   const [selectedProductId, setSelectedProductId] = useState(0);
+  const [selectedYear, setSelectedYear] = useState(2023);
 
   useEffect(() => {
     setSelectedProductId(0);
+    setSelectedProductId(2023);
   }, []);
 
   useEffect(() => {
@@ -41,18 +44,15 @@ export const MailClassPage = (props) => {
 
   const joinedData = joinDataWithProdKey(annDat);
   let annualDataClass = filterAnnualComparison(mailClassName, 2021, joinedData);
-  // console.table(annualDataClass);
-  // console.log(annualDataClass);
 
   function changeProductSelected(e) {
     setSelectedProductId(e.target.id);
   }
 
-  // annualDataClass = annualData.filter((row) => row.class === mailClassName);
-
-  // function generateAnnualClassData(mailClassName) {
-  //   return annualData.filter((row) => row.class === mailClassName);
-  // }
+  function changeYearSelected(e) {
+    console.log(e.target.id);
+    setSelectedYear(e.target.id);
+  }
 
   const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
   function generateVolDataClass(mailClassName) {
@@ -81,12 +81,18 @@ export const MailClassPage = (props) => {
               </Typography>
             </div>
           </Grid>
+
           <Grid
             item
             md={9}
             xs={12}
             style={{ maxWidth: "950px", minWidth: "800px" }}
           >
+            <YearDropdown
+              propData={annDat}
+              selectedYear={2023}
+              changeYearSelected={changeYearSelected}
+            />
             <Paper
               className={classes.graphDivFirstClass}
               elevation={3}
