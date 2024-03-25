@@ -5,7 +5,7 @@ import volData from "../Data/volume.json";
 import { useEffect, useState } from "react";
 import annualData from "../Data/annualData.json";
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
-import ProductCountTableData from "../DashComponents/ProductCountTable";
+import ProductCountTableData from "../DashComponents/productCountTable/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import ProductPage from "./ProductPage";
@@ -22,23 +22,10 @@ import {
   joinDataWithProdKey,
   joinDataWithLibRef,
 } from "../DataManipulation/join";
-import { returnAnnual } from "../DataManipulation/returnAnnual";
+import { filterAnnualComparison } from "../DataManipulation/filterAnnualComparison";
 import annDat from "../Data/annual - Updated.json";
 
 export const MailClassPage = (props) => {
-  const joinedData = joinDataWithProdKey(annDat);
-  const rtrAnn = returnAnnual("Marketing Mail", 2019, joinedData);
-
-  function testFunc(d) {
-    return d;
-  }
-
-  // const rtrAnn = testFunc(joinedData);
-
-  console.log(rtrAnn);
-  // console.table(rtrAnn);
-  // console.table(joinedData);
-
   const { mailClassName } = props;
   const classes = useStyles_ClassPage();
 
@@ -52,25 +39,27 @@ export const MailClassPage = (props) => {
     setSelectedProductId(0);
   }, [mailClassName]);
 
+  const joinedData = joinDataWithProdKey(annDat);
+  let annualDataClass = filterAnnualComparison(mailClassName, 2021, joinedData);
+  // console.table(annualDataClass);
+  // console.log(annualDataClass);
+
   function changeProductSelected(e) {
     setSelectedProductId(e.target.id);
   }
 
-  const annualDataClass = annualData.filter(
-    (row) => row.class === mailClassName
-  );
+  // annualDataClass = annualData.filter((row) => row.class === mailClassName);
+
+  // function generateAnnualClassData(mailClassName) {
+  //   return annualData.filter((row) => row.class === mailClassName);
+  // }
 
   const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
-
-  const isFirstClass = mailClassName === "First Class Mail" ? true : false;
-
-  function generateAnnualClassData(mailClassName) {
-    return annualData.filter((row) => row.class === mailClassName);
-  }
-
   function generateVolDataClass(mailClassName) {
     return volData.filter((row) => row.mailClass === mailClassName);
   }
+
+  const isFirstClass = mailClassName === "First Class Mail" ? true : false;
 
   function mailClassNameTitle(mailClassName) {
     const trailingText = " Class-Level Data";
@@ -130,22 +119,22 @@ export const MailClassPage = (props) => {
                 </Paper>
                 <div style={{ marginTop: "30%" }}></div>
                 <Paper>
-                  <DownloadButton
+                  {/* <DownloadButton
                     propData={annualDataClass}
                     dataName={"Class-Level Data"}
-                  />
+                  /> */}
                 </Paper>
               </Grid>
             </Grid>
           </Grid>
 
           <Paper xs={12} className={classes.paperDropdown}>
-            <ProductDropdown
+            {/* <ProductDropdown
               propData={annualDataClass}
               selectedProductId={selectedProductId}
               changeProductSelected={changeProductSelected}
               mailClass={mailClassName}
-            />
+            /> */}
           </Paper>
         </Grid>
 

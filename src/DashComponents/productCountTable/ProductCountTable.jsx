@@ -2,12 +2,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
+import { createCellData } from "./countTableDataFilter";
+import ProductCountBar from "./ProductCountBar";
 
 import { useEffect, useState } from "react";
-
-import { primaryColor, secondaryColor, liteBlue } from "../Design/MyTheme";
-
-import * as d3 from "d3";
+import { primaryColor, secondaryColor, liteBlue } from "../../Design/MyTheme";
 
 const useStyles = makeStyles({
   totalCountCountainer: {
@@ -40,7 +39,8 @@ const useStyles = makeStyles({
 export const ProductCountTable = (props) => {
   const { propData } = props;
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(propData);
+  // const [data, setData] = useState([]);
 
   useEffect(() => {
     setData(propData);
@@ -58,52 +58,10 @@ export const ProductCountTable = (props) => {
     if (isFirstClass) {
       return "Product Components";
     }
-
     return "Products";
   }
 
   const classes = useStyles();
-
-  function createCellData(inputData) {
-    let singleYear = inputData
-      .filter((row) => row.fy === 2020)
-      .filter((row) => row.productAbbrev !== "missing")
-      .filter((row) => row.subProduct !== "yes");
-
-    let productCount = singleYear.length;
-
-    let decreasedCount = 0;
-    let missedTarget = 0;
-
-    for (let i = 0; i < singleYear.length; i++) {
-      const currentRow = singleYear[i];
-      if (currentRow.pctOnTime - currentRow.target < 0) {
-        missedTarget += 1;
-      }
-      if (decreasedThisYear(currentRow.productId)) {
-        decreasedCount += 1;
-      }
-    }
-
-    const rez = {
-      productCount: productCount,
-      missedTarget: missedTarget,
-      decreasedCount: decreasedCount,
-    };
-
-    return rez;
-  }
-
-  function decreasedThisYear(productId) {
-    const thisProduct = data.filter((row) => row.productId === productId);
-
-    const thisYearScore = thisProduct.filter((row) => row.fy === 2020)[0]
-      .pctOnTime;
-    const lastYearScore = thisProduct.filter((row) => row.fy === 2019)[0]
-      .pctOnTime;
-
-    return thisYearScore < lastYearScore;
-  }
 
   const cellData = createCellData(data);
 
@@ -170,90 +128,6 @@ export const ProductCountTable = (props) => {
         />
       </Container>
     </>
-  );
-};
-
-const ProductCountBar = (props) => {
-  const { totalProductCount, thisCount, dataType } = props;
-
-  const [countPctState, setCountPctState] = useState(0);
-
-  useEffect(() => {
-    setCountPctState(thisCount / totalProductCount);
-    removeBars();
-    drawBar();
-  }, [thisCount, totalProductCount, countPctState]);
-
-  useEffect(() => {
-    removeBars();
-    drawBar();
-  }, []);
-
-  useEffect(() => {
-    removeBars();
-    drawBar();
-  });
-
-  const svgId = `${dataType}_svg`;
-  const barId = `${dataType}_bar`;
-  const otherBarId = `${dataType}_otherBar`;
-
-  const svgSelection = d3.select(`#${svgId}`);
-
-  const barHeight = 10;
-
-  const svgWidth = 300;
-  const svgHeight = barHeight + 20;
-
-  // const countPctState = thisCount / totalProductCount;
-
-  const countPercentageDiff = 1 - countPctState;
-
-  const xScale = d3.scaleLinear().domain([0, 1]).range([0, svgWidth]);
-
-  const fakeData = [{ value: countPctState }];
-
-  drawBar();
-
-  function drawBar() {
-    svgSelection
-      .selectAll(`#${otherBarId}`)
-      .data(fakeData)
-      .enter()
-      .append("rect")
-      .attr("x", xScale(countPctState))
-      .attr("y", 15)
-      .attr("height", 15)
-      .attr("width", (d) => xScale(countPercentageDiff))
-      .attr("fill", "hsla(239, 100%, 100%, 0.55)")
-      .attr("class", "countTableBar")
-      .attr("id", otherBarId);
-
-    svgSelection
-      .selectAll(`#${barId}`)
-      .data(fakeData)
-      .enter()
-      .append("rect")
-      .attr("x", 0)
-      .attr("y", 15)
-      .attr("height", 15)
-      .attr("width", (d) => xScale(countPctState))
-      .attr("fill", "white")
-      .attr("class", "countTableBar")
-      .attr("id", barId);
-  }
-
-  function removeBars() {
-    svgSelection.selectAll(".countTableBar").remove();
-  }
-  return (
-    <div
-      style={{
-        paddingBottom: "5px",
-      }}
-    >
-      <svg fill="black" id={svgId} height={svgHeight} width={svgWidth}></svg>
-    </div>
   );
 };
 

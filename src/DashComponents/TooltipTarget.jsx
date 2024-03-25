@@ -77,7 +77,8 @@ function tooltipXPoz(xHover, tooltipId) {
 function tooltipYPoz(tooltipId, propData) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
-  const mailClass = propData[0].class;
+  // const mailClass = propData[0].mail_class;
+  const mailClass = "fix me";
 
   const isProductLevelGraph = tooltipId.includes("Product");
 
