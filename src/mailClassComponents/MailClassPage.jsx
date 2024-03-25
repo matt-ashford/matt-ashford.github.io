@@ -18,17 +18,26 @@ import Footer from "./Footer";
 
 import MailClassDef from "../DashComponents/MailClassDef";
 
-import {joinDataWithProdKey, joinDataWithLibRef} from "../DataManipulation/join"
+import {
+  joinDataWithProdKey,
+  joinDataWithLibRef,
+} from "../DataManipulation/join";
+import { returnAnnual } from "../DataManipulation/returnAnnual";
 import annDat from "../Data/annual - Updated.json";
 
-
 export const MailClassPage = (props) => {
+  const joinedData = joinDataWithProdKey(annDat);
+  const rtrAnn = returnAnnual("Marketing Mail", 2019, joinedData);
 
-  // const joinTest = joinDataWithProdKey(annDat)
-  const joinTest = joinDataWithLibRef(annDat)
+  function testFunc(d) {
+    return d;
+  }
 
-  console.log(joinTest)
+  // const rtrAnn = testFunc(joinedData);
 
+  console.log(rtrAnn);
+  // console.table(rtrAnn);
+  // console.table(joinedData);
 
   const { mailClassName } = props;
   const classes = useStyles_ClassPage();
