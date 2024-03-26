@@ -1,0 +1,38 @@
+/* @import url("../../../theme.css"); */
+@import url("../../../theme.css");
+
+.totalCountCountainer {
+  background-color: var(--primaryColor);
+  /* background-color: #225cf6; Use a CSS variable */
+  border-radius: 1%;
+  justify-content: left;
+  padding-left: 5%; /* Positive value for padding */
+  padding-right: 0;
+}
+
+#broh {
+  background-color: red;
+}
+.tableTextNumber {
+  color: white;
+}
+
+.tableText {
+  color: white;
+  font-weight: bolder;
+  margin-left: 3%;
+}
+
+.missedCountCountainer {
+  background-color: var(--lightBlue); /* Use lowercase for standard color */
+  border-radius: 1%;
+}
+
+.decCountContainer {
+  background-color: var(--secondaryColor); /* Use a CSS variable */
+  border-radius: 1%;
+}
+
+.productCount {
+  /* Add styles as needed */
+}

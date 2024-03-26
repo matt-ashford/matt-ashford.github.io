@@ -36,7 +36,7 @@ export const YearDropdown = (props) => {
     <>
       <Grid container className={styles.dropdownOuterContainer}>
         <Grid item xs={6}>
-          <Typography lassName={styles.yearLabel}>Years:</Typography>
+          <Typography className={styles.yearLabel}>Years:</Typography>
         </Grid>
         <Grid item xs={5}>
           <FormControl className={styles.formControl}>

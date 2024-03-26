@@ -5,7 +5,7 @@ import volData from "../Data/volume.json";
 import { useEffect, useState } from "react";
 // import annualData from "../Data/annualData.json";
 import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
-import ProductCountTableData from "../DashComponents/productCountTable/ProductCountTable";
+import ProductCountTableData from "../DashComponents/UIBits/productCountTable/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
 import YearDropdown from "../DashComponents/UIBits/YearDropdown";
@@ -94,7 +94,7 @@ export const MailClassPage = (props) => {
               selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
-            <Paper
+            {/* <Paper
               className={classes.graphDivFirstClass}
               elevation={3}
               width={graphWidth}
@@ -103,7 +103,7 @@ export const MailClassPage = (props) => {
                 propData={annualDataClass}
                 mailClass={mailClassName}
               />
-            </Paper>
+            </Paper> */}
             <MailClassDef mailClass={mailClassName} />
           </Grid>
 
