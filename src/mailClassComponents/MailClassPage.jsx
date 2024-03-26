@@ -8,7 +8,7 @@ import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/productCountTable/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
-import YearDropdown from "../DashComponents/YearDropdown";
+import YearDropdown from "../DashComponents/UIBits/YearDropdown";
 import ProductPage from "./ProductPage";
 
 import DownloadButton from "../DashComponents/DownloadButton";
@@ -50,8 +50,9 @@ export const MailClassPage = (props) => {
   }
 
   function changeYearSelected(e) {
-    console.log(e.target.id);
-    setSelectedYear(e.target.id);
+    console.log(e.target.value);
+    // setSelectedYear(e.target.id);
+    setSelectedYear(e.target.value);
   }
 
   const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
@@ -90,7 +91,7 @@ export const MailClassPage = (props) => {
           >
             <YearDropdown
               propData={annDat}
-              selectedYear={2023}
+              selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
             <Paper

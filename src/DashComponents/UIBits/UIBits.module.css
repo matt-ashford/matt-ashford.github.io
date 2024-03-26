@@ -1,0 +1,23 @@
+.dropdownOuterContainer {
+  margin-bottom: 1rem;
+}
+
+.dropdownSelect {
+  /* margin-left: -16rem; */
+  width: 10rem;
+  font-size: large;
+  margin-left: -4rem;
+  /* background-color: blue; */
+}
+
+.formControl {
+  min-width: 2rem;
+  max-width: 4rem;
+}
+
+.yearLabel {
+  margin-right: -20rem;
+  font-size: larger;
+  margin-top: 0.5rem;
+  /* margin-left: -2rem; */
+}
