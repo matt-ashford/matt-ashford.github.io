@@ -10,7 +10,9 @@ export const filterAnnualComparison = (mailClass, fyInput, dataset) => {
   }
   let keepYears = [fyInput, comparisonYear];
 
-  const rez = dataset.filter(
+  let rez = {};
+
+  rez = dataset.filter(
     (row) => keepYears.includes(row.fy) && row.mail_class === filterClassName
   );
 

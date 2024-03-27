@@ -35,7 +35,7 @@ export const MailClassPage = (props) => {
 
   useEffect(() => {
     setSelectedProductId(0);
-    setSelectedProductId(2023);
+    // setSelectedProductId(2023);
   }, []);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export const MailClassPage = (props) => {
   }
 
   function changeYearSelected(e) {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     // setSelectedYear(e.target.id);
     setSelectedYear(e.target.value);
   }
@@ -104,7 +104,7 @@ export const MailClassPage = (props) => {
                 mailClass={mailClassName}
               />
             </Paper> */}
-            <MailClassDef mailClass={mailClassName} />
+            {/* <MailClassDef mailClass={mailClassName} /> */}
           </Grid>
 
           <Grid item xs={3} float="left">
@@ -113,7 +113,11 @@ export const MailClassPage = (props) => {
                 <Paper className={classes.paper}>
                   <div>
                     {" "}
-                    <ProductCountTableData propData={annualDataClass} />{" "}
+                    <ProductCountTableData
+                      propData={joinedData}
+                      selectedYear={selectedYear}
+                      mailClassName={mailClassName}
+                    />{" "}
                   </div>
                 </Paper>
               </Grid>

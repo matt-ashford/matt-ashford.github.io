@@ -1,41 +1,38 @@
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
-import { createCellData } from "./countTableDataFilter";
+import { countTableDataFilter } from "./countTableDataFilter";
 import ProductCountBar from "./ProductCountBar";
 import styles from "./ProductCountTableStyles.module.css";
 import Stack from "@mui/material/Stack";
 
+import { filterAnnualComparison } from "../../../DataManipulation/filterAnnualComparison";
+
 import { useEffect, useState } from "react";
 
 export const ProductCountTable = (props) => {
-  const { propData } = props;
+  const { propData, selectedYear, mailClassName } = props;
 
-  const [data, setData] = useState(propData);
-
-  useEffect(() => {
-    setData(propData);
-  }, [propData, data]);
+  const [cellData, setCellData] = useState(
+    countTableDataFilter(propData, selectedYear)
+  );
 
   useEffect(() => {
-    setData(propData);
-  }, []);
+    const filtData = filterAnnualComparison(
+      mailClassName,
+      selectedYear,
+      propData
+    );
+    setCellData(countTableDataFilter(filtData, selectedYear));
+  }, [propData]);
 
-  function productOrComponent(data) {
-    const secondRowValues = Object.values(propData[1]);
-
-    const isFirstClass = secondRowValues.includes("First Class Mail");
+  function productOrComponent(mc) {
+    const isFirstClass = mc == "First Class Mail";
 
     if (isFirstClass) {
       return "Product Components";
     }
     return "Products";
   }
-
-  const cellData = createCellData(data);
-
-  const maxYear = data.reduce((maxSoFar, row) => {
-    return row.fy > maxSoFar ? row.fy : maxSoFar;
-  }, 0);
 
   return (
     <>
@@ -54,7 +51,7 @@ export const ProductCountTable = (props) => {
           </Typography>
           <br></br>
           <Typography align="left" className={styles.tableText}>
-            {productOrComponent(data)} are Rated in this Class
+            {productOrComponent(mailClassName)} are Rated in this Class
           </Typography>
 
           <ProductCountBar
@@ -77,7 +74,8 @@ export const ProductCountTable = (props) => {
           </Typography>
           <br></br>
           <Typography align="left" className={styles.tableText}>
-            {productOrComponent(data)} Missed their Targets
+            {productOrComponent(mailClassName)} Missed their Targets in{" "}
+            {selectedYear}
           </Typography>
           <ProductCountBar
             totalProductCount={cellData.productCount}
@@ -96,7 +94,7 @@ export const ProductCountTable = (props) => {
           <br></br>
 
           <Typography align="left" className={styles.tableText}>
-            {productOrComponent(data)} Decreased in {maxYear}
+            {productOrComponent(mailClassName)} Decreased in {selectedYear}
           </Typography>
           <ProductCountBar
             totalProductCount={cellData.productCount}

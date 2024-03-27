@@ -6,13 +6,10 @@
   /* background-color: #225cf6; Use a CSS variable */
   border-radius: 1%;
   justify-content: left;
-  padding-left: 5%; /* Positive value for padding */
+  /* padding-left: 5%; */
   padding-right: 0;
 }
 
-#broh {
-  background-color: red;
-}
 .tableTextNumber {
   color: white;
 }

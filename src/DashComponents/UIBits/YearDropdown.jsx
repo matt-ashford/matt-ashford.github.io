@@ -10,15 +10,27 @@ import { extractYearsFromAnnual } from "../../DataManipulation/extractYearsFromA
 export const YearDropdown = (props) => {
   const { propData, selectedYear, changeYearSelected } = props;
 
-  const [dropdownData, setDropdownData] = useState([]);
-  // const [selectedYear, setSelectedYear] = useState(2023);
+  const [dropdownData, setDropdownData] = useState([2023]);
+
+  useEffect(() => {
+    const yearsArray = extractYearsFromAnnual(propData);
+    const yearsArray_dropMin = dropMin(yearsArray);
+    setDropdownData(yearsArray_dropMin);
+    console.log(yearsArray_dropMin);
+  }, [propData, selectedYear]);
 
   useEffect(() => {
     const yearsArray = extractYearsFromAnnual(propData);
     setDropdownData(yearsArray);
-  }, [propData, selectedYear]);
+  }, []);
 
   const inputRef = useRef();
+
+  function dropMin(list) {
+    const min = Math.min(...list);
+    const rez = list.filter((item) => item !== min);
+    return rez;
+  }
 
   const menuItems = dropdownData.map((el, ind) => (
     <MenuItem
@@ -42,7 +54,7 @@ export const YearDropdown = (props) => {
           <FormControl className={styles.formControl}>
             <Select
               className={styles.dropdownSelect}
-              value={selectedYear}
+              value={`${selectedYear}`}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               onChange={changeYearSelected}
