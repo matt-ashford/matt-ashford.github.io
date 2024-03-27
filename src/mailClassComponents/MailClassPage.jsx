@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import volData from "../Data/volume.json";
 import { useEffect, useState } from "react";
 // import annualData from "../Data/annualData.json";
-import ClassLevelGraph from "../DashComponents/ClassLevelGraph";
+import ClassGraphSingleYear from "../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
 import ProductCountTableData from "../DashComponents/UIBits/productCountTable/ProductCountTable";
 import VolumeChange from "../DashComponents/VolumeChange";
 import ProductDropdown from "../DashComponents/ProductDropdown";
@@ -19,39 +19,30 @@ import Footer from "./Footer";
 
 import MailClassDef from "../DashComponents/MailClassDef";
 
-import {
-  joinDataWithProdKey,
-  // joinDataWithLibRef,
-} from "../DataManipulation/join";
+import { joinDataWithProdKey } from "../DataManipulation/join";
 import { filterAnnualComparison } from "../DataManipulation/filterAnnualComparison";
 import annDat from "../Data/annual - Updated.json";
 
 export const MailClassPage = (props) => {
   const { mailClassName } = props;
   const classes = useStyles_ClassPage();
-
   const [selectedProductId, setSelectedProductId] = useState(0);
   const [selectedYear, setSelectedYear] = useState(2023);
+  const [joinedData, setJoinedData] = useState(joinDataWithProdKey(annDat));
 
   useEffect(() => {
     setSelectedProductId(0);
-    // setSelectedProductId(2023);
   }, []);
 
   useEffect(() => {
     setSelectedProductId(0);
   }, [mailClassName]);
 
-  const joinedData = joinDataWithProdKey(annDat);
-  let annualDataClass = filterAnnualComparison(mailClassName, 2021, joinedData);
-
   function changeProductSelected(e) {
     setSelectedProductId(e.target.id);
   }
 
   function changeYearSelected(e) {
-    // console.log(e.target.value);
-    // setSelectedYear(e.target.id);
     setSelectedYear(e.target.value);
   }
 
@@ -94,33 +85,35 @@ export const MailClassPage = (props) => {
               selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
-            {/* <Paper
+            <Grid item lg={7} md={12}>
+              <Paper className={classes.paper}>
+                <div>
+                  {" "}
+                  <ProductCountTableData
+                    propData={joinedData}
+                    selectedYear={selectedYear}
+                    mailClassName={mailClassName}
+                  />{" "}
+                </div>
+              </Paper>
+            </Grid>
+            <Paper
               className={classes.graphDivFirstClass}
               elevation={3}
               width={graphWidth}
             >
-              <ClassLevelGraph
-                propData={annualDataClass}
+              <ClassGraphSingleYear
+                propData={joinedData}
                 mailClass={mailClassName}
+                selectedYear={selectedYear}
               />
-            </Paper> */}
-            {/* <MailClassDef mailClass={mailClassName} /> */}
+            </Paper>
+
+            <MailClassDef mailClass={mailClassName} />
           </Grid>
 
           <Grid item xs={3} float="left">
             <Grid container direction="column" spacing={3}>
-              <Grid item lg={7} md={12}>
-                <Paper className={classes.paper}>
-                  <div>
-                    {" "}
-                    <ProductCountTableData
-                      propData={joinedData}
-                      selectedYear={selectedYear}
-                      mailClassName={mailClassName}
-                    />{" "}
-                  </div>
-                </Paper>
-              </Grid>
               <Grid item xs={3}>
                 <Paper
                   className={classes.paper}

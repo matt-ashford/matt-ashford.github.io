@@ -1,13 +1,23 @@
 /* @import url("../../../theme.css"); */
 @import url("../../../theme.css");
 
-.totalCountCountainer {
-  background-color: var(--primaryColor);
-  /* background-color: #225cf6; Use a CSS variable */
+.countCell {
+  /* padding-left: 2rem; */
+  /* padding-right: 2rem; */
   border-radius: 1%;
-  justify-content: left;
-  /* padding-left: 5%; */
-  padding-right: 0;
+  padding-top: 0.2rem;
+}
+
+#totalCountCountainer {
+  background-color: var(--primaryColor);
+}
+
+#missedCountCountainer {
+  background-color: var(--lightBlue); /* Use lowercase for standard color */
+}
+
+#decCountContainer {
+  background-color: var(--secondaryColor); /* Use a CSS variable */
 }
 
 .tableTextNumber {
@@ -17,19 +27,16 @@
 .tableText {
   color: white;
   font-weight: bolder;
-  margin-left: 3%;
-}
-
-.missedCountCountainer {
-  background-color: var(--lightBlue); /* Use lowercase for standard color */
-  border-radius: 1%;
-}
-
-.decCountContainer {
-  background-color: var(--secondaryColor); /* Use a CSS variable */
-  border-radius: 1%;
+  /* margin-left: 20rem; */
 }
 
 .productCount {
   /* Add styles as needed */
+}
+
+.countBarContainer {
+  /* position: absolute; */
+  /* bottom: 1rem; */
+  padding-bottom: 1rem;
+  /* padding-top: 1rem; */
 }

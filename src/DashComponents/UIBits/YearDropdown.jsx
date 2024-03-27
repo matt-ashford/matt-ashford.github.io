@@ -16,7 +16,6 @@ export const YearDropdown = (props) => {
     const yearsArray = extractYearsFromAnnual(propData);
     const yearsArray_dropMin = dropMin(yearsArray);
     setDropdownData(yearsArray_dropMin);
-    console.log(yearsArray_dropMin);
   }, [propData, selectedYear]);
 
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import * as d3 from "d3";
+import styles from "./ProductCountTableStyles.module.css";
 
 export const ProductCountBar = (props) => {
   const { totalProductCount, thisCount, dataType } = props;
@@ -75,11 +76,7 @@ export const ProductCountBar = (props) => {
     svgSelection.selectAll(".countTableBar").remove();
   }
   return (
-    <div
-      style={{
-        paddingBottom: "5px",
-      }}
-    >
+    <div className={styles.countBarContainer}>
       <svg fill="black" id={svgId} height={svgHeight} width={svgWidth}></svg>
     </div>
   );

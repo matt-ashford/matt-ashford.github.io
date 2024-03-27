@@ -1,12 +1,12 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import GraphKey from "./GraphKey";
+import GraphKey from "../GraphKey";
 import {
   primaryColor,
   secondaryColor,
   textNodeFont,
   pinkHighlight,
-} from "../Design/MyTheme";
+} from "../../Design/MyTheme";
 
 import {
   marginBottom,
@@ -20,15 +20,17 @@ import {
   marginTop,
   yScale,
   yScaleRev,
-} from "../Design/graphDimensions";
+} from "../../Design/graphDimensions";
 
-import { TooltipTarget } from "./TooltipTarget";
+import { TooltipTarget } from "../TooltipTarget";
 
-import { TooltipServiceClassLevel } from "./TooltipServiceClassLevel";
-import { TooltipProductNames } from "./TooltipProductNames";
+import { TooltipServiceClassLevel } from "../TooltipServiceClassLevel";
+import { TooltipProductNames } from "../TooltipProductNames";
 
-export const ClassLevelGraph = (props) => {
-  const { propData, mailClass } = props;
+export const ClassGraphSingleYear = (props) => {
+  const { propData, mailClass, selectedYear } = props;
+
+  // console.log(propData);
 
   const [data, setData] = useState([]);
 
@@ -331,7 +333,7 @@ export const ClassLevelGraph = (props) => {
 
   return (
     <>
-      <div style={{ marginLeft: "-5%" }}>
+      {/* <div style={{ marginLeft: "-5%" }}>
         <h3 fontFamily={textNodeFont}>{titleText(mailClass)}</h3>
         <svg
           shapeRendering="crispEdges"
@@ -345,31 +347,32 @@ export const ClassLevelGraph = (props) => {
           bar2020={".bar2020"}
         />
       </div>
-      <TooltipServiceClassLevel
+       */}
+      {/* <TooltipServiceClassLevel
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}
         hoverHeight={hoverHeight}
         propData={propData}
         tooltipId={"tooltipClassGraph"}
-      />
-
+      /> */}
+      {/* 
       <TooltipTarget
         isHoveringTarget={isHoveringTarget}
         hoverTargetId={hoverTargetId}
         tooltipId={"tooltipClassTarget"}
         propData={propData}
         xHoverTarget={xHoverTarget}
-      />
+      /> */}
 
-      <TooltipProductNames
+      {/* <TooltipProductNames
         isHoveringProductText={isHoveringProductText}
         hoverTextId={hoverTextId}
         propData={propData}
         xHoverText={xHoverText}
-      />
+      /> */}
     </>
   );
 };
 
-export default ClassLevelGraph;
+export default ClassGraphSingleYear;

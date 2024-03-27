@@ -4,9 +4,7 @@ import { countTableDataFilter } from "./countTableDataFilter";
 import ProductCountBar from "./ProductCountBar";
 import styles from "./ProductCountTableStyles.module.css";
 import Stack from "@mui/material/Stack";
-
 import { filterAnnualComparison } from "../../../DataManipulation/filterAnnualComparison";
-
 import { useEffect, useState } from "react";
 
 export const ProductCountTable = (props) => {
@@ -23,7 +21,8 @@ export const ProductCountTable = (props) => {
       propData
     );
     setCellData(countTableDataFilter(filtData, selectedYear));
-  }, [propData]);
+    console.log(selectedYear, filtData, cellData);
+  }, [propData, selectedYear]);
 
   function productOrComponent(mc) {
     const isFirstClass = mc == "First Class Mail";
@@ -38,9 +37,9 @@ export const ProductCountTable = (props) => {
     <>
       <Stack direction="row">
         <Container
-          disableGutters={true}
-          className={styles.totalCountCountainer}
-          id={styles.broh}
+          // disableGutters={true}
+          className={styles.countCell}
+          id={styles.totalCountCountainer}
         >
           <Typography
             variant="h4"
@@ -49,7 +48,7 @@ export const ProductCountTable = (props) => {
           >
             {cellData.productCount}
           </Typography>
-          <br></br>
+          <br />
           <Typography align="left" className={styles.tableText}>
             {productOrComponent(mailClassName)} are Rated in this Class
           </Typography>
@@ -62,8 +61,9 @@ export const ProductCountTable = (props) => {
         </Container>
 
         <Container
-          disableGutters={true}
-          className={styles.missedCountCountainer}
+          // disableGutters={true}
+          className={styles.countCell}
+          id={styles.missedCountCountainer}
         >
           <Typography
             variant="h4"
@@ -83,7 +83,11 @@ export const ProductCountTable = (props) => {
             dataType="missedProductCount"
           />
         </Container>
-        <Container disableGutters={true} className={styles.decCountContainer}>
+        <Container
+          // disableGutters={true}
+          className={styles.countCell}
+          id={styles.decCountContainer}
+        >
           <Typography
             variant="h4"
             align="left"
