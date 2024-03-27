@@ -85,7 +85,7 @@ export const MailClassPage = (props) => {
               selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
-            <Grid item lg={7} md={12}>
+            {/* <Grid item lg={7} md={12}>
               <Paper className={classes.paper}>
                 <div>
                   {" "}
@@ -96,14 +96,19 @@ export const MailClassPage = (props) => {
                   />{" "}
                 </div>
               </Paper>
-            </Grid>
+            </Grid> */}
+
             <Paper
               className={classes.graphDivFirstClass}
               elevation={3}
               width={graphWidth}
             >
               <ClassGraphSingleYear
-                propData={joinedData}
+                propData={filterAnnualComparison(
+                  mailClassName,
+                  selectedYear,
+                  joinedData
+                )}
                 mailClass={mailClassName}
                 selectedYear={selectedYear}
               />
@@ -124,7 +129,6 @@ export const MailClassPage = (props) => {
                 <div style={{ marginTop: "30%" }}></div>
                 <Paper>
                   {/* <DownloadButton
-                    propData={annualDataClass}
                     dataName={"Class-Level Data"}
                   /> */}
                 </Paper>
@@ -134,7 +138,7 @@ export const MailClassPage = (props) => {
 
           <Paper xs={12} className={classes.paperDropdown}>
             {/* <ProductDropdown
-              propData={annualDataClass}
+              propData={annualData}
               selectedProductId={selectedProductId}
               changeProductSelected={changeProductSelected}
               mailClass={mailClassName}

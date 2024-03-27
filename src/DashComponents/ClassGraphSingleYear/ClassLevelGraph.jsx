@@ -26,11 +26,13 @@ import { TooltipTarget } from "../TooltipTarget";
 
 import { TooltipServiceClassLevel } from "../TooltipServiceClassLevel";
 import { TooltipProductNames } from "../TooltipProductNames";
+import ClassGraphTitle from "./ClassGraphTitle";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
 
   // console.log(propData);
+  console.log(mailClass);
 
   const [data, setData] = useState([]);
 
@@ -323,19 +325,11 @@ export const ClassGraphSingleYear = (props) => {
     setIsHoveringProductText(false);
   }
 
-  function titleText(mailClass) {
-    if (mailClass === "First Class") {
-      return "First-Class Product Components";
-    } else {
-      return `${mailClass} Products`;
-    }
-  }
-
   return (
     <>
-      {/* <div style={{ marginLeft: "-5%" }}>
-        <h3 fontFamily={textNodeFont}>{titleText(mailClass)}</h3>
-        <svg
+      <div style={{ marginLeft: "-5%" }}>
+        <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
+        {/* <svg
           shapeRendering="crispEdges"
           id={svgId}
           height={rotateProductNames ? 350 : 330}
@@ -345,9 +339,9 @@ export const ClassGraphSingleYear = (props) => {
           level={"classLevel"}
           bar2019={".bar2019"}
           bar2020={".bar2020"}
-        />
+        /> */}
       </div>
-       */}
+
       {/* <TooltipServiceClassLevel
         xHover={xHover}
         hoverId={hoverId}

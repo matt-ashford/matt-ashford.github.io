@@ -21,7 +21,6 @@ export const ProductCountTable = (props) => {
       propData
     );
     setCellData(countTableDataFilter(filtData, selectedYear));
-    console.log(selectedYear, filtData, cellData);
   }, [propData, selectedYear]);
 
   function productOrComponent(mc) {
