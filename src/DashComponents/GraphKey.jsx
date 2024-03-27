@@ -13,12 +13,17 @@ export const GraphKey = (props) => {
   const oldSelector = `keyOld${level}`;
   const newSelector = `keyNew${level}`;
 
+  // console.log(newBars);
+
   d3.select(`.${oldSelector}`)
     .on("mouseover", function () {
-      d3.selectAll(oldBars).transition().duration(200).style("opacity", 0.2);
+      d3.selectAll(newBars).transition().duration(200).style("opacity", 0.2);
     })
     .on("mouseout", function () {
+      console.log("mouseOut");
       d3.selectAll(newBars).transition().duration(200).style("opacity", 1);
+      // d3.selectAll(newBars).style("color", "green");
+      // d3.selectAll(oldBars).style("color", "green");
     })
     .on("click", () => console.log("clicked"));
 
@@ -27,7 +32,7 @@ export const GraphKey = (props) => {
       d3.selectAll(oldBars).transition().duration(200).style("opacity", 0.2);
     })
     .on("mouseout", function () {
-      d3.selectAll(newBars).transition().duration(200).style("opacity", 1);
+      d3.selectAll(oldBars).transition().duration(200).style("opacity", 1);
     });
 
   const newYearText = `FY ${selectedYear} Score`;
@@ -40,6 +45,8 @@ export const GraphKey = (props) => {
   const oldYearStartX = 1;
   const yearTextMargin = 140;
   const squareMargin = 20;
+  const squareWidth = 17;
+
   const oldYearTextStart = oldYearStartX + squareMargin;
   const newSquareStartX = oldYearStartX + yearTextMargin;
   const newTextStartX = newSquareStartX + squareMargin;
@@ -52,13 +59,13 @@ export const GraphKey = (props) => {
   // const targetTextStart = targetLineEnd;
 
   return (
-    <svg height={35} width={400}>
+    <svg height={35} width={450}>
       <rect
         fill={secondaryColor}
         x={oldYearStartX}
         y={marginTopSquare}
-        width={15}
-        height={15}
+        width={squareWidth}
+        height={squareWidth}
         className={oldSelector}
       ></rect>
       <text
@@ -74,8 +81,8 @@ export const GraphKey = (props) => {
         fill={primaryColor}
         x={newSquareStartX}
         y={marginTopSquare}
-        width={15}
-        height={15}
+        width={squareWidth}
+        height={squareWidth}
         className={newSelector}
       ></rect>
       <text
@@ -98,7 +105,7 @@ export const GraphKey = (props) => {
       />
 
       <text x={targetTextStart} y={30} fontFamily={textNodeFont}>
-        Target
+        {targetText}
       </text>
     </svg>
   );

@@ -27,6 +27,8 @@ import { TooltipTarget } from "../TooltipTarget";
 import { TooltipServiceClassLevel } from "../TooltipServiceClassLevel";
 import { TooltipProductNames } from "../TooltipProductNames";
 import ClassGraphTitle from "./ClassGraphTitle";
+import { transitionBars } from "./TransitionBars";
+import { drawBars } from "./DrawBars";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
@@ -56,7 +58,15 @@ export const ClassGraphSingleYear = (props) => {
 
   useEffect(() => {
     setData(propData);
-    barFunctions();
+    // barFunctions();
+    transitionBars(
+      propData,
+      ".barOldData",
+      ".barNewData",
+      selectedYear,
+      topStart,
+      pinkHighlight
+    );
   }, [data, propData]);
 
   const rotateProductNames = mailClass === "First Class Mail" ? true : false;
@@ -97,18 +107,18 @@ export const ClassGraphSingleYear = (props) => {
   }
 
   function drawBars() {
-    const dataProducts = data
-      .filter((row) => row.productAbbrev !== "missing")
-      .filter((row) => row.subProduct !== "yes");
+    // const dataProducts = data
+    //   .filter((row) => row.productAbbrev !== "missing")
+    //   .filter((row) => row.subProduct !== "yes");
 
-    const data2020 = dataProducts.filter((row) => row.fy === 2020);
-    const data2019 = dataProducts.filter((row) => row.fy === 2019);
+    const dataNew = propData.filter((row) => row.fy === selectedYear);
+    const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
 
-    const interBarMargin = getInterBarMargin(data2020);
+    const interBarMargin = getInterBarMargin(dataNew);
 
     svg
       .selectAll(".productNameText")
-      .data(data2020)
+      .data(dataNew)
       .enter()
       .append("text")
       .text((d) => d.productAbbrev)
@@ -167,52 +177,54 @@ export const ClassGraphSingleYear = (props) => {
     d3.selectAll(".targetLines").style("opacity", 1);
 
     svg
-      .selectAll(".bar2019")
-      .data(data2019)
+      .selectAll(".barOldData")
+      .data(dataOld)
       .enter()
       .append("rect")
       .attr("x", (d, i) => barXPoz(i))
-      .attr("y", (d) => topStart - yScale(d.pctOnTime))
-      .attr("height", (d) => yScale(d.pctOnTime))
       .attr("width", barWidth)
+      .attr("height", (d) => yScale(d.pct_on_time))
       .attr("fill", secondaryColor)
-      .attr("class", "graphicElement bar2019")
+      .attr("class", "graphicElement barOldData")
       .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
-      .on("mouseover", function () {
-        const currentBarSelection = d3.select(this);
+      .attr("y", (d) => topStart - yScale(d.pct_on_time));
 
-        mouseOverTriggers(currentBarSelection);
-      })
-      .on("mouseout", () => {
-        const currentBarSelection = d3.select(this);
-        mouseOutTriggers(currentBarSelection);
-      });
+    // .on("mouseover", function () {
+    //   const currentBarSelection = d3.select(this);
+
+    //   mouseOverTriggers(currentBarSelection);
+    // })
+    // .on("mouseout", () => {
+    //   const currentBarSelection = d3.select(this);
+    //   mouseOutTriggers(currentBarSelection);
+    // });
 
     svg
-      .selectAll(".bar2020")
-      .data(data2020)
+      .selectAll(".barNewData")
+      .data(dataNew)
       .enter()
       .append("rect")
       .attr("x", (d, i) => barXPoz(i) + barWidth)
-      .attr("y", (d) => topStart - yScale(d.pctOnTime))
-      .attr("height", (d) => yScale(d.pctOnTime))
+      .attr("y", (d) => topStart - yScale(d.pct_on_time))
+      .attr("height", (d) => yScale(d.pct_on_time))
       .attr("width", barWidth)
       .attr("fill", primaryColor)
-      .attr("class", "graphicElement bar2020")
-      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
-      .on("mouseover", function () {
-        const currentBarSelection = d3.select(this);
+      .attr("class", "graphicElement barNewData")
+      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`);
 
-        mouseOverTriggers(currentBarSelection);
-      })
-      .on("mouseout", () => {
-        const currentBarSelection = d3.select(this);
-        mouseOutTriggers(currentBarSelection);
-      });
+    // .on("mouseover", function () {
+    //   const currentBarSelection = d3.select(this);
+
+    //   mouseOverTriggers(currentBarSelection);
+    // })
+    // .on("mouseout", () => {
+    //   const currentBarSelection = d3.select(this);
+    //   mouseOutTriggers(currentBarSelection);
+    // });
 
     svg
       .selectAll(".targetLines")
-      .data(data2020)
+      .data(dataNew)
       .enter()
       .append("line")
       .attr(
@@ -237,7 +249,7 @@ export const ClassGraphSingleYear = (props) => {
 
     svg
       .selectAll(".targetTooltipRect")
-      .data(data2020)
+      .data(dataNew)
       .enter()
       .append("rect")
       .attr("x", (d, i) => barXPoz(i))
@@ -329,18 +341,17 @@ export const ClassGraphSingleYear = (props) => {
     <>
       <div style={{ marginLeft: "-5%" }}>
         <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
-        {/* <svg
+        <svg
           shapeRendering="crispEdges"
           id={svgId}
           height={rotateProductNames ? 350 : 330}
           width={graphWidth}
         ></svg>
-*/}
 
         <GraphKey
           level={"classLevel"}
-          oldBars={".bar2019"}
-          newBars={".bar2020"}
+          oldBars={".barOldData"}
+          newBars={".barNewData"}
           selectedYear={selectedYear}
         />
       </div>
