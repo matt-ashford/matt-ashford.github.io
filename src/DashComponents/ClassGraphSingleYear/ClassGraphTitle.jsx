@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 
 export const ClassGraphTitle = (props) => {
   const { mailClass, selectedYear } = props;
-  console.log(mailClass);
 
   function classAndProds(mailClass) {
     if (mailClass === "First Class") {

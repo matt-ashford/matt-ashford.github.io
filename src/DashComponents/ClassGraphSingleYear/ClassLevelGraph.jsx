@@ -32,7 +32,7 @@ export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
 
   // console.log(propData);
-  console.log(mailClass);
+  // console.log(mailClass);
 
   const [data, setData] = useState([]);
 
@@ -335,11 +335,14 @@ export const ClassGraphSingleYear = (props) => {
           height={rotateProductNames ? 350 : 330}
           width={graphWidth}
         ></svg>
+*/}
+
         <GraphKey
           level={"classLevel"}
-          bar2019={".bar2019"}
-          bar2020={".bar2020"}
-        /> */}
+          oldBars={".bar2019"}
+          newBars={".bar2020"}
+          selectedYear={selectedYear}
+        />
       </div>
 
       {/* <TooltipServiceClassLevel

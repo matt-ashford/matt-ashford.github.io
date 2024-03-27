@@ -8,58 +8,88 @@ import {
 } from "../Design/MyTheme";
 
 export const GraphKey = (props) => {
-  const { bar2019, bar2020, level } = props;
+  const { oldBars, newBars, level, selectedYear } = props;
 
-  const selector2019 = `key2019${level}`;
-  const selector2020 = `key2020${level}`;
+  const oldSelector = `keyOld${level}`;
+  const newSelector = `keyNew${level}`;
 
-  d3.select(`.${selector2019}`)
+  d3.select(`.${oldSelector}`)
     .on("mouseover", function () {
-      d3.selectAll(bar2020).transition().duration(200).style("opacity", 0.2);
+      d3.selectAll(oldBars).transition().duration(200).style("opacity", 0.2);
     })
     .on("mouseout", function () {
-      d3.selectAll(bar2020).transition().duration(200).style("opacity", 1);
+      d3.selectAll(newBars).transition().duration(200).style("opacity", 1);
     })
     .on("click", () => console.log("clicked"));
 
-  d3.select(`.${selector2020}`)
+  d3.select(`.${newSelector}`)
     .on("mouseover", function () {
-      d3.selectAll(bar2019).transition().duration(200).style("opacity", 0.2);
+      d3.selectAll(oldBars).transition().duration(200).style("opacity", 0.2);
     })
     .on("mouseout", function () {
-      d3.selectAll(bar2019).transition().duration(200).style("opacity", 1);
+      d3.selectAll(newBars).transition().duration(200).style("opacity", 1);
     });
 
+  const newYearText = `FY ${selectedYear} Score`;
+  const oldYearText = `FY ${selectedYear - 1} Score`;
+  const targetText = `Target FY ${selectedYear}`;
+
+  const marginTopText = 20;
+  const marginTopSquare = 17;
+
+  const oldYearStartX = 1;
+  const yearTextMargin = 140;
+  const squareMargin = 20;
+  const oldYearTextStart = oldYearStartX + squareMargin;
+  const newSquareStartX = oldYearStartX + yearTextMargin;
+  const newTextStartX = newSquareStartX + squareMargin;
+  const targetMargin = 120;
+  const targetLineStart = newTextStartX + targetMargin;
+  const lineWidth = 25;
+  const lineMargin = 5;
+  const targetLineEnd = targetLineStart + lineWidth;
+  const targetTextStart = targetLineEnd + lineMargin;
+  // const targetTextStart = targetLineEnd;
+
   return (
-    <svg height={35}>
+    <svg height={35} width={400}>
       <rect
         fill={secondaryColor}
-        x={20}
-        y={20}
+        x={oldYearStartX}
+        y={marginTopSquare}
         width={15}
         height={15}
-        className={selector2019}
+        className={oldSelector}
       ></rect>
-      <text className={selector2019} x={39} y={30} fontFamily={textNodeFont}>
-        FY2019
+      <text
+        className={oldSelector}
+        x={oldYearTextStart}
+        y={30}
+        fontFamily={textNodeFont}
+      >
+        {oldYearText}
       </text>
 
       <rect
         fill={primaryColor}
-        x={100}
-        y={20}
+        x={newSquareStartX}
+        y={marginTopSquare}
         width={15}
         height={15}
-        className={selector2020}
+        className={newSelector}
       ></rect>
-      <text x={120} y={30} fontFamily={textNodeFont} className={selector2020}>
-        {" "}
-        FY2020
+      <text
+        x={newTextStartX}
+        y={30}
+        fontFamily={textNodeFont}
+        className={newSelector}
+      >
+        {newYearText}
       </text>
       <line
-        x1={190}
+        x1={targetLineStart}
         y1={25}
-        x2={215}
+        x2={targetLineEnd}
         y2={25}
         strokeWidth={2}
         // stroke={highlightColor}
@@ -67,7 +97,7 @@ export const GraphKey = (props) => {
         className="targetLines"
       />
 
-      <text x={220} y={30} fontFamily={textNodeFont}>
+      <text x={targetTextStart} y={30} fontFamily={textNodeFont}>
         Target
       </text>
     </svg>
