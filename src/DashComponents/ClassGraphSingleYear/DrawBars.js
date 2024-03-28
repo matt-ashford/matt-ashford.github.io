@@ -9,10 +9,12 @@ export const drawBars = ({
   barXPoz,
   topStart,
 }) => {
+  //   propData = propData.filter((row) => row.target !== null);
+
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
 
-  console.log("frm drawbars", propData);
+  //   console.table("frm drawbars", propData);
 
   d3.select(`#${svgId}`)
     .selectAll(".barOldData")

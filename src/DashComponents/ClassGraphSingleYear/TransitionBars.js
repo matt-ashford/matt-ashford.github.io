@@ -12,8 +12,7 @@ export const transitionBars = ({
 }) => {
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
-  const transtionMs = 700;
-  console.log("from trsnition", propData);
+  const transtionMs = 800;
 
   d3.selectAll(newBars)
     .data(dataNew)

@@ -59,6 +59,7 @@ export const ClassGraphSingleYear = (props) => {
     drawTicks(svgId, yScaleRev, svgWidth);
     drawBars(drawBarsParams);
     drawTargetLines(drawTargetLinesParams);
+    drawProductNames(drawProductNamesParams);
   }, []);
 
   useEffect(() => {
@@ -68,8 +69,10 @@ export const ClassGraphSingleYear = (props) => {
   useEffect(() => {
     removeBars();
     removeTargetLines();
+    removeProductNames();
     drawBars(drawBarsParams);
     drawTargetLines(drawTargetLinesParams);
+    drawProductNames(drawProductNamesParams);
   }, [mailClass]);
 
   const rotateProductNames = mailClass === "First Class Mail" ? true : false;
@@ -92,6 +95,8 @@ export const ClassGraphSingleYear = (props) => {
 
   const svg = d3.select(`#${svgId}`);
 
+  const propDataNotNull = propData.filter((row) => row.target !== null);
+
   function getInterBarMargin(graphData) {
     const barCount = graphData.length;
     const interBarDist = svgWidth / barCount;
@@ -100,13 +105,13 @@ export const ClassGraphSingleYear = (props) => {
   }
 
   function barXPoz(i) {
-    let interBarMargin = getInterBarMargin(propData) * 2;
+    let interBarMargin = getInterBarMargin(propDataNotNull) * 2;
     return i * interBarMargin + barMarginLeft + extraBarMargin;
   }
 
   const drawTargetLinesParams = {
     svgId: svgId,
-    propData: propData,
+    propData: propDataNotNull,
     selectedYear: selectedYear,
     topStart: topStart,
     getInterBarMargin: getInterBarMargin,
@@ -114,7 +119,7 @@ export const ClassGraphSingleYear = (props) => {
   };
 
   const transitionBarsParams = {
-    propData: propData,
+    propData: propDataNotNull,
     oldBars: ".barOldData",
     newBars: ".barNewData",
     selectedYear: selectedYear,
@@ -124,14 +129,15 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawBarsParams = {
     svgId: svgId,
-    propData: propData,
+    propData: propDataNotNull,
     selectedYear: selectedYear,
     barXPoz: barXPoz,
     topStart: topStart,
   };
 
   const drawProductNamesParams = {
-    propData: propData,
+    svgId: svgId,
+    propData: propDataNotNull,
     rotateProductNames: rotateProductNames,
     selectedYear: selectedYear,
     getInterBarMargin: getInterBarMargin,
@@ -140,6 +146,19 @@ export const ClassGraphSingleYear = (props) => {
     mouseOverTriggersProductText: mouseOverTriggersProductText,
     mouseOutTriggersProductText: mouseOutTriggersProductText,
   };
+
+  function removeBars() {
+    d3.selectAll(".barNewData").remove();
+    d3.selectAll(".barOldData").remove();
+  }
+
+  function removeTargetLines() {
+    d3.select(`#${svgId}`).selectAll(".targetLines").remove();
+  }
+
+  function removeProductNames() {
+    d3.select(`#${svgId}`).selectAll(".productNameText").remove();
+  }
 
   // function drawBars(propData) {
   function drawBarsLocal(propData) {
@@ -187,15 +206,6 @@ export const ClassGraphSingleYear = (props) => {
   function mouseOutTriggers(currentBarSelection) {
     setIsHovering(false);
     d3.selectAll("rect").attr("stroke", "none");
-  }
-
-  function removeBars() {
-    d3.selectAll(".barNewData").remove();
-    d3.selectAll(".barOldData").remove();
-  }
-
-  function removeTargetLines() {
-    d3.select(`#${svgId}`).selectAll(".targetLines").remove();
   }
 
   function mouseOverTriggersTarget(currentTargetSelection) {
