@@ -2,19 +2,18 @@ import * as d3 from "d3";
 
 import { yScale } from "../../Design/graphDimensions";
 
-export const transitionBars = (
+export const transitionBars = ({
   propData,
   oldBars,
   newBars,
   selectedYear,
   topStart,
-  pinkHighlight
-) => {
+  pinkHighlight,
+}) => {
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
-  const transtionMs = 650;
-
-  console.log("broh");
+  const transtionMs = 700;
+  console.log("from trsnition", propData);
 
   d3.selectAll(newBars)
     .data(dataNew)

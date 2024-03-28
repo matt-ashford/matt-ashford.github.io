@@ -20,10 +20,7 @@ export const GraphKey = (props) => {
       d3.selectAll(newBars).transition().duration(200).style("opacity", 0.2);
     })
     .on("mouseout", function () {
-      console.log("mouseOut");
       d3.selectAll(newBars).transition().duration(200).style("opacity", 1);
-      // d3.selectAll(newBars).style("color", "green");
-      // d3.selectAll(oldBars).style("color", "green");
     })
     .on("click", () => console.log("clicked"));
 

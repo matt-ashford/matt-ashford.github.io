@@ -29,6 +29,10 @@ import { TooltipProductNames } from "../TooltipProductNames";
 import ClassGraphTitle from "./ClassGraphTitle";
 import { transitionBars } from "./TransitionBars";
 import { drawBars } from "./DrawBars";
+import { drawTargetLines } from "./DrawTargetLines";
+import { drawProductNames } from "./DrawProductNames";
+import { drawYaxisText } from "./DrawYaxisText";
+import { drawTicks } from "./DrawTicks";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
@@ -36,8 +40,7 @@ export const ClassGraphSingleYear = (props) => {
   // console.log(propData);
   // console.log(mailClass);
 
-  const [data, setData] = useState([]);
-
+  // const [data, setData] = useState([]);
   const [xHover, setXHover] = useState(0);
   const [hoverId, setHoverId] = useState("");
   const [isHovering, setIsHovering] = useState(false);
@@ -52,27 +55,25 @@ export const ClassGraphSingleYear = (props) => {
   const [xHoverText, setXhoverText] = useState(0);
 
   useEffect(() => {
-    setData(propData);
-    barFunctions();
+    drawYaxisText(svgId);
+    drawTicks(svgId, yScaleRev, svgWidth);
+    drawBars(drawBarsParams);
+    drawTargetLines(drawTargetLinesParams);
   }, []);
 
   useEffect(() => {
-    setData(propData);
-    // barFunctions();
-    transitionBars(
-      propData,
-      ".barOldData",
-      ".barNewData",
-      selectedYear,
-      topStart,
-      pinkHighlight
-    );
-  }, [data, propData]);
+    transitionBars(transitionBarsParams);
+  }, [selectedYear]);
+
+  useEffect(() => {
+    removeBars();
+    removeTargetLines();
+    drawBars(drawBarsParams);
+    drawTargetLines(drawTargetLinesParams);
+  }, [mailClass]);
 
   const rotateProductNames = mailClass === "First Class Mail" ? true : false;
-
   const strippedMailClass = mailClass.replace(/\s+/g, "");
-
   const extraBarMarginLookup = {
     FirstClassMail: 0,
     MarketingMail: 0,
@@ -91,14 +92,6 @@ export const ClassGraphSingleYear = (props) => {
 
   const svg = d3.select(`#${svgId}`);
 
-  function barFunctions() {
-    removeBars();
-    if (data.length > 1) {
-      removeBars();
-      drawBars();
-    }
-  }
-
   function getInterBarMargin(graphData) {
     const barCount = graphData.length;
     const interBarDist = svgWidth / barCount;
@@ -106,146 +99,52 @@ export const ClassGraphSingleYear = (props) => {
     return interBarDist;
   }
 
-  function drawBars() {
-    // const dataProducts = data
-    //   .filter((row) => row.productAbbrev !== "missing")
-    //   .filter((row) => row.subProduct !== "yes");
+  function barXPoz(i) {
+    let interBarMargin = getInterBarMargin(propData) * 2;
+    return i * interBarMargin + barMarginLeft + extraBarMargin;
+  }
 
+  const drawTargetLinesParams = {
+    svgId: svgId,
+    propData: propData,
+    selectedYear: selectedYear,
+    topStart: topStart,
+    getInterBarMargin: getInterBarMargin,
+    extraBarMargin: extraBarMargin,
+  };
+
+  const transitionBarsParams = {
+    propData: propData,
+    oldBars: ".barOldData",
+    newBars: ".barNewData",
+    selectedYear: selectedYear,
+    topStart: topStart,
+    pinkHighlight: pinkHighlight,
+  };
+
+  const drawBarsParams = {
+    svgId: svgId,
+    propData: propData,
+    selectedYear: selectedYear,
+    barXPoz: barXPoz,
+    topStart: topStart,
+  };
+
+  const drawProductNamesParams = {
+    propData: propData,
+    rotateProductNames: rotateProductNames,
+    selectedYear: selectedYear,
+    getInterBarMargin: getInterBarMargin,
+    topStart: topStart,
+    extraBarMargin: extraBarMargin,
+    mouseOverTriggersProductText: mouseOverTriggersProductText,
+    mouseOutTriggersProductText: mouseOutTriggersProductText,
+  };
+
+  // function drawBars(propData) {
+  function drawBarsLocal(propData) {
     const dataNew = propData.filter((row) => row.fy === selectedYear);
     const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
-
-    const interBarMargin = getInterBarMargin(dataNew);
-
-    svg
-      .selectAll(".productNameText")
-      .data(dataNew)
-      .enter()
-      .append("text")
-      .text((d) => d.productAbbrev)
-      .attr("text-anchor", () => {
-        if (rotateProductNames) {
-          return "start";
-        }
-        return "middle";
-      })
-      .attr("class", "graphicElement nameBox nonBar")
-      .attr("font-family", textNodeFont)
-      .attr("id", (d, i) => `nameTextid_${d.productId}`)
-      .attr("transform", function (d, i) {
-        let rotationDeg = 0;
-
-        if (rotateProductNames) {
-          rotationDeg = 25;
-        }
-
-        return `translate(${
-          i * interBarMargin + 85 + extraBarMargin
-        },${topStart + 15})rotate(${rotationDeg})`;
-      })
-      .attr("dx", () => {
-        if (rotateProductNames) {
-          return "-.9em";
-        } else {
-          return ".3em";
-        }
-      })
-      .attr("dy", () => {
-        if (rotateProductNames) {
-          return ".3em";
-        } else {
-          return ".2em";
-        }
-      })
-      .on("mouseover", function () {
-        const currentTextSelection = d3.select(this);
-        mouseOverTriggersProductText(currentTextSelection);
-      })
-      .on("mouseout", function () {
-        mouseOutTriggersProductText();
-      });
-
-    svg
-      .append("g")
-      .call(d3.axisLeft(yScaleRev).tickSize(-svgWidth).ticks(5))
-      .attr("transform", `translate(${marginLeft},${marginTop})`)
-      .attr("class", "graphicElement axisTicks nonBar");
-
-    d3.select(".domain").remove();
-    d3.selectAll(".axisTicks").selectAll("text").style("opacity", 1);
-    d3.selectAll("line").style("opacity", 0.3);
-
-    d3.selectAll(".targetLines").style("opacity", 1);
-
-    svg
-      .selectAll(".barOldData")
-      .data(dataOld)
-      .enter()
-      .append("rect")
-      .attr("x", (d, i) => barXPoz(i))
-      .attr("width", barWidth)
-      .attr("height", (d) => yScale(d.pct_on_time))
-      .attr("fill", secondaryColor)
-      .attr("class", "graphicElement barOldData")
-      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
-      .attr("y", (d) => topStart - yScale(d.pct_on_time));
-
-    // .on("mouseover", function () {
-    //   const currentBarSelection = d3.select(this);
-
-    //   mouseOverTriggers(currentBarSelection);
-    // })
-    // .on("mouseout", () => {
-    //   const currentBarSelection = d3.select(this);
-    //   mouseOutTriggers(currentBarSelection);
-    // });
-
-    svg
-      .selectAll(".barNewData")
-      .data(dataNew)
-      .enter()
-      .append("rect")
-      .attr("x", (d, i) => barXPoz(i) + barWidth)
-      .attr("y", (d) => topStart - yScale(d.pct_on_time))
-      .attr("height", (d) => yScale(d.pct_on_time))
-      .attr("width", barWidth)
-      .attr("fill", primaryColor)
-      .attr("class", "graphicElement barNewData")
-      .attr("id", (d) => `classBar_${d.productId}_${d.fy}`);
-
-    // .on("mouseover", function () {
-    //   const currentBarSelection = d3.select(this);
-
-    //   mouseOverTriggers(currentBarSelection);
-    // })
-    // .on("mouseout", () => {
-    //   const currentBarSelection = d3.select(this);
-    //   mouseOutTriggers(currentBarSelection);
-    // });
-
-    svg
-      .selectAll(".targetLines")
-      .data(dataNew)
-      .enter()
-      .append("line")
-      .attr(
-        "x1",
-        (d, i) =>
-          i * interBarMargin + marginLeft + targetMarginLeft + extraBarMargin
-      )
-      .attr("y1", (d) => topStart - yScale(d.target))
-      .attr(
-        "x2",
-        (d, i) =>
-          i * interBarMargin +
-          barWidth * 2 +
-          barMarginLeft +
-          targetMarginLeft +
-          extraBarMargin
-      )
-      .attr("y2", (d) => topStart - yScale(d.target))
-      .style("stroke", pinkHighlight)
-      .style("stroke-width", 3)
-      .attr("class", "graphicElement targetLines nonBar");
 
     svg
       .selectAll(".targetTooltipRect")
@@ -268,20 +167,6 @@ export const ClassGraphSingleYear = (props) => {
         const currentTargetSelection = d3.select(this);
         mouseOutTriggersTarget(currentTargetSelection);
       });
-
-    svg
-      .append("text")
-      .text("On-Time (%)")
-      .attr("x", 190)
-      .attr("y", 20)
-      .style("text-anchor", "middle")
-      .attr("transform", "translate(-5,315) rotate(270)")
-      .attr("font-family", textNodeFont)
-      .attr("class", "graphicElement");
-
-    function barXPoz(i) {
-      return i * interBarMargin + barMarginLeft + extraBarMargin;
-    }
   }
 
   function mouseOverTriggers(currentBarSelection) {
@@ -301,12 +186,16 @@ export const ClassGraphSingleYear = (props) => {
 
   function mouseOutTriggers(currentBarSelection) {
     setIsHovering(false);
-
     d3.selectAll("rect").attr("stroke", "none");
   }
 
   function removeBars() {
-    d3.selectAll(".graphicElement").remove();
+    d3.selectAll(".barNewData").remove();
+    d3.selectAll(".barOldData").remove();
+  }
+
+  function removeTargetLines() {
+    d3.select(`#${svgId}`).selectAll(".targetLines").remove();
   }
 
   function mouseOverTriggersTarget(currentTargetSelection) {

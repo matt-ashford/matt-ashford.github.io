@@ -1,0 +1,90 @@
+[33mda64bba[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m bar transitions working!
+[33m841e686[m fixed graph key
+[33m8d75a38[m finished class graph title
+[33mb369182[m starting class level graph
+[33m3c7b079[m count table functioning
+[33m36e60a8[m fixed year dropdown
+[33mce4ce6f[m year dropdown functioning properly
+[33ma6d5476[m created year dropdown
+[33m5e93a61[m fixed product count table data reference
+[33m083b43b[m created filterFunc annual
+[33m9f55f5b[m  joining json working
+[33maed9b0b[m loaded new data, starterted data utility files
+[33m8f01395[m changed homepage again 02
+[33m2dc5d5e[m changed homepage again
+[33m6db9e03[m deleted readme
+[33m6a22609[m changed homepage for gh pages
+[33mcaf5fd7[m first commit, new repo
+[33m800a04f[m first commit
+[33me466922[m removed strikethrough text
+[33m13a2b07[m changed congress link target
+[33mf608172[m changed acd link target
+[33m87b0d69[m semicolons final
+[33m7c2382a[m additional edits from lyud
+[33mcb9d5f3[m added strikethrough
+[33mbb49707[m added full text for acd 2021
+[33m595eca1[m change home page text with acd 2021 link:
+[33md8e1fcc[m final text in footer and homepage
+[33m4d53d30[m added text under intro paragraph
+[33mb6d59bb[m try this again
+[33mea6cd5c[m home page graph and footer
+[33mf29ceb5[m font fix again
+[33mcaaf3b5[m ugly font added
+[33m53d81f6[m home page graph and ugly text
+[33mcee5476[m refacto design
+[33m4a55799[m refactor product count data
+[33mdae887d[m class page refactor complete :)
+[33m9349b15[m dropdown nearly fixed
+[33m63ad964[m class refactor init
+[33m7358f14[m removed most warnings
+[33mcc3b96a[m tooltip styling
+[33m1eef112[m formatting changes to class pages
+[33mfc58cb4[m text formatting and data output fix
+[33m258eb76[m all feedback edits
+[33mf2e03ff[m added product defs
+[33me939950[m added class level defs
+[33m9703ae1[m moar styling
+[33m3deaaef[m footer and styling
+[33ma5888b3[m components lol
+[33mc0684ef[m homepage text finished
+[33mfba2c92[m more spacing
+[33mce60fb7[m fixed table preliminary
+[33m8afb64c[m layout changes and product categories
+[33m99da789[m home page complete
+[33m255fe73[m fixed spacing maybe
+[33mba6dc3e[m ready for next sprint
+[33mb0d5d83[m added links
+[33m684ea34[m correclty calculating count data
+[33mcf8f45f[m finished formatting class level graph on all classes
+[33m9ada24f[m further along with classes
+[33mbac95d3[m starting remaining mail classes
+[33mc9def45[m fixed other tooltip triggers
+[33m6fbdfb2[m changed tooltip trigger targets for volume graph
+[33m278efa6[m changed target tooltip trigger
+[33mcd63fde[m fixed layout issues
+[33m1a8440b[m finished target tooltip
+[33mecdedda[m nearly finished with target tooltip
+[33mcbb4c39[m added data bars to count table
+[33mea5b367[m restyled product count table
+[33mc008b40[m first sprint basic reqs finished
+[33m8edb7d1[m fixed layout issues
+[33m1afc77e[m fc page finished
+[33mf6c66e5[m first class page components are nearly finished
+[33mde061eb[m condidiontal axis rotattion on class graph
+[33m3a3ef26[m starting first class
+[33mc7610fc[m product page sizing works
+[33m7aa482d[m both annual and quarterly tooltips working
+[33m66acb4d[m class tooltip working
+[33mdb8be3c[m volume tooltip finished
+[33mf19e0d3[m tooltip text working properly
+[33m9627150[m tooltip poz working better
+[33md071b18[m tooltip extracted to separate file
+[33m6a2b905[m refactored class graph
+[33m7d8e554[m spacing on product page
+[33m2666d54[m removed product tooltip
+[33m0229503[m final editts
+[33mc5df3bb[m migrated all files
+[33mff5d455[m added a third line
+[33m94cabef[m added line
+[33m8578398[m test
+[33m877b945[m Initialize project using Create React App

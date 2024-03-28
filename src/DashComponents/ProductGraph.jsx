@@ -125,7 +125,6 @@ export const ProductGraph = (props) => {
       .attr("id", (d) => `productTarget_${d.productId}`)
       .on("mouseover", function () {
         const currentTargetSelection = d3.select(this);
-
         mouseOverTriggersTarget(currentTargetSelection);
       })
       .on("mouseout", function () {
