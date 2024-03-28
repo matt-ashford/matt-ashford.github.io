@@ -33,14 +33,11 @@ import { drawTargetLines } from "./DrawTargetLines";
 import { drawProductNames } from "./DrawProductNames";
 import { drawYaxisText } from "./DrawYaxisText";
 import { drawTicks } from "./DrawTicks";
+import { sortPropData } from "./SortPropData";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
 
-  // console.log(propData);
-  // console.log(mailClass);
-
-  // const [data, setData] = useState([]);
   const [xHover, setXHover] = useState(0);
   const [hoverId, setHoverId] = useState("");
   const [isHovering, setIsHovering] = useState(false);
@@ -97,6 +94,8 @@ export const ClassGraphSingleYear = (props) => {
 
   const propDataNotNull = propData.filter((row) => row.target !== null);
 
+  const propDataSorted = sortPropData(propDataNotNull);
+
   function getInterBarMargin(graphData) {
     const barCount = graphData.length;
     const interBarDist = svgWidth / barCount;
@@ -111,7 +110,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawTargetLinesParams = {
     svgId: svgId,
-    propData: propDataNotNull,
+    propData: propDataSorted,
     selectedYear: selectedYear,
     topStart: topStart,
     getInterBarMargin: getInterBarMargin,
@@ -119,7 +118,7 @@ export const ClassGraphSingleYear = (props) => {
   };
 
   const transitionBarsParams = {
-    propData: propDataNotNull,
+    propData: propDataSorted,
     oldBars: ".barOldData",
     newBars: ".barNewData",
     selectedYear: selectedYear,
@@ -129,7 +128,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawBarsParams = {
     svgId: svgId,
-    propData: propDataNotNull,
+    propData: propDataSorted,
     selectedYear: selectedYear,
     barXPoz: barXPoz,
     topStart: topStart,
@@ -137,7 +136,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawProductNamesParams = {
     svgId: svgId,
-    propData: propDataNotNull,
+    propData: propDataSorted,
     rotateProductNames: rotateProductNames,
     selectedYear: selectedYear,
     getInterBarMargin: getInterBarMargin,

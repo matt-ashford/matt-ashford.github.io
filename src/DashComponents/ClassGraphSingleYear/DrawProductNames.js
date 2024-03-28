@@ -17,12 +17,12 @@ export const drawProductNames = ({
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const interBarMargin = getInterBarMargin(dataNew);
 
-  const namesArray = propData.map((row) =>
+  const namesArray = dataNew.map((row) =>
     row.product_abbrev === null ? row.product : row.product_abbrev
   );
 
   // console.log(namesArray);
-  console.table(propData);
+  // console.table(propData);
 
   d3.select(`#${svgId}`)
     .selectAll(".productNameText")
