@@ -21,7 +21,8 @@ export const drawProductNames = ({
     row.product_abbrev === null ? row.product : row.product_abbrev
   );
 
-  console.log(namesArray);
+  // console.log(namesArray);
+  console.table(propData);
 
   d3.select(`#${svgId}`)
     .selectAll(".productNameText")
