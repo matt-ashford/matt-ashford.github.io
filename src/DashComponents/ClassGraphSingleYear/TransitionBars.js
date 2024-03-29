@@ -16,7 +16,7 @@ export const transitionBars = ({
 
   d3.selectAll(newBars)
     .data(dataNew)
-    .attr("id", (d) => `${d.product_id}_${d.fy}`)
+    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
     .transition()
     .duration(transtionMs)
     .attr("y", (d) => topStart - yScale(d.pct_on_time))
@@ -32,6 +32,7 @@ export const transitionBars = ({
 
   d3.selectAll(".targetLines")
     .data(dataNew)
+    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
     .transition()
     .duration(transtionMs)
     .attr("y1", (d) => topStart - yScale(d.target))

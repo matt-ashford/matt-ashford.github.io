@@ -38,6 +38,13 @@ import { sortPropData } from "./SortPropData";
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
 
+  // const [propDataNotNull, setPropDataNotNull] = useState(
+  //   propData.filter((row) => row.target !== null)
+  // );
+  // const [propDataSorted, setPopDataSorted] = useState(
+  //   sortPropData(propDataNotNull)
+  // );
+
   const [xHover, setXHover] = useState(0);
   const [hoverId, setHoverId] = useState("");
   const [isHovering, setIsHovering] = useState(false);
@@ -52,6 +59,7 @@ export const ClassGraphSingleYear = (props) => {
   const [xHoverText, setXhoverText] = useState(0);
 
   useEffect(() => {
+    removeGraphicalElements();
     drawYaxisText(svgId);
     drawTicks(svgId, yScaleRev, svgWidth);
     drawBars(drawBarsParams);
@@ -60,17 +68,28 @@ export const ClassGraphSingleYear = (props) => {
   }, []);
 
   useEffect(() => {
+    // setPropDataNotNull(propData.filter((row) => row.target !== null));
+    // setPopDataSorted(sortPropData(propDataNotNull));
+
     transitionBars(transitionBarsParams);
   }, [selectedYear]);
 
   useEffect(() => {
-    removeBars();
-    removeTargetLines();
-    removeProductNames();
+    // setPropDataNotNull(propData.filter((row) => row.target !== null));
+    // setPopDataSorted(sortPropData(propDataNotNull));
+
+    removeGraphicalElements();
+
     drawBars(drawBarsParams);
     drawTargetLines(drawTargetLinesParams);
     drawProductNames(drawProductNamesParams);
   }, [mailClass]);
+
+  function removeGraphicalElements() {
+    removeBars();
+    removeTargetLines();
+    removeProductNames();
+  }
 
   const rotateProductNames = mailClass === "First Class Mail" ? true : false;
   const strippedMailClass = mailClass.replace(/\s+/g, "");
@@ -104,13 +123,15 @@ export const ClassGraphSingleYear = (props) => {
   }
 
   function barXPoz(i) {
-    let interBarMargin = getInterBarMargin(propDataNotNull) * 2;
+    // let interBarMargin = getInterBarMargin(propDataNotNull) * 2;
+    let interBarMargin = getInterBarMargin(propDataSorted) * 2;
     return i * interBarMargin + barMarginLeft + extraBarMargin;
   }
 
   const drawTargetLinesParams = {
     svgId: svgId,
     propData: propDataSorted,
+    // propData: propDataNotNull,
     selectedYear: selectedYear,
     topStart: topStart,
     getInterBarMargin: getInterBarMargin,
@@ -119,6 +140,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const transitionBarsParams = {
     propData: propDataSorted,
+    // propData: propDataNotNull,
     oldBars: ".barOldData",
     newBars: ".barNewData",
     selectedYear: selectedYear,
@@ -128,6 +150,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawBarsParams = {
     svgId: svgId,
+    // propData: propDataNotNull,
     propData: propDataSorted,
     selectedYear: selectedYear,
     barXPoz: barXPoz,
@@ -136,6 +159,7 @@ export const ClassGraphSingleYear = (props) => {
 
   const drawProductNamesParams = {
     svgId: svgId,
+    // propData: propDataNotNull,
     propData: propDataSorted,
     rotateProductNames: rotateProductNames,
     selectedYear: selectedYear,
@@ -175,7 +199,7 @@ export const ClassGraphSingleYear = (props) => {
       .attr("width", barWidth * 2.5)
       .style("opacity", 0)
       .attr("class", "targetTooltipRect")
-      .attr("id", (d) => `classTarget_${d.productId}`)
+      .attr("id", (d) => `classTarget_${d.product_name}_${d.delivery_speed}`)
       .on("mouseover", function () {
         const currentTargetSelection = d3.select(this);
 

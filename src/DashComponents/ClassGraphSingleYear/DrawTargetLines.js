@@ -23,6 +23,8 @@ export const drawTargetLines = ({
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
 
+  console.table("from lines", propData);
+
   const interBarMargin = getInterBarMargin(dataNew);
   d3.select(`#${svgId}`)
     .selectAll(".targetLines")

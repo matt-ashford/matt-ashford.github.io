@@ -14,7 +14,12 @@ export const drawBars = ({
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
 
-  //   console.table("frm drawbars", propData);
+  const barPoz1 = barXPoz(1);
+  const barPoz2 = barXPoz(2);
+  const barPozDiff = barPoz1 - barPoz2;
+
+  console.table("frm drawbars", propData);
+  //   console.table("frm drawbars", barPozDiff);
 
   d3.select(`#${svgId}`)
     .selectAll(".barOldData")
@@ -26,7 +31,7 @@ export const drawBars = ({
     .attr("height", (d) => yScale(d.pct_on_time))
     .attr("fill", secondaryColor)
     .attr("class", "graphicElement barOldData")
-    .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
+    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
     .attr("y", (d) => topStart - yScale(d.pct_on_time));
 
   // .on("mouseover", function () {
@@ -50,7 +55,7 @@ export const drawBars = ({
     .attr("width", barWidth)
     .attr("fill", primaryColor)
     .attr("class", "graphicElement barNewData")
-    .attr("id", (d) => `classBar_${d.productId}_${d.fy}`)
+    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
     .raise();
 
   // .on("mouseover", function () {

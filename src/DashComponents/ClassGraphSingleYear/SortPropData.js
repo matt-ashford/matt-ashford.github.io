@@ -27,7 +27,7 @@ export const sortPropData = (inputData) => {
     "Carrier Route": 2,
     HDSL: 3,
     HDSF: 4,
-    "EDDM - Retail": 5,
+    "EDDM-Retail": 5,
     Parcels: 6,
   };
 
@@ -46,7 +46,6 @@ export const sortPropData = (inputData) => {
 };
 
 function sortByClass(className, inputData_sortProp, allClassOrders) {
-  // if classname in allClassOrders.keys()
   let sortedData = inputData_sortProp;
 
   if (!Object.keys(allClassOrders).some((key) => key === className)) {
@@ -63,6 +62,9 @@ function sortByClass(className, inputData_sortProp, allClassOrders) {
   sortedData = inputDataWithOrder.sort((a, b) => {
     return a.orderNumber - b.orderNumber;
   });
+
+  //   console.log(sortedData.map((row) => row.product));
+  //   console.log(inputDataWithOrder);
 
   return sortedData;
 }
