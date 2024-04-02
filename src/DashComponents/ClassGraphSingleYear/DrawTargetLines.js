@@ -12,6 +12,8 @@ import {
   barMarginLeft,
 } from "../../Design/graphDimensions";
 
+import { generateSvgElementId } from "./GenerateSvgElementId";
+
 export const drawTargetLines = ({
   svgId,
   propData,
@@ -21,9 +23,8 @@ export const drawTargetLines = ({
   extraBarMargin,
 }) => {
   const dataNew = propData.filter((row) => row.fy === selectedYear);
-  const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
 
-  console.table("from lines", propData);
+  //   console.table("from lines", propData);
 
   const interBarMargin = getInterBarMargin(dataNew);
   d3.select(`#${svgId}`)
@@ -31,6 +32,7 @@ export const drawTargetLines = ({
     .data(dataNew)
     .enter()
     .append("line")
+    .attr("id", (d) => generateSvgElementId("line", d))
     .attr(
       "x1",
       (d, i) =>

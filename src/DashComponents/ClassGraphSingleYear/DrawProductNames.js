@@ -2,6 +2,7 @@ import * as d3 from "d3";
 
 import { yScale } from "../../Design/graphDimensions";
 import { textNodeFont } from "../../Design/MyTheme";
+import { generateSvgElementId } from "./GenerateSvgElementId";
 
 export const drawProductNames = ({
   svgId,

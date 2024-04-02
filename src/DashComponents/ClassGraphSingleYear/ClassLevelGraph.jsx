@@ -24,7 +24,7 @@ import {
 
 import { TooltipTarget } from "../TooltipTarget";
 
-import { TooltipServiceClassLevel } from "../TooltipServiceClassLevel";
+import { TooltipServiceClassLevel } from "./TooltipServiceClassLevel";
 import { TooltipProductNames } from "../TooltipProductNames";
 import ClassGraphTitle from "./ClassGraphTitle";
 import { transitionBars } from "./TransitionBars";
@@ -37,13 +37,6 @@ import { sortPropData } from "./SortPropData";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
-
-  // const [propDataNotNull, setPropDataNotNull] = useState(
-  //   propData.filter((row) => row.target !== null)
-  // );
-  // const [propDataSorted, setPopDataSorted] = useState(
-  //   sortPropData(propDataNotNull)
-  // );
 
   const [xHover, setXHover] = useState(0);
   const [hoverId, setHoverId] = useState("");
@@ -155,6 +148,8 @@ export const ClassGraphSingleYear = (props) => {
     selectedYear: selectedYear,
     barXPoz: barXPoz,
     topStart: topStart,
+    mouseOverTriggersBar: mouseOverTriggersBar,
+    mouseOutTriggersBar: mouseOutTriggersBar,
   };
 
   const drawProductNamesParams = {
@@ -170,6 +165,14 @@ export const ClassGraphSingleYear = (props) => {
     mouseOutTriggersProductText: mouseOutTriggersProductText,
   };
 
+  const tooltipParams = {
+    svgId: svgId,
+    barXPoz: barXPoz,
+    topStart: topStart,
+    barWidth: barWidth,
+    yScale: yScale,
+  };
+
   function removeBars() {
     d3.selectAll(".barNewData").remove();
     d3.selectAll(".barOldData").remove();
@@ -183,35 +186,17 @@ export const ClassGraphSingleYear = (props) => {
     d3.select(`#${svgId}`).selectAll(".productNameText").remove();
   }
 
-  // function drawBars(propData) {
-  function drawBarsLocal(propData) {
-    const dataNew = propData.filter((row) => row.fy === selectedYear);
-    const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
-
-    svg
-      .selectAll(".targetTooltipRect")
-      .data(dataNew)
-      .enter()
-      .append("rect")
-      .attr("x", (d, i) => barXPoz(i))
-      .attr("y", (d) => 0)
-      .attr("height", (d) => topStart - yScale(d.target))
-      .attr("width", barWidth * 2.5)
-      .style("opacity", 0)
-      .attr("class", "targetTooltipRect")
-      .attr("id", (d) => `classTarget_${d.product_name}_${d.delivery_speed}`)
-      .on("mouseover", function () {
-        const currentTargetSelection = d3.select(this);
-
-        mouseOverTriggersTarget(currentTargetSelection);
-      })
-      .on("mouseout", function () {
-        const currentTargetSelection = d3.select(this);
-        mouseOutTriggersTarget(currentTargetSelection);
-      });
+  function mouseEnterSvg() {
+    console.log("we in this bitch");
+    setIsHovering(true);
   }
 
-  function mouseOverTriggers(currentBarSelection) {
+  function mouseExitSvg() {
+    setIsHovering(false);
+    console.log("we out this bitch");
+  }
+
+  function mouseOverTriggersBar(currentBarSelection) {
     const currentBarId = currentBarSelection._groups[0][0].id;
 
     const currentBarX = currentBarSelection._groups[0][0].x.baseVal.value;
@@ -220,25 +205,13 @@ export const ClassGraphSingleYear = (props) => {
 
     setXHover(currentBarX);
     setHoverId(currentBarId);
-    setIsHovering(true);
     setHoverHeight(currentBarHeight);
 
     currentBarSelection.attr("stroke", "black");
   }
 
-  function mouseOutTriggers(currentBarSelection) {
-    setIsHovering(false);
+  function mouseOutTriggersBar(currentBarSelection) {
     d3.selectAll("rect").attr("stroke", "none");
-  }
-
-  function mouseOverTriggersTarget(currentTargetSelection) {
-    const currentTargetId = currentTargetSelection._groups[0][0].id;
-
-    const currentTargetX = currentTargetSelection._groups[0][0].x.baseVal.value;
-
-    setIsHoveringTarget(true);
-    setHoverTargetId(currentTargetId);
-    setXHoverTarget(currentTargetX);
   }
 
   function mouseOutTriggersTarget(currentTargetSelection) {
@@ -264,6 +237,8 @@ export const ClassGraphSingleYear = (props) => {
       <div style={{ marginLeft: "-5%" }}>
         <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
         <svg
+          onMouseEnter={mouseEnterSvg}
+          onMouseLeave={mouseExitSvg}
           shapeRendering="crispEdges"
           id={svgId}
           height={rotateProductNames ? 350 : 330}
@@ -278,14 +253,16 @@ export const ClassGraphSingleYear = (props) => {
         />
       </div>
 
-      {/* <TooltipServiceClassLevel
+      <TooltipServiceClassLevel
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}
         hoverHeight={hoverHeight}
-        propData={propData}
+        propData={propDataSorted}
         tooltipId={"tooltipClassGraph"}
-      /> */}
+        tooltipParams={tooltipParams}
+      />
+
       {/* 
       <TooltipTarget
         isHoveringTarget={isHoveringTarget}

@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 
 import { yScale } from "../../Design/graphDimensions";
+import { generateSvgElementId } from "./GenerateSvgElementId";
 
 export const transitionBars = ({
   propData,
@@ -16,7 +17,7 @@ export const transitionBars = ({
 
   d3.selectAll(newBars)
     .data(dataNew)
-    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
+    .attr("id", (d) => generateSvgElementId("rect", d))
     .transition()
     .duration(transtionMs)
     .attr("y", (d) => topStart - yScale(d.pct_on_time))
@@ -24,15 +25,15 @@ export const transitionBars = ({
 
   d3.selectAll(oldBars)
     .data(dataOld)
+    .attr("id", (d) => generateSvgElementId("rect", d))
     .transition()
     .duration(transtionMs)
     .attr("y", (d) => topStart - yScale(d.pct_on_time))
-    .attr("height", (d) => yScale(d.pct_on_time))
-    .attr("id", (d) => `${d.product_id}_${d.fy}`);
+    .attr("height", (d) => yScale(d.pct_on_time));
 
   d3.selectAll(".targetLines")
     .data(dataNew)
-    .attr("id", (d) => `classBar_${d.product}_${d.delivery_speed}_${d.fy}`)
+    .attr("id", (d) => generateSvgElementId("line", d))
     .transition()
     .duration(transtionMs)
     .attr("y1", (d) => topStart - yScale(d.target))
