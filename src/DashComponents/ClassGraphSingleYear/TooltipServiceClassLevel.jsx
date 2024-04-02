@@ -11,6 +11,7 @@ export const TooltipServiceClassLevel = (props) => {
     xHover,
     hoverId,
     isHovering,
+    setIsHovering,
     hoverHeight,
     propData,
     tooltipId,
@@ -37,6 +38,7 @@ export const TooltipServiceClassLevel = (props) => {
     tooltipYPoz(hoverHeight, tooltipId);
     setTooltipText(tooltipTextChange(hoverId, propData));
     // console.log(isHovering, xHover, hoverId);
+    drawStroke(hoverId);
   }, [isHovering, xHover, hoverId]);
 
   useEffect(() => {
@@ -44,13 +46,13 @@ export const TooltipServiceClassLevel = (props) => {
     // removeOnMouseOut(isHovering, tooltipId);
   });
 
-  // // const selectedRect = d3.select("#classBar_Carrier Route_null_2023");
-  // const selectedRect = d3.select("#classBar_Parcels_null_2023");
-  // // console.log(selectedRect);
-  // // console.log(selectedRect._groups[0][0].x.baseVal.value);
-  // // console.log(selectedRect._groups[0][0].x);
-  // // console.log(selectedRect._groups[0].attributes);
-  // // console.log(selectedRect.attr("x"));
+  function drawStroke(hoverId) {
+    if (hoverId) {
+      const hoveredBarSelection = d3.select(`#${hoverId}`);
+      d3.selectAll("rect").attr("stroke", "none");
+      hoveredBarSelection.attr("stroke", "black");
+    }
+  }
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
@@ -73,6 +75,7 @@ export const TooltipServiceClassLevel = (props) => {
 
     .on("mouseover", () => {
       // tooltipDiv.style("opacity", 0).style("top", 1500);
+      setIsHovering(true);
       tooltipDiv.style("opacity", 1);
     });
 

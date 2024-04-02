@@ -139,6 +139,8 @@ export const ClassGraphSingleYear = (props) => {
     selectedYear: selectedYear,
     topStart: topStart,
     pinkHighlight: pinkHighlight,
+    mouseOverTriggersBar: mouseOverTriggersBar,
+    mouseOutTriggersBar: mouseOutTriggersBar,
   };
 
   const drawBarsParams = {
@@ -211,7 +213,10 @@ export const ClassGraphSingleYear = (props) => {
   }
 
   function mouseOutTriggersBar(currentBarSelection) {
-    d3.selectAll("rect").attr("stroke", "none");
+    // d3.selectAll("rect").attr("stroke", "none");
+    // d3.selectAll(currentBarSelection).attr("stroke", "none");
+    // console.log(currentBarSelection);
+    // setHoverId(0);
   }
 
   function mouseOutTriggersTarget(currentTargetSelection) {
@@ -257,6 +262,7 @@ export const ClassGraphSingleYear = (props) => {
         xHover={xHover}
         hoverId={hoverId}
         isHovering={isHovering}
+        setIsHovering={setIsHovering}
         hoverHeight={hoverHeight}
         propData={propDataSorted}
         tooltipId={"tooltipClassGraph"}

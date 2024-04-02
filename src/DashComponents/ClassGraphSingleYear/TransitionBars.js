@@ -10,6 +10,8 @@ export const transitionBars = ({
   selectedYear,
   topStart,
   pinkHighlight,
+  mouseOutTriggersBar,
+  mouseOverTriggersBar,
 }) => {
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const dataOld = propData.filter((row) => row.fy === selectedYear - 1);
@@ -18,19 +20,34 @@ export const transitionBars = ({
   d3.selectAll(newBars)
     .data(dataNew)
     .attr("id", (d) => generateSvgElementId("rect", d))
+    .on("mouseover", function () {
+      const currentBarSelection = d3.select(this);
+      mouseOverTriggersBar(currentBarSelection);
+    })
+    .on("mouseout", () => {
+      const currentBarSelection = d3.select(this);
+      mouseOutTriggersBar(currentBarSelection);
+    })
     .transition()
     .duration(transtionMs)
     .attr("y", (d) => topStart - yScale(d.pct_on_time))
     .attr("height", (d) => yScale(d.pct_on_time));
-
   d3.selectAll(oldBars)
     .data(dataOld)
     .attr("id", (d) => generateSvgElementId("rect", d))
+    .on("mouseover", function () {
+      const currentBarSelection = d3.select(this);
+
+      mouseOverTriggersBar(currentBarSelection);
+    })
+    .on("mouseout", () => {
+      const currentBarSelection = d3.select(this);
+      mouseOutTriggersBar(currentBarSelection);
+    })
     .transition()
     .duration(transtionMs)
     .attr("y", (d) => topStart - yScale(d.pct_on_time))
     .attr("height", (d) => yScale(d.pct_on_time));
-
   d3.selectAll(".targetLines")
     .data(dataNew)
     .attr("id", (d) => generateSvgElementId("line", d))
