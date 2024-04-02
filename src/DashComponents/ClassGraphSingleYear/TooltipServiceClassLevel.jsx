@@ -44,12 +44,13 @@ export const TooltipServiceClassLevel = (props) => {
     // removeOnMouseOut(isHovering, tooltipId);
   });
 
-  // const selectedRect = d3.select("#classBar_Carrier Route_null_2023");
-  const selectedRect = d3.select("#classBar_Parcels_null_2023");
-  // console.log(selectedRect);
-  // console.log(selectedRect._groups[0][0].x.baseVal.value);
-  // console.log(selectedRect._groups[0][0].x.baseVal.value);
-  // console.log(selectedRect.attr("x"));
+  // // const selectedRect = d3.select("#classBar_Carrier Route_null_2023");
+  // const selectedRect = d3.select("#classBar_Parcels_null_2023");
+  // // console.log(selectedRect);
+  // // console.log(selectedRect._groups[0][0].x.baseVal.value);
+  // // console.log(selectedRect._groups[0][0].x);
+  // // console.log(selectedRect._groups[0].attributes);
+  // // console.log(selectedRect.attr("x"));
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
@@ -134,7 +135,7 @@ function tooltipTextChange(hoverId, propData) {
   let pointsFromTarget;
 
   pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
-  // console.log(hoverId);
+  // console.log(pointsFromTarget);
 
   return `Points from Target: ${pointsFromTarget}`;
 }
@@ -145,15 +146,17 @@ function calcPointsFromTargetAnnual(hoverId, propData) {
   const yearVal = parseInt(idList[2]);
 
   let pointsFromTarget;
+  let hoveredRow;
 
   if (propData) {
-    let hoveredRow = propData
+    hoveredRow = propData
       .filter((row) => row.fy === yearVal)
-      .filter((row) => row.productId === productId);
+      .filter((row) => row.product_id === productId);
 
     if (hoveredRow.length > 0) {
       hoveredRow = hoveredRow[0];
-      pointsFromTarget = hoveredRow.pointsFromTarget;
+      pointsFromTarget = hoveredRow.target - hoveredRow.pct_on_time;
+      pointsFromTarget = pointsFromTarget.toFixed(2);
     }
   }
 
