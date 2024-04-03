@@ -68,6 +68,12 @@ export const ClassGraphSingleYear = (props) => {
   }, [selectedYear]);
 
   useEffect(() => {
+    if (isHoveringProductText) {
+      setIsHovering(false);
+    }
+  }, [isHoveringProductText]);
+
+  useEffect(() => {
     // setPropDataNotNull(propData.filter((row) => row.target !== null));
     // setPopDataSorted(sortPropData(propDataNotNull));
 
@@ -188,14 +194,25 @@ export const ClassGraphSingleYear = (props) => {
     d3.select(`#${svgId}`).selectAll(".productNameText").remove();
   }
 
+  function mouseMoveSvg() {
+    const selectedSvg = d3.select(`#${svgId}`);
+    const minYPoz = 250;
+    selectedSvg.on("mousemove", function (event) {
+      const mouseY = event.clientY - this.getBoundingClientRect().top;
+      if (mouseY > minYPoz) {
+        setIsHovering(false);
+      }
+    });
+  }
+
   function mouseEnterSvg() {
-    console.log("we in this bitch");
     setIsHovering(true);
+    // mouseMoveSvg();
   }
 
   function mouseExitSvg() {
     setIsHovering(false);
-    console.log("we out this bitch");
+    // mouseMoveSvg();
   }
 
   function mouseOverTriggersBar(currentBarSelection) {
@@ -215,7 +232,6 @@ export const ClassGraphSingleYear = (props) => {
   function mouseOutTriggersBar(currentBarSelection) {
     // d3.selectAll("rect").attr("stroke", "none");
     // d3.selectAll(currentBarSelection).attr("stroke", "none");
-    // console.log(currentBarSelection);
     // setHoverId(0);
   }
 
@@ -242,6 +258,7 @@ export const ClassGraphSingleYear = (props) => {
       <div style={{ marginLeft: "-5%" }}>
         <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
         <svg
+          // onMouseMove={mouseMoveSvg}
           onMouseEnter={mouseEnterSvg}
           onMouseLeave={mouseExitSvg}
           shapeRendering="crispEdges"
@@ -267,6 +284,7 @@ export const ClassGraphSingleYear = (props) => {
         propData={propDataSorted}
         tooltipId={"tooltipClassGraph"}
         tooltipParams={tooltipParams}
+        isHoveringProductText={isHoveringProductText}
       />
 
       {/* 

@@ -17,6 +17,7 @@ export const TooltipServiceClassLevel = (props) => {
     propData,
     tooltipId,
     tooltipParams,
+    isHoveringProductText,
   } = props;
 
   const {
@@ -27,11 +28,7 @@ export const TooltipServiceClassLevel = (props) => {
     yScale,
   } = tooltipParams;
 
-  // console.log(svgId);
-
-  // console.log(props);
-
-  const [tooltipText, setTooltipText] = useState("321321");
+  const [tooltipText, setTooltipText] = useState("");
 
   useEffect(() => {
     d3.select(`#${tooltipId}`).style("opacity", 1);
@@ -39,11 +36,11 @@ export const TooltipServiceClassLevel = (props) => {
     tooltipYPoz(hoverHeight, tooltipId);
     setTooltipText(tooltipTextChange(hoverId, propData));
     drawStroke(hoverId, isHovering);
-  }, [xHover, hoverId]);
+  }, [xHover, hoverId, isHovering]);
 
   useEffect(() => {
-    renderTooltip(isHovering, tooltipId);
-  }, [isHovering]);
+    renderTooltip(isHovering, tooltipId, isHoveringProductText);
+  }, [isHovering, isHoveringProductText]);
 
   function drawStroke(hoverId, isHovering) {
     if (!isHovering) {
@@ -74,7 +71,6 @@ export const TooltipServiceClassLevel = (props) => {
     .style("width", `${tooltipWidth}px`)
     .style("height", `${tooltipHeight}px`)
     .style("background-color", tooltipColor)
-
     .on("mouseover", () => {
       // tooltipDiv.style("opacity", 0).style("top", 1500);
       setIsHovering(true);
@@ -90,9 +86,9 @@ export const TooltipServiceClassLevel = (props) => {
   );
 };
 
-function renderTooltip(isHovering, tooltipId) {
+function renderTooltip(isHovering, tooltipId, isHoveringProductText) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
-  if (isHovering) {
+  if (isHovering && !isHoveringProductText) {
     tooltipDiv.transition().duration(400).style("opacity", 1);
   } else {
     tooltipDiv.transition().duration(400).style("opacity", 0);
@@ -157,26 +153,3 @@ function calcPointsFromTargetAnnual(hoverId, propData) {
 }
 
 export default TooltipServiceClassLevel;
-
-// function drawTooltipRect() {
-//   d3.select(`#${svgId}`)
-//     .selectAll(".targetTooltipRect")
-//     .data(propData)
-//     .enter()
-//     .append("rect")
-//     .attr("x", (d, i) => barXPoz(i))
-//     .attr("y", (d) => 0)
-//     .attr("height", (d) => topStart - yScale(d.target))
-//     .attr("width", barWidth * 2.5)
-//     .style("opacity", 0)
-//     .attr("class", "targetTooltipRect")
-//     .attr("id", (d) => `classTarget_${d.product_name}_${d.delivery_speed}`);
-// .on("mouseover", function () {
-//   const currentTargetSelection = d3.select(this);
-//   mouseOverTriggersTarget(currentTargetSelection);
-// })
-// .on("mouseout", function () {
-//   const currentTargetSelection = d3.select(this);
-//   mouseOutTriggersTarget(currentTargetSelection);
-// });
-// }

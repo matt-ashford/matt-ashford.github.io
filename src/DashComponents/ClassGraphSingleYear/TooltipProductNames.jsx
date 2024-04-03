@@ -1,10 +1,10 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import { darkGrey } from "../../Design/MyTheme";
+import { lightGrey } from "../../Design/MyTheme";
 import styles from "./classGraph.module.css";
 
 const tooltipWidth = 130;
-const tooltipColor = darkGrey;
+const tooltipColor = lightGrey;
 const tooltipId = "tooltipProductName";
 
 export const TooltipProductNames = (props) => {
@@ -25,7 +25,7 @@ export const TooltipProductNames = (props) => {
     .style("background-color", tooltipColor);
 
   return (
-    <div id="tooltipProductName" style={tooltipStyles_ProductText}>
+    <div id="tooltipProductName" className={styles.tooltip_ProductText}>
       <span style={{}}>{tooltipText}</span>
     </div>
   );
@@ -64,7 +64,7 @@ function tooltipXPoz(xHoverText) {
 
   outputVal = xHoverText + xPush;
 
-  const yPush = -125;
+  const yPush = -110;
 
   tooltipDiv.style("left", `${outputVal}px`).style("top", `${yPush}px`);
 }
@@ -84,21 +84,3 @@ function removeOnMouseOut(isHoveringProductText) {
 }
 
 export default TooltipProductNames;
-
-const tooltipStyles_ProductText = {
-  position: "relative",
-  textAlign: "center",
-  font: "12px sans-serif",
-  verticalAlign: "middle",
-  paddingTop: "8px",
-  paddingBottom: "8px",
-  borderRadius: "5px",
-  fontWeight: "bolder",
-  padding: "3px",
-  fontSize: "14px",
-  fontFamily: "roboto",
-  boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
-  border: "1px solid black",
-  color: "black",
-  opacity: 0,
-};
