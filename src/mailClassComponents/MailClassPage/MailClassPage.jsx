@@ -1,27 +1,28 @@
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import volData from "../Data/volume.json";
+import volData from "../../Data/volume.json";
 import { useEffect, useState } from "react";
 // import annualData from "../Data/annualData.json";
-import ClassGraphSingleYear from "../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
-import ProductCountTableData from "../DashComponents/UIBits/productCountTable/ProductCountTable";
-import VolumeChange from "../DashComponents/VolumeChange";
-import ProductDropdown from "../DashComponents/ProductDropdown";
-import YearDropdown from "../DashComponents/UIBits/YearDropdown";
-import ProductPage from "./ProductPage";
+import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
+import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
+import VolumeChange from "../../DashComponents/VolumeChange";
+import ProductDropdown from "../../DashComponents/ProductDropdown";
+import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
+import ProductPage from "../ProductPage";
 
-import DownloadButton from "../DashComponents/DownloadButton";
+import DownloadButton from "../../DashComponents/DownloadButton";
 
-import { lightGrey, useStyles_ClassPage } from "../Design/MyTheme";
-import { graphWidth } from "../Design/graphDimensions";
-import Footer from "./Footer";
+import { lightGrey, useStyles_ClassPage } from "../../Design/MyTheme";
+import { graphWidth } from "../../Design/graphDimensions";
+import Footer from "../Footer";
 
-import MailClassDef from "../DashComponents/MailClassDef";
+import MailClassDef from "../../DashComponents/MailClassDef";
 
-import { joinDataWithProdKey } from "../DataManipulation/join";
-import { filterAnnualComparison } from "../DataManipulation/filterAnnualComparison";
-import annDat from "../Data/annual - Updated.json";
+import { joinDataWithProdKey } from "../../DataManipulation/join";
+import { filterAnnualComparison } from "../../DataManipulation/filterAnnualComparison";
+import annDat from "../../Data/annual - Updated.json";
+import styles from "./MailClassPageStyles.module.css";
 
 export const MailClassPage = (props) => {
   const { mailClassName } = props;
@@ -99,19 +100,21 @@ export const MailClassPage = (props) => {
             </Grid> */}
 
             <Paper
-              className={classes.graphDivFirstClass}
-              elevation={3}
-              width={graphWidth}
+              // className={classes.graphDivFirstClass}
+              // elevation={3}
+              className={styles.classGraphPaper}
             >
-              <ClassGraphSingleYear
-                propData={filterAnnualComparison(
-                  mailClassName,
-                  selectedYear,
-                  joinedData
-                )}
-                mailClass={mailClassName}
-                selectedYear={selectedYear}
-              />
+              <div className={styles.classGraphOuterContainer}>
+                <ClassGraphSingleYear
+                  propData={filterAnnualComparison(
+                    mailClassName,
+                    selectedYear,
+                    joinedData
+                  )}
+                  mailClass={mailClassName}
+                  selectedYear={selectedYear}
+                />
+              </div>
             </Paper>
 
             <MailClassDef mailClass={mailClassName} />

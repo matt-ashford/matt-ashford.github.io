@@ -38,12 +38,22 @@ export const sortPropData = (inputData) => {
 
   let inputDataWithOrder = inputData_sortProp;
 
-  let rez = inputDataWithOrder;
+  let sortedData = inputDataWithOrder;
 
-  rez = sortByClass(mailClass, inputData_sortProp, allClassOrders);
+  sortedData = sortByClass(mailClass, inputData_sortProp, allClassOrders);
 
-  return rez;
+  let g = applyRecentTargets(sortedData);
+  console.log(g);
+
+  return sortedData;
 };
+
+function applyRecentTargets(inputData) {
+  let latestYear = inputData.reduce((soFar, row) => {
+    return Math.max(soFar, row.fy);
+  }, 0);
+  return latestYear;
+}
 
 function sortByClass(className, inputData_sortProp, allClassOrders) {
   let sortedData = inputData_sortProp;

@@ -7,7 +7,7 @@ import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
 
 import { HomePage } from "./mailClassComponents/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage";
-import { MailClassPage } from "./mailClassComponents/MailClassPage";
+import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Drawer from "./Drawer";

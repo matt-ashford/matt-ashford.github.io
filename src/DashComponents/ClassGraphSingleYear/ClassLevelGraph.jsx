@@ -34,6 +34,7 @@ import { drawProductNames } from "./DrawProductNames";
 import { drawYaxisText } from "./DrawYaxisText";
 import { drawTicks } from "./DrawTicks";
 import { sortPropData } from "./SortPropData";
+import styles from "./classGraph.module.css";
 
 export const ClassGraphSingleYear = (props) => {
   const { propData, mailClass, selectedYear } = props;
@@ -74,9 +75,6 @@ export const ClassGraphSingleYear = (props) => {
   }, [isHoveringProductText]);
 
   useEffect(() => {
-    // setPropDataNotNull(propData.filter((row) => row.target !== null));
-    // setPopDataSorted(sortPropData(propDataNotNull));
-
     removeGraphicalElements();
 
     drawBars(drawBarsParams);
@@ -255,15 +253,18 @@ export const ClassGraphSingleYear = (props) => {
 
   return (
     <>
-      <div style={{ marginLeft: "-5%" }}>
+      <div className={styles.classGraphContainer}>
         <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
         <svg
+          className={styles.classGraphsvg}
           // onMouseMove={mouseMoveSvg}
           onMouseEnter={mouseEnterSvg}
           onMouseLeave={mouseExitSvg}
           shapeRendering="crispEdges"
           id={svgId}
-          height={rotateProductNames ? 350 : 330}
+          // height={rotateProductNames ? 350 : 330}
+          // height={rotateProductNames ? 330 : 310}
+          height={rotateProductNames ? 330 : 300}
           width={graphWidth}
         ></svg>
 

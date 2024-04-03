@@ -1,3 +1,18 @@
+.classGraphContainer {
+  /* margin-left: 1%; */
+  /* width: fit-content; */
+  /* height: 20rem; */
+  /* overflow: hidden; */
+  /* height:  */
+  /* padding-bottom: -10rem; */
+}
+
+.classGraphsvg {
+  transform: scale(0.97);
+  transform-origin: 0 0;
+  /* margin-bottom: -5rem; */
+}
+
 .classGraphTooltip {
   position: relative;
   background: lightsteelblue;
@@ -7,7 +22,7 @@
   padding-bottom: 8px;
   font-weight: bolder;
   font-size: 14px;
-  font-family: roboto;
+  /* font-family: roboto; */
   border: 1px solid black;
   box-shadow: 5px 5px 0px hsla(0, 1%, 37%, 0.329);
 }
