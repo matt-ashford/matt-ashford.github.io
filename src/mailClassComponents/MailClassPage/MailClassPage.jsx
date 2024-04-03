@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
 import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
 import VolumeChange from "../../DashComponents/VolumeChange";
-import ProductDropdown from "../../DashComponents/ProductDropdown";
+// import ProductDropdown from "../../DashComponents/ProductDropdown/ProductDropdown";
+import ProductDropdown from "../../DashComponents/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import ProductPage from "../ProductPage";
 
@@ -140,12 +141,12 @@ export const MailClassPage = (props) => {
           </Grid>
 
           <Paper xs={12} className={classes.paperDropdown}>
-            {/* <ProductDropdown
-              propData={annualData}
+            <ProductDropdown
+              propData={joinedData}
               selectedProductId={selectedProductId}
               changeProductSelected={changeProductSelected}
               mailClass={mailClassName}
-            /> */}
+            />
           </Paper>
         </Grid>
 
