@@ -18,6 +18,7 @@ export const TooltipServiceClassLevel = (props) => {
     tooltipId,
     tooltipParams,
     isHoveringProductText,
+    selectedYear,
   } = props;
 
   const {
@@ -34,7 +35,7 @@ export const TooltipServiceClassLevel = (props) => {
     d3.select(`#${tooltipId}`).style("opacity", 1);
     tooltipXPoz(xHover, tooltipId);
     tooltipYPoz(hoverHeight, tooltipId);
-    setTooltipText(tooltipTextChange(hoverId, propData));
+    setTooltipText(tooltipTextChange(hoverId, propData, selectedYear));
     drawStroke(hoverId, isHovering);
   }, [xHover, hoverId, isHovering]);
 
@@ -72,7 +73,6 @@ export const TooltipServiceClassLevel = (props) => {
     .style("height", `${tooltipHeight}px`)
     .style("background-color", tooltipColor)
     .on("mouseover", () => {
-      // tooltipDiv.style("opacity", 0).style("top", 1500);
       setIsHovering(true);
       tooltipDiv.style("opacity", 1);
     });
@@ -120,13 +120,13 @@ function tooltipYPoz(hoverHeight, tooltipId) {
   tooltipDiv.style("top", `${outputVal}px`);
 }
 
-function tooltipTextChange(hoverId, propData) {
+function tooltipTextChange(hoverId, propData, selectedYear) {
   let pointsFromTarget;
 
   pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
   // console.log(pointsFromTarget);
 
-  return `Points from Target: ${pointsFromTarget}`;
+  return `Points from  FY${selectedYear} Target: ${pointsFromTarget}`;
 }
 
 function calcPointsFromTargetAnnual(hoverId, propData) {

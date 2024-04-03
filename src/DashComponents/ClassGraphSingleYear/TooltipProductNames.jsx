@@ -8,14 +8,20 @@ const tooltipColor = lightGrey;
 const tooltipId = "tooltipProductName";
 
 export const TooltipProductNames = (props) => {
-  const { propData, isHoveringProductText, hoverTextId, xHoverText } = props;
+  const {
+    propData,
+    isHoveringProductText,
+    hoverTextId,
+    xHoverText,
+    selectedYear,
+  } = props;
 
   const [tooltipText, setTooltipText] = useState("");
 
   useEffect(() => {
     removeOnMouseOut(isHoveringProductText);
     tooltipXPoz(xHoverText);
-    setTooltipText(tooltipTextChange(hoverTextId, propData));
+    setTooltipText(tooltipTextChange(hoverTextId, propData, selectedYear));
   }, [isHoveringProductText]);
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
@@ -31,12 +37,12 @@ export const TooltipProductNames = (props) => {
   );
 };
 
-function tooltipTextChange(hoverTextId, propData) {
+function tooltipTextChange(hoverTextId, propData, selectedYear) {
   const hoverProductId = parseInt(hoverTextId.split("_")[1]);
 
   const hoveredRow = propData
     .filter((row) => row.product_id === hoverProductId)
-    .filter((row) => row.fy === 2023)[0];
+    .filter((row) => row.fy === selectedYear)[0];
 
   let isFirstClass = false;
 

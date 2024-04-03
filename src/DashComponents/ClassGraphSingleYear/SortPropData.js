@@ -52,7 +52,21 @@ function applyRecentTargets(inputData) {
   let latestYear = inputData.reduce((soFar, row) => {
     return Math.max(soFar, row.fy);
   }, 0);
-  return latestYear;
+
+  const targetMapped = inputData.map((row) => {
+    if (row.fy === latestYear) {
+      return row;
+    }
+    const matchingId = row.product_id;
+    let mostRecentTargetRow = inputData.filter((filterRow) => {
+      return filterRow.fy === latestYear && filterRow.product_id === matchingId;
+    });
+    mostRecentTargetRow = mostRecentTargetRow[0];
+    row.target = mostRecentTargetRow.target;
+    return row;
+  });
+
+  return targetMapped;
 }
 
 function sortByClass(className, inputData_sortProp, allClassOrders) {

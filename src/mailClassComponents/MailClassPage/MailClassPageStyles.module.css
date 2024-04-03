@@ -2,6 +2,8 @@
   height: 30rem !important;
   width: 50rem;
   padding-top: 0.5rem;
+  /* padding-right: 2rem; */
+  padding-left: 1rem;
 }
 
 .classGraphPaper {

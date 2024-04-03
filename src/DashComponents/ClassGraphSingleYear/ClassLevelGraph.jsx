@@ -286,6 +286,7 @@ export const ClassGraphSingleYear = (props) => {
         tooltipId={"tooltipClassGraph"}
         tooltipParams={tooltipParams}
         isHoveringProductText={isHoveringProductText}
+        selectedYear={selectedYear}
       />
 
       {/* 
@@ -302,6 +303,7 @@ export const ClassGraphSingleYear = (props) => {
         hoverTextId={hoverTextId}
         propData={propData}
         xHoverText={xHoverText}
+        selectedYear={selectedYear}
       />
     </>
   );
