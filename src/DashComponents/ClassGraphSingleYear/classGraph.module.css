@@ -1,0 +1,33 @@
+.classGraphTooltip {
+  position: relative;
+  /* font: 12px sans-serif; */
+  /* font: 20px sans-serif; */
+  background: lightsteelblue;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: bolder;
+  font-size: 14px;
+  font-family: roboto;
+  border: 1px solid black;
+  box-shadow: 5px 5px 5px hsla(0, 1%, 37%, 0.589);
+}
+
+.tooltip_ProductText {
+  position: relative;
+  text-align: center;
+  font: 12px sans-serif;
+  vertical-align: middle;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
+  font-weight: bolder;
+  padding: 3px; /* I removed this line because padding was already set above */
+  font-size: 14px;
+  font-family: roboto;
+  box-shadow: 5px 5px 2px hsla(0, 0%, 62%, 0.69);
+  border: 1px solid black;
+  color: black;
+  opacity: 0;
+}

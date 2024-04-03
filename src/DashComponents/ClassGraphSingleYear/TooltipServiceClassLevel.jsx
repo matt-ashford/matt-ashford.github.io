@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import { pinkHighlight, greenGrey, tooltipStyles } from "../../Design/MyTheme";
+import { pinkHighlight, greenGrey } from "../../Design/MyTheme";
+import styles from "./classGraph.module.css";
 
 const tooltipWidth = 130;
 const tooltipHeight = 30;
@@ -33,20 +34,21 @@ export const TooltipServiceClassLevel = (props) => {
   const [tooltipText, setTooltipText] = useState("321321");
 
   useEffect(() => {
-    disappearTooltip(isHovering, tooltipId);
+    d3.select(`#${tooltipId}`).style("opacity", 1);
     tooltipXPoz(xHover, tooltipId);
     tooltipYPoz(hoverHeight, tooltipId);
     setTooltipText(tooltipTextChange(hoverId, propData));
-    // console.log(isHovering, xHover, hoverId);
-    drawStroke(hoverId);
-  }, [isHovering, xHover, hoverId]);
+    drawStroke(hoverId, isHovering);
+  }, [xHover, hoverId]);
 
   useEffect(() => {
-    disappearTooltip(isHovering, tooltipId);
-    // removeOnMouseOut(isHovering, tooltipId);
-  });
+    renderTooltip(isHovering, tooltipId);
+  }, [isHovering]);
 
-  function drawStroke(hoverId) {
+  function drawStroke(hoverId, isHovering) {
+    if (!isHovering) {
+      d3.selectAll("rect").attr("stroke", "none");
+    }
     if (hoverId) {
       const hoveredBarSelection = d3.select(`#${hoverId}`);
       d3.selectAll("rect").attr("stroke", "none");
@@ -80,7 +82,7 @@ export const TooltipServiceClassLevel = (props) => {
     });
 
   return (
-    <div style={tooltipStyles} id={tooltipId}>
+    <div id={tooltipId} className={styles.classGraphTooltip}>
       <span style={{ marginTop: textMarginTop, marginBottom: "5px" }}>
         {tooltipText}
       </span>
@@ -88,27 +90,15 @@ export const TooltipServiceClassLevel = (props) => {
   );
 };
 
-function disappearTooltip(isHovering, tooltipId) {
+function renderTooltip(isHovering, tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
-
-  if (!isHovering) {
+  if (isHovering) {
+    tooltipDiv.transition().duration(400).style("opacity", 1);
+  } else {
     tooltipDiv.transition().duration(400).style("opacity", 0);
+    d3.selectAll("rect").attr("stroke", "none");
   }
 }
-
-// function removeOnMouseOut(isHovering, tooltipId) {
-//   const tooltipDiv = d3.select(`#${tooltipId}`);
-
-//   if (!isHovering) {
-//     tooltipDiv
-//       .transition()
-//       .duration(400)
-//       .style("opacity", 0)
-//       .style("top", 1500);
-//   } else {
-//     tooltipDiv.transition().duration(400).style("opacity", 0.95);
-//   }
-// }
 
 function tooltipXPoz(xHover, tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);

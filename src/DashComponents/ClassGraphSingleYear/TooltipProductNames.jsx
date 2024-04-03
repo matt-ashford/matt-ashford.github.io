@@ -1,6 +1,7 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import { darkGrey } from "../Design/MyTheme";
+import { darkGrey } from "../../Design/MyTheme";
+import styles from "./classGraph.module.css";
 
 const tooltipWidth = 130;
 const tooltipColor = darkGrey;
@@ -34,8 +35,8 @@ function tooltipTextChange(hoverTextId, propData) {
   const hoverProductId = parseInt(hoverTextId.split("_")[1]);
 
   const hoveredRow = propData
-    .filter((row) => row.productId === hoverProductId)
-    .filter((row) => row.fy === 2020)[0];
+    .filter((row) => row.product_id === hoverProductId)
+    .filter((row) => row.fy === 2023)[0];
 
   let isFirstClass = false;
 
@@ -63,7 +64,7 @@ function tooltipXPoz(xHoverText) {
 
   outputVal = xHoverText + xPush;
 
-  const yPush = -150;
+  const yPush = -125;
 
   tooltipDiv.style("left", `${outputVal}px`).style("top", `${yPush}px`);
 }

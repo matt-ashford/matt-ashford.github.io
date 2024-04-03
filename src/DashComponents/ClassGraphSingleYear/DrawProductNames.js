@@ -2,7 +2,6 @@ import * as d3 from "d3";
 
 import { yScale } from "../../Design/graphDimensions";
 import { textNodeFont } from "../../Design/MyTheme";
-import { generateSvgElementId } from "./GenerateSvgElementId";
 
 export const drawProductNames = ({
   svgId,
@@ -18,29 +17,21 @@ export const drawProductNames = ({
   const dataNew = propData.filter((row) => row.fy === selectedYear);
   const interBarMargin = getInterBarMargin(dataNew);
 
-  const namesArray = dataNew.map((row) =>
-    row.product_abbrev === null ? row.product : row.product_abbrev
-  );
-
-  // console.log(namesArray);
-  // console.table(propData);
-
   d3.select(`#${svgId}`)
     .selectAll(".productNameText")
-    .data(namesArray)
+    .data(dataNew)
     .enter()
     .append("text")
-    .text((d) => d)
+    .text((d) => (d.product_abbrev === null ? d.product : d.product_abbrev))
     .attr("text-anchor", () => {
       if (rotateProductNames) {
         return "start";
       }
       return "middle";
     })
-    // .attr("class", "productNameText graphicElement nameBox nonBar")
     .attr("class", "productNameText")
     .attr("font-family", textNodeFont)
-    .attr("id", (d, i) => `nameTextid_${d.productId}`)
+    .attr("id", (d, i) => `productName_${d.product_id}`)
     .attr("transform", function (d, i) {
       let rotationDeg = 0;
 

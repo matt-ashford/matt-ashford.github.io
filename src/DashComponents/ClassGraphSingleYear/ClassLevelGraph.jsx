@@ -25,7 +25,7 @@ import {
 import { TooltipTarget } from "../TooltipTarget";
 
 import { TooltipServiceClassLevel } from "./TooltipServiceClassLevel";
-import { TooltipProductNames } from "../TooltipProductNames";
+import { TooltipProductNames } from "./TooltipProductNames";
 import ClassGraphTitle from "./ClassGraphTitle";
 import { transitionBars } from "./TransitionBars";
 import { drawBars } from "./DrawBars";
@@ -219,9 +219,9 @@ export const ClassGraphSingleYear = (props) => {
     // setHoverId(0);
   }
 
-  function mouseOutTriggersTarget(currentTargetSelection) {
-    setIsHoveringTarget(false);
-  }
+  // function mouseOutTriggersTarget(currentTargetSelection) {
+  //   setIsHoveringTarget(false);
+  // }
 
   function mouseOverTriggersProductText(currentTextSelection) {
     const currentTextId = currentTextSelection._groups[0][0].id;
@@ -278,12 +278,12 @@ export const ClassGraphSingleYear = (props) => {
         xHoverTarget={xHoverTarget}
       /> */}
 
-      {/* <TooltipProductNames
+      <TooltipProductNames
         isHoveringProductText={isHoveringProductText}
         hoverTextId={hoverTextId}
         propData={propData}
         xHoverText={xHoverText}
-      /> */}
+      />
     </>
   );
 };
