@@ -1,5 +1,4 @@
 export const sortPropData = (inputData) => {
-  //   console.log(inputData);
   const mailClass = inputData[0].mail_class;
 
   const inputData_sortProp = inputData.map((row) => {
@@ -43,7 +42,6 @@ export const sortPropData = (inputData) => {
   sortedData = sortByClass(mailClass, inputData_sortProp, allClassOrders);
 
   let g = applyRecentTargets(sortedData);
-  console.log(g);
 
   return sortedData;
 };
@@ -86,9 +84,6 @@ function sortByClass(className, inputData_sortProp, allClassOrders) {
   sortedData = inputDataWithOrder.sort((a, b) => {
     return a.orderNumber - b.orderNumber;
   });
-
-  //   console.log(sortedData.map((row) => row.product));
-  //   console.log(inputDataWithOrder);
 
   return sortedData;
 }

@@ -21,13 +21,7 @@ export const TooltipServiceClassLevel = (props) => {
     selectedYear,
   } = props;
 
-  const {
-    //  svgId,
-    barXPoz,
-    topStart,
-    barWidth,
-    yScale,
-  } = tooltipParams;
+  const { barXPoz, topStart, barWidth, yScale } = tooltipParams;
 
   const [tooltipText, setTooltipText] = useState("");
 

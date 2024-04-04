@@ -3,7 +3,7 @@ import styles from "./UIBits.module.css";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
-import { Typography, Grid, Input } from "@mui/material";
+import { Typography, Grid } from "@mui/material";
 import { extractYearsFromAnnual } from "../../DataManipulation/extractYearsFromAnnual";
 // import InputLabel from "@mui/material/InputLabel";
 

@@ -1,12 +1,12 @@
 import { useRef, useEffect, useState } from "react";
 
-import Select from "@material-ui/core/Select";
-import FormControl from "@material-ui/core/FormControl";
+import { createDropDownData } from "./CreateDropdownData";
 
-import MenuItem from "@material-ui/core/MenuItem";
-
-import { makeStyles } from "@material-ui/core/styles";
+import Select from "@mui/material/Select";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
 import { Typography, Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   selectDropdown: {
@@ -39,7 +39,9 @@ export const ProductDropdown = (props) => {
   // }, []);
 
   useEffect(() => {
-    setDropdownData(propData);
+    const finalDropdownData = createDropDownData(propData, mailClass);
+    console.log(finalDropdownData);
+    setDropdownData(finalDropdownData);
     setMailClassState(mailClass);
   }, [propData, mailClassState, selectedProductId]);
 
@@ -47,62 +49,21 @@ export const ProductDropdown = (props) => {
 
   const inputRef = useRef();
 
-  let productList = dropdownData
-    .filter((row) => row.fy === 2020)
-    .filter((row) => !row.product.includes("Mixed"));
+  // let defaultValue = dropdownData[0];
+  // if (!defaultValue) {
+  //   defaultValue = "none";
+  // }
 
-  const isFirstClass = mailClassState === "First Class Mail" ? true : false;
+  let defaultValue = dropdownData.length > 0 ? dropdownData[0] : "";
 
-  if (isFirstClass) {
-    productList = productList.filter((row) => row.productAbbrev !== "missing");
-
-    productList = productList
-      .filter((row) => ![7, 8, 9].includes(row.productId))
-      .filter((row) => row.productId !== 61) //sp flats overnight
-      .filter((row) => row.productId !== 1) //sp letters overnight
-      .filter((row) => ![10, 11, 12, 14, 15, 16].includes(row.productId)); //inbound/outbound deliv speeds
-  } else {
-    productList = productList
-      .filter(
-        (row) => ![44, 45, 46, 48, 60, 50, 51, 52, 53].includes(row.productId)
-      ) // special services nonsense
-      .filter((row) => ![40].includes(row.productId)); //alaska bypass
-  }
-
-  productList.push({
-    class: mailClassState,
-    fy: 2019,
-    product: "none",
-    productId: 0,
-  });
-
-  function returnFullProductName(element) {
-    const productName = element.product;
-    const deliverySpeed = element.deliverySpeed;
-    const subProductName = element.subProductName;
-
-    if (isFirstClass & (productName === "none")) {
-      return productName;
-    }
-
-    if (isFirstClass & (productName === "Flats")) {
-      return `${subProductName} (${deliverySpeed})`;
-    } else if (isFirstClass) {
-      return `${productName} (${deliverySpeed})`;
-    } else {
-      return `${productName}`;
-    }
-  }
-
-  const menuItems = productList.map((el, ind) => (
+  const menuItems = dropdownData.map((el, ind) => (
     <MenuItem
       key={`dropdown${ind}`}
-      id={el.productId}
-      onClick={changeProductSelected}
-      value={returnFullProductName(el)}
+      id={`dropdown${el}`}
+      value={el}
       ref={inputRef}
     >
-      {returnFullProductName(el)}
+      {el}
     </MenuItem>
   ));
 
@@ -126,7 +87,13 @@ export const ProductDropdown = (props) => {
               </Typography>
             </Grid>
             <Grid item xs={5}>
-              <Select className={classes.selectDropdown}>{menuItems}</Select>
+              <Select
+                className={classes.selectDropdown}
+                value={`${defaultValue}`}
+                onChange={changeProductSelected}
+              >
+                {menuItems}
+              </Select>
             </Grid>
           </Grid>
         </FormControl>
