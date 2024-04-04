@@ -1,7 +1,10 @@
 import { useRef, useEffect, useState } from "react";
 
-import { createDropDownData } from "./CreateDropdownData";
-
+import {
+  createUniqueProdsList,
+  createFormattedProductList,
+  formatProductNameSingleRow,
+} from "./CreateDropdownData";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
@@ -30,42 +33,50 @@ export const ProductDropdown = (props) => {
   const { propData, selectedProductId, changeProductSelected, mailClass } =
     props;
 
-  const [dropdownData, setDropdownData] = useState([]);
+  const [dropdownData, setDropdownData] = useState(
+    createUniqueProdsList(propData, mailClass)
+  );
+  const [formattedProductNames, setFormattedProductNames] = useState(
+    createFormattedProductList(dropdownData, mailClass)
+  );
   const [mailClassState, setMailClassState] = useState("");
 
-  // useEffect(() => {
-  //   setDropdownData(propData);
-  //   setMailClassState(mailClass);
-  // }, []);
-
   useEffect(() => {
-    const finalDropdownData = createDropDownData(propData, mailClass);
-    console.log(finalDropdownData);
-    setDropdownData(finalDropdownData);
+    setDropdownData(createUniqueProdsList(propData, mailClass));
     setMailClassState(mailClass);
   }, [propData, mailClassState, selectedProductId]);
 
   const classes = useStyles();
 
-  const inputRef = useRef();
+  const defaultValue = dropdownData.length > 0 ? "" : "none";
+  // const defaultValue = "none";
 
-  // let defaultValue = dropdownData[0];
-  // if (!defaultValue) {
-  //   defaultValue = "none";
+  // console.log(formattedProductNames);
+  console.log(dropdownData);
+
+  // for (let i = 0; i < dropdownData.length; i++) {
+  //   console.log(
+  //     "formatted name",
+  //     formattedProductNames[i],
+  //     "dropdown row",
+  //     dropdownData[i]
+  //   );
   // }
 
-  let defaultValue = dropdownData.length > 0 ? dropdownData[0] : "";
-
-  const menuItems = dropdownData.map((el, ind) => (
-    <MenuItem
-      key={`dropdown${ind}`}
-      id={`dropdown${el}`}
-      value={el}
-      ref={inputRef}
-    >
-      {el}
-    </MenuItem>
-  ));
+  const menuItems = dropdownData.map((el, ind) => {
+    return (
+      <MenuItem
+        key={`dropdown${ind}`}
+        id={el.product_id}
+        value={formattedProductNames[ind]}
+        // value={formatProductNameSingleRow(el, mailClass)}
+        // value={el.product_id}
+        // value="1"
+      >
+        {formattedProductNames[ind]}
+      </MenuItem>
+    );
+  });
 
   function returnDropdown(propData) {
     const mailClass = propData[0].class;
