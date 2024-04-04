@@ -24,7 +24,6 @@ export const createUniqueProdsList = (fullDataset, selectedClass) => {
     }
   });
 
-  // If you need to convert the set back to an array of objects
   const uniqueProdsArray = Array.from(uniqueProds).map((item) =>
     JSON.parse(item)
   );
@@ -59,20 +58,6 @@ export const createFormattedProductList = (uniqueProds, selectedClass) => {
   // console.log(uniqueProds);
 
   return productNameList;
-};
-
-export const formatProductNameSingleRow = (row, selectedClass) => {
-  if (!row) {
-    return "";
-  }
-  const filterClass = filterClassName(selectedClass);
-  if (row.product === "none") {
-    return "none";
-  }
-  if (filterClass === "First Class" && String(row.delivery_speed) !== "null") {
-    return `${row.product} ${row.delivery_speed}`;
-  }
-  return row.product;
 };
 
 function filterClassName(selectedClass) {

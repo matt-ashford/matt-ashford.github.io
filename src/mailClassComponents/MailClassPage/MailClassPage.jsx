@@ -40,8 +40,9 @@ export const MailClassPage = (props) => {
   }, [mailClassName]);
 
   function changeProductSelected(e) {
-    console.log("product selected", e.target.id);
-    setSelectedProductId(e.target.id);
+    const rawValue = e.target.value;
+    let matchingProductId = parseInt(rawValue.match(/\d+/)[0]);
+    setSelectedProductId(matchingProductId);
   }
 
   function changeYearSelected(e) {
@@ -150,7 +151,7 @@ export const MailClassPage = (props) => {
           </Paper>
         </Grid>
 
-        <ProductPage selectedProductId={selectedProductId} />
+        {/* <ProductPage selectedProductId={selectedProductId} /> */}
 
         <div style={{ height: "150px" }}></div>
       </div>

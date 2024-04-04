@@ -3,7 +3,6 @@ import { useRef, useEffect, useState } from "react";
 import {
   createUniqueProdsList,
   createFormattedProductList,
-  formatProductNameSingleRow,
 } from "./CreateDropdownData";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
@@ -48,30 +47,17 @@ export const ProductDropdown = (props) => {
 
   const classes = useStyles();
 
+  const inputRef = useRef();
+
   const defaultValue = dropdownData.length > 0 ? "" : "none";
-  // const defaultValue = "none";
-
-  // console.log(formattedProductNames);
-  console.log(dropdownData);
-
-  // for (let i = 0; i < dropdownData.length; i++) {
-  //   console.log(
-  //     "formatted name",
-  //     formattedProductNames[i],
-  //     "dropdown row",
-  //     dropdownData[i]
-  //   );
-  // }
 
   const menuItems = dropdownData.map((el, ind) => {
     return (
       <MenuItem
+        ref={inputRef}
         key={`dropdown${ind}`}
         id={el.product_id}
-        value={formattedProductNames[ind]}
-        // value={formatProductNameSingleRow(el, mailClass)}
-        // value={el.product_id}
-        // value="1"
+        value={`dropdown_product${el.product_id}`}
       >
         {formattedProductNames[ind]}
       </MenuItem>
@@ -90,24 +76,26 @@ export const ProductDropdown = (props) => {
       );
     } else {
       return (
-        <FormControl>
-          <Grid container>
-            <Grid item xs={6}>
-              <Typography className={classes.dropdownLabel}>
-                View Product-Level Data:
-              </Typography>
-            </Grid>
-            <Grid item xs={5}>
+        <Grid container>
+          <Grid item xs={6}>
+            <Typography className={classes.dropdownLabel}>
+              View Product-Level Data:
+            </Typography>
+          </Grid>
+          <Grid item xs={5}>
+            <FormControl>
               <Select
                 className={classes.selectDropdown}
-                value={`${defaultValue}`}
+                // value={`${defaultValue}`}
+                // value={selectedProductId}
+                value={`dropdown_product${selectedProductId}`}
                 onChange={changeProductSelected}
               >
                 {menuItems}
               </Select>
-            </Grid>
+            </FormControl>
           </Grid>
-        </FormControl>
+        </Grid>
       );
     }
   }

@@ -11,6 +11,7 @@ export const YearDropdown = (props) => {
   const { propData, selectedYear, changeYearSelected } = props;
 
   const [dropdownData, setDropdownData] = useState([2023]);
+  const [defaultValue, setDefaultValue] = useState("");
 
   useEffect(() => {
     const yearsArray = extractYearsFromAnnual(propData);
