@@ -6,7 +6,7 @@ import myTheme from "./Design/MyTheme";
 import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
 
 import { HomePage } from "./mailClassComponents/HomePage";
-import { ProductPage } from "./mailClassComponents/ProductPage";
+import { ProductPage } from "./mailClassComponents/ProductPage/ProductPage";
 import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";

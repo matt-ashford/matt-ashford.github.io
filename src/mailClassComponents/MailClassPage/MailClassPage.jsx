@@ -9,7 +9,6 @@ import ProductCountTableData from "../../DashComponents/UIBits/productCountTable
 import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
-import ProductPage from "../ProductPage";
 
 import DownloadButton from "../../DashComponents/DownloadButton";
 
@@ -21,6 +20,7 @@ import MailClassDef from "../../DashComponents/MailClassDef";
 
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import { filterAnnualComparison } from "../../DataManipulation/filterAnnualComparison";
+import ProductPage from "../ProductPage/ProductPage";
 import annDat from "../../Data/annual - Updated.json";
 import styles from "./MailClassPageStyles.module.css";
 
@@ -149,7 +149,7 @@ export const MailClassPage = (props) => {
           mailClass={mailClassName}
         />
 
-        {/* <ProductPage selectedProductId={selectedProductId} /> */}
+        <ProductPage selectedProductId={selectedProductId} />
 
         <div style={{ height: "150px" }}></div>
       </div>

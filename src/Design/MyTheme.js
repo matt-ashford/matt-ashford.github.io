@@ -7,7 +7,6 @@ export const colorPalleteMatt = {
   liteBlue: "#108FE0",
   highlightColor: "#E08D20",
   lightGrey: "#e6e8e6",
-  // darkGrey: "#abb8b3",
   darkGrey: "#d0d6d4",
   greenGrey: "#69cfa9",
   pinkHighlight: "#f45273",
@@ -49,22 +48,6 @@ const myTheme = createTheme({
     },
   },
 });
-
-export const tooltipStyles = {
-  position: "relative",
-  font: "12px sans-serif",
-  background: "lightsteelblue",
-  textAlign: "center",
-  verticalAlign: "middle",
-  paddingTop: "8px",
-  paddingBottom: "8px",
-  borderRadius: "5px",
-  fontWeight: "bolder",
-  fontSize: "14px",
-  fontFamily: "roboto",
-  border: "1px solid black",
-  boxShadow: "5px 5px 2px hsla(0, 0%, 62%, 0.69)",
-};
 
 export const useStyles_MDPage = makeStyles((theme) => ({
   root: {
