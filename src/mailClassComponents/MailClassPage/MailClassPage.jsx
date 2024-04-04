@@ -140,16 +140,14 @@ export const MailClassPage = (props) => {
               </Grid>
             </Grid>
           </Grid>
-
-          <Paper xs={12} className={classes.paperDropdown}>
-            <ProductDropdown
-              propData={joinedData}
-              selectedProductId={selectedProductId}
-              changeProductSelected={changeProductSelected}
-              mailClass={mailClassName}
-            />
-          </Paper>
         </Grid>
+
+        <ProductDropdown
+          propData={joinedData}
+          selectedProductId={selectedProductId}
+          changeProductSelected={changeProductSelected}
+          mailClass={mailClassName}
+        />
 
         {/* <ProductPage selectedProductId={selectedProductId} /> */}
 

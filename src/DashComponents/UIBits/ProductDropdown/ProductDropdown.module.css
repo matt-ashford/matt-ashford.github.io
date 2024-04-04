@@ -1,14 +1,44 @@
 .dropdownContainerFull {
   display: flex;
-  align-items: center; /* Vertical center alignment */
-  height: 100%;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: row;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #ffffff;
+  border-radius: 4px;
+  max-width: 40rem; /* Maximum width */
+  min-width: min-content; /* Shrink to fit content */
+  transition: all 350ms ease-in-out;
+
+  /* border-top: 1px solid(rgba(0, 0, 0, 0.1)); */
+}
+.isNotMouse {
+  /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
+  /* box-shadow: 0px 4px 4px rgba(02, 170, 233, 0.2); */
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: white;
+}
+
+.isMouse {
+  background-color: rgba(102, 170, 233, 0.01);
+  box-shadow: 0px 5px 6px rgba(102, 170, 233, 0.4);
 }
 
 .productSelect {
   margin-right: 5%;
   max-width: 30rem;
   min-width: 20rem;
+}
+.dropdownLabel {
+  overflow: hidden;
+  color: black;
+
+  /* margin-left: 2rem; */
+  margin-right: 2rem;
+  min-width: 12rem;
 }
 
 .formControl {
@@ -21,10 +51,8 @@
 }
 
 .productDropdownLableContainer {
+  font-size: 1.2rem;
   /* display: flex;
   align-items: center; /* Vertical center alignment */
   /* padding-top: 2rem; */
-}
-.dropdownLabel {
-  color: black;
 }

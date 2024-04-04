@@ -1,6 +1,4 @@
 export const createUniqueProdsList = (fullDataset, selectedClass) => {
-  console.log(selectedClass);
-
   const filterClass = filterClassName(selectedClass);
   const classLevelData = fullDataset.filter(
     (row) => row.mail_class === filterClass
@@ -37,8 +35,6 @@ export const createUniqueProdsList = (fullDataset, selectedClass) => {
 
   uniqueProdsArray.unshift(leadingRow);
 
-  console.log(uniqueProdsArray);
-
   return uniqueProdsArray;
 };
 
@@ -57,9 +53,6 @@ export const createFormattedProductList = (uniqueProds, selectedClass) => {
     }
     return row.product;
   });
-
-  // console.log(productNameList);
-  // console.log(uniqueProds);
 
   return productNameList;
 };

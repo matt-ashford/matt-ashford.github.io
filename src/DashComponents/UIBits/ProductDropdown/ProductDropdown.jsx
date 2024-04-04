@@ -7,14 +7,11 @@ import {
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
-import { Typography, Grid } from "@material-ui/core";
 import styles from "./ProductDropdown.module.css";
 
 export const ProductDropdown = (props) => {
   const { propData, selectedProductId, changeProductSelected, mailClass } =
     props;
-
-  // const [selectedClass, setSelectedClass] = useState(mailClass);
 
   const [dropdownData, setDropdownData] = useState(
     createUniqueProdsList(propData, mailClass)
@@ -23,12 +20,13 @@ export const ProductDropdown = (props) => {
     createFormattedProductList(dropdownData, mailClass)
   );
 
+  const [isMouseEnter, setIsMouseEnter] = useState(false);
+
   useEffect(() => {
     setDropdownData(createUniqueProdsList(propData, mailClass));
     setFormattedProductNames(
       createFormattedProductList(dropdownData, mailClass)
     );
-    console.log(formattedProductNames);
   }, [propData, mailClass, selectedProductId]);
 
   useEffect(() => {
@@ -51,6 +49,13 @@ export const ProductDropdown = (props) => {
       </MenuItem>
     );
   });
+  const handleMouseEnter = () => {
+    setIsMouseEnter(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMouseEnter(false);
+  };
 
   function returnDropdown(propData) {
     const mailClass = propData[0].class;
@@ -64,23 +69,34 @@ export const ProductDropdown = (props) => {
       );
     } else {
       return (
-        <div className={styles.dropdownContainerFull}>
-          <Grid item xs={6} className={styles.productDropdownLableContainer}>
-            <Typography className={styles.dropdownLabel}>
-              View Product-Level Data:
-            </Typography>
-          </Grid>
-          <Grid item xs={5}>
-            <FormControl>
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className={`${styles.dropdownContainerFull} ${
+            isMouseEnter ? styles.isMouse : styles.isNotMouse
+          }`}
+        >
+          <div className={styles.productDropdownLableContainer}>
+            {/* <Typography className={styles.dropdownLabel}> */}
+            View Product-Level Data:
+            {/* </Typography> */}
+          </div>
+
+          <div>
+            <FormControl onMouseLeave={handleMouseLeave}>
               <Select
+                onMouseLeave={handleMouseLeave}
                 className={styles.productSelect}
                 value={`dropdown_product${selectedProductId}`}
-                onChange={changeProductSelected}
+                onChange={(e) => {
+                  changeProductSelected(e);
+                  handleMouseLeave();
+                }}
               >
                 {menuItems}
               </Select>
             </FormControl>
-          </Grid>
+          </div>
         </div>
       );
     }

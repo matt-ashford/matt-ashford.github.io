@@ -108,8 +108,8 @@ body {
   font-family: var(--niceFont);
 }
 
-.strikeThrough{
-  color:red
+.strikeThrough {
+  color: red;
 }
 
 #topLogoContainer {
