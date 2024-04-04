@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
 import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
 import VolumeChange from "../../DashComponents/VolumeChange";
-import ProductDropdown from "../../DashComponents/ProductDropdown/ProductDropdown";
+import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import ProductPage from "../ProductPage";
 

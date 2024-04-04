@@ -8,29 +8,13 @@ import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import { Typography, Grid } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  selectDropdown: {
-    marginRight: "5%",
-
-    width: "375px",
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-  dropdownLabel: {
-    color: "black",
-  },
-}));
+import styles from "./ProductDropdown.module.css";
 
 export const ProductDropdown = (props) => {
   const { propData, selectedProductId, changeProductSelected, mailClass } =
     props;
+
+  // const [selectedClass, setSelectedClass] = useState(mailClass);
 
   const [dropdownData, setDropdownData] = useState(
     createUniqueProdsList(propData, mailClass)
@@ -38,18 +22,22 @@ export const ProductDropdown = (props) => {
   const [formattedProductNames, setFormattedProductNames] = useState(
     createFormattedProductList(dropdownData, mailClass)
   );
-  const [mailClassState, setMailClassState] = useState("");
 
   useEffect(() => {
     setDropdownData(createUniqueProdsList(propData, mailClass));
-    setMailClassState(mailClass);
-  }, [propData, mailClassState, selectedProductId]);
+    setFormattedProductNames(
+      createFormattedProductList(dropdownData, mailClass)
+    );
+    console.log(formattedProductNames);
+  }, [propData, mailClass, selectedProductId]);
 
-  const classes = useStyles();
+  useEffect(() => {
+    setFormattedProductNames(
+      createFormattedProductList(dropdownData, mailClass)
+    );
+  }, [dropdownData]);
 
   const inputRef = useRef();
-
-  const defaultValue = dropdownData.length > 0 ? "" : "none";
 
   const menuItems = dropdownData.map((el, ind) => {
     return (
@@ -76,18 +64,16 @@ export const ProductDropdown = (props) => {
       );
     } else {
       return (
-        <Grid container>
-          <Grid item xs={6}>
-            <Typography className={classes.dropdownLabel}>
+        <div className={styles.dropdownContainerFull}>
+          <Grid item xs={6} className={styles.productDropdownLableContainer}>
+            <Typography className={styles.dropdownLabel}>
               View Product-Level Data:
             </Typography>
           </Grid>
           <Grid item xs={5}>
             <FormControl>
               <Select
-                className={classes.selectDropdown}
-                // value={`${defaultValue}`}
-                // value={selectedProductId}
+                className={styles.productSelect}
                 value={`dropdown_product${selectedProductId}`}
                 onChange={changeProductSelected}
               >
@@ -95,7 +81,7 @@ export const ProductDropdown = (props) => {
               </Select>
             </FormControl>
           </Grid>
-        </Grid>
+        </div>
       );
     }
   }

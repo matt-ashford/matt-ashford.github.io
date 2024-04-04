@@ -1,0 +1,30 @@
+.dropdownContainerFull {
+  display: flex;
+  align-items: center; /* Vertical center alignment */
+  height: 100%;
+  flex-direction: row;
+}
+
+.productSelect {
+  margin-right: 5%;
+  max-width: 30rem;
+  min-width: 20rem;
+}
+
+.formControl {
+  /* margin: ${({ theme }) => theme.spacing(1)}; */
+  /* min-width: 120px; */
+}
+
+.selectEmpty {
+  /* margin-top: ${({ theme }) => theme.spacing(2)}; */
+}
+
+.productDropdownLableContainer {
+  /* display: flex;
+  align-items: center; /* Vertical center alignment */
+  /* padding-top: 2rem; */
+}
+.dropdownLabel {
+  color: black;
+}
