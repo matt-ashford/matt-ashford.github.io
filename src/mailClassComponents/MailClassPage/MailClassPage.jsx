@@ -21,7 +21,8 @@ import MailClassDef from "../../DashComponents/MailClassDef";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import { filterAnnualComparison } from "../../DataManipulation/filterAnnualComparison";
 import ProductPage from "../ProductPage/ProductPage";
-import annDat from "../../Data/annual - Updated.json";
+import annualData from "../../Data/annual - Updated.json";
+import quarterData from "../../Data/quarterly - Updated.json";
 import styles from "./MailClassPageStyles.module.css";
 
 export const MailClassPage = (props) => {
@@ -29,7 +30,12 @@ export const MailClassPage = (props) => {
   const classes = useStyles_ClassPage();
   const [selectedProductId, setSelectedProductId] = useState(0);
   const [selectedYear, setSelectedYear] = useState(2023);
-  const [joinedData, setJoinedData] = useState(joinDataWithProdKey(annDat));
+  const [joinedDataAnnual, setJoinedDataAnnual] = useState(
+    joinDataWithProdKey(annualData)
+  );
+  const [joinedDataQtr, setJoinedDataQtr] = useState(
+    joinDataWithProdKey(quarterData)
+  );
 
   useEffect(() => {
     setSelectedProductId(0);
@@ -84,7 +90,7 @@ export const MailClassPage = (props) => {
             style={{ maxWidth: "950px", minWidth: "800px" }}
           >
             <YearDropdown
-              propData={annDat}
+              propData={annualData}
               selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
@@ -111,7 +117,7 @@ export const MailClassPage = (props) => {
                   propData={filterAnnualComparison(
                     mailClassName,
                     selectedYear,
-                    joinedData
+                    joinedDataAnnual
                   )}
                   mailClass={mailClassName}
                   selectedYear={selectedYear}
@@ -143,13 +149,18 @@ export const MailClassPage = (props) => {
         </Grid>
 
         <ProductDropdown
-          propData={joinedData}
+          propDataAnnual={joinedDataAnnual}
+          propDataQuarterly={joinedDataQtr}
           selectedProductId={selectedProductId}
           changeProductSelected={changeProductSelected}
           mailClass={mailClassName}
         />
 
-        <ProductPage selectedProductId={selectedProductId} />
+        <ProductPage
+          selectedProductId={selectedProductId}
+          joinedDataAnnual={joinedDataAnnual}
+          joinedDataQtr={joinedDataQtr}
+        />
 
         <div style={{ height: "150px" }}></div>
       </div>

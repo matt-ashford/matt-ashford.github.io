@@ -10,11 +10,16 @@ import MenuItem from "@mui/material/MenuItem";
 import styles from "./ProductDropdown.module.css";
 
 export const ProductDropdown = (props) => {
-  const { propData, selectedProductId, changeProductSelected, mailClass } =
-    props;
+  const {
+    propDataAnnual,
+    propDataQuarterly,
+    selectedProductId,
+    changeProductSelected,
+    mailClass,
+  } = props;
 
   const [dropdownData, setDropdownData] = useState(
-    createUniqueProdsList(propData, mailClass)
+    createUniqueProdsList(propDataAnnual, propDataQuarterly, mailClass)
   );
   const [formattedProductNames, setFormattedProductNames] = useState(
     createFormattedProductList(dropdownData, mailClass)
@@ -23,11 +28,13 @@ export const ProductDropdown = (props) => {
   const [isMouseEnter, setIsMouseEnter] = useState(false);
 
   useEffect(() => {
-    setDropdownData(createUniqueProdsList(propData, mailClass));
+    setDropdownData(
+      createUniqueProdsList(propDataAnnual, propDataQuarterly, mailClass)
+    );
     setFormattedProductNames(
       createFormattedProductList(dropdownData, mailClass)
     );
-  }, [propData, mailClass, selectedProductId]);
+  }, [propDataAnnual, mailClass, selectedProductId]);
 
   useEffect(() => {
     setFormattedProductNames(
@@ -102,7 +109,7 @@ export const ProductDropdown = (props) => {
     }
   }
 
-  return <>{returnDropdown(propData)}</>;
+  return <>{returnDropdown(propDataAnnual)}</>;
 };
 
 export default ProductDropdown;

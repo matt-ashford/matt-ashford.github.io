@@ -1,21 +1,25 @@
 import Paper from "@mui/material/Paper";
 import styles from "./ProductPage.module.css";
 
+import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
+
 export const ProductPageFull = (props) => {
-  const { productId, productData } = props;
+  const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
 
   return (
     <>
       <div className={styles.productContainerOuter}>
         <div className={styles.graph_info_downloadBtn_container}>
           <div className={styles.graphContainer}>
-            {/* <Paper> */} {/* grpah here */}
-            {/* <ProductGraph propData={productData} /> */}
-            {/* </Paper> */}
+            <LineGraphProduct
+              selectedProductId={selectedProductId}
+              joinedDataAnnual={joinedDataAnnual}
+              joinedDataQtr={joinedDataQtr}
+            />
           </div>
           <div className={styles.info_download_container}>
             <div className={styles.productInfoContainer}>
-              your selected id is {productId}{" "}
+              your selected id is {selectedProductId}{" "}
             </div>
             <div className={styles.downlodaBtnContainer}> download btn </div>
           </div>

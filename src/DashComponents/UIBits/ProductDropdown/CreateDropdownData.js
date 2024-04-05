@@ -1,11 +1,24 @@
-export const createUniqueProdsList = (fullDataset, selectedClass) => {
+export const createUniqueProdsList = (
+  propDataAnnual,
+  propDataQuarterly,
+  selectedClass
+) => {
   const filterClass = filterClassName(selectedClass);
-  const classLevelData = fullDataset.filter(
+  const classLevelDataAnnual = propDataAnnual.filter(
     (row) => row.mail_class === filterClass
   );
 
+  const classLevelDataQuarterly = propDataQuarterly.filter(
+    (row) => row.mail_class === filterClass
+  );
+
+  const classLevelDataCombined = [
+    ...classLevelDataAnnual,
+    ...classLevelDataQuarterly,
+  ];
+
   const uniqueProds = new Set();
-  classLevelData.forEach((row) => {
+  classLevelDataCombined.forEach((row) => {
     if (filterClass === "First Class") {
       uniqueProds.add(
         JSON.stringify({

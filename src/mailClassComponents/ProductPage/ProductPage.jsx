@@ -1,5 +1,3 @@
-import data from "../../Data/quarterlyData.json";
-
 import ProductGraph from "../../DashComponents/ProductGraph";
 import QuarterlyVolume from "../../DashComponents/QuarterlyVolume";
 import { Grid, Paper, Divider } from "@material-ui/core";
@@ -8,27 +6,27 @@ import { makeStyles } from "@material-ui/core/styles";
 import DownloadButton from "../../DashComponents/DownloadButton";
 
 import ProductDef from "../../DashComponents/ProductDef";
-import ProductPageFull from "./ProductPageFull";
-import EmptyProductPage from "./EmptyProductPage";
+import ProductPageWithData from "./ProductPageWithData";
+import ProductPageEmpty from "./ProductPageEmpty";
 import { useEffect, useState } from "react";
 
 export const ProductPage = (props) => {
-  const { selectedProductId } = props;
-
-  let productId = parseInt(selectedProductId);
-
-  const productData = data.filter((row) => row.productId === productId);
+  const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
 
   let renderedSection;
   let dynamicMarginBottom = 5;
 
-  if (productId && productId !== 0) {
+  if (selectedProductId && selectedProductId !== 0) {
     renderedSection = (
-      <ProductPageFull productId={productId} productData={productData} />
+      <ProductPageWithData
+        selectedProductId={selectedProductId}
+        joinedDataAnnual={joinedDataAnnual}
+        joinedDataQtr={joinedDataQtr}
+      />
     );
     dynamicMarginBottom = 0;
   } else {
-    renderedSection = <EmptyProductPage />;
+    renderedSection = <ProductPageEmpty />;
   }
 
   return (
@@ -41,20 +39,5 @@ export const ProductPage = (props) => {
     </div>
   );
 };
-
-const useStyles = makeStyles((theme) => ({
-  fullProductContainer: {
-    marginTop: "3%",
-    backgroundColor: "black",
-  },
-  quarterlyContainer: {
-    minWidth: 315,
-  },
-  productGraphContainer: {
-    minwidth: 700,
-    maxWidth: 775,
-    paddingTop: "1%",
-  },
-}));
 
 export default ProductPage;
