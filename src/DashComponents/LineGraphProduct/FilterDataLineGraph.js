@@ -20,43 +20,36 @@ export const FilterDataLineGraph = (
 
   if (!isUsingAnnual) {
     graphData = graphData.map((row) => {
-      const { target, ...rest } = row;
-
+      let { target, quarter, ...rest } = row;
       const matchingFY = rest.fy;
       const annualDataRows = dataAnnualProduct.filter((filtRow) => {
         return filtRow.fy === matchingFY;
       });
-
       const firstRow = annualDataRows[0];
-      //   return firstRow;
-      //   return Object.keys(firstRow); // returns ['target', 'product']
-      //   return firstRow.product; // returns the product names
-      return { target: firstRow.target, ...rest }; // returns null. it should not be null.
+      const qtrInt = parseInt(quarter);
 
-      //   const annualTarget = annualDataRow["target"];
-      //   return { annualDataRow['annualDataRow']['target'] };
-      //   return { annualDataRow[annualDataRow] };
-      //   return { annualDataRow };
-      //   return firstRow.target;
-      //   return firstRow;
-      //   return firstRow.product;
-      //   return Object.keys(firstRow);
-      return firstRow["target"];
-      //   return { target: annualTarget, ...row };
-      //   return { fy: matchingFY, target: annualTarget };
+      return { target: firstRow.target, quarter: qtrInt, ...rest };
     });
   }
 
-  //   const rez = dataQtrProduct;
+  const graphDataSorted = sortGraphData(graphData);
+  console.log(graphDataSorted);
 
-  console.log(graphData);
-  //   console.log(joinedDataQtr);
-  //   console.log(joinedDataAnnual);
-
-  //   console.log(selectedProductId);
-  //   console.log(dataAnnualProduct);
-
-  return joinedDataAnnual;
-
-  return selectedProductId;
+  return graphDataSorted;
 };
+
+function sortGraphData(graphData, isUsingAnnual) {
+  const sortedData = graphData.sort((a, b) => {
+    if (a.fy !== b.fy) {
+      return a.fy - b.fy;
+    }
+    if (!isUsingAnnual) {
+      if (a.quarter !== b.quarter) {
+        return a.quarter - b.quarter;
+      }
+    }
+    return 0;
+  });
+
+  return sortedData;
+}
