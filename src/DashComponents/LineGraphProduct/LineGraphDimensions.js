@@ -1,6 +1,6 @@
 import { scaleLinear } from "d3";
 const classGraphDims = {
-  graphHeight: 300,
+  graphHeight: 320,
   graphWidth: 820,
   graphWidthProduct: 675,
   // graphWidthProduct: 750,

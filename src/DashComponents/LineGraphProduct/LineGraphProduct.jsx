@@ -20,6 +20,8 @@ import {
   topStart,
 } from "./LineGraphDimensions";
 
+import * as d3 from "d3";
+
 import { drawYAxis } from "./DrawYAxis";
 import { drawXAxis } from "./DrawXAxis";
 
@@ -27,9 +29,10 @@ export const LineGraphProduct = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
 
   useEffect(() => {
+    removeAxes();
     drawYAxis(drawYAxisParams);
     drawXAxis(drawXAxisParams);
-  });
+  }, [selectedProductId]);
 
   const svgId = "lineGraphProductSvg";
   const graphData = FilterDataLineGraph(
@@ -51,6 +54,19 @@ export const LineGraphProduct = (props) => {
   function xPoz(i, graphData) {
     let interBarMargin = getInterBarMargin(graphData) * 2;
     return i * interBarMargin + barMarginLeft;
+  }
+
+  function removeAxes() {
+    const svgSelected = d3.select(`#${svgId}`);
+
+    svgSelected.selectAll(".lineGraphYAxis").remove();
+
+    svgSelected.selectAll(".domain").remove();
+    svgSelected.selectAll(".xAxisText").remove();
+
+    svgSelected.selectAll(".tick").remove();
+
+    console.log("remove fun ccalled ");
   }
 
   return (
