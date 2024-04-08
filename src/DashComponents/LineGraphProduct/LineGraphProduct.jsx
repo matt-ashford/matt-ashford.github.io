@@ -16,6 +16,8 @@ import {
   marginTop,
   yScale,
   yScaleRev,
+  getInterBarMargin,
+  topStart,
 } from "./LineGraphDimensions";
 
 import { drawYAxis } from "./DrawYAxis";
@@ -30,7 +32,7 @@ export const LineGraphProduct = (props) => {
   });
 
   const svgId = "lineGraphProductSvg";
-  const g = FilterDataLineGraph(
+  const graphData = FilterDataLineGraph(
     selectedProductId,
     joinedDataAnnual,
     joinedDataQtr
@@ -41,8 +43,16 @@ export const LineGraphProduct = (props) => {
   };
   const drawXAxisParams = {
     svgId: svgId,
-    graphData: g,
+    graphData: graphData,
+    xPoz: xPoz,
+    topStart: topStart,
   };
+
+  function xPoz(i, graphData) {
+    let interBarMargin = getInterBarMargin(graphData) * 2;
+    return i * interBarMargin + barMarginLeft;
+  }
+
   return (
     <div className={styles.graphAndTitleContainer}>
       <LineGraphTitle />

@@ -95,6 +95,7 @@ export const ProductDropdown = (props) => {
                 onMouseLeave={handleMouseLeave}
                 className={styles.productSelect}
                 value={`dropdown_product${selectedProductId}`}
+                // value={`dropdown_product${96}`}
                 onChange={(e) => {
                   changeProductSelected(e);
                   handleMouseLeave();
