@@ -14,6 +14,8 @@ export const TooltipServiceProduct = (props) => {
     xScale,
   } = props;
 
+  const [tooltipText, setTooltipText] = useState("");
+
   useEffect(() => {
     const tooltipId = "tooltipProduct";
     const tooltipSelected = d3.select(`#${tooltipId}`);
@@ -24,6 +26,9 @@ export const TooltipServiceProduct = (props) => {
     const tooltipId = "tooltipProduct";
     tooltipXPoz(hoverSeq, tooltipId, xScale, isHoveringProdGraph, graphData);
     tooltipYPoz(tooltipId, hoverSeq);
+    setTooltipText(
+      returnTooltipText(tooltipId, isHoveringProdGraph, hoverSeq, graphData)
+    );
   }, [hoverSeq, isHoveringProdGraph]);
 
   useEffect(() => {
@@ -37,7 +42,7 @@ export const TooltipServiceProduct = (props) => {
   tooltipSelected.on("mouseenter", function () {
     setIsHoveringProdGraph(true);
   });
-  const tooltipText = "sdfsdf";
+  const tooltipTextFill = "sdfsdf";
 
   const tooltipXPozParams = {};
 
@@ -72,28 +77,83 @@ function tooltipXPoz(
 
 function tooltipYPoz(tooltipId, hoverSeq) {
   const tooltipSelected = d3.select(`#${tooltipId}`);
-  if (hoverSeq !== -1 && tooltipSelected) {
-    const overlaySelected = d3.select(`#${hoverSeq}`);
-    const overlayBoxHeight = overlaySelected.node().getBBox().height;
 
-    const heightRatio = 0.4;
-    const tooltipHeight = overlayBoxHeight * heightRatio * -1;
+  tooltipSelected.style("top", `${-140}px`);
 
-    tooltipSelected.style("top", `${tooltipHeight}px`);
-  }
+  //   if (hoverSeq !== -1 && tooltipSelected) {
+
+  //     const overlaySelected = d3.select(`#${hoverSeq}`);
+  //     if (overlaySelected) {
+  //       const overlayBoxHeight = overlaySelected.node().getBBox().height;
+
+  //       const heightRatio = 0.4;
+  //       const tooltipHeight = overlayBoxHeight * heightRatio * -1;
+
+  //       tooltipSelected.style("top", `${tooltipHeight}px`);
+  //     }
+  //   }
 }
 
 function fadeOutTooltip(tooltipId, isHoveringProdGraph) {
   const tooltipSelected = d3.select(`#${tooltipId}`);
   if (tooltipSelected) {
-    // const currentOpacity = parseFloat(tooltipSelected.style("opacity"));
-
-    //   if (currentOpacity >= 0 && currentOpacity <= 1) {
     const newOpacity = isHoveringProdGraph ? 1 : 0;
     tooltipSelected.style("opacity", newOpacity);
-    // .transition().duration(200).
   }
-  //   }
+}
+
+function returnTooltipText(
+  tooltipId,
+  isHoveringProdGraph,
+  hoverSeq,
+  graphData
+) {
+  if (hoverSeq === -1) {
+    return "n/a";
+  } else {
+    const matchingXArray = matchXArray(hoverSeq).toString();
+    let matchingQuarter;
+    let matchingYear;
+
+    if (hoverSeq.includes("Q")) {
+      matchingQuarter = matchingXArray.split("Q")[1][0];
+      matchingYear = matchingXArray.split("_")[1];
+    } else {
+      matchingYear = matchingXArray;
+    }
+
+    const matchingRow = filterGraphDataSingleRow(
+      matchingYear,
+      matchingQuarter,
+      graphData
+    );
+    // return `${matchingXArray} ${matchingQuarter} ${matchingYear} ${matchingRow}`;
+    return `${JSON.stringify(matchingRow)}`;
+  }
+}
+
+function filterGraphDataSingleRow(matchingYear, matchingQuarter, graphData) {
+  matchingYear = parseInt(matchingYear);
+
+  console.log(
+    graphData.filter((row) => {
+      //   return row.fy == 2020 && row.quater == 2;
+      return row.fy == 2020 && row.quater == 2;
+    })
+  );
+  let matchingRow;
+  if (matchingQuarter) {
+    matchingQuarter = parseInt(matchingQuarter);
+    console.log(matchingQuarter, graphData);
+    matchingRow = graphData.filter((row) => {
+      return row.fy === matchingYear && row.quarter === matchingQuarter;
+    });
+  } else {
+    matchingRow = graphData.filter((row) => {
+      return row.fy === matchingYear;
+    });
+  }
+  return matchingRow;
 }
 
 function matchXArray(hoverSeq) {
