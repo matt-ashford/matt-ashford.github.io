@@ -23,7 +23,8 @@ export const drawOverLay = ({
   const rightPush = determineRightPush(graphData);
   //   const leftPush =
 
-  const rectWidth = svgWidth / xArray.length - 2;
+  //   const rectWidth = svgWidth / xArray.length - 2;
+  const rectWidth = svgWidth / xArray.length;
 
   svgSelection
     .selectAll(".overlayRect")

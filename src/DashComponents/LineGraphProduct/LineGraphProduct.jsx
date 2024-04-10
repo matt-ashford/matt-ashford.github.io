@@ -73,10 +73,8 @@ export const LineGraphProduct = (props) => {
     const svgSelected = d3.select(`#${svgId}`);
 
     svgSelected.selectAll(".lineGraphYAxis").remove();
-
     svgSelected.selectAll(".domain").remove();
     svgSelected.selectAll(".xAxisText").remove();
-
     svgSelected.selectAll(".tick").remove();
   }
 
@@ -174,6 +172,7 @@ export const LineGraphProduct = (props) => {
       <TooltipServiceProduct
         graphData={graphData}
         isHoveringProdGraph={isHoveringProdGraph}
+        setIsHoveringProdGraph={setIsHoveringProdGraph}
         xArray={xArray}
         svgId={svgId}
         xScale={xScale}
