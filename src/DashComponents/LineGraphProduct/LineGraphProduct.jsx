@@ -33,8 +33,13 @@ export const LineGraphProduct = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
 
   const [isHoveringProdGraph, setIsHoveringProdGraph] = useState(false);
+  const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
 
   const [hoverSeq, setHoverSeq] = useState(-1);
+
+  //   useEffect(()=>{
+
+  //   })
 
   const [graphData, setGraphData] = useState(
     generateDataLineGraph(selectedProductId, joinedDataAnnual, joinedDataQtr)
@@ -56,6 +61,14 @@ export const LineGraphProduct = (props) => {
   }, [graphData]);
 
   const svgId = "lineGraphProductSvg";
+
+  const tooltipId = "tooltipProduct";
+  const tooltipSelected = d3.select(`#${tooltipId}`);
+  tooltipSelected.on("mouseenter", function () {
+    setIsHoveringProdGraph(true);
+    setIsHoveringTooltip(true);
+    tooltipSelected.style("opacity", 1);
+  });
 
   const getInterBarMargin = (graphData) => {
     const barCount = graphData.length;
@@ -161,7 +174,7 @@ export const LineGraphProduct = (props) => {
       <svg
         className={styles.classGraphsvg}
         // onMouseMove={mouseMoveSvg}
-        // onMouseEnter={mouseEnterSvg}
+        onMouseEnter={mouseEnterSvg}
         onMouseLeave={mouseExitSvg}
         shapeRendering="crispEdges"
         id={svgId}

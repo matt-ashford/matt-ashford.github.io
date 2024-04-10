@@ -36,8 +36,7 @@ export const drawOverLay = ({
     .attr("y", (d) => 1)
     .attr("width", rectWidth)
     .attr("height", graphHeight)
-    .attr("opacity", 0.2)
-    .style("fill", "brown")
+    .attr("opacity", 0)
     .attr("id", (d) => `overlay_${d}`)
     .on("mouseenter", function (event, d) {
       setHoverSeq(this.id);
