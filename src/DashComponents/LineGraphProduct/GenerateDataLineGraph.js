@@ -1,4 +1,4 @@
-export const FilterDataLineGraph = (
+export const generateDataLineGraph = (
   selectedProductId,
   joinedDataAnnual,
   joinedDataQtr
@@ -32,11 +32,44 @@ export const FilterDataLineGraph = (
     });
   }
 
-  const graphDataSorted = sortGraphData(graphData);
-  console.log(graphDataSorted);
+  const graphDataFCFlatsMatch = matchTargetsFCFlats(
+    graphData,
+    joinedDataAnnual
+  );
+
+  const graphDataSorted = sortGraphData(graphDataFCFlatsMatch);
 
   return graphDataSorted;
 };
+
+function matchTargetsFCFlats(graphData, joinedDataAnnual) {
+  const firstObs = graphData[0];
+  const productName = firstObs.product;
+
+  if (["Presort Flats", "Single-Piece Flats"].includes(productName)) {
+    const delSpeed = firstObs.delivery_speed;
+
+    const rez = graphData.map((row) => {
+      let { target, ...rest } = row;
+      const matchingFY = rest.fy;
+      const annualDataRows = joinedDataAnnual.filter((filtRow) => {
+        return (
+          filtRow.fy === matchingFY &&
+          filtRow.product === "Flats" &&
+          filtRow.mail_class === "First Class" &&
+          filtRow.delivery_speed === delSpeed
+        );
+      });
+      const firstMatchAnnualRow = annualDataRows[0];
+
+      return { target: firstMatchAnnualRow.target, ...rest };
+    });
+
+    return rez;
+  } else {
+    return graphData;
+  }
+}
 
 function sortGraphData(graphData, isUsingAnnual) {
   const sortedData = graphData.sort((a, b) => {

@@ -1,4 +1,5 @@
-import { scaleLinear } from "d3";
+// import { scaleLinear } from "d3";
+import * as d3 from "d3";
 const classGraphDims = {
   graphHeight: 320,
   graphWidth: 820,
@@ -30,18 +31,20 @@ export const {
 
 export const topStart = graphHeight - marginBottom;
 
-export const yScale = scaleLinear().domain([0, 100]).range([0, 250]);
-export const yScaleRev = scaleLinear().domain([0, 100]).range([250, 0]);
+export const yScale = d3.scaleLinear().domain([0, 100]).range([0, 250]);
+export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([250, 0]);
 
-const svgWidth = graphWidth - marginLeft - marginRight;
+export const svgWidth = graphWidth - marginLeft - marginRight;
 
-export const getInterBarMargin = (graphData) => {
-  const barCount = graphData.length;
-  let innerGraphLen = svgWidth / 2;
-  //   const interBarDist = svgWidth / barCount;
-  const interBarDist = innerGraphLen / barCount;
+export const determineRightPush = (graphData) => {
+  const firstObs = graphData[0];
+  const annualPush = 73;
+  const quarterlyPush = 15;
+  if (Object.keys(firstObs).includes("quarter")) {
+    return quarterlyPush;
+  }
 
-  return interBarDist;
+  return annualPush;
 };
 
 export default yScale;

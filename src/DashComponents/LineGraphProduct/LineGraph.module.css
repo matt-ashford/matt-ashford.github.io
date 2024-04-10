@@ -1,0 +1,14 @@
+.lineGraphTitle {
+  font-size: 1.2em;
+  /* font-weight: bolder; */
+  margin-bottom: 0.5rem;
+}
+
+.tooltipProduct {
+  background-color: green;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  width: 5rem;
+  height: 3rem;
+}
