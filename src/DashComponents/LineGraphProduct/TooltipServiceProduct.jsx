@@ -78,7 +78,9 @@ function tooltipXPoz(
 function tooltipYPoz(tooltipId, hoverSeq) {
   const tooltipSelected = d3.select(`#${tooltipId}`);
 
-  tooltipSelected.style("top", `${-140}px`);
+  const topPush = -160;
+
+  tooltipSelected.style("top", `${topPush}px`);
 
   //   if (hoverSeq !== -1 && tooltipSelected) {
 
@@ -114,8 +116,10 @@ function returnTooltipText(
     const matchingXArray = matchXArray(hoverSeq).toString();
     let matchingQuarter;
     let matchingYear;
+    let isQuarterly = false;
 
     if (hoverSeq.includes("Q")) {
+      isQuarterly = true;
       matchingQuarter = matchingXArray.split("Q")[1][0];
       matchingYear = matchingXArray.split("_")[1];
     } else {
@@ -127,20 +131,41 @@ function returnTooltipText(
       matchingQuarter,
       graphData
     );
-    // return `${matchingXArray} ${matchingQuarter} ${matchingYear} ${matchingRow}`;
-    return `${JSON.stringify(matchingRow)}`;
+
+    const pointsFromTarget =
+      //   matchingRow.target - matchingRow.pct_on_time.toFixed(2);
+      Math.round(
+        (matchingRow.target - matchingRow.pct_on_time + Number.EPSILON) * 100
+      ) / 100;
+
+    const pointsFromTargetColor =
+      pointsFromTarget > 0 ? "pointsFromTargetRed" : "pointsFromTargetGreen";
+
+    const yearAndQuarterText = isQuarterly
+      ? `${matchingYear} Q${matchingQuarter}`
+      : `${matchingYear}`;
+
+    const targetDifferenceText = `Points form Target ${pointsFromTarget}`;
+
+    return (
+      <>
+        {" "}
+        <div>{yearAndQuarterText}</div>
+        <div className={styles.pointsFromTargetLabel}>Points from Target:</div>
+        <div
+          className={styles[pointsFromTargetColor]}
+        >{`${pointsFromTarget}`}</div>
+      </>
+    );
+    // return `${matchingYear} ${matchingQuarter} ${matchingRow.pct_on_time}`;
+    // return `${JSON.stringify(matchingRow)}`;
+    // return `${matchingRow.pct_on_time}`;
   }
 }
 
 function filterGraphDataSingleRow(matchingYear, matchingQuarter, graphData) {
   matchingYear = parseInt(matchingYear);
 
-  console.log(
-    graphData.filter((row) => {
-      //   return row.fy == 2020 && row.quater == 2;
-      return row.fy == 2020 && row.quater == 2;
-    })
-  );
   let matchingRow;
   if (matchingQuarter) {
     matchingQuarter = parseInt(matchingQuarter);
@@ -153,7 +178,7 @@ function filterGraphDataSingleRow(matchingYear, matchingQuarter, graphData) {
       return row.fy === matchingYear;
     });
   }
-  return matchingRow;
+  return matchingRow[0];
 }
 
 function matchXArray(hoverSeq) {

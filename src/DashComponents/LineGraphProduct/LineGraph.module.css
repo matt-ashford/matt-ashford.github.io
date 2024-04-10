@@ -1,14 +1,40 @@
+@import "../../theme.css" .meh {
+}
+
 .lineGraphTitle {
   font-size: 1.2em;
-  /* font-weight: bolder; */
   margin-bottom: 0.5rem;
 }
 
 .tooltipProduct {
-  background-color: green;
+  background-color: var(--lightGrey);
+  font-size: 0.9rem;
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 5rem;
-  height: 3rem;
+  width: 6.5rem;
+  height: 4rem;
+  padding-left: 0.5rem;
+  padding-right: 0.9rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0rem;
+  border: 1px solid black;
+  box-shadow: var(--coolBoxShadow);
+}
+
+.pointsFromTargetLabel {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  /* margin-left: 0.2rem;
+  margin-right: 0.9rem; */
+}
+
+.pointsFromTargetRed {
+  color: red;
+  font-weight: bold;
+}
+
+.pointsFromTargetGreen {
+  color: green;
+  font-weight: bold;
 }
