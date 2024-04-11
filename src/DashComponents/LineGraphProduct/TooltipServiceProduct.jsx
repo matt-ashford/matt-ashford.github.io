@@ -47,9 +47,15 @@ export const TooltipServiceProduct = (props) => {
   const tooltipXPozParams = {};
 
   return (
-    <div id={tooltipId} className={styles.tooltipProduct}>
-      <span>{tooltipText}</span>
-    </div>
+    <>
+      <div className={styles.tooltipLine}></div>
+      <div id={tooltipId} className={styles.tooltipProduct}>
+        {/* <div className={styles.triangleContainer}> */}
+        <div className={styles.triangleDiv}></div>
+        {/* </div> */}
+        <div>{tooltipText}</div>
+      </div>
+    </>
   );
 };
 
@@ -78,7 +84,7 @@ function tooltipXPoz(
 function tooltipYPoz(tooltipId, hoverSeq) {
   const tooltipSelected = d3.select(`#${tooltipId}`);
 
-  const topPush = -160;
+  const topPush = -180;
 
   tooltipSelected.style("top", `${topPush}px`);
 

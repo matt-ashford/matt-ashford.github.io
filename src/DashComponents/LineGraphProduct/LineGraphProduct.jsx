@@ -7,6 +7,7 @@ import { generateDataLineGraph } from "./GenerateDataLineGraph";
 import { drawTargets } from "./DrawTargets";
 import { drawLine } from "./DrawLine";
 import { drawOverLay } from "./DrawOverlay";
+import { drawTooltipLines } from "./DrawTooltipLines";
 
 import {
   marginBottom,
@@ -35,11 +36,26 @@ export const LineGraphProduct = (props) => {
   const [isHoveringProdGraph, setIsHoveringProdGraph] = useState(false);
   const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
 
+  //   const [hoveredLine, setHoveredLine] = useState(-1);
+
   const [hoverSeq, setHoverSeq] = useState(-1);
 
-  //   useEffect(()=>{
+  useEffect(() => {
+    if (!isHoveringProdGraph) {
+      tooltipLinesInvisible();
+    } else {
+      changeOpacityTooltipLine(hoverSeq);
+    }
+    //   });
+  }, [hoverSeq, isHoveringProdGraph]);
 
-  //   })
+  useEffect(() => {
+    if (!isHoveringProdGraph) {
+      tooltipLinesInvisible();
+    } else {
+      changeOpacityTooltipLine(hoverSeq);
+    }
+  });
 
   const [graphData, setGraphData] = useState(
     generateDataLineGraph(selectedProductId, joinedDataAnnual, joinedDataQtr)
@@ -58,6 +74,7 @@ export const LineGraphProduct = (props) => {
     drawXAxis(drawXAxisParams);
     drawLine(drawLineParams);
     drawTargets(drawTargetsParams);
+    drawTooltipLines(drawTooltipLinesParams);
   }, [graphData]);
 
   const svgId = "lineGraphProductSvg";
@@ -119,6 +136,33 @@ export const LineGraphProduct = (props) => {
     return rezArray;
   }
 
+  function changeOpacityTooltipLine(hoverSeq) {
+    if (hoverSeq !== -1) {
+      const hoveredLine = matchXArrayWithLine(hoverSeq);
+      tooltipLinesInvisible();
+      d3.select(`${hoveredLine}`)
+        // .transition()
+        // .duration(200)
+        .style("opacity", 1);
+    }
+  }
+
+  function tooltipLinesInvisible() {
+    d3.selectAll(".tooltipLines").style("opacity", 0);
+  }
+
+  function matchXArrayWithLine(hoverSeq) {
+    if (hoverSeq === -1) {
+      return ".fake";
+    }
+
+    const hoverSeqList = hoverSeq.split("_");
+    if (hoverSeq.includes("Q")) {
+      return `#tooltipLineSeq_${hoverSeqList[1]}_${hoverSeqList[2]}`;
+    }
+    return `#tooltipLineSeq_${hoverSeqList[1]}`;
+  }
+
   function mouseEnterSvg() {
     setIsHoveringProdGraph(true);
     // mouseMoveSvg();
@@ -165,6 +209,15 @@ export const LineGraphProduct = (props) => {
     xScale: xScale,
     xArray: xArray,
     setHoverSeq: setHoverSeq,
+    setIsHoveringProdGraph: setIsHoveringProdGraph,
+  };
+
+  const drawTooltipLinesParams = {
+    svgId: svgId,
+    graphData: graphData,
+    xScale: xScale,
+    xArray: xArray,
+    hoverSeq: hoverSeq,
     setIsHoveringProdGraph: setIsHoveringProdGraph,
   };
 

@@ -1,4 +1,6 @@
-@import "../../theme.css" .meh {
+:root {
+  --lightGrey: #e6e8e6;
+  --coolBoxShadow: 5px 5px 0px hsla(0, 1%, 37%, 0.329);
 }
 
 .lineGraphTitle {
@@ -10,6 +12,7 @@
   background-color: var(--lightGrey);
   font-size: 0.9rem;
   position: relative;
+  /* display: inline-block; */
   text-align: center;
   vertical-align: middle;
   width: 6.5rem;
@@ -20,6 +23,18 @@
   padding-bottom: 0rem;
   border: 1px solid black;
   box-shadow: var(--coolBoxShadow);
+}
+
+.triangleDiv {
+  position: absolute;
+  top: 50%;
+  left: -12px; /* Adjust this value for positioning */
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid var(--lightGrey);
+  background-color: transparent;
 }
 
 .pointsFromTargetLabel {
@@ -38,3 +53,16 @@
   color: green;
   font-weight: bold;
 }
+
+/* .triangleContainer {
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  width: 0px;
+  height: 0px;
+  transform: translateY(-75%);
+
+  border-top: 1px solid black;
+  border-bottom: 10px solid black;
+  border-right: 10px solid black;
+}   */
