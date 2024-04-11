@@ -156,7 +156,7 @@ function returnTooltipText(
     return (
       <>
         {" "}
-        <div>{yearAndQuarterText}</div>
+        <div className={styles.yearAndQuarterText}>{yearAndQuarterText}</div>
         <div className={styles.pointsFromTargetLabel}>Points from Target:</div>
         <div
           className={styles[pointsFromTargetColor]}
@@ -175,7 +175,6 @@ function filterGraphDataSingleRow(matchingYear, matchingQuarter, graphData) {
   let matchingRow;
   if (matchingQuarter) {
     matchingQuarter = parseInt(matchingQuarter);
-    console.log(matchingQuarter, graphData);
     matchingRow = graphData.filter((row) => {
       return row.fy === matchingYear && row.quarter === matchingQuarter;
     });

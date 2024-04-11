@@ -25,6 +25,8 @@ export const drawTooltipLines = ({
 
   const bottomPush = 20;
 
+  console.log(xArray);
+
   svgSelection
     .selectAll(".tooltipLines")
     .data(xArray)

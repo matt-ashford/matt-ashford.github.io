@@ -69,6 +69,7 @@ export const LineGraphProduct = (props) => {
   useEffect(() => {
     removeAxes();
     removeGraphedData();
+    deleteTooltipLines();
     drawOverLay(drawOverLayParams);
     drawYAxis(drawYAxisParams);
     drawXAxis(drawXAxisParams);
@@ -140,15 +141,16 @@ export const LineGraphProduct = (props) => {
     if (hoverSeq !== -1) {
       const hoveredLine = matchXArrayWithLine(hoverSeq);
       tooltipLinesInvisible();
-      d3.select(`${hoveredLine}`)
-        // .transition()
-        // .duration(200)
-        .style("opacity", 1);
+      d3.select(`${hoveredLine}`).style("opacity", 0.5);
     }
   }
 
   function tooltipLinesInvisible() {
     d3.selectAll(".tooltipLines").style("opacity", 0);
+  }
+
+  function deleteTooltipLines() {
+    d3.selectAll(".tooltipLines").remove();
   }
 
   function matchXArrayWithLine(hoverSeq) {
