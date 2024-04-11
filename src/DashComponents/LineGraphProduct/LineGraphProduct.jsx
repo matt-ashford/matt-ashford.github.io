@@ -29,6 +29,7 @@ import * as d3 from "d3";
 
 import { drawYAxis } from "./DrawYAxis";
 import { drawXAxis } from "./DrawXAxis";
+import { LineGraphKey } from "./LineGraphKey";
 
 export const LineGraphProduct = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
@@ -141,7 +142,7 @@ export const LineGraphProduct = (props) => {
     if (hoverSeq !== -1) {
       const hoveredLine = matchXArrayWithLine(hoverSeq);
       tooltipLinesInvisible();
-      d3.select(`${hoveredLine}`).style("opacity", 0.5);
+      d3.select(`${hoveredLine}`).style("opacity", 0.3);
     }
   }
 
@@ -236,6 +237,7 @@ export const LineGraphProduct = (props) => {
         height={graphHeight}
         width={graphWidth}
       ></svg>
+      <LineGraphKey />
 
       <TooltipServiceProduct
         graphData={graphData}

@@ -24,8 +24,7 @@ export const drawTooltipLines = ({
   const rectWidth = svgWidth / xArray.length;
 
   const bottomPush = 20;
-
-  console.log(xArray);
+  const extraHeight = 15;
 
   svgSelection
     .selectAll(".tooltipLines")
@@ -36,7 +35,7 @@ export const drawTooltipLines = ({
     .attr("x1", (d) => xScale(d) + marginLeft + rightPush)
     .attr("y1", bottomPush)
     .attr("x2", (d) => xScale(d) + marginLeft + rightPush)
-    .attr("y2", svgHeight + bottomPush)
+    .attr("y2", svgHeight + bottomPush + extraHeight)
     .style("stroke", "black")
     .style("stroke-width", "2px")
     .attr("opacity", 0)

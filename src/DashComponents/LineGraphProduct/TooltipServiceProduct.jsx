@@ -84,7 +84,7 @@ function tooltipXPoz(
 function tooltipYPoz(tooltipId, hoverSeq) {
   const tooltipSelected = d3.select(`#${tooltipId}`);
 
-  const topPush = -180;
+  const topPush = -210;
 
   tooltipSelected.style("top", `${topPush}px`);
 
@@ -148,8 +148,8 @@ function returnTooltipText(
       pointsFromTarget > 0 ? "pointsFromTargetRed" : "pointsFromTargetGreen";
 
     const yearAndQuarterText = isQuarterly
-      ? `${matchingYear} Q${matchingQuarter}`
-      : `${matchingYear}`;
+      ? `FY ${matchingYear} Q${matchingQuarter}`
+      : `FY ${matchingYear}`;
 
     const targetDifferenceText = `Points form Target ${pointsFromTarget}`;
 
