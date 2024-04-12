@@ -38,6 +38,7 @@ export const MailClassPage = (props) => {
   );
 
   useEffect(() => {
+    // setSelectedProductId(mailClassFilterData[0].product_id);
     setSelectedProductId(0);
   }, []);
 

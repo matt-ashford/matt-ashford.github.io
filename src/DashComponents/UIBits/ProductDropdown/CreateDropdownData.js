@@ -4,13 +4,17 @@ export const createUniqueProdsList = (
   selectedClass
 ) => {
   const filterClass = filterClassName(selectedClass);
-  const classLevelDataAnnual = propDataAnnual.filter(
+
+  let classLevelDataAnnual = propDataAnnual.filter(
     (row) => row.mail_class === filterClass
   );
 
-  const classLevelDataQuarterly = propDataQuarterly.filter(
+  let classLevelDataQuarterly = propDataQuarterly.filter(
     (row) => row.mail_class === filterClass
   );
+
+  classLevelDataAnnual = removeBannedProds(classLevelDataAnnual);
+  classLevelDataQuarterly = removeBannedProds(classLevelDataQuarterly);
 
   const classLevelDataCombined = [
     ...classLevelDataAnnual,
@@ -37,9 +41,13 @@ export const createUniqueProdsList = (
     }
   });
 
-  const uniqueProdsArray = Array.from(uniqueProds).map((item) =>
+  let uniqueProdsArray = Array.from(uniqueProds).map((item) =>
     JSON.parse(item)
   );
+
+  uniqueProdsArray = uniqueProdsArray.sort((a, b) => {
+    return a.product < b.product ? 1 : -1;
+  });
 
   const leadingRow = {
     product_id: 0,
@@ -69,6 +77,13 @@ export const createFormattedProductList = (uniqueProds, selectedClass) => {
 
   return productNameList;
 };
+
+function removeBannedProds(aList) {
+  const filt = aList.filter((row) => {
+    return !(row.product === "Flats" && row.delivery_speed === "Overnight");
+  });
+  return filt;
+}
 
 function filterClassName(selectedClass) {
   let filterClass = selectedClass;
