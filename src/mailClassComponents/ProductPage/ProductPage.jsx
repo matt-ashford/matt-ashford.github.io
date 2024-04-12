@@ -1,5 +1,3 @@
-import ProductGraph from "../../DashComponents/ProductGraph";
-import QuarterlyVolume from "../../DashComponents/QuarterlyVolume";
 import { Grid, Paper, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 

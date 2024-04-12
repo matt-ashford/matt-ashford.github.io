@@ -8,14 +8,7 @@
 .graph_info_downloadBtn_container {
   display: flex;
   flex-direction: row;
-  /* min-width: 50rem;
-  max-width: 75rem; */
-  /* width: 75rem; */
-  width: 66vw;
-  /* min-width: 60rem;
-  max-width: 60rem; */
-  height: 20rem;
-  /* background-color: yellow; */
+  height: 25rem;
 }
 .info_download_container {
   display: flex;
@@ -23,10 +16,30 @@
   width: 25%;
 }
 
+@media (max-width: 868px) {
+  .graph_info_downloadBtn_container {
+    flex-direction: column;
+    align-items: center; /* Center items vertically */
+  }
+
+  .info_download_container {
+    width: 90vw; /* Take full width when in column layout */
+    flex-direction: row;
+    min-width: 15rem;
+    margin-right: 2rem;
+    justify-content: space-between;
+    background-color: black;
+    padding-left: 20rem;
+  }
+  .downloadBtnContainer {
+    margin-right: 10rem;
+    margin-left: 10rem;
+  }
+}
+
 .graphContainer {
   padding-top: 2rem;
-  /* background-color: blue; */
-  /* border: 1px solid blue; */
+  transform: scale(0.9);
   width: 50rem !important;
   min-width: 50rem !important;
   max-width: 50rem !important;
@@ -34,26 +47,24 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-top: 1rem;
-  /* margin-bottom: 6rem; */
 }
 
 .productInfoContainer {
-  /* background-color: red; */
-  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); */
-
-  /* border: 1px solid grey; */
+  margin-top: 2rem;
+  margin-left: -1rem;
+  margin-bottom: 1rem;
   background-color: var(--touchofBlue);
   border-radius: 15px;
   min-width: 10rem; /* Minimum width */
   max-width: 20rem; /* Maximum width */
   width: 75%;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   flex: 1; /* Take up remaining vertical space */
 }
 
-.downlodaBtnContainer {
-  background-color: green;
+.downloadBtnContainer {
+  margin-left: -1rem;
   height: 5rem;
   min-width: 10rem; /* Minimum width */
   max-width: 20rem; /* Maximum width */

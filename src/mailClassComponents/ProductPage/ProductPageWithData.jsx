@@ -36,7 +36,7 @@ export const ProductPageFull = (props) => {
             <div className={styles.productInfoContainer}>
               <ProductInfo filteredData={filteredData} />
             </div>
-            <div className={styles.downlodaBtnContainer}>
+            <div className={styles.downloadBtnContainer}>
               {" "}
               <DownloadButton
                 propData={filteredData}

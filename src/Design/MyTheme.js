@@ -6,6 +6,7 @@ export const colorPalleteMatt = {
   secondaryColor: "#88b7d7", //new
   liteBlue: "#108FE0",
   highlightColor: "#E08D20",
+  darkBlue: "#104EE0",
   lightGrey: "#e6e8e6",
   darkGrey: "#d0d6d4",
   greenGrey: "#69cfa9",

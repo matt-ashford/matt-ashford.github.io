@@ -19,7 +19,6 @@ export const DownloadButton = (props) => {
           <Button
             style={{
               textTransform: "none",
-              // backgroundColor: colorPalleteMatt.lightGrey,
               backgroundColor: colorPalleteMatt.darkBlue,
               color: "white",
             }}
@@ -28,7 +27,7 @@ export const DownloadButton = (props) => {
             id="downloadButton"
           >
             <div className={styles.textAndIcon}>
-              <div clasName={styles.iconContainer}>
+              <div className={styles.iconContainer}>
                 <TocIcon className={styles.icon} />
               </div>
               <div className={styles.textContainer}>

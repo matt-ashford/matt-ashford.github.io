@@ -23,11 +23,15 @@
 }
 .btnOuterContainer {
   z-index: 9;
-  border-radius: 20px;
+  border-radius: 2%;
+}
+.iconContainer {
+  margin-right: 1.5rem;
 }
 .textAndIcon {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .textContainer {

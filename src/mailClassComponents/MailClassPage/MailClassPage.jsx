@@ -56,11 +56,6 @@ export const MailClassPage = (props) => {
     setSelectedYear(e.target.value);
   }
 
-  const volDataClass = volData.filter((row) => row.mailClass === mailClassName);
-  function generateVolDataClass(mailClassName) {
-    return volData.filter((row) => row.mailClass === mailClassName);
-  }
-
   const isFirstClass = mailClassName === "First Class Mail" ? true : false;
 
   function mailClassNameTitle(mailClassName) {
@@ -134,12 +129,6 @@ export const MailClassPage = (props) => {
           <Grid item xs={3} float="left">
             <Grid container direction="column" spacing={3}>
               <Grid item xs={3}>
-                <Paper
-                  className={classes.paper}
-                  style={{ backgroundColor: lightGrey }}
-                >
-                  <VolumeChange propData={volDataClass} />
-                </Paper>
                 <div style={{ marginTop: "30%" }}></div>
                 <Paper>
                   {/* <DownloadButton
