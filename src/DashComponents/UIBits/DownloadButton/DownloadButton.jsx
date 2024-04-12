@@ -1,59 +1,48 @@
 import { CSVLink } from "react-csv";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import TocIcon from "@material-ui/icons/Toc";
-import Grid from "@material-ui/core/Grid";
-import { downloadBtnDataPrep } from "./DownloadBtnDataPrep";
 
-const useStyles = makeStyles((theme) => ({
-  button: {
-    padding: "-2rem",
-    width: "15rem",
-    color: "black",
-    font: "roboto",
-    textDecoration: "none",
-  },
-  icon: {
-    transform: "scale(1.5)",
-    marginTop: "1rem",
-  },
-  dataName: {
-    fontSize: "11px",
-    marginTop: "-.8rem",
-  },
-}));
+import Button from "@mui/material/Button";
+import TocIcon from "@material-ui/icons/Toc";
+import { colorPalleteMatt } from "../../../Design/MyTheme";
+
+import { downloadBtnDataPrep } from "./DownloadBtnDataPrep";
+import styles from "../UIBits.module.css";
 
 export const DownloadButton = (props) => {
   const { propData, dataName } = props;
 
   const returnedData = downloadBtnDataPrep(propData);
 
-  const classes = useStyles();
-
   return (
     <>
-      <CSVLink data={returnedData}>
-        <Button
-          className={classes.button}
-          variant="contained"
-          id="downloadButton"
-        >
-          <div>
-            <Grid container direction="row">
-              <Grid item xs={2}>
-                <TocIcon className={classes.icon} />
-              </Grid>
-              <Grid item xs={10}>
-                <p> Download CSV</p>
-              </Grid>
-              <Grid item xs={2}></Grid>
-              <Grid item xs={10}>
-                <p className={classes.dataName}>{dataName}</p>
-              </Grid>
-            </Grid>
-          </div>
-        </Button>
-      </CSVLink>
+      <div className={styles.btnOuterContainer}>
+        <CSVLink data={returnedData}>
+          <Button
+            style={{
+              textTransform: "none",
+              // backgroundColor: colorPalleteMatt.lightGrey,
+              backgroundColor: colorPalleteMatt.darkBlue,
+              color: "white",
+            }}
+            className={styles.button}
+            variant="contained"
+            id="downloadButton"
+          >
+            <div className={styles.textAndIcon}>
+              <div clasName={styles.iconContainer}>
+                <TocIcon className={styles.icon} />
+              </div>
+              <div className={styles.textContainer}>
+                <div className={styles.downloadContainer}>
+                  <p> DOWNLOAD CSV</p>
+                </div>
+                <div className={styles.dataNameContainer}>
+                  <p className={styles.dataName}>{dataName}</p>
+                </div>
+              </div>
+            </div>
+          </Button>
+        </CSVLink>
+      </div>
     </>
   );
 };

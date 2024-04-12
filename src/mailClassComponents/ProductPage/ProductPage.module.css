@@ -1,3 +1,7 @@
+:root {
+  --secondaryColor: #88b7d7;
+  --touchofBlue: #d9f6ff;
+}
 .productContainerOuter {
 }
 
@@ -37,8 +41,9 @@
   /* background-color: red; */
   /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); */
 
-  border: 1px solid grey;
-  border-radius: 5px;
+  /* border: 1px solid grey; */
+  background-color: var(--touchofBlue);
+  border-radius: 15px;
   min-width: 10rem; /* Minimum width */
   max-width: 20rem; /* Maximum width */
   width: 75%;

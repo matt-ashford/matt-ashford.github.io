@@ -24,14 +24,8 @@ export const downloadBtnDataPrep = (propData) => {
   const mergedDataset = datasetRemoveCols.map((row) => {
     let matchingLibref = libRefs.filter((filtRow) => filtRow.fy === row.fy);
     matchingLibref = matchingLibref[0];
-
     const { fy, ...rest } = matchingLibref;
     return { ...matchingLibref, ...row };
   });
-
-  console.log(mergedDataset);
-  // const rezData = propData ? removeNeedlessCols(propData) : propData;
-
-  // return rezData;
   return mergedDataset;
 };
