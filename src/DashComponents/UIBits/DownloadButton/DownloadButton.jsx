@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import TocIcon from "@material-ui/icons/Toc";
 import Grid from "@material-ui/core/Grid";
+import { downloadBtnDataPrep } from "./DownloadBtnDataPrep";
 
 const useStyles = makeStyles((theme) => ({
   button: {
@@ -25,44 +26,13 @@ const useStyles = makeStyles((theme) => ({
 export const DownloadButton = (props) => {
   const { propData, dataName } = props;
 
-  function removeNeedlessCols(propData) {
-    const needlessCols = [
-      "originalOrder",
-      "missingData",
-      "mailMeasuredPctFootnote",
-      "subProduct",
-      "subProductName",
-      "productId",
-    ];
-
-    const remainingCols = Object.keys(propData[0]).filter(
-      (val) => !needlessCols.includes(val)
-    );
-
-    let rez = [];
-
-    for (let row in propData) {
-      let rezRow = {};
-      const currentRow = propData[row];
-
-      for (let col in remainingCols) {
-        const currenCol = remainingCols[col];
-
-        rezRow[currenCol] = currentRow[currenCol];
-      }
-      rez.push(rezRow);
-    }
-
-    return rez;
-  }
-
-  const rezData = propData ? removeNeedlessCols(propData) : propData;
+  const returnedData = downloadBtnDataPrep(propData);
 
   const classes = useStyles();
 
   return (
     <>
-      <CSVLink data={rezData}>
+      <CSVLink data={returnedData}>
         <Button
           className={classes.button}
           variant="contained"

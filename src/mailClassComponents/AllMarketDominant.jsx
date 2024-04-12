@@ -9,7 +9,7 @@ import MDCompositeContainer from "./allMarketDominantComponents/MDCompositeConta
 import VolumeChange from "../DashComponents/VolumeChange";
 import volumeData from "../Data/volume.json";
 import ProductCountTableMD from "./allMarketDominantComponents/ProductCountTableMD";
-import DownloadButton from "../DashComponents/DownloadButton";
+import DownloadButton from "../DashComponents/UIBits/DownloadButton/DownloadButton";
 import annualDataFull from "../Data/annualData.json";
 import Footer from "./Footer";
 

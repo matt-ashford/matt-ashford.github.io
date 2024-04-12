@@ -10,7 +10,7 @@ import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 
-import DownloadButton from "../../DashComponents/DownloadButton";
+import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
 
 import { lightGrey, useStyles_ClassPage } from "../../Design/MyTheme";
 import { graphWidth } from "../../Design/graphDimensions";

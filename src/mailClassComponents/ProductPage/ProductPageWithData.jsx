@@ -3,9 +3,23 @@ import styles from "./ProductPage.module.css";
 
 import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
 import ProductInfo from "./ProductInfo";
+import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
 
 export const ProductPageFull = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
+
+  const annualDataWithQtrValue = joinedDataAnnual.map((row) => {
+    row.quarter = "annual";
+    return row;
+  });
+
+  const fullDataset = [...annualDataWithQtrValue, ...joinedDataQtr];
+  const filteredData = fullDataset.filter(
+    (row) => row.product_id === selectedProductId
+  );
+
+  // console.log(joinedDataAnnual);
+  // console.log(filteredData);
 
   return (
     <>
@@ -20,23 +34,18 @@ export const ProductPageFull = (props) => {
           </div>
           <div className={styles.info_download_container}>
             <div className={styles.productInfoContainer}>
-              <ProductInfo
-                selectedProductId={selectedProductId}
-                joinedDataAnnual={joinedDataAnnual}
-                joinedDataQtr={joinedDataQtr}
+              <ProductInfo filteredData={filteredData} />
+            </div>
+            <div className={styles.downlodaBtnContainer}>
+              {" "}
+              <DownloadButton
+                propData={filteredData}
+                dataName="Historical Product Data"
               />
             </div>
-            <div className={styles.downlodaBtnContainer}> download btn </div>
           </div>
         </div>
-
-        {/* <QuarterlyVolume propData={productData} /> */}
-        {/* <DownloadButton
-                  propData={productData}
-                  dataName={"Quarterly Data"}
-                /> */}
       </div>
-      {/* <ProductDef productId={productId} /> */}
     </>
   );
 };

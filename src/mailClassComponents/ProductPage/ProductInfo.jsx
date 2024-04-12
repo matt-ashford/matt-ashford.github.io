@@ -3,14 +3,9 @@ import productDefData from "../../Data/productDefinitions.json";
 import styles from "./ProductPage.module.css";
 
 export const ProductInfo = (props) => {
-  const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
+  const { filteredData } = props;
 
-  const fullDataset = [...joinedDataAnnual, ...joinedDataQtr];
-
-  const matchingSeries = fullDataset.filter(
-    (row) => row.product_id === selectedProductId
-  );
-  const firstMatch = matchingSeries[0];
+  const firstMatch = filteredData[0];
 
   const productDefDataFiltered = productDefData.filter(
     (row) =>
@@ -39,7 +34,7 @@ export const ProductInfo = (props) => {
           {`${fullLinkText}`}
           <a
             href="https://www.prc.gov/mail-classification-schedule"
-            target="_blank"
+            // target="_blank"
           >
             Mail Classification Schedule
           </a>
