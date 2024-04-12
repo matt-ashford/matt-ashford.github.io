@@ -24,7 +24,7 @@ export const drawTooltipLines = ({
   const rectWidth = svgWidth / xArray.length;
 
   const bottomPush = 20;
-  const extraHeight = 15;
+  const extraHeight = 17;
 
   svgSelection
     .selectAll(".tooltipLines")

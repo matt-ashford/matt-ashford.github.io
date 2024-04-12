@@ -72,6 +72,12 @@ export const MailClassPage = (props) => {
     }
   }
 
+  const filteredAnnualData = filterAnnualComparison(
+    mailClassName,
+    selectedYear,
+    joinedDataAnnual
+  );
+
   return (
     <>
       <div className={classes.root} id="allMdContainer">
@@ -115,11 +121,7 @@ export const MailClassPage = (props) => {
             >
               <div className={styles.classGraphOuterContainer}>
                 <ClassGraphSingleYear
-                  propData={filterAnnualComparison(
-                    mailClassName,
-                    selectedYear,
-                    joinedDataAnnual
-                  )}
+                  propData={filteredAnnualData}
                   mailClass={mailClassName}
                   selectedYear={selectedYear}
                 />

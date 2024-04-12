@@ -1,78 +1,93 @@
 [
   {
-    "mailClass": "First Class Mail",
-    "productId": 2,
-    "productName": "Single-Piece Letters and Postcards",
+    "mail_class": "First Class",
+    "product_id": 2,
+    "product": "Single-Piece Letters and Postcards",
     "definition": "Small envelopes",
     "examples": "wedding invitations, greeting cards and post cards"
   },
   {
-    "mailClass": "First Class Mail",
-    "productId": 3,
-    "productName": "Single-Piece Letters and Postcards",
-    "definition": "",
+    "mail_class": "First Class",
+    "product_id": 3,
+    "product": "Single-Piece Letters/Postcards",
+    "definition": "Small envelopes",
     "examples": "wedding invitations, greeting cards and post cards"
   },
   {
-    "mailClass": "First Class Mail",
-    "productId": 4,
-    "productName": "Presort Letters/Postcards",
+    "mail_class": "First Class",
+    "product": "Flats",
+    "examples": "legal correspondence and reports"
+  },
+  {
+    "mail_class": "First Class",
+    "product": "Presort Flats",
+    "examples": "legal correspondence and reports"
+  },
+  {
+    "mail_class": "First Class",
+    "product": "Single-Piece Flats",
+    "examples": "legal correspondence and reports"
+  },
+  {
+    "mail_class": "First Class",
+    "product_id": 4,
+    "product": "Presort Letters/Postcards",
+    "definition": "Small envelopes",
+    "examples": "bank statements and credit card bills"
+  },
+  {
+    "mail_class": "First Class",
+    "product_id": 5,
+    "product": "Presort Letters/Postcards",
     "definition": "",
     "examples": "bank statements and credit card bills"
   },
   {
-    "mailClass": "First Class Mail",
-    "productId": 5,
-    "productName": "Presort Letters/Postcards",
-    "definition": "",
+    "mail_class": "First Class",
+    "product_id": 6,
+    "product": "Presort Letters/Postcards",
+    "definition": "Small envelopes",
     "examples": "bank statements and credit card bills"
   },
   {
-    "mailClass": "First Class Mail",
-    "productId": 6,
-    "productName": "Presort Letters/Postcards",
-    "definition": "",
-    "examples": "bank statements and credit card bills"
-  },
-  {
-    "mailClass": "Marketing Mail",
-    "productId": 18,
-    "productName": "High Density and Saturation Letters",
+    "mail_class": "Marketing Mail",
+    "product_id": 18,
+    "product": "High Density and Saturation Letters",
     "definition": "",
     "examples": "letter advertisments and election mail"
   },
   {
-    "mailClass": "Marketing Mail",
-    "productId": 19,
-    "productName": "High Density and Saturation Flats/Parcels",
+    "mail_class": "Marketing Mail",
+    "product_id": 19,
+    "product": "High Density and Saturation Flats/Parcels",
     "definition": "",
     "examples": "catalogs and coupon books"
   },
   {
-    "mailClass": "Marketing Mail",
-    "productId": 21,
-    "productName": "Letters",
+    "mail_class": "Marketing Mail",
+    "product_id": 21,
+    "product": "Letters",
     "definition": "",
     "examples": "letter advertisments and election mail"
   },
   {
-    "mailClass": "Marketing Mail",
-    "productId": 22,
-    "productName": "Flats",
+    "mail_class": "Marketing Mail",
+    "product_id": 22,
+    "product": "Flats",
     "definition": "",
     "examples": "catalogs and coupon books"
   },
   {
-    "mailClass": "Periodicals",
-    "productId": 27,
-    "productName": "In-County",
+    "mail_class": "Periodicals",
+    "product_id": 27,
+    "product": "In-County",
     "definition": "",
     "examples": "magazines and newspapers"
   },
   {
-    "mailClass": "Periodicals",
-    "productId": 28,
-    "productName": "Outside County",
+    "mail_class": "Periodicals",
+    "product_id": 28,
+    "product": "Outside County",
     "definition": "",
     "examples": "magazines and newspapers"
   }

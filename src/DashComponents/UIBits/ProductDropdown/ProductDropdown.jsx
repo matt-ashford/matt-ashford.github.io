@@ -34,7 +34,7 @@ export const ProductDropdown = (props) => {
     setFormattedProductNames(
       createFormattedProductList(dropdownData, mailClass)
     );
-  }, [propDataAnnual, mailClass, selectedProductId]);
+  }, [propDataAnnual, mailClass]);
 
   useEffect(() => {
     setFormattedProductNames(
