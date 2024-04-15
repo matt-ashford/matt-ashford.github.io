@@ -28,7 +28,6 @@ import styles from "./MailClassPageStyles.module.css";
 
 export const MailClassPage = (props) => {
   const { mailClassName } = props;
-  const classes = useStyles_ClassPage();
   const [selectedProductId, setSelectedProductId] = useState(0);
   const [selectedYear, setSelectedYear] = useState(2023);
   const [joinedDataAnnual, setJoinedDataAnnual] = useState(
@@ -76,8 +75,10 @@ export const MailClassPage = (props) => {
 
   return (
     <>
-      <div className={classes.root} id="allMdContainer">
-        <div className={classes.root} id="classTitleTextContainer">
+      {/* <div className={classes.root} id="allMdContainer"> */}
+      <div className={styles.allMdContainer} id="allMdContainer">
+        {/* <div className={classes.root} id="classTitleTextContainer"> */}
+        <div id="classTitleTextContainer">
           <Typography variant="h4" component="h4" gutterBottom>
             {mailClassNameTitle(mailClassName)}
           </Typography>

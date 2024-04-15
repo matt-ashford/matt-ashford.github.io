@@ -11,7 +11,7 @@ import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import Drawer from "./Drawer";
-import Drawer02 from "./Drawer02";
+import Drawer02 from "./Drawer/Drawer02";
 
 function App() {
   return (

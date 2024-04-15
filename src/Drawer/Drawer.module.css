@@ -1,0 +1,66 @@
+@import url("../theme.css");
+
+:root {
+  --leftDivWidth: 3rem;
+}
+
+.drawerContainer {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+.leftDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--leftDivWidth);
+  height: 100%;
+  /* background: #f0f0f0; */
+  background: var(--darkGrey);
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.openDrawerButton {
+  margin-top: 20px;
+}
+
+.content {
+  margin-left: 40rem; /* Adjust margin-left to match width of leftDiv */
+  z-index: 1; /* Ensure it's below leftDiv */
+}
+.listItem {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.listItem:hover {
+  cursor: pointer;
+  /* background-color: azure; */
+  background-color: var(--darkGrey);
+}
+.btnContainer {
+  margin-top: 1rem;
+  /* margin-left: 0.65rem; */
+  width: var(--leftDivWidth) !important;
+  padding-left: 2px;
+  padding-right: -20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btnContainer:hover {
+  cursor: pointer;
+  background-color: var(--lightGrey);
+  /* width: var(--leftDivWidth) !important; */
+}
+
+.iconLine {
+  height: 3px;
+  width: 27px;
+  margin-top: 2px;
+  margin-left: 0.55rem;
+  border-top: 1.5px solid black;
+}

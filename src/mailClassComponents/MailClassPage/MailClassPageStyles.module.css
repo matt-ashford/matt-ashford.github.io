@@ -1,3 +1,7 @@
+.allMdContainer {
+  margin-top: -100vh;
+}
+
 .classGraphOuterContainer {
   height: 30rem !important;
   width: 50rem;
