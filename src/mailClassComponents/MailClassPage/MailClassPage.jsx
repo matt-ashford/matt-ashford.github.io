@@ -96,18 +96,18 @@ export const MailClassPage = (props) => {
               selectedYear={selectedYear}
               changeYearSelected={changeYearSelected}
             />
-            {/* <Grid item lg={7} md={12}>
+            <Grid item lg={7} md={12}>
               <Paper className={classes.paper}>
                 <div>
                   {" "}
                   <ProductCountTableData
-                    propData={joinedData}
+                    propData={joinedDataAnnual}
                     selectedYear={selectedYear}
                     mailClassName={mailClassName}
                   />{" "}
                 </div>
               </Paper>
-            </Grid> */}
+            </Grid>
 
             <Paper
               // className={classes.graphDivFirstClass}

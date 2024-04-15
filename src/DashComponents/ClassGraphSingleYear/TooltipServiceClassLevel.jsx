@@ -24,12 +24,17 @@ export const TooltipServiceClassLevel = (props) => {
   const { barXPoz, topStart, barWidth, yScale } = tooltipParams;
 
   const [tooltipText, setTooltipText] = useState("");
+  const [tooltipPtsFromTarget, setTooltipPtsFromTarget] = useState("");
+  const [tooltipFY, setTooltipFY] = useState("");
 
   useEffect(() => {
     d3.select(`#${tooltipId}`).style("opacity", 1);
     tooltipXPoz(xHover, tooltipId);
     tooltipYPoz(hoverHeight, tooltipId);
-    setTooltipText(tooltipTextChange(hoverId, propData, selectedYear));
+
+    setTooltipFY(returnTooltipFY(selectedYear));
+    setTooltipPtsFromTarget(tooltipTextChange(hoverId, propData));
+
     drawStroke(hoverId, isHovering);
   }, [xHover, hoverId, isHovering]);
 
@@ -52,20 +57,19 @@ export const TooltipServiceClassLevel = (props) => {
 
   const pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
 
-  const tooltipColor = assignColor(pointsFromTarget);
+  // const tooltipColor = assignColor(pointsFromTarget);
 
-  function assignColor(pointsFromTarget) {
-    if (pointsFromTarget < 0) {
-      return greenGrey;
-    } else {
-      return pinkHighlight;
-    }
-  }
+  // function assignColor(pointsFromTarget) {
+  //   if (pointsFromTarget < 0) {
+  //     return greenGrey;
+  //   } else {
+  //     return pinkHighlight;
+  //   }
+  // }
 
   tooltipDiv
     .style("width", `${tooltipWidth}px`)
     .style("height", `${tooltipHeight}px`)
-    .style("background-color", tooltipColor)
     .on("mouseover", () => {
       setIsHovering(true);
       tooltipDiv.style("opacity", 1);
@@ -74,7 +78,8 @@ export const TooltipServiceClassLevel = (props) => {
   return (
     <div id={tooltipId} className={styles.classGraphTooltip}>
       <span style={{ marginTop: textMarginTop, marginBottom: "5px" }}>
-        {tooltipText}
+        <div>{tooltipFY}</div>
+        {tooltipPtsFromTarget}
       </span>
     </div>
   );
@@ -114,13 +119,26 @@ function tooltipYPoz(hoverHeight, tooltipId) {
   tooltipDiv.style("top", `${outputVal}px`);
 }
 
-function tooltipTextChange(hoverId, propData, selectedYear) {
+function returnTooltipFY(selectedYear) {
+  return `Points from  FY${selectedYear}`;
+}
+
+function tooltipTextChange(hoverId, propData) {
   let pointsFromTarget;
 
   pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
-  // console.log(pointsFromTarget);
 
-  return `Points from  FY${selectedYear} Target: ${pointsFromTarget}`;
+  let pointDiffColor = "redPoints";
+  if (pointsFromTarget <= 0) {
+    pointDiffColor = "greenPoints";
+  }
+
+  return (
+    <>
+      <span className={styles.pointsFromTargetLabel}>Target:</span>
+      <span className={`${styles[pointDiffColor]}`}>{pointsFromTarget}</span>
+    </>
+  );
 }
 
 function calcPointsFromTargetAnnual(hoverId, propData) {
