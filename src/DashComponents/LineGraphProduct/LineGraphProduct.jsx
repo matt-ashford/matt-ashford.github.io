@@ -1,4 +1,3 @@
-// import { useState, useEffect } from "react";
 import { TooltipServiceProduct } from "./TooltipServiceProduct";
 import { useEffect, useState } from "react";
 import styles from "./LineGraph.module.css";
@@ -8,7 +7,6 @@ import { drawTargets } from "./DrawTargets";
 import { drawLine } from "./DrawLine";
 import { drawOverLay } from "./DrawOverlay";
 import { drawTooltipLines } from "./DrawTooltipLines";
-
 import {
   marginBottom,
   graphHeight,
@@ -23,8 +21,8 @@ import {
   yScaleRev,
   topStart,
   svgWidth,
+  determineRightPush,
 } from "./LineGraphDimensions";
-
 import * as d3 from "d3";
 
 import { drawYAxis } from "./DrawYAxis";
@@ -33,14 +31,10 @@ import { LineGraphKey } from "./LineGraphKey";
 
 export const LineGraphProduct = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
-
   const [isHoveringProdGraph, setIsHoveringProdGraph] = useState(false);
   const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
-
   //   const [hoveredLine, setHoveredLine] = useState(-1);
-
   const [hoverSeq, setHoverSeq] = useState(-1);
-
   useEffect(() => {
     if (!isHoveringProdGraph) {
       tooltipLinesInvisible();
@@ -49,7 +43,6 @@ export const LineGraphProduct = (props) => {
     }
     //   });
   }, [hoverSeq, isHoveringProdGraph]);
-
   useEffect(() => {
     if (!isHoveringProdGraph) {
       tooltipLinesInvisible();
@@ -57,7 +50,6 @@ export const LineGraphProduct = (props) => {
       changeOpacityTooltipLine(hoverSeq);
     }
   });
-
   const [graphData, setGraphData] = useState(
     generateDataLineGraph(selectedProductId, joinedDataAnnual, joinedDataQtr)
   );
@@ -80,7 +72,6 @@ export const LineGraphProduct = (props) => {
   }, [graphData]);
 
   const svgId = "lineGraphProductSvg";
-
   const tooltipId = "tooltipProduct";
   const tooltipSelected = d3.select(`#${tooltipId}`);
   tooltipSelected.on("mouseenter", function () {
@@ -88,60 +79,46 @@ export const LineGraphProduct = (props) => {
     setIsHoveringTooltip(true);
     tooltipSelected.style("opacity", 1);
   });
-
   const getInterBarMargin = (graphData) => {
     const barCount = graphData.length;
     const interBarDist = svgWidth / barCount;
-
     return interBarDist;
   };
-
   function xPoz(i, graphData) {
     let interBarMargin = getInterBarMargin(graphData);
     return i * interBarMargin + barMarginLeft;
   }
-
   function removeAxes() {
     const svgSelected = d3.select(`#${svgId}`);
-
     svgSelected.selectAll(".lineGraphYAxis").remove();
     svgSelected.selectAll(".domain").remove();
     svgSelected.selectAll(".xAxisText").remove();
     svgSelected.selectAll(".tick").remove();
   }
-
   function removeGraphedData() {
     const svgSelected = d3.select(`#${svgId}`);
-
     svgSelected.selectAll(".lineGraphTarget").remove();
-
     svgSelected.selectAll(".lineGraphLine").remove();
-
     svgSelected.selectAll(".overlayRect").remove();
   }
-
   function createXAxisValuesArray(graphData) {
     const firstRow = graphData[0];
     let rezArray = [];
-    if (!Object.keys(firstRow).includes("quarter")) {
+
+    if (firstRow.quarter === "annual") {
       rezArray = graphData.map((row) => row.fy.toString());
     } else {
       rezArray = graphData.map((row) => {
-        //   return `${row.fy}_Q${row.quarter}`;
         return `Q${row.quarter}_${row.fy}`;
-        //   if (row.quarter === 1) {
-        //     return `${row.fy}_Q${row.quarter}`;
-        //   }
-        //   return `Q${row.quarter}`;
       });
     }
     return rezArray;
   }
-
   function changeOpacityTooltipLine(hoverSeq) {
     if (hoverSeq !== -1) {
       const hoveredLine = matchXArrayWithLine(hoverSeq);
       tooltipLinesInvisible();
+      d3.select(`${hoveredLine}`).style("opacity", 0.5);
       d3.select(`${hoveredLine}`).style("opacity", 0.3);
     }
   }
@@ -149,39 +126,43 @@ export const LineGraphProduct = (props) => {
   function tooltipLinesInvisible() {
     d3.selectAll(".tooltipLines").style("opacity", 0);
   }
-
   function deleteTooltipLines() {
     d3.selectAll(".tooltipLines").remove();
   }
-
   function matchXArrayWithLine(hoverSeq) {
     if (hoverSeq === -1) {
       return ".fake";
     }
-
     const hoverSeqList = hoverSeq.split("_");
     if (hoverSeq.includes("Q")) {
       return `#tooltipLineSeq_${hoverSeqList[1]}_${hoverSeqList[2]}`;
     }
     return `#tooltipLineSeq_${hoverSeqList[1]}`;
   }
-
   function mouseEnterSvg() {
     setIsHoveringProdGraph(true);
     // mouseMoveSvg();
   }
-
   function mouseExitSvg() {
     setIsHoveringProdGraph(false);
     // mouseMoveSvg();
   }
+  let xArray = createXAxisValuesArray(graphData);
 
-  const xArray = createXAxisValuesArray(graphData);
+  function calculateXScale(graphData, xArray) {
+    const rightPush = determineRightPush(graphData);
 
-  const xScale = d3
-    .scaleBand()
-    .domain(xArray)
-    .range([0, graphWidth - marginRight - marginLeft]);
+    return d3
+      .scaleBand()
+      .domain(xArray)
+      .range([0, graphWidth - marginRight - marginLeft + rightPush]);
+  }
+  const xScale = calculateXScale(graphData, xArray);
+
+  // d3
+  //   .scaleBand()
+  //   .domain(xArray)
+  //   .range([0, graphWidth - marginRight - marginLeft]);
 
   const drawYAxisParams = {
     svgId: svgId,
@@ -191,21 +172,18 @@ export const LineGraphProduct = (props) => {
     xArray: xArray,
     xScale: xScale,
   };
-
   const drawLineParams = {
     svgId: svgId,
     graphData: graphData,
     xScale: xScale,
     xArray: xArray,
   };
-
   const drawTargetsParams = {
     svgId: svgId,
     graphData: graphData,
     xScale: xScale,
     xArray: xArray,
   };
-
   const drawOverLayParams = {
     svgId: svgId,
     graphData: graphData,
@@ -214,7 +192,6 @@ export const LineGraphProduct = (props) => {
     setHoverSeq: setHoverSeq,
     setIsHoveringProdGraph: setIsHoveringProdGraph,
   };
-
   const drawTooltipLinesParams = {
     svgId: svgId,
     graphData: graphData,
@@ -223,7 +200,6 @@ export const LineGraphProduct = (props) => {
     hoverSeq: hoverSeq,
     setIsHoveringProdGraph: setIsHoveringProdGraph,
   };
-
   return (
     <div className={styles.graphAndTitleContainer}>
       <LineGraphTitle graphData={graphData} />
@@ -251,5 +227,4 @@ export const LineGraphProduct = (props) => {
     </div>
   );
 };
-
 export default LineGraphProduct;

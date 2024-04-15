@@ -1,6 +1,5 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import { pinkHighlight, greenGrey } from "../../Design/MyTheme";
 import styles from "./classGraph.module.css";
 
 const tooltipWidth = 130;
@@ -16,14 +15,10 @@ export const TooltipServiceClassLevel = (props) => {
     hoverHeight,
     propData,
     tooltipId,
-    tooltipParams,
     isHoveringProductText,
     selectedYear,
   } = props;
 
-  const { barXPoz, topStart, barWidth, yScale } = tooltipParams;
-
-  const [tooltipText, setTooltipText] = useState("");
   const [tooltipPtsFromTarget, setTooltipPtsFromTarget] = useState("");
   const [tooltipFY, setTooltipFY] = useState("");
 
@@ -49,23 +44,13 @@ export const TooltipServiceClassLevel = (props) => {
     if (hoverId) {
       const hoveredBarSelection = d3.select(`#${hoverId}`);
       d3.selectAll("rect").attr("stroke", "none");
-      hoveredBarSelection.attr("stroke", "black");
+      hoveredBarSelection.attr("stroke", "black").attr("stroke-width", "2px");
     }
   }
 
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
-  const pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
-
-  // const tooltipColor = assignColor(pointsFromTarget);
-
-  // function assignColor(pointsFromTarget) {
-  //   if (pointsFromTarget < 0) {
-  //     return greenGrey;
-  //   } else {
-  //     return pinkHighlight;
-  //   }
-  // }
+  // const pointsFromTarget = calcPointsFromTargetAnnual(hoverId, propData);
 
   tooltipDiv
     .style("width", `${tooltipWidth}px`)
