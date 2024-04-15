@@ -21,10 +21,9 @@ export const drawOverLay = ({
   const svgSelection = d3.select(`#${svgId}`);
 
   const rightPush = determineRightPush(graphData);
-  //   const leftPush =
 
-  const rectWidth = svgWidth / xArray.length - 2;
-  //   const rectWidth = svgWidth / xArray.length;
+  const rectWidth = svgWidth / xArray.length;
+  // const rectWidth = svgWidth / xArray.length - 1;
 
   svgSelection
     .selectAll(".overlayRect")
@@ -32,10 +31,11 @@ export const drawOverLay = ({
     .enter()
     .append("rect")
     .attr("class", "overlayRect")
-    .attr("x", (d) => xScale(d) + marginLeft)
+    .attr("x", (d) => xScale(d) + marginLeft + rightPush)
     .attr("y", (d) => 1)
     .attr("width", rectWidth)
     .attr("height", graphHeight)
+    // .attr("opacity", 0.3)
     .attr("opacity", 0)
     .attr("id", (d) => `overlay_${d}`)
     .on("mouseenter", function (event, d) {

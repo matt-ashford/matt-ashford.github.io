@@ -31,7 +31,7 @@ export const ProductCountBar = (props) => {
 
   const barHeight = 10;
 
-  const svgWidth = 300;
+  const svgWidth = 200;
   const svgHeight = barHeight + 20;
 
   // const countPctState = thisCount / totalProductCount;

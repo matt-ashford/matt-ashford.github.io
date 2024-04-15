@@ -38,8 +38,8 @@ export const svgWidth = graphWidth - marginLeft - marginRight;
 
 export const determineRightPush = (graphData) => {
   const firstObs = graphData[0];
-  const annualPush = 60;
-  const quarterlyPush = 15;
+  const annualPush = 75;
+  const quarterlyPush = 18;
   // if (Object.keys(firstObs).includes("quarter")) {
   if (firstObs.quarter !== "annual") {
     return quarterlyPush;

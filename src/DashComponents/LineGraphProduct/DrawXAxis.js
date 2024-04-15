@@ -30,7 +30,9 @@ export const drawXAxis = ({ svgId, xScale }) => {
     .attr("class", "xAxisText")
     .style("text-anchor", "start")
     .attr("dy", "1em")
-    .attr("transform", "rotate(35)");
+    // .attr("dx", "1em")
+    .attr("transform", "rotate(35)")
+    .attr("shape-rendering", "crispEdges");
 
   //   d3.selectAll(".tick").style("opacity", 0.2);
 

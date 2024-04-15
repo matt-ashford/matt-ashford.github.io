@@ -40,7 +40,7 @@ export const drawLine = ({ svgId, graphData, xScale, xArray }) => {
   // Start the transition
   linePath
     .transition()
-    .duration(400) // Transition duration
+    .duration(500) // Transition duration
     .ease(d3.easeLinear) // Easing function for smooth transition
     .attr("stroke-dashoffset", 0); // Set the stroke-dashoffset to 0 (line is fully visible)
 };

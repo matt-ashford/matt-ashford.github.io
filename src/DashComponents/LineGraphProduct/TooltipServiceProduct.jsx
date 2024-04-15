@@ -138,11 +138,15 @@ function returnTooltipText(
       graphData
     );
 
+    function roundToTwoDecimals(number) {
+      const epsilon = 0.01;
+      return Math.round((number + epsilon) * 100) / 100;
+    }
+
     const pointsFromTarget =
-      //   matchingRow.target - matchingRow.pct_on_time.toFixed(2);
-      Math.round(
-        (matchingRow.target - matchingRow.pct_on_time + Number.EPSILON) * 100
-      ) / 100;
+      matchingRow && typeof matchingRow.target !== "undefined"
+        ? roundToTwoDecimals(matchingRow.target - matchingRow.pct_on_time)
+        : 0;
 
     const pointsFromTargetColor =
       pointsFromTarget > 0 ? "pointsFromTargetRed" : "pointsFromTargetGreen";
@@ -163,9 +167,6 @@ function returnTooltipText(
         >{`${pointsFromTarget}`}</div>
       </>
     );
-    // return `${matchingYear} ${matchingQuarter} ${matchingRow.pct_on_time}`;
-    // return `${JSON.stringify(matchingRow)}`;
-    // return `${matchingRow.pct_on_time}`;
   }
 }
 

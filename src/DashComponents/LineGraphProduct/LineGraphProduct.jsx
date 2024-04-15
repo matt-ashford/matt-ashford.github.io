@@ -155,14 +155,10 @@ export const LineGraphProduct = (props) => {
     return d3
       .scaleBand()
       .domain(xArray)
-      .range([0, graphWidth - marginRight - marginLeft + rightPush]);
+      .range([0, graphWidth - marginRight - marginLeft]);
+    // .range([0, graphWidth - marginRight - marginLeft - 10])
   }
   const xScale = calculateXScale(graphData, xArray);
-
-  // d3
-  //   .scaleBand()
-  //   .domain(xArray)
-  //   .range([0, graphWidth - marginRight - marginLeft]);
 
   const drawYAxisParams = {
     svgId: svgId,

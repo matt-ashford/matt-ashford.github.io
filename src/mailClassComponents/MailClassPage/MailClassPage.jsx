@@ -5,7 +5,8 @@ import volData from "../../Data/volume.json";
 import { useEffect, useState } from "react";
 // import annualData from "../Data/annualData.json";
 import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
-import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
+// import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
+import ProductCountTable from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
 import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
@@ -76,83 +77,58 @@ export const MailClassPage = (props) => {
   return (
     <>
       <div className={classes.root} id="allMdContainer">
-        <Grid container spacing={1} justifyContent="flex-start">
-          <Grid item xs={12}>
-            <div className={classes.root} id="classTitleTextContainer">
-              <Typography variant="h4" component="h4" gutterBottom>
-                {mailClassNameTitle(mailClassName)}
-              </Typography>
+        <div className={classes.root} id="classTitleTextContainer">
+          <Typography variant="h4" component="h4" gutterBottom>
+            {mailClassNameTitle(mailClassName)}
+          </Typography>
+        </div>
+
+        <YearDropdown
+          propData={annualData}
+          selectedYear={selectedYear}
+          changeYearSelected={changeYearSelected}
+        />
+
+        <div className={styles.graphAndCountTableContainer}>
+          <Paper className={styles.classGraphPaper}>
+            <div className={styles.classGraphOuterContainer}>
+              <ClassGraphSingleYear
+                propData={filteredAnnualData}
+                mailClass={mailClassName}
+                selectedYear={selectedYear}
+              />
             </div>
-          </Grid>
+          </Paper>
+          <ProductCountTable
+            propData={joinedDataAnnual}
+            selectedYear={selectedYear}
+            mailClassName={mailClassName}
+          />{" "}
+        </div>
 
-          <Grid
-            item
-            md={9}
-            xs={12}
-            style={{ maxWidth: "950px", minWidth: "800px" }}
-          >
-            <YearDropdown
-              propData={annualData}
-              selectedYear={selectedYear}
-              changeYearSelected={changeYearSelected}
-            />
-            <Grid item lg={7} md={12}>
-              <Paper className={classes.paper}>
-                <div>
-                  {" "}
-                  <ProductCountTableData
-                    propData={joinedDataAnnual}
-                    selectedYear={selectedYear}
-                    mailClassName={mailClassName}
-                  />{" "}
-                </div>
-              </Paper>
-            </Grid>
+        <MailClassDef mailClass={mailClassName} />
 
-            <Paper
-              // className={classes.graphDivFirstClass}
-              // elevation={3}
-              className={styles.classGraphPaper}
-            >
-              <div className={styles.classGraphOuterContainer}>
-                <ClassGraphSingleYear
-                  propData={filteredAnnualData}
-                  mailClass={mailClassName}
-                  selectedYear={selectedYear}
-                />
-              </div>
-            </Paper>
-
-            <MailClassDef mailClass={mailClassName} />
-          </Grid>
-
-          <Grid item xs={3} float="left">
-            <Grid container direction="column" spacing={3}>
-              <Grid item xs={3}>
-                <div style={{ marginTop: "30%" }}></div>
-                <Paper>
-                  {/* <DownloadButton
+        <Paper>
+          {/* <DownloadButton
                     dataName={"Class-Level Data"}
                   /> */}
-                </Paper>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
+        </Paper>
 
-        <ProductDropdown
-          propDataAnnual={joinedDataAnnual}
-          propDataQuarterly={joinedDataQtr}
-          selectedProductId={selectedProductId}
-          changeProductSelected={changeProductSelected}
-          mailClass={mailClassName}
-        />
+        <div className={styles.productPageContainer}>
+          <ProductDropdown
+            propDataAnnual={joinedDataAnnual}
+            propDataQuarterly={joinedDataQtr}
+            selectedProductId={selectedProductId}
+            changeProductSelected={changeProductSelected}
+            mailClass={mailClassName}
+          />
 
-        <ProductPage
-          selectedProductId={selectedProductId}
-          joinedDataAnnual={joinedDataAnnual}
-          joinedDataQtr={joinedDataQtr}
-        />
+          <ProductPage
+            selectedProductId={selectedProductId}
+            joinedDataAnnual={joinedDataAnnual}
+            joinedDataQtr={joinedDataQtr}
+          />
+        </div>
 
         <div style={{ height: "150px" }}></div>
       </div>

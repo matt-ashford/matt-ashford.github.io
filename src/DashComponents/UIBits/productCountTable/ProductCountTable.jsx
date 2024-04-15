@@ -34,12 +34,8 @@ export const ProductCountTable = (props) => {
 
   return (
     <>
-      <Stack direction="row">
-        <Container
-          // disableGutters={true}
-          className={styles.countCell}
-          id={styles.totalCountCountainer}
-        >
+      <div className={styles.outerContainerProductCount}>
+        <div className={styles.countCell} id={styles.totalCountCountainer}>
           <Typography
             variant="h4"
             align="left"
@@ -57,13 +53,9 @@ export const ProductCountTable = (props) => {
             thisCount={cellData.productCount}
             dataType="totalProductCount"
           />
-        </Container>
+        </div>
 
-        <Container
-          // disableGutters={true}
-          className={styles.countCell}
-          id={styles.missedCountCountainer}
-        >
+        <div className={styles.countCell} id={styles.missedCountCountainer}>
           <Typography
             variant="h4"
             align="left"
@@ -76,17 +68,14 @@ export const ProductCountTable = (props) => {
             {productOrComponent(mailClassName)} Missed their Targets in{" "}
             {selectedYear}
           </Typography>
+
           <ProductCountBar
             totalProductCount={cellData.productCount}
             thisCount={cellData.missedTarget}
             dataType="missedProductCount"
           />
-        </Container>
-        <Container
-          // disableGutters={true}
-          className={styles.countCell}
-          id={styles.decCountContainer}
-        >
+        </div>
+        <div className={styles.countCell} id={styles.decCountContainer}>
           <Typography
             variant="h4"
             align="left"
@@ -104,8 +93,8 @@ export const ProductCountTable = (props) => {
             thisCount={cellData.decreasedCount}
             dataType="decreasedProductCount"
           />
-        </Container>
-      </Stack>
+        </div>
+      </div>
     </>
   );
 };
