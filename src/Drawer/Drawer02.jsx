@@ -20,7 +20,6 @@ export const Drawer02 = (props) => {
 
   function changeDrawer(binaryInput) {
     setIsOpen(binaryInput);
-    console.log("toggleDrwar triggered", isOpen);
   }
 
   const mailClassNames = [

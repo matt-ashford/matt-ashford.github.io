@@ -21,7 +21,7 @@ export const ProductCountTable = (props) => {
       propData
     );
     setCellData(countTableDataFilter(filtData, selectedYear));
-  }, [propData, selectedYear]);
+  }, [propData, selectedYear, mailClassName]);
 
   function productOrComponent(mc) {
     const isFirstClass = mc == "First Class Mail";

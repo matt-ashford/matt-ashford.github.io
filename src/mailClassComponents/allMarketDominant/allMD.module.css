@@ -1,0 +1,74 @@
+@import url("../../theme.css");
+
+.allMDContainer {
+  margin-top: -100vh;
+}
+
+.barGraphAndLineContainer {
+  display: flex;
+  flex-direction: row;
+  height: 15rem;
+  width: 100vw;
+}
+
+.barGraphContainer {
+  background-color: azure;
+  width: 30rem;
+}
+
+.lineGraphContainer {
+  width: 25%;
+  background-color: pink;
+}
+.titleContainer {
+  flex-grow: 1;
+}
+
+.paper {
+  padding: var(--theme-spacing-2);
+  text-align: center;
+  color: var(--theme-palette-text-secondary);
+}
+
+.paperTopRow {
+  padding-bottom: 10%;
+  height: 400px;
+  padding-top: 2%;
+}
+
+.mdGraphContainer {
+  max-width: 600px;
+  height: 500px;
+  margin-top: 2%;
+}
+
+.titleBox {
+  margin-top: 1%;
+}
+.tableAndPieGraphGrid {
+  display: grid;
+  grid-template-columns: 600px 200px;
+  grid-template-rows: 400px 200px;
+}
+.tableContainer {
+  /* background-color: beige; */
+
+  grid-column: 1;
+  grid-row: 1 / span 2;
+}
+.pieGraphContainer {
+  background-color: bisque;
+  grid-column: 2;
+  grid-row: 1;
+  transform: scale(0.7);
+}
+
+.downloadBtnContainer {
+  background-color: aqua;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.footerSpacer {
+  height: 500px;
+}

@@ -3,14 +3,16 @@ import { ThemeProvider } from "@material-ui/core/styles";
 
 import myTheme from "./Design/MyTheme";
 
-import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
+// import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
+
+// import { AllMarketDominant } from "./mailClassComponents/allMarketDominant";
+import AllMarketDominant from "./mailClassComponents/allMarketDominant/AllMarketDominant";
 
 import { HomePage } from "./mailClassComponents/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage/ProductPage";
 import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import Drawer from "./Drawer";
 import Drawer02 from "./Drawer/Drawer02";
 
 function App() {

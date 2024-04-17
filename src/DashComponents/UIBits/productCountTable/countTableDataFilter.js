@@ -5,9 +5,9 @@ export const countTableDataFilter = (inputData, inputFy) => {
 
   const inputDataMailClass = inputData[0].mail_class;
 
-  if (inputDataMailClass == "First Class") {
-    inputData = filterProdsFistClass(inputData);
-  }
+  // if (inputDataMailClass == "First Class") {
+  //   inputData = filterProdsFistClass(inputData);
+  // }
 
   const singleYearOfData = inputData.filter((row) => row.fy === inputFy);
 
