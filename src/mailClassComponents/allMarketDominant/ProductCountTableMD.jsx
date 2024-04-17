@@ -1,84 +1,61 @@
 import { makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-
-// import countData from "../../Data/toLevelProductCounts.json";
-// import annualData from "../../Data/annualData.json";
-
-const useStyles = makeStyles({
-  table: {
-    minWidth: 500,
-    maxHeight: 400,
-    padding: "4px 8px",
-    borderTop: "1px solid rgba(0, 0, 0, 0.2)",
-    boxShadow: "2px 2px 2px 2px rgba(0, 0, 0, 0.2)",
-  },
-
-  tableHead: {
-    fontWeight: "bolder",
-    color: "green",
-  },
-});
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import styles from "./allMD.module.css";
 
 export const ProductCountTableMD = (props) => {
-  const { countData } = props;
-
-  // console.log("count table", countData);
-  // console.table(countData);
-  const classes = useStyles();
+  const { countData, selectedYear } = props;
 
   return (
     <>
       <h3>Product Component Count by Class</h3>
       <TableContainer component={Paper}>
-        <Table className={classes.table} aria-label="simple table">
-          <TableHead className={classes.tableHead}>
+        <Table className={styles.table} aria-label="simple table">
+          <TableHead className={styles.tableHead}>
             <TableRow>
               <TableCell
-                style={{
-                  inlineSize: "100px",
-                  textAlign: "left",
-                  fontWeight: "bolder",
-                }}
+                sx={{ minWidth: 150 }}
+                className={styles.firstTableHead}
+                style={{ fontWeight: "bolder" }}
               >
                 Mail Class
               </TableCell>
               <TableCell
                 align="center"
-                className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
+                className={styles.allMdTableHeader}
               >
                 Total Product Components
               </TableCell>
               <TableCell
                 align="center"
-                className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
+                className={styles.allMdTableHeader}
               >
-                Product Components that missed Target in FY2020
+                Product Components that missed Target in FY{selectedYear}
               </TableCell>
               <TableCell
                 align="center"
-                className="allMdTableHeader"
                 style={{ fontWeight: "bolder" }}
+                className={styles.allMdTableHeader}
               >
-                Product Components that Decreased in FY2020
+                Product Components that Decreased in FY{selectedYear}
               </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {countData.map((row, ind) => (
-              <TableRow key={`row${ind}`}>
+              <TableRow key={`row${ind}`} className={styles.tableRow}>
                 <TableCell
-                  component="th"
+                  //  component="th"
                   scope="row"
                   key={`row${ind}1`}
-                  // style={{ inlineSize: "150px", textAlign: "left" }}
+                  sx={{ maxHeight: 10 }}
                 >
                   {row.mailClass}
                 </TableCell>

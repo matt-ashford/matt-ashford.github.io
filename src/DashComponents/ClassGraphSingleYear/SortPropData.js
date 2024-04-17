@@ -41,9 +41,18 @@ export const sortPropData = (inputData) => {
 
   sortedData = sortByClass(mailClass, inputData_sortProp, allClassOrders);
 
-  let g = applyRecentTargets(sortedData);
+  sortedData = applyRecentTargets(sortedData);
 
-  return sortedData;
+  let sortedData_removeSubFlats = sortedData.filter((row) => {
+    if (
+      row.product !== "Single-Piece Flats" &&
+      row.product !== "Presort Flats"
+    ) {
+      return row;
+    }
+  });
+
+  return sortedData_removeSubFlats;
 };
 
 function applyRecentTargets(inputData) {

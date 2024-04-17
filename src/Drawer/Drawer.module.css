@@ -27,7 +27,7 @@
 }
 
 .content {
-  margin-left: 40rem; /* Adjust margin-left to match width of leftDiv */
+  /* margin-left: 40rem; */
   z-index: 1; /* Ensure it's below leftDiv */
 }
 .listItem {

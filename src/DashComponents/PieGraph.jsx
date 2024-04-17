@@ -5,11 +5,14 @@ import PieGraphKey from "./PieGraphKey";
 import { pinkHighlight, greenGrey } from "../Design/MyTheme";
 
 export const PieGraph = (props) => {
-  const { countData } = props;
+  const { countData, selectedYear } = props;
 
   useEffect(() => {
     drawPie();
-  });
+  }, []);
+  useEffect(() => {
+    drawPie();
+  }, [countData]);
 
   const dataName = "pieGraph";
 
@@ -64,7 +67,7 @@ export const PieGraph = (props) => {
     <>
       <div style={{ paddingRight: "28%" }}>
         <h3 style={{ marginBottom: "1rem", marginTop: "5%" }}>
-          FY2020 Mail Product Component Count
+          FY{selectedYear} Mail Product Component Count
         </h3>
         <svg width={svgWidth} height={svgHeight} id={svgId}></svg>
         <PieGraphKey colorObj={colorObj} />

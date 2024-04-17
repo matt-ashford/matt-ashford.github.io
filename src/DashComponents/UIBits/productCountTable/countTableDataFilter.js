@@ -20,7 +20,6 @@ export const countTableDataFilter = (inputData, inputFy) => {
   }, 0);
 
   const decreasedCount = singleYearOfData.reduce((decSoFar, currentRow) => {
-    // return decreasedThisYear(inputData, currentRow.product_id, maxYear)
     return decreasedThisYear(inputData, currentRow.product_id, inputFy)
       ? ++decSoFar
       : decSoFar;

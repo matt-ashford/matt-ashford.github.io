@@ -39,7 +39,6 @@ function generateCountDataByClass(annualData, mailClass, selectedYear) {
     negativeChange: countProductDecreases(singleClassData, selectedYear),
   };
 
-  console.log(rez);
   return rez;
 }
 

@@ -1,7 +1,6 @@
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
-import volData from "../../Data/volume.json";
 import { useEffect, useState } from "react";
 // import annualData from "../Data/annualData.json";
 import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
@@ -11,10 +10,6 @@ import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 
-import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
-
-import { lightGrey, useStyles_ClassPage } from "../../Design/MyTheme";
-import { graphWidth } from "../../Design/graphDimensions";
 import Footer from "../Footer";
 
 import MailClassDef from "../../DashComponents/MailClassDef";

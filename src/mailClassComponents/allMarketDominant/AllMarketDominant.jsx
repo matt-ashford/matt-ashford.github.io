@@ -17,24 +17,30 @@ import annualData from "../../Data/annual - Updated.json";
 import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import { useEffect, useState } from "react";
+import { Divider } from "@mui/material";
 
 export const AllMarketDominant = (props) => {
   const [selectedYear, setSelectedYear] = useState(2023);
 
   const joinedAnnualData = joinDataWithProdKey(annualData);
+  const joinedDataForDownload = joinedAnnualData.map((row) => {
+    row.quarter = "annual";
+    return row;
+  });
+
+  console.log(joinedDataForDownload);
 
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
   const countDataTopLevel = generateCountData(selectedYear, joinedAnnualData);
 
   function changeYearSelected(e) {
-    console.log(e.target.value);
     setSelectedYear(e.target.value);
   }
 
   return (
     <>
-      <div id="allMdContainer" className={styles.allMDContainer}>
+      <div className={styles.allMDContainer}>
         <div className={styles.titleContainer}>
           <Typography variant="h4" component="h4" gutterBottom>
             All Market Dominant Products
@@ -56,16 +62,22 @@ export const AllMarketDominant = (props) => {
         <div className={styles.tableAndPieGraphGrid}>
           <div className={styles.tableContainer}>
             {" "}
-            <ProductCountTableMD countData={countDataTopLevel} />
+            <ProductCountTableMD
+              countData={countDataTopLevel}
+              selectedYear={selectedYear}
+            />
           </div>
           <div className={styles.pieGraphContainer}>
             {" "}
-            <PieGraph countData={countDataTopLevel} />
+            <PieGraph
+              countData={countDataTopLevel}
+              selectedYear={selectedYear}
+            />
           </div>
           <div className={styles.downloadBtnContainer}>
             {" "}
             <DownloadButton
-              propData={annualDataFull}
+              propData={joinedDataForDownload}
               dataName={"Market Dominant Data"}
             />{" "}
           </div>
@@ -76,77 +88,5 @@ export const AllMarketDominant = (props) => {
     </>
   );
 };
-
-function generateCountDataTopLevel() {
-  const mailClasses = [
-    "First Class Mail",
-    "Marketing Mail",
-    "Periodicals",
-    "Package Services",
-    "Special Services",
-    "Grand Total",
-  ];
-
-  let rez = [];
-
-  mailClasses.forEach((mailClass) => {
-    rez.push(generateCountDataByClass(mailClass));
-  });
-  return rez;
-}
-
-function generateCountDataByClass(mailClass) {
-  let singleClassData = annualDataFull;
-
-  if (mailClass !== "Grand Total") {
-    singleClassData = annualDataFull.filter((row) => row.class === mailClass);
-  }
-
-  singleClassData = singleClassData
-    .filter((row) => row.productAbbrev !== "missing")
-    .filter((row) => row.subProduct === "no");
-
-  const singleYearData = singleClassData.filter((row) => row.fy === 2020);
-
-  const rez = {
-    mailClass: mailClass,
-    totalProducts: singleYearData.length,
-    productsMissedTarget: countMissedTargets(singleClassData),
-    negativeChange: countProductDecreases(singleClassData),
-  };
-
-  return rez;
-}
-
-function countMissedTargets(singleClassData) {
-  const missedProductCount = singleClassData
-    .filter((row) => row.fy === 2020)
-    .filter((row) => row.pointsFromTarget > 0).length;
-
-  return missedProductCount;
-}
-
-function countProductDecreases(singleClassData) {
-  let negativeChangeCount = 0;
-
-  const data2020 = singleClassData.filter((row) => row.fy === 2020);
-
-  for (let i = 0; i < data2020.length; i++) {
-    const currentProductId = data2020[i].productId;
-    const singleProduct = singleClassData.filter(
-      (row) => row.productId === currentProductId
-    );
-    const thisYearScore = singleProduct.filter((row) => row.fy === 2020)[0]
-      .pctOnTime;
-    const prevYearScore = singleProduct.filter((row) => row.fy === 2019)[0]
-      .pctOnTime;
-
-    if (thisYearScore < prevYearScore) {
-      negativeChangeCount++;
-    }
-  }
-
-  return negativeChangeCount;
-}
 
 export default AllMarketDominant;
