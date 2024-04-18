@@ -13,9 +13,11 @@ import Footer from "../Footer";
 import styles from "./allMD.module.css";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import annualData from "../../Data/annual - Updated.json";
+import quarterlyData from "../../Data/annual - Updated.json";
 import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
+import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
 import { useEffect, useState } from "react";
 import { Divider } from "@mui/material";
 
@@ -28,6 +30,8 @@ export const AllMarketDominant = (props) => {
     return row;
   });
 
+  const joinedDataQtr = joinDataWithProdKey(quarterlyData);
+
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
   const countDataTopLevel = generateCountData(selectedYear, joinedAnnualData);
@@ -35,6 +39,8 @@ export const AllMarketDominant = (props) => {
   function changeYearSelected(e) {
     setSelectedYear(e.target.value);
   }
+
+  const lettersTwoDayId = 59;
 
   return (
     <>
@@ -48,7 +54,14 @@ export const AllMarketDominant = (props) => {
           <div className={styles.barGraphContainer}>
             <CountBarGraph propData={joinedAnnualData} />{" "}
           </div>
-          <div className={styles.lineGraphContainer}>linegrph here </div>
+          <div className={styles.lineGraphContainer}>
+            <LineGraphProduct
+              selectedProductId={lettersTwoDayId}
+              // joinedDataAnnual={joinedAnnualData}
+              joinedDataAnnual={joinedDataForDownload}
+              joinedDataQtr={joinedDataQtr}
+            />
+          </div>
         </div>
 
         <div className={styles.yearDropdownContainer}>

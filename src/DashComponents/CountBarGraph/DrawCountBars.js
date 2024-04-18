@@ -1,4 +1,5 @@
 import * as d3 from "d3";
+import { pinkHighlight, greenGrey } from "../../Design/MyTheme";
 
 export const drawCountBars = (countData, svgId) => {
   // console.log(JSON.stringify(countData));
@@ -6,6 +7,8 @@ export const drawCountBars = (countData, svgId) => {
   const margin = { top: 20, right: 30, bottom: 30, left: 40 };
   const width = 300 - margin.left - margin.right;
   const height = 200 - margin.top - margin.bottom;
+
+  const rightPush = 10;
 
   const svg = d3
     .select(`#${svgId}`)
@@ -27,14 +30,15 @@ export const drawCountBars = (countData, svgId) => {
   const color = d3
     .scaleOrdinal()
     .domain(["missedCount", "exceededCount"])
-    .range(["#ff6347", "#4682b4"]);
+    // .range(["#ff6347", "#4682b4"]);
+    .range([pinkHighlight, greenGrey]);
 
   svg
     .selectAll(".barCount")
     .data(countData)
     .join("g")
     .attr("class", "barCount")
-    .attr("transform", (d) => `translate(${x(d.fy)},0)`)
+    .attr("transform", (d) => `translate(${x(d.fy) + rightPush},0)`)
     .selectAll("rect")
     .data((d) => [
       { type: "missedCount", count: d.missedCount },

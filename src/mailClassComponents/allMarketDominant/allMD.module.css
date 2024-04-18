@@ -12,18 +12,31 @@
 .barGraphAndLineContainer {
   display: flex;
   flex-direction: row;
-  height: 15rem;
+  height: 19rem;
   width: 100vw;
 }
 
 .barGraphContainer {
-  background-color: azure;
-  width: 30rem;
+  /* background-color: azure; */
+  width: 25rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: -6rem;
+  border: 1px solid grey;
+  border-radius: 10px;
+
+  /* box-shadow: var(--coolBoxShadow); */
+}
+.yearDropdownContainer {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .lineGraphContainer {
   width: 25%;
-  background-color: pink;
+  transform: scale(0.7);
+  padding-top: -10rem;
+  /* background-color: pink; */
 }
 .titleContainer {
   flex-grow: 1;

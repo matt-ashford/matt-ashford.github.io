@@ -1,0 +1,13 @@
+.graphKeyContainer {
+  margin-top: -22.5rem;
+  transform: scale(0.7);
+  margin-left: -3rem;
+}
+
+.graphTitleContainer {
+  margin-left: 1rem;
+}
+
+.graphSvgContainer {
+  margin-left: 1rem;
+}

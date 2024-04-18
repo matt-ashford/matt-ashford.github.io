@@ -1,49 +1,61 @@
 import { useEffect, useState } from "react";
-import { countBarDataPrep } from "./countBarDataPrep";
+import { countBarDataPrep } from "./CountBarDataPrep";
 import { drawCountBars } from "./DrawCountBars";
+// import { drawAxisLabels } from "./DrawAxisLabels";
+import { drawAxisLabels } from "./DrawAxisLabels";
 import * as d3 from "d3";
+import PieGraphKey from "../PieGraphKey";
+import { pinkHighlight, greenGrey } from "../../Design/MyTheme";
+import styles from "./countBartGraph.module.css";
 
 export const CountBarGraph = (props) => {
   const { propData } = props;
 
   useEffect(() => {
-    removeBars();
-    // drawCountBars(countData, svgId);
+    removeGraphics();
   }, []);
 
   useEffect(() => {
-    removeBars();
-    drawCountBars(countData, svgId);
+    removeGraphics();
+    drawGraphics(countData, svgId);
   }, [propData]);
 
   const svgId = "countBarsSvg";
 
-  function removeBars() {
+  function removeGraphics() {
     d3.selectAll(".barCount").remove();
     d3.selectAll(".x-axisCountBar").remove();
     d3.selectAll(".y-axisCountBar").remove();
+    d3.selectAll(".axisLabel").remove();
+  }
+
+  function drawGraphics(countData, svgId) {
+    drawCountBars(countData, svgId);
+    drawAxisLabels(countData, svgId);
   }
 
   let countData = countBarDataPrep(propData);
 
+  const colorObj = {
+    pinkHighlight: pinkHighlight,
+    greenGrey: greenGrey,
+  };
+
   return (
     <>
       <div>
-        <svg id={`${svgId}`} height="500"></svg>
-        {/* {JSON.stringify(countData)} */}
+        <div className={styles.graphTitleContainer}>
+          Count of Product Components by Fiscal Year
+        </div>
+        <div className={styles.graphSvgContainer}>
+          <svg id={`${svgId}`} height="550"></svg>
+        </div>
+        <div className={styles.graphKeyContainer}>
+          <PieGraphKey colorObj={colorObj} />
+        </div>
       </div>
     </>
   );
 };
 
 export default CountBarGraph;
-
-//   d3.select(`#${svgId}`)
-//     .selectAll(".countBars")
-//     .data(countData)
-//     .enter()
-//     .append("rect")
-//     .attr("x", (d, i) => i * 20)
-//     .attr("width", 10)
-//     .attr("height", 50)
-//     .attr("class", "countBars");
