@@ -1,5 +1,6 @@
 .allMdContainer {
   margin-top: -100vh;
+  margin-left: 20rem;
 }
 
 .classGraphOuterContainer {
@@ -17,7 +18,7 @@
 .graphAndCountTableContainer {
   display: flex;
   flex-direction: row;
-  margin-left: -10rem;
+  margin-left: -6rem;
 }
 
 .productPageContainer {

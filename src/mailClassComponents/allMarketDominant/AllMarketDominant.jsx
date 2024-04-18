@@ -9,13 +9,13 @@ import MDCompositeContainer from "./MDCompositeContainer";
 import volumeData from "../../Data/volume.json";
 import ProductCountTableMD from "./ProductCountTableMD";
 import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
-import annualDataFull from "../../Data/annualData.json";
 import Footer from "../Footer";
 import styles from "./allMD.module.css";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import annualData from "../../Data/annual - Updated.json";
 import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
+import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
 import { useEffect, useState } from "react";
 import { Divider } from "@mui/material";
 
@@ -27,8 +27,6 @@ export const AllMarketDominant = (props) => {
     row.quarter = "annual";
     return row;
   });
-
-  console.log(joinedDataForDownload);
 
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
@@ -47,7 +45,9 @@ export const AllMarketDominant = (props) => {
           </Typography>
         </div>
         <div className={styles.barGraphAndLineContainer}>
-          <div className={styles.barGraphContainer}>bargraph here </div>
+          <div className={styles.barGraphContainer}>
+            <CountBarGraph propData={joinedAnnualData} />{" "}
+          </div>
           <div className={styles.lineGraphContainer}>linegrph here </div>
         </div>
 
