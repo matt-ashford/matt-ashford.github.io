@@ -8,7 +8,7 @@ export const drawCountBars = (countData, svgId) => {
   const width = 300 - margin.left - margin.right;
   const height = 200 - margin.top - margin.bottom;
 
-  const rightPush = 10;
+  const rightPush = 17.5;
 
   const svg = d3
     .select(`#${svgId}`)
@@ -18,8 +18,10 @@ export const drawCountBars = (countData, svgId) => {
   const x = d3
     .scaleBand()
     .domain(countData.map((d) => d.fy))
-    .range([0, width])
-    .padding(0.1);
+    // .nice()
+    .range([0, width]);
+
+  // .padding(0.1);
 
   const y = d3
     .scaleLinear()
@@ -48,28 +50,41 @@ export const drawCountBars = (countData, svgId) => {
     .attr("fill", (d) => color(d.type))
     .attr("x", (d, i) => 0)
     .attr("y", (d, i, nodes) => {
-      console.log(i, d);
       if (d.type === "missedCount") {
         return y(d.count);
       }
       const matchingMissedCount = nodes[i - 1];
       return y(matchingMissedCount.__data__.count) + y(d.count) - height;
     })
-
-    .attr("width", 20)
+    .attr("width", 0)
+    .attr("id", (d, i) => `countIs_${d.count}_${i}`)
     .attr("height", (d) => y(0) - y(d.count))
+    .transition()
+    .duration(500)
+    .attr("width", 10);
 
-    .attr("id", (d, i) => `countIs_${d.count}_${i}`);
+  // Add y-axis
+  svg
+    .append("g")
+    .attr("class", "y-axisCountBar")
+    .call(d3.axisLeft(y).ticks(3).tickSize(6));
+
+  d3.select(".y-axisCountBar")
+    .style("opacity", 0.8)
+    .style("font-size", "0.6rem");
+  // d3.selectAll(".tick").style("opacity", 0.5);
+
+  d3.select(".domain").remove();
 
   // Add x-axis
   svg
     .append("g")
     .attr("class", "x-axisCountBar")
-    .attr("transform", `translate(0,${height})`)
-    .call(d3.axisBottom(x));
+    .attr("transform", `translate(0,${height + 6})`)
+    .call(d3.axisBottom(x).tickSize(3))
+    .style("opacity", 0.8);
 
-  // Add y-axis
-  svg.append("g").attr("class", "y-axisCountBar").call(d3.axisLeft(y));
+  // d3.select(".domain").remove();
 };
 
 export default drawCountBars;

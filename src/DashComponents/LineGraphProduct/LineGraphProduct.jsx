@@ -8,19 +8,12 @@ import { drawLine } from "./DrawLine";
 import { drawOverLay } from "./DrawOverlay";
 import { drawTooltipLines } from "./DrawTooltipLines";
 import {
-  marginBottom,
   graphHeight,
   graphWidth,
-  barWidth,
+  svgWidth,
   marginLeft,
   marginRight,
-  targetMarginLeft,
   barMarginLeft,
-  marginTop,
-  yScale,
-  yScaleRev,
-  topStart,
-  svgWidth,
   determineRightPush,
 } from "./LineGraphDimensions";
 import * as d3 from "d3";
@@ -41,7 +34,6 @@ export const LineGraphProduct = (props) => {
     } else {
       changeOpacityTooltipLine(hoverSeq);
     }
-    //   });
   }, [hoverSeq, isHoveringProdGraph]);
   useEffect(() => {
     if (!isHoveringProdGraph) {

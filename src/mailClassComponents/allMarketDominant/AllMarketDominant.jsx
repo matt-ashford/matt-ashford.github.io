@@ -17,6 +17,7 @@ import quarterlyData from "../../Data/annual - Updated.json";
 import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
+import LineGraphDoubleSeries from "../../DashComponents/LineGraphDoubleSeries/LineGraphDoubleSeries";
 import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
 import { useEffect, useState } from "react";
 import { Divider } from "@mui/material";
@@ -24,8 +25,8 @@ import { Divider } from "@mui/material";
 export const AllMarketDominant = (props) => {
   const [selectedYear, setSelectedYear] = useState(2023);
 
-  const joinedAnnualData = joinDataWithProdKey(annualData);
-  const joinedDataForDownload = joinedAnnualData.map((row) => {
+  const joinedDataAnnual = joinDataWithProdKey(annualData);
+  const joinedDataForDownload = joinedDataAnnual.map((row) => {
     row.quarter = "annual";
     return row;
   });
@@ -34,13 +35,17 @@ export const AllMarketDominant = (props) => {
 
   const totalMDVol = volumeData.filter((row) => row.mailClass === "MD");
 
-  const countDataTopLevel = generateCountData(selectedYear, joinedAnnualData);
+  const countDataTopLevel = generateCountData(selectedYear, joinedDataAnnual);
 
   function changeYearSelected(e) {
     setSelectedYear(e.target.value);
   }
 
   const lettersTwoDayId = 59;
+  const lettersThreeDayId = 99;
+  const keeperProds = [lettersThreeDayId, lettersThreeDayId];
+
+  console.log(joinedDataQtr);
 
   return (
     <>
@@ -52,15 +57,15 @@ export const AllMarketDominant = (props) => {
         </div>
         <div className={styles.barGraphAndLineContainer}>
           <div className={styles.barGraphContainer}>
-            <CountBarGraph propData={joinedAnnualData} />{" "}
+            {/* <Paper> */}
+            <CountBarGraph propData={joinedDataAnnual} /> {/* </Paper> */}
           </div>
           <div className={styles.lineGraphContainer}>
-            <LineGraphProduct
+            {/* <LineGraphProduct
               selectedProductId={lettersTwoDayId}
-              // joinedDataAnnual={joinedAnnualData}
-              joinedDataAnnual={joinedDataForDownload}
+              joinedDataAnnual={joinedDataAnnual}
               joinedDataQtr={joinedDataQtr}
-            />
+            /> */}
           </div>
         </div>
 
