@@ -9,6 +9,8 @@ import {
   topStart,
   marginRight,
   marginBottom,
+  bottomStart,
+  svgWidth,
 } from "./LineGraphDimensionsDS";
 
 export const drawXAxis = ({ svgId, xScale }) => {
@@ -27,10 +29,13 @@ export const drawXAxis = ({ svgId, xScale }) => {
     return "";
   }
 
+  const xLabelDownPush = 40;
+  const xLabelRightPush = svgWidth / 2;
+
   svg
     .append("g")
     .attr("class", "axis")
-    .attr("transform", `translate(${marginLeft}, ${topStart - 10})`)
+    .attr("transform", `translate(${marginLeft}, ${topStart + bottomStart})`)
     .call(d3.axisBottom(xScale).tickSize(5).tickFormat(customFormat))
     .selectAll("text")
     .attr("class", "xAxisText")
@@ -43,7 +48,17 @@ export const drawXAxis = ({ svgId, xScale }) => {
 
   //   d3.selectAll(".tick").style("opacity", 0.2);
 
-  //   d3.selectAll(".tick").selectAll("line");
+  svg
+    .append("text")
+    .attr("class", "axisLabelDS")
+    .text("Fiscal Year")
+    .attr(
+      "transform",
+      `translate(${xLabelRightPush},  ${
+        topStart + bottomStart + xLabelDownPush
+      })`
+    )
+    .attr("font-size", "0.7rem");
 
   d3.select(".domain").style("opacity", 0);
   d3.selectAll(".xAxisText").style("opacity", 1);

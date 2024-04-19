@@ -38,7 +38,7 @@
 .lineGraphContainer {
   width: 25%;
   /* transform: scale(0.7); */
-  background-color: pink;
+  /* background-color: pink; */
 }
 
 .lineGraphContainer svg {

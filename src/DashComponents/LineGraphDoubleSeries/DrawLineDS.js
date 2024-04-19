@@ -23,7 +23,7 @@ export const drawLine = ({ svgId, graphData, xScale, xArray, seriesSeq }) => {
   const valueline = d3
     .line()
     .x((d, i) => xScale(xArray[i]) + marginLeft + rightPush)
-    .y((d) => topStart - marginTop - yScale(d.pct_on_time))
+    .y((d) => yScaleRev(d.pct_on_time))
     .curve(d3.curveCardinal.tension(0.2));
 
   const linePath = svgSelection
