@@ -37,9 +37,12 @@
 
 .lineGraphContainer {
   width: 25%;
-  transform: scale(0.7);
-  padding-top: -10 rem;
-  /* background-color: pink; */
+  /* transform: scale(0.7); */
+  background-color: pink;
+}
+
+.lineGraphContainer svg {
+  background-color: burlywood;
 }
 .titleContainer {
   flex-grow: 1;

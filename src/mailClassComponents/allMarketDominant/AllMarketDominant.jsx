@@ -13,7 +13,7 @@ import Footer from "../Footer";
 import styles from "./allMD.module.css";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import annualData from "../../Data/annual - Updated.json";
-import quarterlyData from "../../Data/annual - Updated.json";
+import quarterlyData from "../../Data/quarterly - Updated";
 import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
@@ -43,9 +43,7 @@ export const AllMarketDominant = (props) => {
 
   const lettersTwoDayId = 59;
   const lettersThreeDayId = 99;
-  const keeperProds = [lettersThreeDayId, lettersThreeDayId];
-
-  console.log(joinedDataQtr);
+  const keeperProds = [lettersTwoDayId, lettersThreeDayId];
 
   return (
     <>
@@ -57,15 +55,13 @@ export const AllMarketDominant = (props) => {
         </div>
         <div className={styles.barGraphAndLineContainer}>
           <div className={styles.barGraphContainer}>
-            {/* <Paper> */}
-            <CountBarGraph propData={joinedDataAnnual} /> {/* </Paper> */}
+            <CountBarGraph propData={joinedDataAnnual} />
           </div>
           <div className={styles.lineGraphContainer}>
-            {/* <LineGraphProduct
-              selectedProductId={lettersTwoDayId}
-              joinedDataAnnual={joinedDataAnnual}
+            <LineGraphDoubleSeries
+              keeperProds={keeperProds}
               joinedDataQtr={joinedDataQtr}
-            /> */}
+            />
           </div>
         </div>
 

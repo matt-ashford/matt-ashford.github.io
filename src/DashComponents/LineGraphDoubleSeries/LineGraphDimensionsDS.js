@@ -1,17 +1,16 @@
 // import { scaleLinear } from "d3";
 import * as d3 from "d3";
 const classGraphDims = {
-  graphHeight: 320,
-  graphWidth: 820,
+  graphHeight: 275,
+  graphWidth: 500,
   graphWidthProduct: 675,
-  // graphWidthProduct: 750,
   productTextMarginLeft: 25,
   targetMarginLeft: 11,
   barWidth: 20,
-  marginLeft: 45,
+  marginLeft: 50,
   marginRight: 40,
-  marginBottom: 30,
-  marginTop: 20,
+  marginBottom: 10,
+  marginTop: 10,
   barMarginLeft: 40 + 30,
 };
 
@@ -29,10 +28,14 @@ export const {
   marginTop,
 } = classGraphDims;
 
-export const topStart = graphHeight - marginBottom;
+export const topStart = graphHeight - marginBottom - marginTop;
 
-export const yScale = d3.scaleLinear().domain([0, 100]).range([0, 250]);
-export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([250, 0]);
+export const yScale = d3.scaleLinear().domain([0, 100]).range([0, topStart]);
+// export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([topStart, 0]);
+export const yScaleRev = d3
+  .scaleLinear()
+  .domain([0, 100])
+  .range([topStart - 22, 10]);
 
 export const svgWidth = graphWidth - marginLeft - marginRight;
 
