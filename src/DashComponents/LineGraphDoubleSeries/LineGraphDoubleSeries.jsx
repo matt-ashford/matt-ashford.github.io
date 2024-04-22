@@ -3,6 +3,7 @@ import * as d3 from "d3";
 import { drawXAxis } from "./DrawXAxisDS";
 import { drawYAxis } from "./DrawYAxisDS";
 import { drawLine } from "./DrawLineDS";
+import LineGraphKeyDS from "./LineGraphKeyDS";
 
 import {
   graphHeight,
@@ -46,6 +47,7 @@ export const LineGraphDoubleSeries = (props) => {
   function removeGraphElements() {
     d3.selectAll(".lineGraphYAxis").remove();
     d3.selectAll(".lineGraphLine").remove();
+    d3.selectAll(".xAxisText").remove();
   }
 
   function returnFilterGraphData(productId, dataset) {
@@ -112,7 +114,6 @@ export const LineGraphDoubleSeries = (props) => {
 
   return (
     <>
-      line graph go burr
       <svg
         height={graphHeight}
         width={graphWidth}
@@ -120,6 +121,7 @@ export const LineGraphDoubleSeries = (props) => {
       >
         {" "}
       </svg>
+      <LineGraphKeyDS />
     </>
   );
 };

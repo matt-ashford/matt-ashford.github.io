@@ -29,7 +29,7 @@ export const drawXAxis = ({ svgId, xScale }) => {
     return "";
   }
 
-  const xLabelDownPush = 40;
+  const xLabelDownPush = 42;
   const xLabelRightPush = svgWidth / 2;
 
   svg
@@ -41,7 +41,6 @@ export const drawXAxis = ({ svgId, xScale }) => {
     .attr("class", "xAxisText")
     .style("text-anchor", "start")
     .attr("dx", 2)
-    // .attr("dy", "1em")
     .attr("transform", "rotate(35)")
     .attr("shape-rendering", "crispEdges");
   // .attr("transform", `translate(${marginLeft}, 6)`);

@@ -13,4 +13,11 @@ export const drawYAxis = ({ svgId }) => {
     .attr("class", "lineGraphYAxis");
   d3.select(".domain").remove();
   d3.selectAll(".lineGraphYAxis").selectAll("text").style("opacity", 1);
+
+  d3.select(`#${svgId}`)
+    .append("text")
+    .attr("class", "axisLabelDS")
+    .text("% on Time")
+    .attr("transform", `translate(${20},150) rotate(270)`)
+    .attr("font-size", "0.8rem");
 };

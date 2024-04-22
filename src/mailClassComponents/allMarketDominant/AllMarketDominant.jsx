@@ -58,6 +58,11 @@ export const AllMarketDominant = (props) => {
             <CountBarGraph propData={joinedDataAnnual} />
           </div>
           <div className={styles.lineGraphContainer}>
+            <div className={styles.lineGraphTitle}>
+              <div>Service Performance Scores</div>{" "}
+              <div>First Class Single-Piece Letters and Cards</div>
+            </div>
+
             <LineGraphDoubleSeries
               keeperProds={keeperProds}
               joinedDataQtr={joinedDataQtr}
