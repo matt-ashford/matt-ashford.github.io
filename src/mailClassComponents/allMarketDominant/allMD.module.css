@@ -40,40 +40,28 @@
   box-shadow: var(--paperMimic);
 }
 
-@media (max-width: 1015px) {
-  .barGraphAndLineContainer {
-    flex-direction: column;
-  }
-
-  .lineGraphContainer {
-    transform: scale(0.9);
-    margin-left: -1rem;
-    margin-top: 1rem;
-  }
-  .yearDropdownContainer .emptyDiv_yearDropdown {
-    margin-top: 24rem;
-    margin-bottom: 4rem;
-    display: flex;
-    justify-content: center;
-    padding-left: 1rem;
-  }
-
-  /* .tableAndPieGraphGrid .emptyDiv_tableAndPieGraphGrid {
-    margin-top: 6rem;
-    background-color: green;
-  } */
+.lowerHalf {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (max-width: 1050px) {
-  .tableAndPieGraphGrid {
-    display: flex;
-    flex-direction: column;
-  }
+.downloadBtnContainer {
+  /* background-color: aqua; */
+  padding-left: 4rem;
+  padding-top: 1rem;
+  margin-top: -4rem;
+}
 
-  .tableAndPieGraphGrid .emptyDiv_tableAndPieGraphGrid {
-    display: flex;
-    flex-direction: column;
-  }
+.pieGraphContainer {
+  /* background-color: bisque; */
+  grid-column: 2;
+  grid-row: 1;
+  transform: scale(0.65);
+}
+
+.pieGraphAndDownloadBtn {
+  display: flex;
+  flex-direction: column;
 }
 
 .yearDropdownContainer {
@@ -107,44 +95,25 @@
 .titleBox {
   margin-top: 1%;
 }
-.tableAndPieGraphGrid {
-  display: grid;
-  grid-template-columns: 600px 400px;
-  grid-template-rows: 400px 200px;
-  margin-top: -3rem;
-}
+
 .tableContainer {
-  grid-column: 1;
-  grid-row: 1 / span 2;
-}
-.pieGraphContainer {
-  /* background-color: bisque; */
-  grid-column: 2;
-  grid-row: 1;
-  transform: scale(0.65);
+  min-width: 550px;
+  max-height: 400px;
+  max-width: 800px;
 }
 
-.downloadBtnContainer {
-  /* background-color: aqua; */
-  padding-left: 4rem;
-  padding-top: 1rem;
-  grid-column: 2;
-  grid-row: 2;
+.countTableTitle {
+  font-size: 1.5rem;
 }
-/* styles.css */
 
 .table {
-  min-width: 500px;
+  min-width: 400px;
   max-height: 400px;
-  /* padding: 4px 8px; */
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
 }
 .allMdTableHeader {
   font-weight: bolder;
   margin-bottom: -300px;
-  /* padding-bottom: -50px; */
-  /* background-color: blue; */
 }
 
 .tableHead {
@@ -165,4 +134,76 @@
 }
 .footerSpacer {
   height: 500px;
+}
+
+@media (max-width: 1015px) {
+  .barGraphAndLineContainer {
+    flex-direction: column;
+  }
+
+  .lineGraphContainer {
+    transform: scale(0.9);
+    margin-left: -1rem;
+    margin-top: 1rem;
+  }
+  .yearDropdownContainer .emptyDiv_yearDropdown {
+    margin-top: 24rem;
+    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 950px) {
+  .lowerHalf {
+    flex-direction: column;
+  }
+  .downloadBtnContainer {
+    margin-top: 16rem;
+    margin-left: -6rem;
+    /* margin-bottom: 20rem; */
+    padding-bottom: 11rem;
+    transform: scale(0.9);
+  }
+  .pieGraphContainer {
+    margin-top: 2rem;
+  }
+  .pieGraphAndDownloadBtn {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 650px) {
+  .tableContainer {
+    transform: scale(0.9);
+    margin-left: -2rem;
+  }
+  .tableAndPieGraphGrid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pieGraphAndDownloadBtn {
+    flex-direction: column;
+  }
+  .downloadBtnContainer {
+    margin-top: -8rem;
+    margin-left: 1rem;
+    /* margin-bottom: 20rem; */
+    /* padding-bottom: 11rem; */
+    transform: scale(0.9);
+  }
+}
+
+@media (max-width: 516px) {
+  .tableContainer {
+    transform: scale(0.84);
+    margin-left: -4.5rem;
+    padding-left: -1rem;
+  }
+
+  .countTableTitle {
+    margin-left: 2rem;
+  }
 }

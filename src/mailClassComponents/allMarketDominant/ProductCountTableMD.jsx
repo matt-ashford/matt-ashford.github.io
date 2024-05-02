@@ -13,7 +13,9 @@ export const ProductCountTableMD = (props) => {
 
   return (
     <>
-      <h3>Product Component Count by Class</h3>
+      <h3 className={styles.countTableTitle}>
+        Product Component Count by Class
+      </h3>
       <TableContainer component={Paper}>
         <Table className={styles.table} aria-label="simple table">
           <TableHead className={styles.tableHead}>

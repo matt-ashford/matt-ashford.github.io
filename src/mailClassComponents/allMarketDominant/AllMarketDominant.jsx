@@ -18,7 +18,6 @@ import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
 import LineGraphDoubleSeries from "../../DashComponents/LineGraphDoubleSeries/LineGraphDoubleSeries";
 import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
 import { useEffect, useState } from "react";
-import { Divider } from "@mui/material";
 
 export const AllMarketDominant = (props) => {
   const [selectedYear, setSelectedYear] = useState(2023);
@@ -76,26 +75,33 @@ export const AllMarketDominant = (props) => {
             changeYearSelected={changeYearSelected}
           />
         </div>
-
-        <div className={styles.tableContainer}>
-          {" "}
-          <ProductCountTableMD
-            countData={countDataTopLevel}
-            selectedYear={selectedYear}
-          />
+        {/* <div className={styles.tableAndPieGraphGrid}> */}
+        <div className={styles.lowerHalfEmptyDiv}></div>
+        {/* <div className={styles.lowerHalf}> */}
+        <div className={`${styles.lowerHalf}`}>
+          <div className={styles.tableContainer}>
+            <ProductCountTableMD
+              countData={countDataTopLevel}
+              selectedYear={selectedYear}
+            />
+          </div>
+          <div className={styles.pieGraphAndDownloadBtn}>
+            <div className={styles.pieGraphContainer}>
+              {" "}
+              <PieGraph
+                countData={countDataTopLevel}
+                selectedYear={selectedYear}
+              />
+            </div>
+            <div className={styles.downloadBtnContainer}>
+              {" "}
+              <DownloadButton
+                propData={joinedDataForDownload}
+                dataName={"Market Dominant Data"}
+              />{" "}
+            </div>
+          </div>
         </div>
-        <div className={styles.pieGraphContainer}>
-          {" "}
-          <PieGraph countData={countDataTopLevel} selectedYear={selectedYear} />
-        </div>
-        <div className={styles.downloadBtnContainer}>
-          {" "}
-          <DownloadButton
-            propData={joinedDataForDownload}
-            dataName={"Market Dominant Data"}
-          />{" "}
-        </div>
-        {/* </div> */}
       </div>
       <div className={styles.footerSpacer}></div>
       <Footer />
