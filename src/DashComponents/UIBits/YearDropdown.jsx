@@ -46,11 +46,13 @@ export const YearDropdown = (props) => {
 
   return (
     <>
-      <Grid container className={styles.dropdownOuterContainer}>
-        <Grid item xs={6}>
-          <Typography className={styles.yearLabel}>Years:</Typography>
-        </Grid>
-        <Grid item xs={5}>
+      <div className={styles.dropdownOuterContainer}>
+        <div>
+          <Typography className={styles.yearLabel}>
+            Select a Fiscal Year:
+          </Typography>
+        </div>
+        <div>
           <FormControl className={styles.formControl}>
             <Select
               className={styles.dropdownSelect}
@@ -62,8 +64,8 @@ export const YearDropdown = (props) => {
               {menuItems}
             </Select>
           </FormControl>
-        </Grid>
-      </Grid>
+        </div>
+      </div>
     </>
   );
 };

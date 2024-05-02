@@ -11,19 +11,18 @@ import {
 export const drawLine = ({ svgId, graphData, xScale, xArray, seriesSeq }) => {
   const svgSelection = d3.select(`#${svgId}`);
 
-  console.log("line triggered", seriesSeq, graphData);
-
   const seriesColors = {
-    1: "blue",
-    2: "green",
+    1: "#225cf6",
+    2: "#88b7d7",
   };
 
   const rightPush = determineRightPush(graphData);
+  const bottomPush = 10;
 
   const valueline = d3
     .line()
     .x((d, i) => xScale(xArray[i]) + marginLeft + rightPush)
-    .y((d) => yScaleRev(d.pct_on_time))
+    .y((d) => yScaleRev(d.pct_on_time) + bottomPush)
     .curve(d3.curveCardinal.tension(0.2));
 
   const linePath = svgSelection

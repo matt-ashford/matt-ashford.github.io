@@ -1,9 +1,13 @@
+@import url("../../theme.css");
+
 :root {
-  --firstColWidth: 20px;
+  --seriesColWidth: 20px;
 }
 
 .keyContainerOuter {
   transform: scale(0.8);
+  padding-top: 0.5rem;
+  margin-left: 2.5rem;
 }
 
 .keyTitle {
@@ -11,14 +15,14 @@
 }
 .keyContentMatrix {
   display: grid;
-  grid-template-columns: 8rem var(--firstColWidth) 600px;
+  grid-template-columns: 7.5rem var(--seriesColWidth) 600px;
   grid-template-rows: 1rem 1rem;
   /* border: 1px solid black; */
 }
 
 .twoDaySeries {
-  border-top: 3px solid blue;
-  width: var(--firstColWidth);
+  border-top: 3px solid var(--primaryColor);
+  width: var(--seriesColWidth);
   height: 1rem;
   margin-top: 0.5rem;
   grid-column-start: 2;
@@ -30,8 +34,8 @@
   grid-column-start: 3;
 }
 .threeFiveDaySeries {
-  border-top: 3px solid green;
-  width: var(--firstColWidth);
+  border-top: 3px solid var(--secondaryColor);
+  width: var(--seriesColWidth);
   height: 1rem;
   margin-top: 0.5rem;
   grid-column-start: 2;

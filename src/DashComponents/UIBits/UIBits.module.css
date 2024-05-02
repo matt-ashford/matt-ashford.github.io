@@ -1,13 +1,24 @@
-.dropdownOuterContainer {
-  margin-bottom: 1rem;
-}
+@import url("../../theme.css");
 
+.dropdownOuterContainer {
+  /* background-color: red; */
+  width: 25rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-evenly; */
+  /* justify-content: space-around; */
+  align-items: center;
+  padding-left: 3rem;
+  padding-right: -20rem;
+  /* box-shadow: var(--paperMimic); */
+  border-radius: 5px;
+}
 .dropdownSelect {
-  /* margin-left: -16rem; */
-  width: 10rem;
+  width: 9rem;
   font-size: large;
-  margin-left: -15rem;
-  /* background-color: blue; */
+  margin-left: 2rem;
 }
 
 .formControl {
@@ -16,7 +27,7 @@
 }
 
 .yearLabel {
-  margin-right: -20rem;
+  /* margin-right: -20rem; */
   font-size: larger;
   margin-top: 0.5rem;
   margin-left: -2rem;

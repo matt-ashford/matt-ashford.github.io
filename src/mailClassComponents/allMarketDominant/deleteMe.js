@@ -23,6 +23,27 @@ import { Divider } from "@mui/material";
 export const AllMarketDominant = (props) => {
   const [selectedYear, setSelectedYear] = useState(2023);
 
+  // const [isSmallViewport, setIsSmallViewport] = useState(false);
+
+  // useEffect(() => {
+  // function handleResize() {
+  // setIsSmallViewport(window.innerWidth <= 1050);
+  // }
+
+  // handleResize();
+
+  // window.addEventListener("resize", handleResize);
+
+  // return () => {
+  // window.removeEventListener("resize", handleResize);
+  // };
+  // }, []);
+
+  function handleResize() {
+    console.log(":rezszz");
+    // setIsSmallViewport(window.innerWidth <= 1050);
+  }
+
   const joinedDataAnnual = joinDataWithProdKey(annualData);
   const joinedDataForDownload = joinedDataAnnual.map((row) => {
     row.quarter = "annual";
@@ -77,6 +98,13 @@ export const AllMarketDominant = (props) => {
           />
         </div>
 
+        {/* <div className={styles.emptyDiv_tableAndPieGraphGrid}> */}
+        {/* <div className={styles.tableAndPieGraphGrid}> */}
+        {/* <div
+          className={`${styles.tableAndPieGraphGrid} ${
+            isSmallViewport ? styles.smallViewportClass : ""
+          }`}
+        > */}
         <div className={styles.tableContainer}>
           {" "}
           <ProductCountTableMD
