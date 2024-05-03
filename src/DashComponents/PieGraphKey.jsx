@@ -17,7 +17,7 @@ const PieGraphKey = (props) => {
 
   return (
     <div
-      style={{ paddingLeft: "25%", marginBottom: "10%", marginLeft: "-15%" }}
+      style={{ paddingLeft: "25%", marginBottom: "10%", marginLeft: "-25%" }}
     >
       <svg height={100} width={400}>
         <rect

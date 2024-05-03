@@ -66,9 +66,11 @@ export const PieGraph = (props) => {
   return (
     <>
       <div style={{ paddingRight: "28%" }}>
-        <h3 style={{ marginBottom: "1rem", marginTop: "5%" }}>
-          FY{selectedYear} Mail Product Component Count
-        </h3>
+        <div style={{ width: "30rem" }}>
+          <h3 style={{ marginBottom: "1rem", marginTop: "5%" }}>
+            FY{selectedYear} Mail Product Component Count
+          </h3>
+        </div>
         <svg width={svgWidth} height={svgHeight} id={svgId}></svg>
         <PieGraphKey colorObj={colorObj} />
       </div>
