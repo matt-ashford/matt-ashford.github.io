@@ -34,7 +34,6 @@ export const LineGraphDoubleSeries = (props) => {
   useEffect(() => {
     removeGraphElements();
     drawGraphElements();
-    // console.log(joinedDataQtr);
   }, [graphDataFirstProd]);
 
   function drawGraphElements() {

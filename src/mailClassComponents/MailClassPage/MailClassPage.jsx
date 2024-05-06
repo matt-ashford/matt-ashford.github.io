@@ -70,31 +70,29 @@ export const MailClassPage = (props) => {
 
   return (
     <>
-      {/* <div className={classes.root} id="allMdContainer"> */}
       <div className={styles.allMdContainer} id="allMdContainer">
-        {/* <div className={classes.root} id="classTitleTextContainer"> */}
-        <div id="classTitleTextContainer">
-          <Typography variant="h4" component="h4" gutterBottom>
-            {mailClassNameTitle(mailClassName)}
-          </Typography>
-        </div>
-
-        <YearDropdown
-          propData={annualData}
-          selectedYear={selectedYear}
-          changeYearSelected={changeYearSelected}
-        />
-
-        <div className={styles.graphAndCountTableContainer}>
-          <Paper className={styles.classGraphPaper}>
-            <div className={styles.classGraphOuterContainer}>
-              <ClassGraphSingleYear
-                propData={filteredAnnualData}
-                mailClass={mailClassName}
-                selectedYear={selectedYear}
-              />
+        <div className={styles.topHalf}>
+          <div className={styles.container_titleGraphYear}>
+            <div className={styles.pageTitleContainer}>
+              <Typography variant="h4" component="h4" gutterBottom>
+                {mailClassNameTitle(mailClassName)}
+              </Typography>
             </div>
-          </Paper>
+            <YearDropdown
+              propData={annualData}
+              selectedYear={selectedYear}
+              changeYearSelected={changeYearSelected}
+            />
+            <div className={styles.graphAndCountTableContainer}>
+              <div className={styles.classGraphOuterContainer}>
+                <ClassGraphSingleYear
+                  propData={filteredAnnualData}
+                  mailClass={mailClassName}
+                  selectedYear={selectedYear}
+                />
+              </div>
+            </div>
+          </div>
           <ProductCountTable
             propData={joinedDataAnnual}
             selectedYear={selectedYear}
@@ -103,12 +101,6 @@ export const MailClassPage = (props) => {
         </div>
 
         <MailClassDef mailClass={mailClassName} />
-
-        <Paper>
-          {/* <DownloadButton
-                    dataName={"Class-Level Data"}
-                  /> */}
-        </Paper>
 
         <div className={styles.productPageContainer}>
           <ProductDropdown

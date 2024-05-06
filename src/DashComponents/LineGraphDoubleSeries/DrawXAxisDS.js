@@ -44,7 +44,6 @@ export const drawXAxis = ({ svgId, xScale }) => {
     .attr("transform", "rotate(35)")
     .attr("shape-rendering", "crispEdges");
   // .attr("transform", `translate(${marginLeft}, 6)`);
-
   //   d3.selectAll(".tick").style("opacity", 0.2);
 
   svg

@@ -254,16 +254,16 @@ export const ClassGraphSingleYear = (props) => {
   return (
     <>
       <div className={styles.classGraphContainer}>
-        <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
+        <div className={styles.titleContainer}>
+          <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
+        </div>
         <svg
+          //old version
           className={styles.classGraphsvg}
-          // onMouseMove={mouseMoveSvg}
           onMouseEnter={mouseEnterSvg}
           onMouseLeave={mouseExitSvg}
           shapeRendering="crispEdges"
           id={svgId}
-          // height={rotateProductNames ? 350 : 330}
-          // height={rotateProductNames ? 330 : 310}
           height={rotateProductNames ? 330 : 300}
           width={graphWidth}
         ></svg>

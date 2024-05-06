@@ -56,55 +56,61 @@ export const GraphKey = (props) => {
   // const targetTextStart = targetLineEnd;
 
   return (
-    <svg height={35} width={450}>
-      <rect
-        fill={secondaryColor}
-        x={oldYearStartX}
-        y={marginTopSquare}
-        width={squareWidth}
-        height={squareWidth}
-        className={oldSelector}
-      ></rect>
-      <text
-        className={oldSelector}
-        x={oldYearTextStart}
-        y={30}
-        fontFamily={textNodeFont}
-      >
-        {oldYearText}
-      </text>
+    <div
+      style={{
+        "margin-left": "12rem",
+      }}
+    >
+      <svg height={35} width={450}>
+        <rect
+          fill={secondaryColor}
+          x={oldYearStartX}
+          y={marginTopSquare}
+          width={squareWidth}
+          height={squareWidth}
+          className={oldSelector}
+        ></rect>
+        <text
+          className={oldSelector}
+          x={oldYearTextStart}
+          y={30}
+          fontFamily={textNodeFont}
+        >
+          {oldYearText}
+        </text>
 
-      <rect
-        fill={primaryColor}
-        x={newSquareStartX}
-        y={marginTopSquare}
-        width={squareWidth}
-        height={squareWidth}
-        className={newSelector}
-      ></rect>
-      <text
-        x={newTextStartX}
-        y={30}
-        fontFamily={textNodeFont}
-        className={newSelector}
-      >
-        {newYearText}
-      </text>
-      <line
-        x1={targetLineStart}
-        y1={25}
-        x2={targetLineEnd}
-        y2={25}
-        strokeWidth={2}
-        // stroke={highlightColor}
-        stroke={pinkHighlight}
-        className="targetLines"
-      />
+        <rect
+          fill={primaryColor}
+          x={newSquareStartX}
+          y={marginTopSquare}
+          width={squareWidth}
+          height={squareWidth}
+          className={newSelector}
+        ></rect>
+        <text
+          x={newTextStartX}
+          y={30}
+          fontFamily={textNodeFont}
+          className={newSelector}
+        >
+          {newYearText}
+        </text>
+        <line
+          x1={targetLineStart}
+          y1={25}
+          x2={targetLineEnd}
+          y2={25}
+          strokeWidth={2}
+          // stroke={highlightColor}
+          stroke={pinkHighlight}
+          className="targetLines"
+        />
 
-      <text x={targetTextStart} y={30} fontFamily={textNodeFont}>
-        {targetText}
-      </text>
-    </svg>
+        <text x={targetTextStart} y={30} fontFamily={textNodeFont}>
+          {targetText}
+        </text>
+      </svg>
+    </div>
   );
 };
 

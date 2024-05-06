@@ -9,14 +9,32 @@ import {
   topStart,
   marginRight,
   marginBottom,
+  svgWidth,
 } from "./LineGraphDimensions";
+import { svgHeight } from "../../Design/graphDimensionsLine";
 
 export const drawXAxis = ({ svgId, xScale }) => {
+  // console.log(xScale);
+  // console.log("asdfdsdf");
+
   let rotationDeg = 35;
 
   d3.select(".domain").remove();
 
   const svg = d3.select(`#${svgId}`);
+
+  function customFormat(e) {
+    if (e.includes("Q1")) {
+      const matchingYear = e.split("_")[1];
+
+      return matchingYear;
+    }
+    if (!e.includes("_")) {
+      return e;
+    }
+    return "";
+  }
+  svg.attr("shape-rendering", "geometricPrecision");
 
   svg
     .append("g")
@@ -25,19 +43,28 @@ export const drawXAxis = ({ svgId, xScale }) => {
       "transform",
       `translate(${marginLeft}, ${graphHeight - marginBottom - 10})`
     )
-    .call(d3.axisBottom(xScale).tickSize(5).ticks())
+    .call(d3.axisBottom(xScale).tickSize(5).tickFormat(customFormat))
+    .selectAll("text")
+    .attr("class", "xAxisText")
+    .style("text-anchor", "start")
+    .attr("dx", 2)
+    .attr("transform", "rotate(35)");
+
+  svg
+    .append("text")
     .selectAll("text")
     .attr("class", "xAxisText")
     .style("text-anchor", "start")
     .attr("dy", "1em")
-    // .attr("dx", "1em")
-    .attr("transform", "rotate(35)")
-    .attr("shape-rendering", "crispEdges");
+    .attr("transform", "rotate(35)");
 
-  //   d3.selectAll(".tick").style("opacity", 0.2);
-
-  d3.selectAll(".tick").selectAll("line");
-
-  //   d3.select(".domain").style("opacity", 0.2);
-  d3.selectAll(".xAxisText").style("opacity", 1);
+  svg
+    .append("text")
+    .attr("class", "xAxisText")
+    .text("Fiscal Year")
+    .attr(
+      "transform",
+      `translate(${svgWidth / 2 + 10}, ${graphHeight - marginBottom + 30} )`
+    )
+    .attr("font-size", "0.9rem");
 };

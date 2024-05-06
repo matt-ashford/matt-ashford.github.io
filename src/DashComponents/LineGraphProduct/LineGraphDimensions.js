@@ -32,7 +32,8 @@ export const {
 export const topStart = graphHeight - marginBottom;
 
 export const yScale = d3.scaleLinear().domain([0, 100]).range([0, 250]);
-export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([250, 0]);
+// export const yScaleRev = d3.scaleLinear().domain([0, 100]).range([250, 0]);
+export const yScaleRev = d3.scaleLinear().domain([0, 1]).range([250, 0]);
 
 export const svgWidth = graphWidth - marginLeft - marginRight;
 

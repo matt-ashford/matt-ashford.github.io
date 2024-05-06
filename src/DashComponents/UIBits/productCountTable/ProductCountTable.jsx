@@ -2,8 +2,9 @@ import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { countTableDataFilter } from "./countTableDataFilter";
 import ProductCountBar from "./ProductCountBar";
-import styles from "./ProductCountTableStyles.module.css";
-import Stack from "@mui/material/Stack";
+// import styles from "./ProductCountTableStyles.module.css";
+
+import styles from "../../../mailClassComponents/MailClassPage/MailClassPageStyles.module.css";
 import { filterAnnualComparison } from "../../../DataManipulation/filterAnnualComparison";
 import { useEffect, useState } from "react";
 

@@ -29,7 +29,7 @@ export const drawYAxis = ({ svgId }) => {
   d3.select(`#${svgId}`)
     .append("text")
     .attr("class", "axisLabelDS")
-    .text("% on Time")
+    .text("% On-Time")
     .attr("transform", `translate(${20},150) rotate(270)`)
     .attr("font-size", "0.8rem");
 };

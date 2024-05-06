@@ -1,18 +1,6 @@
 /* @import "../../theme.css"  */
-:root {
-  --primaryColor: #225cf6;
-  --secondaryColor: #88b7d7;
-  --lightBlue: #108fe0;
-  --highlightColor: #e08d20;
-  --lightGrey: #e6e8e6;
-  --darkGrey: #d0d6d4;
-  --greenGrey: #69cfa9;
-  --pinkHighlight: #f45273;
-  --alternateHighlight: #1ed4c7;
-  --alternateSecondary: #1e7fd4;
-  --lineGraphTitleBlock: #caf3fa;
-  --coolBoxShadow: 5px 5px 0px hsla(0, 1%, 37%, 0.329);
-}
+
+@import url("../../theme.css");
 
 .classGraphContainer {
   /* margin-left: 1%; */
@@ -23,6 +11,12 @@
   /* padding-bottom: -10rem; */
 }
 
+.titleContainer {
+  /* background-color: blue; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .classGraphsvg {
   transform: scale(0.97);
   transform-origin: 0 0;
