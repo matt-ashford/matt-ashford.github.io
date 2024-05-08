@@ -85,11 +85,12 @@
 }
 
 .outerContainerProductCountFC {
-  margin-top: 39rem;
+  margin-top: 26rem;
   margin-left: -9rem;
   display: flex;
   flex-direction: column;
   width: 10rem;
+  /* padding-top: -20rem; */
 }
 
 .countCell {

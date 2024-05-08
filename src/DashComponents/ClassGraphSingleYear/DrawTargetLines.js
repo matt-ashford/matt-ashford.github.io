@@ -24,7 +24,8 @@ export const drawTargetLines = ({
 }) => {
   const dataNew = propData.filter((row) => row.fy === selectedYear);
 
-  //   console.table("from lines", propData);
+  const latestBarOnlyStart = 35;
+  const latestBarOnlyEnd = -10;
 
   const interBarMargin = getInterBarMargin(dataNew);
   d3.select(`#${svgId}`)
@@ -36,7 +37,11 @@ export const drawTargetLines = ({
     .attr(
       "x1",
       (d, i) =>
-        i * interBarMargin + marginLeft + targetMarginLeft + extraBarMargin
+        i * interBarMargin +
+        marginLeft +
+        targetMarginLeft +
+        extraBarMargin +
+        latestBarOnlyStart
     )
     .attr("y1", (d) => topStart - yScale(d.target))
     .attr(
@@ -46,7 +51,8 @@ export const drawTargetLines = ({
         barWidth * 2 +
         barMarginLeft +
         targetMarginLeft +
-        extraBarMargin
+        extraBarMargin +
+        latestBarOnlyEnd
     )
     .attr("y2", (d) => topStart - yScale(d.target))
     .style("stroke", pinkHighlight)

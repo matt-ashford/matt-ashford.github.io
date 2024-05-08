@@ -21,7 +21,8 @@ export const YearDropdown = (props) => {
 
   useEffect(() => {
     const yearsArray = extractYearsFromAnnual(propData);
-    setDropdownData(yearsArray);
+    const yearsArray_dropMin = dropMin(yearsArray);
+    setDropdownData(yearsArray_dropMin);
   }, []);
 
   const inputRef = useRef();
@@ -38,7 +39,7 @@ export const YearDropdown = (props) => {
       id={`yearDropdown_${el}`}
       value={el}
       ref={inputRef}
-      className={styles.yeardropdownvalue}
+      // className={styles.yeardropdownvalue}
     >
       {el}
     </MenuItem>

@@ -73,9 +73,9 @@ export const TooltipServiceClassLevel = (props) => {
 function renderTooltip(isHovering, tooltipId, isHoveringProductText) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
   if (isHovering && !isHoveringProductText) {
-    tooltipDiv.transition().duration(400).style("opacity", 1);
+    tooltipDiv.style("opacity", 1);
   } else {
-    tooltipDiv.transition().duration(400).style("opacity", 0);
+    tooltipDiv.style("opacity", 0);
     d3.selectAll("rect").attr("stroke", "none");
   }
 }

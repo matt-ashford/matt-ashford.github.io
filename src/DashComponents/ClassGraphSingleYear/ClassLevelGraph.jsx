@@ -261,7 +261,7 @@ export const ClassGraphSingleYear = (props) => {
           className={styles.classGraphsvg}
           onMouseEnter={mouseEnterSvg}
           onMouseLeave={mouseExitSvg}
-          shapeRendering="crispEdges"
+          shapeRendering="geometricPrecision"
           id={svgId}
           height={rotateProductNames ? 330 : 300}
           width={graphWidth}
@@ -287,15 +287,6 @@ export const ClassGraphSingleYear = (props) => {
         isHoveringProductText={isHoveringProductText}
         selectedYear={selectedYear}
       />
-
-      {/* 
-      <TooltipTarget
-        isHoveringTarget={isHoveringTarget}
-        hoverTargetId={hoverTargetId}
-        tooltipId={"tooltipClassTarget"}
-        propData={propData}
-        xHoverTarget={xHoverTarget}
-      /> */}
 
       <TooltipProductNames
         isHoveringProductText={isHoveringProductText}

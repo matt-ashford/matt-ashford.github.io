@@ -35,17 +35,17 @@ export const drawBars = ({
     .attr("fill", secondaryColor)
     .attr("class", "graphicElement barOldData")
     .attr("id", (d) => generateSvgElementId("rect", d))
-    .attr("y", (d) => topStart - yScale(d.pct_on_time))
+    .attr("y", (d) => topStart - yScale(d.pct_on_time));
 
-    .on("mouseover", function () {
-      const currentBarSelection = d3.select(this);
+  // .on("mouseover", function () {
+  //   const currentBarSelection = d3.select(this);
 
-      mouseOverTriggersBar(currentBarSelection);
-    })
-    .on("mouseout", () => {
-      const currentBarSelection = d3.select(this);
-      mouseOutTriggersBar(currentBarSelection);
-    });
+  //   mouseOverTriggersBar(currentBarSelection);
+  // })
+  // .on("mouseout", () => {
+  //   const currentBarSelection = d3.select(this);
+  //   mouseOutTriggersBar(currentBarSelection);
+  // });
 
   d3.select(`#${svgId}`)
     .selectAll(".barNewData")

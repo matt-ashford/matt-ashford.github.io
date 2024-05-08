@@ -49,7 +49,6 @@ const Drawer02 = (props) => {
   const homeName = [
     {
       text: "Home",
-      // onClickItem: () => history.push("/dash-deploy"),
       onClickItem: () => history.push("/home"),
     },
     {
