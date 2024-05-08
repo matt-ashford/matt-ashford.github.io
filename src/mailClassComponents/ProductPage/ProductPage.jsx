@@ -1,8 +1,6 @@
 import { Grid, Paper, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
-
 import ProductDef from "../../DashComponents/ProductDef";
 import ProductPageWithData from "./ProductPageWithData";
 import ProductPageEmpty from "./ProductPageEmpty";

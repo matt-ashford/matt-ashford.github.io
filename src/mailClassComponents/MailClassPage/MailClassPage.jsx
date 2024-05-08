@@ -9,7 +9,7 @@ import ProductCountTable from "../../DashComponents/UIBits/productCountTable/Pro
 import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
-
+import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
 import Footer from "../Footer";
 
 import MailClassDef from "../../DashComponents/MailClassDef";
@@ -83,6 +83,13 @@ export const MailClassPage = (props) => {
             {isFirstClass ? (
               <div className={styles.fcWeeklyContainer}>
                 <LineGraphFCWeekly data={fcWeeklyData} />
+                <div className={styles.downloadBtnContainerWeekly}>
+                  <DownloadButton
+                    propData={fcWeeklyData}
+                    dataName="First-Class Weekly Data"
+                    dataType={"FCWeekly"}
+                  />
+                </div>
               </div>
             ) : (
               <></>

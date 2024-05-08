@@ -41,6 +41,7 @@ export const ProductPageFull = (props) => {
               <DownloadButton
                 propData={filteredData}
                 dataName="Historical Product Data"
+                dataType="libRef"
               />
             </div>
           </div>

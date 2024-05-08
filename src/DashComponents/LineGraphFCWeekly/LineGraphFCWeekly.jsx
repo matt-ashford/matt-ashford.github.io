@@ -19,11 +19,10 @@ import {
 } from "./LineGraphDimensionsWeekly.js";
 
 import { KeyLineGraphFCWeekly } from "./KeyLineGraphFCWeekly.jsx";
+import DownloadButton from "../UIBits/DownloadButton/DownloadButton.jsx";
 
 export const LineGraphFCWeekly = (props) => {
   const { data } = props;
-
-  console.log(data);
 
   useEffect(() => {
     drawGraphElements();
@@ -46,14 +45,6 @@ export const LineGraphFCWeekly = (props) => {
   const latestYear = Math.max(...uniqueYears);
   const prevYear = Math.min(...uniqueYears);
 
-  // const dataPctConvert = data.map((row) => {
-  //   const newScore = row.score * 100;
-  //   const { score, ...rest } = row;
-  //   return { score: newScore, ...rest };
-  // });
-
-  // console.log("new thing", dataPctConvert);
-
   const latestYearData = data.filter((row) => row.pstl_yr === latestYear);
   const prevYearData = data.filter((row) => row.pstl_yr === prevYear);
 
@@ -64,18 +55,7 @@ export const LineGraphFCWeekly = (props) => {
     drawXAxis(drawXAxisParams);
     drawLine(drawLineParamsFirst);
     drawLine(drawLineParamsSecond);
-    // drawLine(drawLineParamsSecond);
   }
-
-  // function removeGraphElements() {
-  //   d3.selectAll(".lineGraphYAxis").remove();
-  //   d3.selectAll(".lineGraphLine").remove();
-  //   d3.selectAll(".xAxisText").remove();
-  // }
-
-  // function returnFilterGraphData(productId, dataset) {
-  //   return dataset.filter((row) => row.product_id === productId);
-  // }
 
   const drawYAxisParams = {
     svgId: svgId,
@@ -98,15 +78,8 @@ export const LineGraphFCWeekly = (props) => {
     seriesSeq: 2,
   };
 
-  // const drawLineParamsSecond = {
-  //   svgId: svgId,
-  //   graphData: graphDataSecondProd,
-  //   xScale: xScale,
-  //   xArray: xArray,
-  //   lineColor: "green",
-  //   seriesSeq: 2,
-  //   // lineColor: "black",
-  // };
+  const sourceText =
+    "Source: USPS Service Performance Dashboard Source Data Extract File, available at https://spm.usps.com/#/main.";
 
   return (
     <div className={styles.graphOuterContainer}>
@@ -127,26 +100,9 @@ export const LineGraphFCWeekly = (props) => {
         ></svg>
         <KeyLineGraphFCWeekly />
       </div>
+      <div className={styles.sourceContainer}>{sourceText}</div>
     </div>
   );
 };
 
 export default LineGraphFCWeekly;
-
-// const [graphDataFirstProd, setGraphDataFirstProd] = useState(
-//   returnFilterGraphData(keeperProds[0], joinedDataQtr)
-// );
-
-// const [graphDataSecondProd, setGraphDataSecondProd] = useState(
-//   returnFilterGraphData(keeperProds[1], joinedDataQtr)
-// );
-
-// useEffect(() => {
-//   removeGraphElements();
-//   drawGraphElements();
-// }, []);
-
-// useEffect(() => {
-//   removeGraphElements();
-//   drawGraphElements();
-// }, [graphDataFirstProd]);

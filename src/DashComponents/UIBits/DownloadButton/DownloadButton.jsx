@@ -5,12 +5,24 @@ import TocIcon from "@material-ui/icons/Toc";
 import { colorPalleteMatt } from "../../../Design/MyTheme";
 
 import { downloadBtnDataPrep } from "./DownloadBtnDataPrep";
+import { FCWeeklyPrep } from "./FCWeeklyPrep";
 import styles from "../UIBits.module.css";
 
 export const DownloadButton = (props) => {
-  const { propData, dataName } = props;
+  const { propData, dataName, dataType } = props;
 
-  const returnedData = downloadBtnDataPrep(propData);
+  const functionDataTypeMap = {
+    FCWeekly: FCWeeklyPrep,
+    libRef: downloadBtnDataPrep,
+  };
+  let selectedFunction = functionDataTypeMap[dataType];
+
+  let returnedData;
+  if (!selectedFunction) {
+    returnedData = downloadBtnDataPrep(propData);
+  } else {
+    returnedData = selectedFunction(propData);
+  }
 
   return (
     <>

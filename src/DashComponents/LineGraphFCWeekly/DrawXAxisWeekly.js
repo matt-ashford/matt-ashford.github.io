@@ -34,7 +34,7 @@ export const drawXAxis = ({ svgId, xScale }) => {
   svg
     .append("text")
     .attr("class", "axisLabelDS")
-    .text("Fiscal Week")
+    .text("Week")
     .attr(
       "transform",
       `translate(${xLabelRightPush},  ${
@@ -43,6 +43,5 @@ export const drawXAxis = ({ svgId, xScale }) => {
     )
     .attr("font-size", "0.7rem");
 
-  // d3.select(".domain").style("opacity", 0);
   d3.selectAll(".xAxisText").style("opacity", 1);
 };

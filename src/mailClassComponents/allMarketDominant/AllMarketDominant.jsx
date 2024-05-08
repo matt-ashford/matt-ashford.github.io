@@ -97,6 +97,7 @@ export const AllMarketDominant = (props) => {
               <DownloadButton
                 propData={joinedDataForDownload}
                 dataName={"Market Dominant Data"}
+                dataType="libRef"
               />{" "}
             </div>
           </div>

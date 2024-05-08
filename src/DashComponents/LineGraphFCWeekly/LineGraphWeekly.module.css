@@ -4,6 +4,13 @@
   --seriesColWidth: 20px;
 }
 
+.componentOuterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  /* justify-content: space-between; */
+}
+
 .graphOuterContainer {
   display: flex;
   flex-direction: column;
@@ -16,6 +23,11 @@
   /* background-color: red */
   box-shadow: var(--paperMimic);
   border-radius: 5px;
+}
+
+.downloadBtnContainer {
+  margin-left: 2rem;
+  padding-bottom: 2rem;
 }
 
 .titleContainerGraph {
@@ -70,4 +82,8 @@
 
 .secondLabel {
   grid-column-start: 3;
+}
+.sourceContainer {
+  font-size: 0.6rem;
+  margin-top: 0.5rem;
 }
