@@ -3,16 +3,13 @@ import { ThemeProvider } from "@material-ui/core/styles";
 
 import myTheme from "./Design/MyTheme";
 
-// import { AllMarketDominant } from "./mailClassComponents/AllMarketDominant";
-
-// import { AllMarketDominant } from "./mailClassComponents/allMarketDominant";
 import AllMarketDominant from "./mailClassComponents/allMarketDominant/AllMarketDominant";
 
 import { HomePage } from "./mailClassComponents/HomePage/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage/ProductPage";
 import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage";
 
-import { Route, Switch, BrowserRouter } from "react-router-dom";
+import { Route, Switch, BrowserRouter, Redirect } from "react-router-dom";
 import Drawer02 from "./Drawer/Drawer02";
 
 function App() {
@@ -20,13 +17,11 @@ function App() {
     <>
       <BrowserRouter>
         <Drawer02 />
-        {/* <Drawer /> */}
         <ThemeProvider theme={myTheme}>
-          {/* <div className="App"> */}
           <Switch>
             <Route
               exact
-              from="/dash-deploy"
+              from="/home"
               render={(props) => <HomePage {...props} />}
             />
 
@@ -66,6 +61,7 @@ function App() {
               path="/product"
               render={(props) => <ProductPage {...props} />}
             />
+            <Redirect to="/home" />
           </Switch>
           {/* </div> */}
         </ThemeProvider>
