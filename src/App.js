@@ -8,7 +8,7 @@ import myTheme from "./Design/MyTheme";
 // import { AllMarketDominant } from "./mailClassComponents/allMarketDominant";
 import AllMarketDominant from "./mailClassComponents/allMarketDominant/AllMarketDominant";
 
-import { HomePage } from "./mailClassComponents/HomePage";
+import { HomePage } from "./mailClassComponents/HomePage/HomePage";
 import { ProductPage } from "./mailClassComponents/ProductPage/ProductPage";
 import { MailClassPage } from "./mailClassComponents/MailClassPage/MailClassPage";
 
@@ -29,6 +29,7 @@ function App() {
               from="/dash-deploy"
               render={(props) => <HomePage {...props} />}
             />
+
             <Route
               exact
               from="/all-md"

@@ -11,7 +11,7 @@ const DashContents = (props) => {
       onClick: () => history.push("/all-md"),
     },
     {
-      text: "USPS service performance results for First-Class Mail product components",
+      text: "USPS service performance results for First-Class Mail",
       onClick: () => history.push("/first-class"),
     },
     {

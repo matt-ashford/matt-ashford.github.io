@@ -1,0 +1,28 @@
+.titleAndLogoContainer {
+  margin-top: -100vh;
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.introTextContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 65rem;
+  min-width: 45rem;
+  margin-left: 8rem;
+}
+.additionalResourcesLinkes {
+  /* margin-left: 10vw; */
+  margin-left: 8rem;
+  margin-top: 3rem;
+  max-width: 45rem;
+  min-width: 30rem;
+}
+
+.glossaryContainer {
+  margin-top: 3rem;
+  margin-left: 8rem;
+  max-width: 65rem;
+  min-width: 45rem;
+}

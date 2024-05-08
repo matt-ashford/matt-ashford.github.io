@@ -14,7 +14,8 @@ import styles from "./Drawer.module.css";
 
 import { withRouter } from "react-router-dom";
 
-export const Drawer02 = (props) => {
+// export const Drawer02 = (props) => {
+const Drawer02 = (props) => {
   const { history } = props;
   const [isOpen, setIsOpen] = useState(false);
 

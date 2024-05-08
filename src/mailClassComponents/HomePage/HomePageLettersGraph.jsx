@@ -1,19 +1,19 @@
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
-import annualData from "../Data/annualData.json";
+import annualData from "../../Data/annualData.json";
 
 import {
   marginBottom,
   barWidth,
   barMarginLeft,
-} from "../Design/graphDimensions";
+} from "../../Design/graphDimensions";
 
 import {
   primaryColor,
   secondaryColor,
   pinkHighlight,
   textNodeFont,
-} from "../Design/MyTheme";
+} from "../../Design/MyTheme";
 
 export const HomePageLettersGraph = (props) => {
   const { propData } = props;
