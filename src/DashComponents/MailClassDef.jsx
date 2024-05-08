@@ -14,7 +14,8 @@ export const MailClassDef = (props) => {
     classDefText = thisDefinitionRow.definition;
   }
 
-  return <div id="mailClassDefContainer">{classDefText} </div>;
+  // return <div id="mailClassDefContainer">{classDefText} </div>;
+  return <>{classDefText} </>;
 };
 
 export default MailClassDef;

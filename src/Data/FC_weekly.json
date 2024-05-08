@@ -1,0 +1,476 @@
+[
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-10-01",
+    "score": 0.932574086,
+    "week": 1
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-10-08",
+    "score": 0.9282522821,
+    "week": 2
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-10-15",
+    "score": 0.9209483783,
+    "week": 3
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-10-22",
+    "score": 0.9268622134,
+    "week": 4
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-10-29",
+    "score": 0.9154259528,
+    "week": 5
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-11-05",
+    "score": 0.9208960353,
+    "week": 6
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-11-12",
+    "score": 0.9288021371,
+    "week": 7
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-11-19",
+    "score": 0.9120830699,
+    "week": 8
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-11-26",
+    "score": 0.9081685245,
+    "week": 9
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-12-03",
+    "score": 0.9049927731,
+    "week": 10
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-12-10",
+    "score": 0.9054180236,
+    "week": 11
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-12-17",
+    "score": 0.8860645233,
+    "week": 12
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-12-24",
+    "score": 0.840600248,
+    "week": 13
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2022-12-31",
+    "score": 0.8999398379,
+    "week": 14
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-01-07",
+    "score": 0.9111656015,
+    "week": 15
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-01-14",
+    "score": 0.9262453865,
+    "week": 16
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-01-21",
+    "score": 0.918224176,
+    "week": 17
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-01-28",
+    "score": 0.9085452479,
+    "week": 18
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-02-04",
+    "score": 0.8697581384,
+    "week": 19
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-02-11",
+    "score": 0.9131147493,
+    "week": 20
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-02-18",
+    "score": 0.9230288684,
+    "week": 21
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-02-25",
+    "score": 0.9096289936,
+    "week": 22
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-03-04",
+    "score": 0.902246201,
+    "week": 23
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-03-11",
+    "score": 0.905972203,
+    "week": 24
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-03-18",
+    "score": 0.9190034251,
+    "week": 25
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-03-25",
+    "score": 0.9266564224,
+    "week": 26
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-04-01",
+    "score": 0.9158144458,
+    "week": 27
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-04-08",
+    "score": 0.9092857122,
+    "week": 28
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-04-15",
+    "score": 0.9171340996,
+    "week": 29
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-04-22",
+    "score": 0.9227065463,
+    "week": 30
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-04-29",
+    "score": 0.9245898511,
+    "week": 31
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-05-06",
+    "score": 0.9200750323,
+    "week": 32
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-05-13",
+    "score": 0.9267356886,
+    "week": 33
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-05-20",
+    "score": 0.9291584477,
+    "week": 34
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-05-27",
+    "score": 0.9311554146,
+    "week": 35
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-06-03",
+    "score": 0.9277466579,
+    "week": 36
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-06-10",
+    "score": 0.9260858749,
+    "week": 37
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-06-17",
+    "score": 0.9302755816,
+    "week": 38
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-06-24",
+    "score": 0.9268031413,
+    "week": 39
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-07-01",
+    "score": 0.9225634796,
+    "week": 40
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-07-08",
+    "score": 0.9130039785,
+    "week": 41
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-07-15",
+    "score": 0.9032660746,
+    "week": 42
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-07-22",
+    "score": 0.9172951136,
+    "week": 43
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-07-29",
+    "score": 0.9128566327,
+    "week": 44
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-08-05",
+    "score": 0.9118107529,
+    "week": 45
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-08-12",
+    "score": 0.920742659,
+    "week": 46
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-08-19",
+    "score": 0.9192494765,
+    "week": 47
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-08-26",
+    "score": 0.9184951926,
+    "week": 48
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-09-02",
+    "score": 0.9200848023,
+    "week": 49
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-09-09",
+    "score": 0.9064975726,
+    "week": 50
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-09-16",
+    "score": 0.912082542,
+    "week": 51
+  },
+  {
+    "pstl_yr": 2023,
+    "rptg_start_date": "2023-09-23",
+    "score": 0.9131556153,
+    "week": 52
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-09-30",
+    "score": 0.9116973573,
+    "week": 1
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-10-07",
+    "score": 0.8946052372,
+    "week": 2
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-10-14",
+    "score": 0.8693733994,
+    "week": 3
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-10-21",
+    "score": 0.8557620574,
+    "week": 4
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-10-28",
+    "score": 0.8732699965,
+    "week": 5
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-11-04",
+    "score": 0.869532962,
+    "week": 6
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-11-11",
+    "score": 0.8771113119,
+    "week": 7
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-11-18",
+    "score": 0.8547673857,
+    "week": 8
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-11-25",
+    "score": 0.8420844324,
+    "week": 9
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-12-02",
+    "score": 0.8328521045,
+    "week": 10
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-12-09",
+    "score": 0.8213615423,
+    "week": 11
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-12-16",
+    "score": 0.8314791847,
+    "week": 12
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-12-23",
+    "score": 0.8397303544,
+    "week": 13
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2023-12-30",
+    "score": 0.8777341988,
+    "week": 14
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-01-06",
+    "score": 0.8476103742,
+    "week": 15
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-01-13",
+    "score": 0.7996388968,
+    "week": 16
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-01-20",
+    "score": 0.8001726958,
+    "week": 17
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-01-27",
+    "score": 0.8348206458,
+    "week": 18
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-02-03",
+    "score": 0.8460789264,
+    "week": 19
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-02-10",
+    "score": 0.8500868879,
+    "week": 20
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-02-17",
+    "score": 0.8757526699,
+    "week": 21
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-02-24",
+    "score": 0.8718027847,
+    "week": 22
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-03-02",
+    "score": 0.856225729,
+    "week": 23
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-03-09",
+    "score": 0.8382292376,
+    "week": 24
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-03-16",
+    "score": 0.8270571638,
+    "week": 25
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-03-23",
+    "score": 0.8330030225,
+    "week": 26
+  },
+  {
+    "pstl_yr": 2024,
+    "rptg_start_date": "2024-03-30",
+    "score": 0.828451216,
+    "week": 27
+  }
+]

@@ -1,0 +1,73 @@
+@import url("../../theme.css");
+
+:root {
+  --seriesColWidth: 20px;
+}
+
+.graphOuterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 31rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+
+  /* background-color: red */
+  box-shadow: var(--paperMimic);
+  border-radius: 5px;
+}
+
+.titleContainerGraph {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.graphTitleText {
+  padding-top: 0.1rem;
+}
+
+.keyContainerOuter {
+  transform: scale(0.8);
+  margin-left: 4.5rem;
+}
+
+.keyTitle {
+  margin-bottom: 0.25rem;
+}
+.keyContentMatrix {
+  display: grid;
+  grid-template-columns: 7.5rem var(--seriesColWidth) 600px;
+  grid-template-rows: 1rem 1rem;
+  margin-left: -1rem;
+  /* border: 1px solid black; */
+}
+
+.firstSeries {
+  border-top: 3px solid var(--primaryColor);
+  width: var(--seriesColWidth);
+  height: 1rem;
+  margin-top: 0.5rem;
+  grid-column-start: 2;
+
+  /* background-color: blue; */
+}
+
+.firstLabel {
+  grid-column-start: 3;
+}
+.secondSeries {
+  border-top: 3px solid var(--secondaryColor);
+  width: var(--seriesColWidth);
+  height: 1rem;
+  margin-top: 0.5rem;
+  grid-column-start: 2;
+}
+
+.secondLabel {
+  grid-column-start: 3;
+}

@@ -17,7 +17,7 @@ export const drawTicks = (svgId, yScaleRev, svgWidth) => {
     .attr("transform", `translate(${marginLeft},${marginTop})`)
     .attr("class", "graphicElement axisTicks nonBar")
     .style("opacity", 0.5);
-  d3.select(".domain").remove();
+  // d3.select(".domain").remove();
   d3.selectAll(".axisTicks").selectAll("text").style("opacity", 1);
   //   d3.selectAll("line").style("opacity", 0.3);
 

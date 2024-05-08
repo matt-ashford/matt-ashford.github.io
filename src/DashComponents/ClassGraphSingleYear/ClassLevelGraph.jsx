@@ -258,7 +258,6 @@ export const ClassGraphSingleYear = (props) => {
           <ClassGraphTitle mailClass={mailClass} selectedYear={selectedYear} />
         </div>
         <svg
-          //old version
           className={styles.classGraphsvg}
           onMouseEnter={mouseEnterSvg}
           onMouseLeave={mouseExitSvg}

@@ -11,23 +11,12 @@ import {
   marginBottom,
   bottomStart,
   svgWidth,
-} from "./LineGraphDimensionsDS";
+} from "./LineGraphDimensionsWeekly.js";
 
 export const drawXAxis = ({ svgId, xScale }) => {
   let rotationDeg = 35;
 
-  // d3.select(".domain").remove();
-
   const svg = d3.select(`#${svgId}`);
-
-  function customFormat(e) {
-    if (e.includes("Q1")) {
-      const matchingYear = e.split("_")[1];
-
-      return matchingYear;
-    }
-    return "";
-  }
 
   const xLabelDownPush = 42;
   const xLabelRightPush = svgWidth / 2;
@@ -36,20 +25,16 @@ export const drawXAxis = ({ svgId, xScale }) => {
     .append("g")
     .attr("class", "axis")
     .attr("transform", `translate(${marginLeft}, ${topStart + bottomStart})`)
-    .call(d3.axisBottom(xScale).tickSize(5).tickFormat(customFormat))
+    .call(d3.axisBottom(xScale).ticks(13).tickSize(5))
     .selectAll("text")
     .attr("class", "xAxisText")
-    .style("text-anchor", "start")
-    .attr("dx", 2)
-    .attr("transform", "rotate(35)")
+    .style("text-anchor", "middle")
     .attr("shape-rendering", "crispEdges");
-  // .attr("transform", `translate(${marginLeft}, 6)`);
-  //   d3.selectAll(".tick").style("opacity", 0.2);
 
   svg
     .append("text")
     .attr("class", "axisLabelDS")
-    .text("Fiscal Year")
+    .text("Fiscal Week")
     .attr(
       "transform",
       `translate(${xLabelRightPush},  ${
@@ -58,6 +43,6 @@ export const drawXAxis = ({ svgId, xScale }) => {
     )
     .attr("font-size", "0.7rem");
 
-  d3.select(".domain").style("opacity", 0);
+  // d3.select(".domain").style("opacity", 0);
   d3.selectAll(".xAxisText").style("opacity", 1);
 };

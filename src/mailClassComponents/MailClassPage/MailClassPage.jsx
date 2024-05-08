@@ -19,7 +19,9 @@ import { filterAnnualComparison } from "../../DataManipulation/filterAnnualCompa
 import ProductPage from "../ProductPage/ProductPage";
 import annualData from "../../Data/annual - Updated.json";
 import quarterData from "../../Data/quarterly - Updated.json";
+import fcWeeklyData from "../../Data/FC_weekly.json";
 import styles from "./MailClassPageStyles.module.css";
+import LineGraphFCWeekly from "../../DashComponents/LineGraphFCWeekly/LineGraphFCWeekly";
 
 export const MailClassPage = (props) => {
   const { mailClassName } = props;
@@ -78,6 +80,13 @@ export const MailClassPage = (props) => {
                 {mailClassNameTitle(mailClassName)}
               </Typography>
             </div>
+            {isFirstClass ? (
+              <div className={styles.fcWeeklyContainer}>
+                <LineGraphFCWeekly data={fcWeeklyData} />
+              </div>
+            ) : (
+              <></>
+            )}
             <YearDropdown
               propData={annualData}
               selectedYear={selectedYear}
@@ -100,7 +109,9 @@ export const MailClassPage = (props) => {
           />{" "}
         </div>
 
-        <MailClassDef mailClass={mailClassName} />
+        <div className={styles.mailClassDefContainer}>
+          <MailClassDef mailClass={mailClassName} />
+        </div>
 
         <div className={styles.productPageContainer}>
           <ProductDropdown

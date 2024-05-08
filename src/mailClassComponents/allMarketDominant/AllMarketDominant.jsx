@@ -16,7 +16,6 @@ import generateCountData from "./genearteMDCountData";
 import { joinDataWithProdKey } from "../../DataManipulation/join";
 import CountBarGraph from "../../DashComponents/CountBarGraph/CountBarGraph";
 import LineGraphDoubleSeries from "../../DashComponents/LineGraphDoubleSeries/LineGraphDoubleSeries";
-import LineGraphProduct from "../../DashComponents/LineGraphProduct/LineGraphProduct";
 import { useEffect, useState } from "react";
 
 export const AllMarketDominant = (props) => {

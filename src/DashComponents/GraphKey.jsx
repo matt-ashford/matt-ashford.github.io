@@ -58,7 +58,7 @@ export const GraphKey = (props) => {
   return (
     <div
       style={{
-        "margin-left": "12rem",
+        marginLeft: "12rem",
       }}
     >
       <svg height={35} width={450}>

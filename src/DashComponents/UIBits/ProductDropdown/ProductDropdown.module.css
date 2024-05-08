@@ -10,8 +10,9 @@
   background-color: #ffffff;
   border-radius: 4px;
   max-width: 40rem; /* Maximum width */
-  min-width: min-content; /* Shrink to fit content */
+  min-width: 30rem; /* Shrink to fit content */
   transition: all 350ms ease-in-out;
+  margin-left: 2rem;
 
   /* border-top: 1px solid(rgba(0, 0, 0, 0.1)); */
 }
@@ -52,7 +53,12 @@
 
 .productDropdownLableContainer {
   font-size: 1.2rem;
-  /* display: flex;
-  align-items: center; /* Vertical center alignment */
-  /* padding-top: 2rem; */
+  text-wrap: nowrap;
+}
+
+@media (max-width: 813px) {
+  .productDropdownLableContainer {
+    font-size: 0.9rem;
+    margin-left: -1rem;
+  }
 }

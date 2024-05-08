@@ -58,7 +58,7 @@
 
 .outerContainerProductCount {
   margin-left: 1rem;
-  margin-top: 9.3rem;
+  margin-top: 33.25rem;
   display: flex;
   flex-direction: column;
   width: 10rem;
@@ -112,6 +112,14 @@
 
   bottom: 1rem;
   padding-top: 2rem;
+}
+
+.mailClassDefContainer {
+  width: 75vw;
+  display: flex;
+  margin-left: -4rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 1226px) {

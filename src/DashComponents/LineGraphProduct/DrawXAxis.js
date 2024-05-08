@@ -19,8 +19,6 @@ export const drawXAxis = ({ svgId, xScale }) => {
 
   let rotationDeg = 35;
 
-  d3.select(".domain").remove();
-
   const svg = d3.select(`#${svgId}`);
 
   function customFormat(e) {

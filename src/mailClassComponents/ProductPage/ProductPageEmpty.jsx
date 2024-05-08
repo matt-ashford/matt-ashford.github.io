@@ -1,5 +1,5 @@
 export const EmptyProductPage = () => {
-  return <>empty page</>;
+  return <></>;
 };
 
 export default EmptyProductPage;
