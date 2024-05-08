@@ -70,29 +70,43 @@ export const MailClassPage = (props) => {
     joinedDataAnnual
   );
 
+  const countTableClassName = isFirstClass
+    ? styles.outerContainerProductCountFC
+    : styles.outerContainerProductCount;
+
   return (
     <>
       <div className={styles.allMdContainer} id="allMdContainer">
         <div className={styles.topHalf}>
           <div className={styles.container_titleGraphYear}>
-            <div className={styles.pageTitleContainer}>
-              <Typography variant="h4" component="h4" gutterBottom>
-                {mailClassNameTitle(mailClassName)}
-              </Typography>
-            </div>
             {isFirstClass ? (
-              <div className={styles.fcWeeklyContainer}>
-                <LineGraphFCWeekly data={fcWeeklyData} />
-                <div className={styles.downloadBtnContainerWeekly}>
-                  <DownloadButton
-                    propData={fcWeeklyData}
-                    dataName="First-Class Weekly Data"
-                    dataType={"FCWeekly"}
-                  />
+              <>
+                <div className={styles.isFirstClass}></div>
+                <div className={styles.pageTitleContainer}>
+                  <Typography variant="h4" component="h4" gutterBottom>
+                    {mailClassNameTitle(mailClassName)}
+                  </Typography>
+                </div>
+
+                <div className={styles.fcWeeklyContainer}>
+                  <LineGraphFCWeekly data={fcWeeklyData} />
+                  <div className={styles.downloadBtnContainerWeekly}>
+                    <DownloadButton
+                      propData={fcWeeklyData}
+                      dataName="First-Class Weekly Data"
+                      dataType={"FCWeekly"}
+                    />
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className={styles.notFirstClass}>
+                <div className={styles.pageTitleContainer}>
+                  <Typography variant="h4" component="h4" gutterBottom>
+                    {mailClassNameTitle(mailClassName)}
+                  </Typography>
                 </div>
               </div>
-            ) : (
-              <></>
             )}
             <YearDropdown
               propData={annualData}
@@ -109,11 +123,13 @@ export const MailClassPage = (props) => {
               </div>
             </div>
           </div>
-          <ProductCountTable
-            propData={joinedDataAnnual}
-            selectedYear={selectedYear}
-            mailClassName={mailClassName}
-          />{" "}
+          <div className={countTableClassName}>
+            <ProductCountTable
+              propData={joinedDataAnnual}
+              selectedYear={selectedYear}
+              mailClassName={mailClassName}
+            />{" "}
+          </div>
         </div>
 
         <div className={styles.mailClassDefContainer}>

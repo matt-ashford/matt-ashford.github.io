@@ -4,13 +4,6 @@
   --seriesColWidth: 20px;
 }
 
-.componentOuterContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: end;
-  /* justify-content: space-between; */
-}
-
 .graphOuterContainer {
   display: flex;
   flex-direction: column;

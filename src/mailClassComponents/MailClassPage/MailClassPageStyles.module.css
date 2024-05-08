@@ -10,7 +10,9 @@
   flex-direction: row;
   /* background-color: azure; */
 }
-
+.isFirstClass {
+  margin-top: -6rem;
+}
 .fcWeeklyContainer {
   display: flex;
   flex-direction: row;
@@ -20,8 +22,6 @@
   min-width: 60rem;
   margin-left: -6rem;
   margin-bottom: 2rem;
-
-  /* justify-content: space-between; */
 }
 
 .downloadBtnContainerWeekly {
@@ -41,6 +41,7 @@
   text-wrap: nowrap;
   justify-content: center;
   min-width: 30rem;
+  margin-top: -1rem;
 }
 
 @media (max-width: 817px) {
@@ -77,7 +78,15 @@
 
 .outerContainerProductCount {
   margin-left: 1rem;
-  margin-top: 33.25rem;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+}
+
+.outerContainerProductCountFC {
+  margin-top: 39rem;
+  margin-left: -9rem;
   display: flex;
   flex-direction: column;
   width: 10rem;
@@ -141,13 +150,21 @@
   margin-bottom: 3rem;
 }
 
-@media (max-width: 1226px) {
+@media (max-width: 1000px) {
   .outerContainerProductCount {
     flex-direction: row;
     margin-top: 2rem;
     width: 50rem;
-    margin-left: -7rem;
+    margin-left: -3rem;
   }
+
+  .outerContainerProductCountFC {
+    flex-direction: row;
+    margin-top: 1rem;
+    width: 50rem;
+    margin-left: 1rem;
+  }
+
   .topHalf {
     flex-direction: column;
   }
@@ -156,7 +173,14 @@
 @media (max-width: 900px) {
   .outerContainerProductCount {
     transform: scale(0.8);
-    margin-left: -14rem;
+    margin-top: -1rem;
+    margin-left: -8rem;
+  }
+
+  .outerContainerProductCountFC {
+    transform: scale(0.8);
+    margin-top: -1rem;
+    margin-left: -8rem;
   }
 
   .classGraphOuterContainer {
@@ -175,9 +199,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 0;
-    margin-top: -6rem;
+    margin-top: -3rem;
     width: 20rem;
-    margin-left: -10rem;
+    margin-left: -5rem;
   }
 
   .classGraphOuterContainer {
