@@ -10,7 +10,7 @@ import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 
 import MailClassDef from "../../DashComponents/MailClassDef";
 
@@ -35,13 +35,26 @@ export const MailClassPage = (props) => {
   );
 
   useEffect(() => {
-    // setSelectedProductId(mailClassFilterData[0].product_id);
-    setSelectedProductId(0);
+    // setSelectedProductId(0);
+    setSelectedProductId(defaultId(mailClassName));
   }, []);
 
   useEffect(() => {
-    setSelectedProductId(0);
+    // setSelectedProductId(0);
+    setSelectedProductId(defaultId(mailClassName));
   }, [mailClassName]);
+
+  function defaultId(mailClass) {
+    const mailClassMap = {
+      "First Class Mail": 99,
+      "Marketing Mail": 8,
+      Periodicals: 15,
+      "Special Services": 103,
+      "Package Services": 89,
+    };
+
+    return mailClassMap[mailClass];
+  }
 
   function changeProductSelected(e) {
     const rawValue = e.target.value;

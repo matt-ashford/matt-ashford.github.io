@@ -1,5 +1,4 @@
 import "./App.css";
-import { ThemeProvider } from "@material-ui/core/styles";
 
 import myTheme from "./Design/MyTheme";
 
@@ -17,54 +16,51 @@ function App() {
     <>
       <BrowserRouter>
         <Drawer02 />
-        <ThemeProvider theme={myTheme}>
-          <Switch>
-            <Route
-              exact
-              from="/home"
-              render={(props) => <HomePage {...props} />}
-            />
+        <Switch>
+          <Route
+            exact
+            from="/home"
+            render={(props) => <HomePage {...props} />}
+          />
 
-            <Route
-              exact
-              from="/all-md"
-              render={(props) => <AllMarketDominant {...props} />}
-            />
+          <Route
+            exact
+            from="/all-md"
+            render={(props) => <AllMarketDominant {...props} />}
+          />
 
-            <Route
-              exact
-              path="/first-class"
-              render={() => <MailClassPage mailClassName="First Class Mail" />}
-            />
-            <Route
-              exact
-              path="/marketing-mail"
-              render={() => <MailClassPage mailClassName="Marketing Mail" />}
-            />
-            <Route
-              exact
-              path="/periodicals"
-              render={() => <MailClassPage mailClassName="Periodicals" />}
-            />
-            <Route
-              exact
-              path="/package-services"
-              render={() => <MailClassPage mailClassName="Package Services" />}
-            />
-            <Route
-              exact
-              path="/special-services"
-              render={() => <MailClassPage mailClassName="Special Services" />}
-            />
-            <Route
-              exact
-              path="/product"
-              render={(props) => <ProductPage {...props} />}
-            />
-            <Redirect to="/home" />
-          </Switch>
-          {/* </div> */}
-        </ThemeProvider>
+          <Route
+            exact
+            path="/first-class"
+            render={() => <MailClassPage mailClassName="First Class Mail" />}
+          />
+          <Route
+            exact
+            path="/marketing-mail"
+            render={() => <MailClassPage mailClassName="Marketing Mail" />}
+          />
+          <Route
+            exact
+            path="/periodicals"
+            render={() => <MailClassPage mailClassName="Periodicals" />}
+          />
+          <Route
+            exact
+            path="/package-services"
+            render={() => <MailClassPage mailClassName="Package Services" />}
+          />
+          <Route
+            exact
+            path="/special-services"
+            render={() => <MailClassPage mailClassName="Special Services" />}
+          />
+          <Route
+            exact
+            path="/product"
+            render={(props) => <ProductPage {...props} />}
+          />
+          <Redirect to="/home" />
+        </Switch>
       </BrowserRouter>
     </>
   );

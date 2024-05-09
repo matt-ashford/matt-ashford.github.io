@@ -89,22 +89,20 @@ export const ProductDropdown = (props) => {
             {/* </Typography> */}
           </div>
 
-          <div>
-            <FormControl onMouseLeave={handleMouseLeave}>
-              <Select
-                onMouseLeave={handleMouseLeave}
-                className={styles.productSelect}
-                value={`dropdown_product${selectedProductId}`}
-                // value={`dropdown_product${96}`}
-                onChange={(e) => {
-                  changeProductSelected(e);
-                  handleMouseLeave();
-                }}
-              >
-                {menuItems}
-              </Select>
-            </FormControl>
-          </div>
+          <FormControl onMouseLeave={handleMouseLeave}>
+            <Select
+              onMouseLeave={handleMouseLeave}
+              className={styles.productSelect}
+              value={`dropdown_product${selectedProductId}`}
+              // value={`dropdown_product${96}`}
+              onChange={(e) => {
+                changeProductSelected(e);
+                handleMouseLeave();
+              }}
+            >
+              {menuItems}
+            </Select>
+          </FormControl>
         </div>
       );
     }

@@ -6,7 +6,7 @@ import Paper from "@material-ui/core/Paper";
 import { ReactComponent as Logo } from "../../Design/prcIcon.svg";
 import DashContents from "./HomePageContents";
 import HomePageGlossary from "./HomePageGlossary";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import LineGraphFCWeekly from "../../DashComponents/LineGraphFCWeekly/LineGraphFCWeekly";
 import fcWeeklyData from "../../Data/FC_weekly.json";
 
@@ -41,16 +41,25 @@ export const HomePage = () => {
     },
   ];
 
-  const acdLinksHtml = acdLinksArray.map((row) => {
+  const acdLinksHtml = acdLinksArray.map((row, idx) => {
     return (
-      <>
-        <br />
-        <Link href={`${row.address}`} className="homePageLink">
+      <div key={`div_${idx}`}>
+        <br key={`br_${idx}`} />
+        <Link
+          key={`link_${idx}`}
+          href={`${row.address}`}
+          className="homePageLink"
+        >
           Annual Compliance Determination FY{row.fy}
         </Link>
-        <br />
-        <Divider />
-      </>
+        <br key={`secondBr_${idx}`} />
+
+        {idx === acdLinksArray.length - 1 ? (
+          <></>
+        ) : (
+          <Divider key={`divider_${idx}`} />
+        )}
+      </div>
     );
   });
 
@@ -79,7 +88,6 @@ export const HomePage = () => {
             Dominant mail products (and product components) delivered by the
             United States Postal Service (USPS).
           </p>
-
           <p className={sty.dashIntroPara}>
             The Commission has published the &nbsp;
             <a
@@ -113,28 +121,28 @@ export const HomePage = () => {
             downloaded in bulk by any person or entity, which is available at at
             https://about.usps.com/what/performance/service-performance/external-service-measurement.htm.
             The law tasks the Commission with:
-            <ul>
-              <li>
-                establishing requirements for publication of service performance
-                information on the Postal Service's dashboard (in terms of
-                organizational structure, geographic coverage, granularity, and
-                temporal coverage);
-              </li>
-              <li>
-                recommending any changes to the Postal Service's measurement
-                systems that the Commission deems necessary for measurement and
-                publication of service performance information on the dashboard;
-                and
-              </li>
-              <li>
-                regularly consulting with the Postal Service on appropriate
-                features and information for the Postal Service's dashboard.
-              </li>
-            </ul>
-            The Commission published the dashboard requirements and recommended
-            changes to the Postal Service's measurement systems on February 9,
-            2023 in Order No. 6439.
           </p>
+          <ul>
+            <li>
+              establishing requirements for publication of service performance
+              information on the Postal Service's dashboard (in terms of
+              organizational structure, geographic coverage, granularity, and
+              temporal coverage);
+            </li>
+            <li>
+              recommending any changes to the Postal Service's measurement
+              systems that the Commission deems necessary for measurement and
+              publication of service performance information on the dashboard;
+              and
+            </li>
+            <li>
+              regularly consulting with the Postal Service on appropriate
+              features and information for the Postal Service's dashboard.
+            </li>
+          </ul>
+          The Commission published the dashboard requirements and recommended
+          changes to the Postal Service's measurement systems on February 9,
+          2023 in Order No. 6439.
         </Typography>
       </div>
       <div className={sty.introTextContainer}>
@@ -173,7 +181,7 @@ export const HomePage = () => {
 
           <br />
           <br />
-          <div id="homePageGraphContainer">
+          <div className={sty.homePageGraphContainer}>
             <LineGraphFCWeekly data={fcWeeklyData} />
           </div>
 

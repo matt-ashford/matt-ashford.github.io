@@ -1,8 +1,8 @@
 // import { scaleLinear } from "d3";
 import * as d3 from "d3";
 const classGraphDims = {
-  graphHeight: 250,
-  graphWidth: 500,
+  graphHeight: 275,
+  graphWidth: 530,
   graphWidthProduct: 675,
   productTextMarginLeft: 25,
   targetMarginLeft: 11,

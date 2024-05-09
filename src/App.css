@@ -122,19 +122,6 @@ body {
   background-color: var(--shadedDiv);
 }
 
-#homePageFooter {
-  background-color: var(--shadedDiv);
-  /* height: 8em; */
-  padding-top: 2em;
-  /* padding-left: 35vw; */
-  /* align-items: right; */
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* z-index: 1; */
-}
-
 #homeLetterGraphContainer {
   border: 1px solid black;
   margin-bottom: 6em;
@@ -153,6 +140,18 @@ body {
 
 .homePageLink {
   font-family: var(--uglyFont);
+}
+
+#homePageFooter {
+  background-color: var(--shadedDiv);
+  /* height: 8em; */
+  padding-top: 2em;
+  /* align-items: left; */
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 }
 
 #footerLogoAndName {
@@ -201,7 +200,10 @@ body {
 #footerDisclosureContainer {
   margin-top: 40px;
   margin-left: 160px;
-  max-width: 65vw;
+  max-width: 70rem;
+
+  /* max-width: 65vw; */
+  /* text-align: left; */
 }
 
 #footerEmailContainer {
@@ -213,6 +215,36 @@ body {
   display: inline-block;
   padding: 0 1em 0 1em;
   /* border: 1px solid black; */
+}
+
+@media (max-width: 1088px) {
+  #homePageFooter {
+    width: 100vw;
+  }
+
+  #footerDisclosureContainer {
+    width: 90vw;
+    margin-left: -10rem;
+  }
+
+  #footerLogoAndName {
+    margin-left: -10rem;
+  }
+}
+
+/* @media (max-width: 1088px) { */
+@media only screen and (max-width: 1088px) {
+  #homePageFooter {
+    width: 1088px;
+    align-items: left;
+    /* padding-right: -20rem; */
+    /* background-color: aqua; */
+  }
+
+  #footerDisclosureContainer {
+    width: 90vw;
+    /* margin-left: 0rem; */
+  }
 }
 
 #footerEmailContainer a:link {

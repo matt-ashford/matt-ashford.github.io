@@ -26,3 +26,8 @@
   max-width: 65rem;
   min-width: 45rem;
 }
+
+.homePageGraphContainer {
+  width: 60rem;
+  /* background-color: black; */
+}

@@ -7,7 +7,7 @@ import MDCompositeContainer from "./MDCompositeContainer";
 import volumeData from "../../Data/volume.json";
 import ProductCountTableMD from "./ProductCountTableMD";
 import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";
-import Footer from "../Footer";
+import Footer from "../Footer/Footer";
 import styles from "./allMD.module.css";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import annualData from "../../Data/annual - Updated.json";
