@@ -50,7 +50,13 @@ export const LineGraphDoubleSeries = (props) => {
   }
 
   function returnFilterGraphData(productId, dataset) {
-    return dataset.filter((row) => row.product_id === productId);
+    return dataset
+      .filter((row) => row.product_id === productId)
+      .map((row) => {
+        const newPct = row.pct_on_time / 10;
+        row.pct_on_time = newPct;
+        return row;
+      });
   }
   const svgId = "lineGraphDoubleSeriesSVG";
 

@@ -3,6 +3,12 @@
 .graphAndTitleContainer {
   height: 70rem;
 }
+
+.titleContainer {
+  /* background-color: blue; */
+  text-align: center;
+}
+
 .lineGraphTitle {
   font-size: 1.2em;
   margin-bottom: 0.5rem;

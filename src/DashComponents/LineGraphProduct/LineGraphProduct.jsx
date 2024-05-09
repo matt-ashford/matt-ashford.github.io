@@ -27,7 +27,6 @@ export const LineGraphProduct = (props) => {
   const { selectedProductId, joinedDataAnnual, joinedDataQtr } = props;
   const [isHoveringProdGraph, setIsHoveringProdGraph] = useState(false);
   const [isHoveringTooltip, setIsHoveringTooltip] = useState(false);
-  //   const [hoveredLine, setHoveredLine] = useState(-1);
   const [hoverSeq, setHoverSeq] = useState(-1);
   useEffect(() => {
     if (!isHoveringProdGraph) {
@@ -191,7 +190,9 @@ export const LineGraphProduct = (props) => {
   };
   return (
     <div className={styles.graphAndTitleContainer}>
-      <LineGraphTitle graphData={graphData} />
+      <div className={styles.titleContainer}>
+        <LineGraphTitle graphData={graphData} />
+      </div>
       <svg
         className={styles.classGraphsvg}
         // onMouseMove={mouseMoveSvg}

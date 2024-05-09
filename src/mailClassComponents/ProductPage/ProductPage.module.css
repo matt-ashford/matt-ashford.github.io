@@ -1,3 +1,5 @@
+@import url("../../theme.css");
+
 :root {
   --secondaryColor: #88b7d7;
   --touchofBlue: #d9f6ff;
@@ -23,7 +25,8 @@
   min-width: 50rem !important;
   max-width: 50rem !important;
   height: 26rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2); */
+  box-shadow: var(--paperMimic);
   border-radius: 5px;
   margin-top: 1rem;
 }

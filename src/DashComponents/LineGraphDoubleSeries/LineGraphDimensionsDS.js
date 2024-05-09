@@ -33,11 +33,11 @@ export const bottomStart = 10;
 
 export const yScale = d3
   .scaleLinear()
-  .domain([0, 100])
+  .domain([0, 1])
   .range([bottomStart, topStart]);
 export const yScaleRev = d3
   .scaleLinear()
-  .domain([0, 100])
+  .domain([0, 1])
   .range([topStart, bottomStart]);
 
 export const svgWidth = graphWidth - marginLeft - marginRight;

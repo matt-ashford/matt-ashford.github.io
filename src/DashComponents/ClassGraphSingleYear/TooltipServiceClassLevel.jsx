@@ -56,8 +56,8 @@ export const TooltipServiceClassLevel = (props) => {
     .style("width", `${tooltipWidth}px`)
     .style("height", `${tooltipHeight}px`)
     .on("mouseover", () => {
-      setIsHovering(true);
-      tooltipDiv.style("opacity", 1);
+      setIsHovering(false);
+      // tooltipDiv.style("opacity", 1);
     });
 
   return (
@@ -84,7 +84,7 @@ function tooltipXPoz(xHover, tooltipId) {
   const tooltipDiv = d3.select(`#${tooltipId}`);
 
   let outputVal;
-  const xPush = 50;
+  const xPush = 20;
 
   outputVal = xHover + xPush;
 

@@ -31,7 +31,7 @@ export const drawOverLay = ({
     .enter()
     .append("rect")
     .attr("class", "overlayRect")
-    .attr("x", (d) => xScale(d) + marginLeft + rightPush)
+    .attr("x", (d) => xScale(d) + marginLeft)
     .attr("y", (d) => 1)
     .attr("width", rectWidth)
     .attr("height", graphHeight)
