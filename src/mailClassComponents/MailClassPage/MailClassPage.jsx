@@ -1,12 +1,7 @@
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { useEffect, useState } from "react";
-// import annualData from "../Data/annualData.json";
 import ClassGraphSingleYear from "../../DashComponents/ClassGraphSingleYear/ClassLevelGraph";
-// import ProductCountTableData from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
 import ProductCountTable from "../../DashComponents/UIBits/productCountTable/ProductCountTable";
-import VolumeChange from "../../DashComponents/VolumeChange";
 import ProductDropdown from "../../DashComponents/UIBits/ProductDropdown/ProductDropdown";
 import YearDropdown from "../../DashComponents/UIBits/YearDropdown";
 import DownloadButton from "../../DashComponents/UIBits/DownloadButton/DownloadButton";

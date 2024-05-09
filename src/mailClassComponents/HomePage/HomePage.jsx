@@ -1,8 +1,8 @@
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
-import Divider from "@material-ui/core/Divider";
-import Link from "@material-ui/core/Link";
-import Paper from "@material-ui/core/Paper";
+import Grid from "@mui/material/Grid";
+import Divider from "@mui/material/Divider";
+import Link from "@mui/material/Link";
+import Paper from "@mui/material/Paper";
 import { ReactComponent as Logo } from "../../Design/prcIcon.svg";
 import DashContents from "./HomePageContents";
 import HomePageGlossary from "./HomePageGlossary";
