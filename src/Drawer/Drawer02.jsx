@@ -25,11 +25,11 @@ const Drawer02 = (props) => {
 
   const mailClassNames = [
     {
-      text: "First-Class",
+      text: "First-Class Mail",
       onClickItem: () => history.push("/first-class"),
     },
     {
-      text: "Marketing Mail",
+      text: "USPS Marketing Mail",
       onClickItem: () => history.push("/marketing-mail"),
     },
     {

@@ -22,8 +22,6 @@ import {
   yScaleRev,
 } from "../../Design/graphDimensions";
 
-import { TooltipTarget } from "../TooltipTarget";
-
 import { TooltipServiceClassLevel } from "./TooltipServiceClassLevel";
 import { TooltipProductNames } from "./TooltipProductNames";
 import ClassGraphTitle from "./ClassGraphTitle";

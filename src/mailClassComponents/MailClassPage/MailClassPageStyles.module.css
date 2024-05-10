@@ -8,10 +8,11 @@
 .topHalf {
   display: flex;
   flex-direction: row;
+  padding-top: 2rem;
   /* background-color: azure; */
 }
 .isFirstClass {
-  margin-top: -6rem;
+  margin-top: 1rem;
 }
 .fcWeeklyContainer {
   display: flex;
@@ -78,14 +79,14 @@
 
 .outerContainerProductCount {
   margin-left: 1rem;
-  margin-top: 6rem;
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   width: 10rem;
 }
 
 .outerContainerProductCountFC {
-  margin-top: 26rem;
+  margin-top: 34rem;
   margin-left: -9rem;
   display: flex;
   flex-direction: column;

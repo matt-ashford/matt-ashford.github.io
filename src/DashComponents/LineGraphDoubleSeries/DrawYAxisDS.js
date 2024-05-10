@@ -21,16 +21,17 @@ export const drawYAxis = ({ svgId }) => {
     .call(
       d3
         .axisLeft(yScaleRev)
-        .tickSize(-tickWidth)
+        // .tickSize(-tickWidth)
+        .tickSize(-5)
         .ticks(5)
         .tickFormat(d3.format(".0%"))
     )
     // .call(d3.axisLeft(yScaleRev).tickSize(0).ticks(5))
     // .call(d3.axisLeft(yScaleRev).tickSize(-tickWidth).ticks(10))
     .attr("transform", `translate(${marginLeft + leftPushYAxis},${marginTop})`)
-    .attr("class", "lineGraphYAxis")
-    .style("opacity", 0.7);
-  d3.select(".domain").remove();
+    .attr("class", "lineGraphYAxis");
+  // .style("opacity", 0.7);
+  // d3.select(".domain").remove();
   d3.selectAll(".lineGraphYAxis").selectAll("text").style("opacity", 1);
 
   d3.select(`#${svgId}`)

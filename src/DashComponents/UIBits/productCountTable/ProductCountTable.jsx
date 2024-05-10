@@ -1,4 +1,3 @@
-import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import { countTableDataFilter } from "./countTableDataFilter";
 import ProductCountBar from "./ProductCountBar";
